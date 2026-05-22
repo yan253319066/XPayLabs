@@ -11,7 +11,7 @@ export default function Footer() {
   const tFooter = useTranslations('footer');
   const tNav = useTranslations('navigation');
   const locale = useLocale();
-  const currentYear = new Date().getFullYear();
+  const launchYear = 2020;
   const pathname = usePathname();
   const homePath = locale === 'zh' ? '/zh' : '/';
   const isDocsPage = pathname ? pathname.includes('/docs') : false;
@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 text-xs">
           <div className="space-y-1">
             <p className="text-slate-500 font-sans">
-              &copy; {currentYear} XPay Labs. {tFooter('allRights')}
+              &copy; {launchYear} XPay Labs. {tFooter('allRights')}
             </p>
             <p className="text-slate-400 font-sans flex items-center space-x-1">
               <ShieldCheck className="w-3.5 h-3.5 text-[#5B8CFF] shrink-0" />
