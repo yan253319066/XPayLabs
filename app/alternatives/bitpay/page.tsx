@@ -100,7 +100,7 @@ const breadcrumbSchema = {
 export default function BitPayAlternativePage() {
   return (
     <NextIntlClientProvider locale="en" messages={translations.en}>
-      <div className="relative min-h-screen bg-[#040612] text-gray-200">
+      <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
 
         <JsonLd data={faqSchema} />
         <JsonLd data={comparisonSchema} />

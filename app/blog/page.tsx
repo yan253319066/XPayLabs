@@ -94,7 +94,7 @@ export default function BlogIndexPage() {
     <NextIntlClientProvider locale="en" messages={translations.en}>
       <JsonLd data={blogSchema} />
       <JsonLd data={postSchema} />
-      <div className="relative min-h-screen bg-[#040612] text-gray-200">
+      <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <Header />
         <main className="relative gradient-bg pt-28 pb-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
