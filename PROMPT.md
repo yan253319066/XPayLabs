@@ -321,3 +321,4 @@ curl -X POST https://api.xpaylabs.com/v1/payment/create
 * Resend
 
 而不是普通加密支付网站。
+官网会使用域名：www.xpaylabs.com

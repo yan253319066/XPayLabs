@@ -8,6 +8,7 @@ import {
   Sparkles, Code, CheckCircle, Smartphone
 } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
+import { DEPOSIT_ADDRESSES } from '@/lib/constants';
 
 type StepIndex = 0 | 1 | 2 | 3;
 
@@ -48,12 +49,7 @@ export default function DevExperience() {
     setIsCreatingPayment(true);
     setPaymentAddress('');
     setTimeout(() => {
-      const addresses = {
-        TRON: 'TYpSq7f8MubE8bK6vG7m8F7WbA9c3DxE1F',
-        ETH: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F',
-        SUI: '0x6a2c2ffab3f3bc6da1d3ad8a5be7f2bc29ffb19b6623e1de1c07ee1c0a0c7edb'
-      };
-      setPaymentAddress(addresses[paymentChain]);
+      setPaymentAddress(DEPOSIT_ADDRESSES[paymentChain]);
       setIsCreatingPayment(false);
       // Automatically unlock next step
       setActiveStep(2);

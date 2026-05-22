@@ -9,6 +9,7 @@ import {
   RefreshCw, Check, Copy, Wifi
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { DEPOSIT_ADDRESSES } from '@/lib/constants';
 
 type ChainType = 'TRON' | 'ETH' | 'BSC' | 'SUI';
 
@@ -29,12 +30,7 @@ export default function HeroSection() {
   const [isFiringWebhook, setIsFiringWebhook] = useState(false);
 
   // Seed addresses based on chain
-  const addresses: Record<ChainType, string> = {
-    TRON: 'TYpSq7f8MubE8bK6vG7m8F7WbA9c3DxE1F',
-    ETH: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F',
-    BSC: '0x4838B106FCe9647Bdf1E7877BF73cE8B0BAD5f97',
-    SUI: '0x6a2c2ffab3f3bc6da1d3ad8a5be7f2bc29ffb19b6623e1de1c07ee1c0a0c7edb'
-  };
+  const addresses = DEPOSIT_ADDRESSES;
 
   const tokenLabel: Record<ChainType, string> = {
     TRON: 'USDT (TRC-20)',
