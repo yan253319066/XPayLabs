@@ -80,17 +80,13 @@ const posts = [
 
 const postSchema = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  ...(posts.reduce((acc, post, i) => {
-    acc[`blogPost${i}`] = {
-      '@type': 'BlogPosting',
-      headline: post.title,
-      url: `https://www.xpaylabs.com${post.href}`,
-      datePublished: post.date,
-      description: post.excerpt,
-    };
-    return acc;
-  }, {} as Record<string, unknown>)),
+  '@graph': posts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    url: `https://www.xpaylabs.com${post.href}`,
+    datePublished: post.date,
+    description: post.excerpt,
+  })),
 };
 
 export default function BlogIndexPage() {

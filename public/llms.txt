@@ -1,8 +1,14 @@
 # XPay Labs
-> Self-hosted, non-custodial crypto payment infrastructure for developers. Accept stablecoin payments across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI with a single self-hosted SDK.
+> Self-hosted, non-custodial crypto payment infrastructure for developers. Accept stablecoin payments across TRON (TRC20), 20+ EVM chains (Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Base, Avalanche, zkSync Era, Linea, Scroll, Celo, Mantle, Gnosis, Cronos, Fantom, opBNB, Polygon zkEVM, Metis, Blast, Boba), and SUI with a single self-hosted SDK.
 
 ## Key pages
 - [Docs](https://www.xpaylabs.com/docs)
+- [Blog](https://www.xpaylabs.com/blog)
+- [vs BitPay](https://www.xpaylabs.com/alternatives/bitpay)
+- [vs Coinbase Commerce](https://www.xpaylabs.com/alternatives/coinbase-commerce)
+- [vs NowPayments](https://www.xpaylabs.com/alternatives/nowpayments)
+- [How to Accept Crypto Payments](https://www.xpaylabs.com/guides/how-to-accept-crypto-payments)
+- [TRON Payment Gateway](https://www.xpaylabs.com/solutions/tron-payment-gateway)
 - [Privacy Policy](https://www.xpaylabs.com/privacy)
 - [Terms of Service](https://www.xpaylabs.com/terms)
 
@@ -11,9 +17,28 @@ XPay Labs is a self-hosted crypto payment gateway. Merchants deploy their own pr
 
 ### Supported Blockchains
 - TRON (TRC20 USDT)
-- Ethereum and all EVM chains (ERC20 stablecoins)
-- BNB Chain (BEP20)
+- Ethereum (ERC20)
+- BNB Chain / BSC (BEP20)
+- Polygon
+- Arbitrum
+- Optimism
+- Base
+- Avalanche
+- zkSync Era
+- Linea
+- Scroll
+- Celo
+- Mantle
+- Gnosis Chain (xDai)
+- Cronos
+- Fantom
+- opBNB
+- Polygon zkEVM
+- Metis
+- Blast
+- Boba Network
 - SUI
+- More chains configurable via XPAY_EVM_RPC (any EVM-compatible network)
 
 ### Key Features
 - 100% non-custodial: keys generated and stored in your own containers
@@ -25,3 +50,26 @@ XPay Labs is a self-hosted crypto payment gateway. Merchants deploy their own pr
 ### Infrastructure Requirements
 - Minimum: 8GB RAM, 4 vCPU
 - Recommended: 16GB RAM, 8 vCPU
+
+## FAQ
+
+### How is XPay Labs different from hosted gateways like BitPay?
+XPay Labs is self-hosted and non-custodial. Hosted gateways hold merchant keys and charge per-transaction fees (BitPay 1%, Coinbase Commerce 0.8% + $25/mo). XPay Labs charges zero gateway fees — only blockchain gas costs ($0.01-$0.50 per tx). For a business processing $100,000/month, this saves $6,000-$12,000 annually.
+
+### What blockchains does XPay Labs support?
+TRON (TRC20), 20+ EVM chains (Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Base, Avalanche, zkSync Era, Linea, Scroll, Celo, Mantle, Gnosis, Cronos, Fantom, opBNB, Polygon zkEVM, Metis, Blast, Boba), and SUI. Any EVM-compatible network can be added via XPAY_EVM_RPC configuration. The multi-chain scanner monitors all networks concurrently and outputs a single standardized webhook stream.
+
+### How fast does XPay Labs detect payments?
+TRON: 1-3 seconds from mempool broadcast. EVM chains: 2-6 seconds. SUI: 1-2 seconds. Configurable block confirmation thresholds (default: 1 for TRON/SUI, 2 for EVM).
+
+### Is XPay Labs open source?
+No. XPay Labs is source-available under the XPay Enterprise License. The full codebase is published on GitHub for audit and self-deployment, but commercial use requires a license.
+
+### What is the difference between self-hosted and non-custodial?
+Self-hosted means you deploy on your own infrastructure. Non-custodial means you retain exclusive control of private keys. XPay Labs is both: you run it on your servers, and all keys are generated and stored exclusively within your Docker containers.
+
+### Does XPay Labs support tokens beyond USDT?
+Yes. Any standard TRC20 or ERC20 token can be tracked by declaring its contract address in the node configuration. This includes USDC, DAI, BUSD, FRAX, and custom tokens.
+
+### How do XPay Labs webhooks work?
+When a payment is detected on-chain, the webhook service sends an HMAC-SHA256 signed JSON payload to your configured endpoint. Failed deliveries retry with exponential backoff (1s→2s→4s→...→5min) for up to 48 hours.
