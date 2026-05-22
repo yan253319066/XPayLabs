@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Terminal, Github, Twitter, ShieldCheck } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -25,12 +26,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-white/5">
           {/* Slogan details */}
           <div className="space-y-4 col-span-1 md:col-span-2">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-purple via-brand-purple to-[#5B8CFF] p-[1.5px]">
-                <div className="w-full h-full bg-[#060816] rounded-[7px] flex items-center justify-center">
-                  <Terminal className="w-3.5 h-3.5 text-[#5B8CFF]" />
-                </div>
-              </div>
+            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-1.5">
+              <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-extrabold text-base tracking-tight italic">
                 XPAY <span className="text-[#5B8CFF]">LABS</span>
               </span>

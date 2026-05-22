@@ -21,7 +21,7 @@ export const en: TranslationSet = {
     subtitle: "Private, containerized and self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.",
     ctaDeploy: "Deploy Your System",
     ctaDocs: "Contact Us",
-    badge: "V1.0 ALPHA — DEPLOY INSTANTLY"
+    badge: "V1.0 — DEPLOY INSTANTLY"
   },
   dashboardMockup: {
     headline: "LIVE GATEWAY MONITOR",
@@ -229,8 +229,7 @@ export const en: TranslationSet = {
   cta: {
     title: "Own Your Payment Gateway Today",
     subtitle: "Stop bleeding profit to custodial intermediaries. Deploy the secure, private self-hosted crypto payment gateway on your own servers in minutes.",
-    btnDeploy: "Deploy on VPS / Docker Core",
-    btnDocs: "Explore Architecture Docs"
+    btnDeploy: "Deploy on VPS / Docker Core"
   },
   footer: {
     slogan: "Sovereign, private, developer-first crypto payment infrastructure.",

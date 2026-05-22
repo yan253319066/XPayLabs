@@ -153,7 +153,6 @@ export interface TranslationSet {
     title: string;
     subtitle: string;
     btnDeploy: string;
-    btnDocs: string;
   };
   footer: {
     slogan: string;

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -114,10 +115,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-2.5 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-brand-cyan rounded-lg flex items-center justify-center p-[1px] shadow-lg group-hover:scale-105 transition-transform duration-200">
-                <span className="font-extrabold text-white text-xs tracking-tighter">XP</span>
-              </div>
+            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-1.5 group">
+              <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-black text-xl tracking-tight group-hover:text-brand-cyan transition-colors italic">
                 XPay <span className="text-brand-blue not-italic font-bold">Labs</span>
               </span>

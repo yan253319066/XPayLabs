@@ -21,7 +21,7 @@ export const zh: TranslationSet = {
     subtitle: "商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全防托管、白标定制，专为高要求的 Web3 开发者设计。",
     ctaDeploy: "一键部署系统",
     ctaDocs: "联系我们",
-    badge: "V1.0 ALPHA — 企业极速私有化部署"
+    badge: "V1.0 — 企业极速私有化部署"
   },
   dashboardMockup: {
     headline: "网关监控中心 (实时)",
@@ -229,8 +229,7 @@ export const zh: TranslationSet = {
   cta: {
     title: "掌握您的绝对收款主权",
     subtitle: "终止继续向聚合扣除昂贵的手续费和面对未知的冻结。立即在几分钟内，在您自己的安全服务器上，点燃这套私有化自托管防托管多链支付引擎。",
-    btnDeploy: "部署至 Docker / 自有主机",
-    btnDocs: "了解私有化底层系统架构"
+    btnDeploy: "部署至 Docker / 自有主机"
   },
   footer: {
     slogan: "去中心化主权、私有定制、开发者先行的加密货币自托管底层支付网关。",

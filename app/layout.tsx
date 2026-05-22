@@ -15,6 +15,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'XPay Labs — Self-hosted Crypto Payment Infrastructure',
   description: 'Open-source and self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI. Merchant-first, non-custodial gateway with Webhooks and API hooks.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

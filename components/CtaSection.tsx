@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Terminal, Github } from 'lucide-react';
+import { ArrowRight, Terminal } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function CtaSection() {
@@ -41,18 +41,11 @@ export default function CtaSection() {
               {/* Launchers split button row */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4">
                 <Link
-                  href="#dev-experience"
+                  href="https://t.me/OS_Blockchain"
                   className="px-8 py-3 bg-[#5B8CFF] hover:bg-[#4A7CEE] text-slate-900 border border-[#8FB3FF] transition-all duration-300 font-extrabold rounded-full inline-flex items-center justify-center shadow-[0_0_20px_rgba(91,140,255,0.4)] hover:shadow-[0_0_30px_rgba(91,140,255,0.6)]"
                 >
                   <span>{t('btnDeploy')}</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-                <Link
-                  href="/docs"
-                  className="px-8 py-3 bg-[#0A0D1F] hover:bg-white/5 text-slate-300 border border-white/10 hover:border-white/20 transition-all duration-300 font-bold rounded-full inline-flex items-center justify-center space-x-2"
-                >
-                  <Github className="w-4 h-4" />
-                  <span>{t('btnDocs')}</span>
                 </Link>
               </div>
 
