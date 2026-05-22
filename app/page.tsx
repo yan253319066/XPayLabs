@@ -20,17 +20,17 @@ export const metadata: Metadata = {
   description: translations.en.meta.description,
   keywords: translations.en.meta.keywords,
   alternates: {
-    canonical: 'https://api.xpaylabs.com/',
+    canonical: 'https://www.xpaylabs.com/',
     languages: {
-      'en-US': 'https://api.xpaylabs.com/',
-      'zh-CN': 'https://api.xpaylabs.com/zh',
+      'en-US': 'https://www.xpaylabs.com/',
+      'zh-CN': 'https://www.xpaylabs.com/zh',
     }
   },
   openGraph: {
     title: translations.en.meta.title,
     description: translations.en.meta.description,
     type: 'website',
-    url: 'https://api.xpaylabs.com/',
+    url: 'https://www.xpaylabs.com/',
     siteName: 'XPay Labs',
     images: [{ url: 'https://picsum.photos/seed/xpay/1200/630' }],
   },
