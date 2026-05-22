@@ -1,0 +1,6 @@
+{
+  "name": "XPay Labs",
+  "description": "Private & Self-hosted Crypto Payment Infrastructure for TRON, EVM chains, and SUI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

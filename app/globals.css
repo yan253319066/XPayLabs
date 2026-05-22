@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-space), sans-serif;
+  
+  --color-brand-blue: #5B8CFF;
+  --color-brand-purple: #7C4DFF;
+  --color-brand-cyan: #00D1FF;
+  --color-brand-bg: #060816;
+  --color-brand-panel: #0d1026;
+  --color-brand-border: rgba(91, 140, 255, 0.15);
+}
+
+/* Custom visual utilities */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at 50% -20%, rgba(124, 77, 255, 0.15) 0%, rgba(91, 140, 255, 0.05) 50%, rgba(6, 8, 22, 1) 100%);
+}
+
+.glass-panel {
+  background: rgba(11, 13, 31, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-blue {
+  box-shadow: 0 0 50px -10px rgba(91, 140, 255, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 50px -10px rgba(124, 77, 255, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(0, 209, 255, 0.15);
+}
+
+.text-gradient-purple-blue {
+  background: linear-gradient(135deg, #00D1FF 0%, #5B8CFF 50%, #7C4DFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
