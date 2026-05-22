@@ -4,12 +4,16 @@ import React from 'react';
 import Link from 'next/link';
 import { Terminal, Github, Twitter, ShieldCheck } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const tFooter = useTranslations('footer');
   const tNav = useTranslations('navigation');
   const locale = useLocale();
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const homePath = locale === 'zh' ? '/zh' : '/';
+  const isDocsPage = pathname ? pathname.includes('/docs') : false;
 
   return (
     <footer className="border-t border-white/5 bg-[#060816] text-slate-400 py-12 lg:py-16 relative overflow-hidden">
@@ -50,9 +54,9 @@ export default function Footer() {
               {tFooter('product')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><a href="#features" className="hover:text-white transition-colors">{tNav('features')}</a></li>
-              <li><a href="#chains" className="hover:text-white transition-colors">{tNav('chains')}</a></li>
-              <li><a href="#architecture" className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
+              <li><a href={isDocsPage ? `${homePath}#features` : '#features'} className="hover:text-white transition-colors">{tNav('features')}</a></li>
+              <li><a href={isDocsPage ? `${homePath}#chains` : '#chains'} className="hover:text-white transition-colors">{tNav('chains')}</a></li>
+              <li><a href={isDocsPage ? `${homePath}#architecture` : '#architecture'} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
             </ul>
           </div>
 
@@ -62,9 +66,9 @@ export default function Footer() {
               {tFooter('developers')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><Link href="/docs" className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
-              <li><a href="#api" className="hover:text-white transition-colors">REST API Spec</a></li>
-              <li><a href="#dev-experience" className="hover:text-white transition-colors">Container Sandboxing</a></li>
+              <li><Link href={locale === 'zh' ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
+              <li><a href={isDocsPage ? `${homePath}#api` : '#api'} className="hover:text-white transition-colors">REST API Spec</a></li>
+              <li><a href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'} className="hover:text-white transition-colors">Container Sandboxing</a></li>
             </ul>
           </div>
         </div>

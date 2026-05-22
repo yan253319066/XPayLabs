@@ -70,7 +70,7 @@ export default function EnglishDocsPage() {
                 </h1>
                 
                 <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
-                  Welcome to XPay Labs. This deployment documentation will guide you through spinning up an isolated multi-chain payment container pool locally or on cloud providers (Vercel, Cloud Run, Cloudflare Pages, Docker clusters). 
+                  Welcome to XPay Labs. This deployment documentation will guide you through spinning up the core multi-chain self-hosted payment node as a secure Docker container (compatible with VPS hosts, AWS, Google Cloud Run, and Kubernetes clusters), while deploying the fast React checkout widget as static files onto serverless edge platforms like Vercel or Cloudflare Pages.
                 </p>
               </section>
 

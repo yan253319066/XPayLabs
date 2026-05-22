@@ -70,7 +70,7 @@ export default function ChineseDocsPage() {
               </h1>
               
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
-                本部署技术文档将指导您在企业自有或隔离服务器集群（如 VPS 虛拟机、Cloudflare Pages、Vercel Serverless 及 Kubernetes 等 Docker 环境）中极速启动 XPay Labs 收钱网关并集成到业务中。
+                本部署技术文档将指导您在企业自有或高安全防护的服务器环境中运行 XPay Labs 核心收钱网关（支持 VPS 主机、阿里云/腾讯云、AWS 实例以及自建 Kubernetes/Docker 容器集群），并将高性能 React 静态收银前端一键托管于 Cloudflare Pages 或 Vercel 等边缘节点，轻松实现主权掌控的多链支付集成。
               </p>
             </section>
 

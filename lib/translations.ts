@@ -207,8 +207,8 @@ export const translations: Record<'en' | 'zh', TranslationSet> = {
       point1Text: "All private keys, mnemonic generation seeds, and transaction signing blocks execute locally within your isolated containers.",
       point2Title: "White-Label Freedom",
       point2Text: "Theme, branding, localized translation sequences, and notification layouts belong completely to your interface.",
-      point3Title: "Deploy Anywhere",
-      point3Text: "Fully dockerized deploy manifests supporting Cloudflare Pages, Vercel, isolated Linux VMs, Kubernetes, and Cloud Run.",
+      point3Title: "Flexible Deployment",
+      point3Text: "Run the JVM core as a secure Docker container on any VPS or Kubernetes cluster, while hosting the static React frontend on Vercel or Cloudflare.",
       point4Title: "Zero Gateway Fees",
       point4Text: "Eliminate standard 1-2% middleman network fees. Pay strictly on-chain gas costs for network transactions."
     },
@@ -385,14 +385,14 @@ export const translations: Record<'en' | 'zh', TranslationSet> = {
         },
         {
           q: "What are the infrastructure requirements for hosting XPay?",
-          a: "Our gateway compiles into lightweight Docker containers requiring fewer than 512MB RAM and minimal CPU overhead. You can deploy them on Cloudflare Pages, Vercel edge paths, standalone low-spec VPS networks, or major container cloud hosts."
+          a: "The core system executes as a secure JVM Spring Boot application packaged within lightweight Docker containers (requiring as little as 512MB RAM on a VPS, Kubernetes cluster, or Google Cloud Run). The checkout widgets and dashboard frontends are static Web applications that can be hosted on serverless edges like Cloudflare Pages or Vercel."
         }
       ]
     },
     cta: {
       title: "Own Your Payment Gateway Today",
       subtitle: "Stop bleeding profit to custodial intermediaries. Deploy the secure, private self-hosted crypto payment gateway on your own servers in minutes.",
-      btnDeploy: "Deploy on Cloudflare / Docker",
+      btnDeploy: "Deploy on VPS / Docker Core",
       btnDocs: "Explore Architecture Docs"
     },
     footer: {
@@ -448,8 +448,8 @@ export const translations: Record<'en' | 'zh', TranslationSet> = {
       point1Text: "所有的私钥管理、助记词派生、以及链上签名广播，完全在您的容器隔离内存中执行，资产不经由任何第三方网站。",
       point2Title: "白标商业自由",
       point2Text: "外观主题、LOGO品牌、国际化翻译以及账单邮件完全能够完美嵌入到您自有的产品线，保障用户体验一致性。",
-      point3Title: "随意部署不受控",
-      point3Text: "高度容器化(Docker)的编译包，支持一键发布至 Cloudflare Pages、Vercel、独立云主机 (VPS) 甚至 Kubernetes。",
+      point3Title: "灵活分离部署",
+      point3Text: "底层的 Java Spring Boot 核心网关支持 Docker 容器化打包运行于任意 VPS、云主机或 K8s 集群，商户前台及收银台 widget 可纯静态托管于 Vercel 或 Cloudflare Pages。",
       point4Title: "零网关手续费",
       point4Text: "彻底终结市场上 1%-2% 的支付网关高额抽成，让资金流转只消耗底层的区块链网络 Gas 费。"
     },
@@ -626,7 +626,7 @@ export const translations: Record<'en' | 'zh', TranslationSet> = {
         },
         {
           q: "部署 XPay 最低系统资源要求高吗？",
-          a: "极其轻量。由于我们在研发底层做到了微服务轻巧封装，整体 Docker 镜像可在内存少于 512MB RAM、0.5 核 CPU 占用的服务器（如几美元月租的主机，或免费的 Vercel Serverless 及 Cloudflare Pages/Workers）上以极佳状态稳定运行。"
+          a: "系统采用轻量分离架构设计，资源消耗极低。底层的 Java Spring Boot 核心网关高度优化，以安全 Docker 镜像形式打包运行，推荐在最低 512MB RAM / 0.5核 vCPU 的云主机 VPS、容器服务或 Kubernetes 中部署。而商户收银台 React 核心组件等前台静态资产完全不消耗您的服务器算力，可直接免费一键承载在 Vercel 或 Cloudflare Pages 等无服务器边缘平台上。"
         }
       ]
     },
