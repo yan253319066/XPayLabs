@@ -202,7 +202,7 @@ export const en: TranslationSet = {
     items: [
       {
         q: "What is XPay Labs?",
-        a: "XPay Labs is an open-source, fully modular, self-hosted crypto payment infrastructure. It enables companies and developers to scan, accept, and settle stablecoin payments natively on TRON, EVM chains, and SUI without relying on a custodial third-party or paying processing commission."
+        a: "XPay Labs is a fully modular, self-hosted crypto payment infrastructure. It enables companies and developers to scan, accept, and settle stablecoin payments natively on TRON, EVM chains, and SUI without relying on a custodial third-party or paying processing commission."
       },
       {
         q: "Which blockchains and tokens are supported?",

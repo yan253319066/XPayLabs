@@ -8,8 +8,21 @@ import Footer from '../../../components/Footer';
 import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — 自托管开发部署技术文档',
+  title: '技术文档 — 开发者部署指南',
   description: '快速将自托管的 XPay Labs 区块链收银网关集群发布至您的服务器之部署教程。涵盖 Docker 编排、环境配置与 API 数据参考说明。',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/zh/docs',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/docs',
+      'en-US': 'https://www.xpaylabs.com/docs',
+      'zh-CN': 'https://www.xpaylabs.com/zh/docs',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — 自托管开发部署技术文档',
+    description: '快速将自托管的 XPay Labs 区块链收银网关集群发布至您的服务器之部署教程。涵盖 Docker 编排、环境配置与 API 数据参考说明。',
+    url: 'https://www.xpaylabs.com/zh/docs',
+  },
 };
 
 export default function ChineseDocsPage() {

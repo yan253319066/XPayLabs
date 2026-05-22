@@ -1,0 +1,27 @@
+# XPay Labs
+> Self-hosted, non-custodial crypto payment infrastructure for developers. Accept stablecoin payments across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI with a single self-hosted SDK.
+
+## Key pages
+- [Docs](https://www.xpaylabs.com/docs)
+- [Privacy Policy](https://www.xpaylabs.com/privacy)
+- [Terms of Service](https://www.xpaylabs.com/terms)
+
+## About
+XPay Labs is a self-hosted crypto payment gateway. Merchants deploy their own private payment infrastructure via Docker, retaining full custody of all keys and funds. No third-party custodians, no processing fees — only on-chain gas costs.
+
+### Supported Blockchains
+- TRON (TRC20 USDT)
+- Ethereum and all EVM chains (ERC20 stablecoins)
+- BNB Chain (BEP20)
+- SUI
+
+### Key Features
+- 100% non-custodial: keys generated and stored in your own containers
+- White-label: full branding control over checkout UI
+- Webhook system with HMAC-signed payloads and automatic retries
+- Multi-chain scanner that monitors all supported chains concurrently
+- Docker Compose one-command deployment
+
+### Infrastructure Requirements
+- Minimum: 8GB RAM, 4 vCPU
+- Recommended: 16GB RAM, 8 vCPU

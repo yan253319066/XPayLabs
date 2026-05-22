@@ -8,8 +8,20 @@ import Footer from '../../components/Footer';
 import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — Privacy Policy',
+  title: 'Privacy Policy',
   description: 'Privacy Policy for XPay Labs self-hosted crypto payment infrastructure software.',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/privacy',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/privacy',
+      'en-US': 'https://www.xpaylabs.com/privacy',
+      'zh-CN': 'https://www.xpaylabs.com/zh/privacy',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — Privacy Policy',
+    url: 'https://www.xpaylabs.com/privacy',
+  },
 };
 
 export default function EnglishPrivacyPage() {

@@ -16,12 +16,13 @@ import Footer from '../../components/Footer';
 import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
-  title: translations.zh.meta.title,
+  title: { absolute: translations.zh.meta.title },
   description: translations.zh.meta.description,
   keywords: translations.zh.meta.keywords,
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh',
     languages: {
+      'x-default': 'https://www.xpaylabs.com/',
       'en-US': 'https://www.xpaylabs.com/',
       'zh-CN': 'https://www.xpaylabs.com/zh',
     }
@@ -29,16 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: translations.zh.meta.title,
     description: translations.zh.meta.description,
-    type: 'website',
     url: 'https://www.xpaylabs.com/zh',
-    siteName: 'XPay Labs',
-    images: [{ url: 'https://picsum.photos/seed/xpay/1200/630' }],
   },
   twitter: {
-    card: 'summary_large_image',
     title: translations.zh.meta.title,
     description: translations.zh.meta.description,
-    images: ['https://picsum.photos/seed/xpay/1200/630'],
   }
 };
 

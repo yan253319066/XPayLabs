@@ -8,8 +8,21 @@ import Footer from '../../components/Footer';
 import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — Developer Infrastructure Documentation',
+  title: 'Documentation — Developer Infrastructure Guide',
   description: 'Integrate and deploy the self-hosted XPay Labs blockchain checkout gateways. Steps, configuration scripts, Docker setup, and environment specifications.',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/docs',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/docs',
+      'en-US': 'https://www.xpaylabs.com/docs',
+      'zh-CN': 'https://www.xpaylabs.com/zh/docs',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — Developer Infrastructure Documentation',
+    description: 'Integrate and deploy the self-hosted XPay Labs blockchain checkout gateways. Steps, configuration scripts, Docker setup, and environment specifications.',
+    url: 'https://www.xpaylabs.com/docs',
+  },
 };
 
 export default function EnglishDocsPage() {

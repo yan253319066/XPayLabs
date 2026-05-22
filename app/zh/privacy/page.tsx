@@ -8,8 +8,20 @@ import Footer from '../../../components/Footer';
 import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — 隐私政策',
+  title: '隐私政策',
   description: 'XPay Labs 自托管加密货币支付基础设施软件的隐私政策。',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/zh/privacy',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/privacy',
+      'en-US': 'https://www.xpaylabs.com/privacy',
+      'zh-CN': 'https://www.xpaylabs.com/zh/privacy',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — 隐私政策',
+    url: 'https://www.xpaylabs.com/zh/privacy',
+  },
 };
 
 export default function ChinesePrivacyPage() {

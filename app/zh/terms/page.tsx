@@ -8,8 +8,20 @@ import Footer from '../../../components/Footer';
 import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — 服务条款',
+  title: '服务条款',
   description: '使用 XPay Labs 自托管加密货币支付基础设施软件的服务条款。',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/zh/terms',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/terms',
+      'en-US': 'https://www.xpaylabs.com/terms',
+      'zh-CN': 'https://www.xpaylabs.com/zh/terms',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — 服务条款',
+    url: 'https://www.xpaylabs.com/zh/terms',
+  },
 };
 
 export default function ChineseTermsPage() {
@@ -46,7 +58,7 @@ export default function ChineseTermsPage() {
             <section className="space-y-3">
               <h2 className="text-lg font-display font-medium text-white">二、服务描述</h2>
               <p>
-                XPay Labs 是一款开源、自托管的软件基础设施，旨在帮助商户和开发者部署自有非托管加密货币支付网关。本软件以容器化微服务的形式提供，商户需在自有服务器上安装部署。XPay Labs 不代任何用户处理、存储或传输支付款项。
+                XPay Labs 是一款专有、自托管的软件基础设施，旨在帮助商户和开发者部署自有非托管加密货币支付网关。本软件以容器化微服务的形式提供，商户需在自有服务器上安装部署。XPay Labs 不代任何用户处理、存储或传输支付款项。
               </p>
             </section>
 

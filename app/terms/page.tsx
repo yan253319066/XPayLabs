@@ -8,8 +8,20 @@ import Footer from '../../components/Footer';
 import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs — Terms of Service',
+  title: 'Terms of Service',
   description: 'Terms of Service governing the use of XPay Labs self-hosted crypto payment infrastructure software.',
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/terms',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/terms',
+      'en-US': 'https://www.xpaylabs.com/terms',
+      'zh-CN': 'https://www.xpaylabs.com/zh/terms',
+    }
+  },
+  openGraph: {
+    title: 'XPay Labs — Terms of Service',
+    url: 'https://www.xpaylabs.com/terms',
+  },
 };
 
 export default function EnglishTermsPage() {
@@ -46,7 +58,7 @@ export default function EnglishTermsPage() {
             <section className="space-y-3">
               <h2 className="text-lg font-display font-medium text-white">2. Description of Service</h2>
               <p>
-                XPay Labs is an open-source, self-hosted software infrastructure that enables merchants and developers to deploy their own non-custodial cryptocurrency payment gateway. The Software is provided as a set of containerized microservices that merchants install on their own infrastructure. XPay Labs does not process, store, or transmit payments on behalf of any user.
+                XPay Labs is a self-hosted software infrastructure that enables merchants and developers to deploy their own non-custodial cryptocurrency payment gateway. The Software is provided as a set of containerized microservices that merchants install on their own infrastructure. XPay Labs does not process, store, or transmit payments on behalf of any user.
               </p>
             </section>
 
