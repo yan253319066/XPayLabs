@@ -23,9 +23,9 @@ export default function Footer() {
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#7C4DFF] opacity-5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 pb-12 border-b border-white/5">
           {/* Slogan details */}
-          <div className="space-y-4 col-span-1 md:col-span-2">
+          <div className="space-y-4 md:col-span-2">
             <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-1.5">
               <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-extrabold text-base tracking-tight italic">
@@ -60,6 +60,8 @@ export default function Footer() {
               <li><a href={isDocsPage ? `${homePath}#features` : '#features'} className="hover:text-white transition-colors">{tNav('features')}</a></li>
               <li><a href={isDocsPage ? `${homePath}#chains` : '#chains'} className="hover:text-white transition-colors">{tNav('chains')}</a></li>
               <li><a href={isDocsPage ? `${homePath}#architecture` : '#architecture'} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
+              <li><Link href="/alternatives/bitpay" className="hover:text-white transition-colors">vs BitPay</Link></li>
+              <li><Link href="/alternatives/coinbase-commerce" className="hover:text-white transition-colors">vs Coinbase Commerce</Link></li>
             </ul>
           </div>
 
@@ -71,7 +73,21 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
               <li><Link href={locale === 'zh' ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
               <li><a href={isDocsPage ? `${homePath}#api` : '#api'} className="hover:text-white transition-colors">REST API Spec</a></li>
-              <li><a href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'} className="hover:text-white transition-colors">Container Sandboxing</a></li>
+              <li><a href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'} className="hover:text-white transition-colors">Sandbox</a></li>
+              <li><Link href="/guides/how-to-accept-crypto-payments" className="hover:text-white transition-colors">Setup Guide</Link></li>
+              <li><Link href="/solutions/tron-payment-gateway" className="hover:text-white transition-colors">TRON Gateway</Link></li>
+            </ul>
+          </div>
+
+          {/* Links 3 */}
+          <div>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest font-mono mb-4 grayscale opacity-80">
+              {tFooter('resources')}
+            </h4>
+            <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
+              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/alternatives/nowpayments" className="hover:text-white transition-colors">vs NowPayments</Link></li>
+              <li><a href="https://github.com/yan253319066/XPayLabs" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
             </ul>
           </div>
         </div>

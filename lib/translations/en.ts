@@ -223,6 +223,58 @@ export const en: TranslationSet = {
       {
         q: "What are the infrastructure requirements for hosting XPay?",
         a: "Since the backend coordinates multiple core services including multi-chain live indexers, merchant nodes, gateway monitors, secure cryptographic keyrings, and queue-backed webhook systems, the runtime requirements are rigorous for enterprise production stability. To ensure JVM efficiency and uninterrupted throughput, a minimum profile of 8GB RAM / 4 vCPU is highly recommended. For high-concurrency settings or clustered multi-node operations, a recommended specification of 16GB RAM / 8 vCPU (or higher) should be allocated. With our provided Docker Compose templates, you can easily deploy all microservices, databases, indexing components, and the frontend collection in a single, unified command."
+      },
+      {
+        q: "How do I set up a self-hosted crypto payment gateway?",
+        a: "Setting up XPay Labs takes under 30 minutes. First, provision a VPS with at least 8GB RAM and 4 vCPU running Ubuntu 22.04+. Install Docker and Docker Compose, then clone the repository and run docker compose up -d. Configure your blockchain RPC endpoints (TRON, EVM, SUI) and generate your node seed phrase. Once deployed, the gateway exposes a REST API on port 3010. Full setup instructions are available in our documentation with step-by-step commands."
+      },
+      {
+        q: "Can I accept USDT payments with XPay Labs?",
+        a: "Yes. XPay Labs natively supports USDT across all integrated blockchains — TRC20 USDT on TRON, ERC20 USDT on Ethereum and all EVM chains, BEP20 USDT on BNB Chain, and USDC as well. The multi-chain scanner monitors all networks concurrently and detects incoming stablecoin payments within seconds. Merchants report a 40-60% reduction in payment processing costs compared to hosted gateways that charge 0.5-1% per transaction."
+      },
+      {
+        q: "How does XPay Labs compare to hosted payment gateways like BitPay or Coinbase Commerce?",
+        a: "The fundamental difference is custody and cost. Hosted gateways like BitPay (1% fee) and Coinbase Commerce (0.8% + $25/mo) hold merchant keys on their infrastructure and charge per-transaction fees. XPay Labs is self-hosted and non-custodial — keys stay in your Docker containers, and you pay only blockchain gas fees (typically $0.01-$0.50 per transaction depending on network congestion). For a business processing $100,000/month in crypto payments, this can save $6,000-$12,000 annually in gateway fees."
+      },
+      {
+        q: "Does XPay Labs support multi-chain payments?",
+        a: "Yes. XPay Labs is built as a multi-chain payment infrastructure from the ground up. It simultaneously supports TRON (TRC20), all EVM-compatible chains (Ethereum, BSC, Polygon, Optimism, Arbitrum, Avalanche), and SUI. The unified event channel consolidates all blockchain scanner outputs into a single webhook stream, so your application receives standardized payment notifications regardless of which chain the customer used."
+      },
+      {
+        q: "How do XPay Labs webhooks work?",
+        a: "When a payment is detected on-chain, the webhook service constructs an HMAC-SHA256 signed JSON payload and sends it to your configured endpoint URL. If your endpoint returns a non-2xx status, the system retries with exponential backoff (1s, 2s, 4s, 8s, up to 5 minutes) for up to 48 hours. Each payload includes the transaction hash, amount, currency, chain, and merchant metadata. You verify the signature using your shared HMAC secret to ensure the payload came from your XPay node."
+      },
+      {
+        q: "Is XPay Labs source-available?",
+        a: "XPay Labs is source-available under the XPay Enterprise License. The full core codebase is published on GitHub for audit and self-deployment. Merchants can inspect exactly how key derivation, transaction scanning, and webhook dispatch work. Community support is provided through GitHub Issues and Discord. Commercial support plans start at $1,500/year for priority SLA."
+      },
+      {
+        q: "What is the difference between self-hosted and non-custodial?",
+        a: "Self-hosted means you deploy and run the payment gateway software on your own infrastructure (VPS, bare metal, Kubernetes). Non-custodial means you retain exclusive control of private keys — no third party can access or move your funds. XPay Labs is both: you run it on your servers, and all cryptographic key material is generated and stored exclusively within your Docker containers. Unlike custodial solutions where the provider holds keys and settles to you later, XPay Labs never touches your funds at any point."
+      },
+      {
+        q: "Which stablecoins are supported beyond USDT?",
+        a: "In addition to USDT on all supported chains, XPay Labs can track any standard-compliant TRC20 or ERC20 token by declaring its smart contract address in the node configuration JSON. This includes USDC, DAI, BUSD, FRAX, and custom tokens. The scanner identifies token transfers by monitoring the contract's Transfer event logs, extracting the amount, sender, and receiver from the indexed parameters."
+      },
+      {
+        q: "How long does it take to detect a payment on-chain?",
+        a: "Detection speed varies by chain. On TRON, the mempool scanner detects incoming USDT transfers within 1-3 seconds of broadcast. On EVM chains, detection occurs within 2-6 seconds depending on network congestion and RPC endpoint latency. SUI transactions are typically detected within 1-2 seconds. The system can be configured to wait for a specific number of block confirmations before firing the webhook (default: 1 for TRON, 2 for EVM, 1 for SUI)."
+      },
+      {
+        q: "Can I customize the checkout page branding?",
+        a: "Yes. XPay Labs is fully white-label. The checkout UI is built with React and can be themed to match your brand — colors, typography, logo, layouts, and custom CSS. The entire frontend is deployed alongside the gateway in Docker, so there are no third-party iframes or external branding requirements. Developers can also build a completely custom checkout experience using the REST API."
+      },
+      {
+        q: "How is XPay Labs different from BTCPay Server?",
+        a: "While both are self-hosted, XPay Labs focuses on stablecoin payments across modern blockchain networks (TRON, EVM, SUI), whereas BTCPay Server primarily targets Bitcoin and Lightning Network. XPay Labs offers a more developer-centric REST API inspired by Stripe's design patterns, native multi-chain concurrent scanning, and HMAC-signed webhooks with automatic retry queues. BTCPay Server has a broader plugin ecosystem but heavier resource requirements and a UI focused on non-technical merchants."
+      },
+      {
+        q: "What happens if my server goes down during a payment?",
+        a: "Since XPay Labs is non-custodial, funds always go directly to your blockchain wallet — there is no risk of fund loss during downtime. When the node comes back online, the blockchain scanner replays blocks from the last checkpoint and detects any missed transactions. The webhook queue stores pending notifications in a persistent database and retries delivery once your endpoint is reachable again."
+      },
+      {
+        q: "Is there an API for creating and managing payments?",
+        a: "Yes. XPay Labs exposes a comprehensive REST API for payment lifecycle management. The create-payment endpoint accepts amount, currency, chain, and optional metadata, then returns a unique deposit address and checkout URL. Additional endpoints cover invoice status lookup, settlement sweeps, webhook log retrieval, and merchant wallet management. API responses follow a consistent JSON structure with typed fields. Full API documentation with Node.js, Python, Go, and cURL examples is available in our docs."
       }
     ]
   },
@@ -239,6 +291,7 @@ export const en: TranslationSet = {
     allRights: "All rights reserved. Protected under XPay Enterprise License.",
     disclaimer: "Non-custodial infrastructure software. Merchant remains strictly responsible for local legislative compliance, key protection, and node security.",
     termsOfService: "Terms of Service",
-    privacyPolicy: "Privacy Policy"
+    privacyPolicy: "Privacy Policy",
+    resources: "RESOURCES"
   }
 };

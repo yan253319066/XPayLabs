@@ -163,6 +163,7 @@ export interface TranslationSet {
     disclaimer: string;
     termsOfService: string;
     privacyPolicy: string;
+    resources: string;
   };
 }
 

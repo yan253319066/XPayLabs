@@ -1,0 +1,162 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Calendar, ArrowUpRight } from 'lucide-react';
+import { NextIntlClientProvider } from 'next-intl';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import JsonLd from '../../components/JsonLd';
+import { translations } from '../../lib/translations';
+
+export const metadata: Metadata = {
+  title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
+  description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure. Learn how to accept USDT, replace BitPay, and deploy your own non-custodial gateway.',
+  keywords: ['crypto payment blog', 'self-hosted payment gateway', 'USDT payment guide', 'BitPay alternative', 'Coinbase Commerce alternative', 'crypto payment infrastructure', 'accept crypto payments'],
+  alternates: {
+    canonical: 'https://www.xpaylabs.com/blog',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/blog',
+      'en-US': 'https://www.xpaylabs.com/blog',
+    },
+  },
+  openGraph: {
+    title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
+    description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure from XPay Labs.',
+    url: 'https://www.xpaylabs.com/blog',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
+    description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure from XPay Labs.',
+    card: 'summary_large_image',
+  },
+};
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'XPay Labs Blog',
+  description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure.',
+  url: 'https://www.xpaylabs.com/blog',
+};
+
+const posts = [
+  {
+    title: 'How to Accept USDT TRC20 Payments: A Developer\'s Guide',
+    href: '/guides/how-to-accept-crypto-payments',
+    date: 'May 2026',
+    category: 'Guide',
+    excerpt: 'A complete walkthrough for accepting USDT TRC20 payments using a self-hosted, non-custodial gateway. Covers Docker deployment, API integration, webhook handling, and multi-chain support for TRON, EVM, and SUI.',
+  },
+  {
+    title: 'BitPay Alternative: Why Merchants Are Switching to Self-Hosted',
+    href: '/alternatives/bitpay',
+    date: 'May 2026',
+    category: 'Alternative',
+    excerpt: 'BitPay pioneered crypto payments, but its custodial model, 1% transaction fees, and limited chain support leave growing businesses wanting more. Here is why merchants are switching to self-hosted alternatives.',
+  },
+  {
+    title: 'Coinbase Commerce Alternative: Take Control of Your Crypto Payments',
+    href: '/alternatives/coinbase-commerce',
+    date: 'May 2026',
+    category: 'Alternative',
+    excerpt: 'Coinbase Commerce is shutting down its custodial service. Merchants need a self-hosted alternative that puts them in control of private keys, settlement timing, and supported chains.',
+  },
+  {
+    title: 'NowPayments Alternative: Why Merchants Are Switching to Self-Hosted',
+    href: '/alternatives/nowpayments',
+    date: 'May 2026',
+    category: 'Alternative',
+    excerpt: 'NowPayments offers a hosted crypto payment gateway, but merchants pay for convenience through fees, custodial risk, and limited customization. Here is why the self-hosted model is gaining traction.',
+  },
+  {
+    title: 'TRON TRC20 Payment Gateway: Self-Hosted USDT Payment Infrastructure',
+    href: '/solutions/tron-payment-gateway',
+    date: 'May 2026',
+    category: 'Solution',
+    excerpt: 'A deep dive into building a self-hosted USDT payment gateway on TRON. Covers TRC-20 token support, energy management, TronGrid integration, and HD wallet derivation for merchant payment processing.',
+  },
+];
+
+const postSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  ...(posts.reduce((acc, post, i) => {
+    acc[`blogPost${i}`] = {
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: `https://www.xpaylabs.com${post.href}`,
+      datePublished: post.date,
+      description: post.excerpt,
+    };
+    return acc;
+  }, {} as Record<string, unknown>)),
+};
+
+export default function BlogIndexPage() {
+  return (
+    <NextIntlClientProvider locale="en" messages={translations.en}>
+      <JsonLd data={blogSchema} />
+      <JsonLd data={postSchema} />
+      <div className="relative min-h-screen bg-[#040612] text-gray-200">
+        <Header />
+        <main className="relative gradient-bg pt-28 pb-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            {/* Header Section */}
+            <section className="mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-xs font-bold uppercase tracking-widest font-mono mb-6">
+                <span>Blog</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-display font-medium text-white tracking-tight">
+                Blog — Self-Hosted Crypto Payment Infrastructure
+              </h1>
+              <p className="mt-6 text-base sm:text-lg text-gray-400 font-sans leading-relaxed max-w-3xl">
+                Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure.
+                From deployment walkthroughs to competitive analysis — everything you need to take
+                control of your payment stack, eliminate transaction fees, and run your own
+                non-custodial gateway.
+              </p>
+            </section>
+
+            {/* Blog Posts Cards */}
+            <div className="space-y-6">
+              {posts.map((post) => (
+                <Link
+                  key={post.href}
+                  href={post.href}
+                  className="glass-panel rounded-2xl p-6 sm:p-8 block hover:bg-white/[0.04] transition-all group"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="inline-flex items-center px-3 py-0.5 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-[10px] font-bold uppercase tracking-wider font-mono">
+                          {post.category}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-xs text-gray-500 font-mono">
+                          <Calendar className="w-3 h-3" />
+                          {post.date}
+                        </span>
+                      </div>
+                      <h2 className="text-lg sm:text-xl font-display font-medium text-white group-hover:text-brand-blue transition-colors leading-snug">
+                        {post.title}
+                      </h2>
+                      <p className="mt-2 text-sm text-gray-400 font-sans leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                    <div className="shrink-0 self-start mt-1">
+                      <ArrowUpRight className="w-5 h-5 text-gray-500 group-hover:text-brand-blue transition-colors" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </NextIntlClientProvider>
+  );
+}

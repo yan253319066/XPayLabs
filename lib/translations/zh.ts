@@ -223,6 +223,26 @@ export const zh: TranslationSet = {
       {
         q: "部署 XPay 最低系统资源要求高吗？",
         a: "系统由于包含多链实时索引、商户节点、网关监控、加密签名和 Webhook 消息队列等多个核心后端服务，对运行环境的要求较为严谨。为保障 JVM 容器及全套组件在高负载下的绝对稳定，推荐最低硬件配置为 8GB RAM / 4核 vCPU；在高并发或由多个网关集群联合组成的生产环境下，建议主节点及服务集群分配 16GB RAM / 8核 vCPU 起步。通过我们提供的 Docker Compose 模板，您可以轻松实现全套前后端微服务及静态资源的一键整站打包部署，极速跑通全部服务。"
+      },
+      {
+        q: "如何搭建自托管加密支付网关？",
+        a: "部署 XPay Labs 只需不到 30 分钟。首先准备一台至少 8GB RAM、4核 CPU 的 VPS（推荐 Ubuntu 22.04+），安装 Docker 和 Docker Compose，然后克隆仓库并运行 docker compose up -d。配置您的区块链 RPC 端点（TRON、EVM、SUI）并生成节点种子短语。部署完成后，网关在 3010 端口提供 REST API。完整的安装指南请参阅我们的开发文档。"
+      },
+      {
+        q: "XPay Labs 与 BitPay 或 Coinbase Commerce 相比如何？",
+        a: "根本区别在于资产托管和费用。BitPay（1% 手续费）和 Coinbase Commerce（0.8% + $25/月）会持有商户密钥并按交易收费。XPay Labs 是自托管且非托管的——密钥保留在您的 Docker 容器中，您只需支付区块链燃料费（通常每笔 $0.01-$0.50）。对于每月处理 $100,000 加密货币支付的企业，每年可节省 $6,000-$12,000 的网关费用。"
+      },
+      {
+        q: "XPay Labs 支持哪些稳定币？",
+        a: "除所有支持链上的 USDT 外，XPay Labs 可以通过在节点配置 JSON 中声明合约地址来追踪任何标准 TRC20 或 ERC20 代币，包括 USDC、DAI、BUSD、FRAX 等。扫描器通过监控代币合约的 Transfer 事件日志来识别转账，从索引参数中提取金额、发送方和接收方。"
+      },
+      {
+        q: "支付到账检测需要多长时间？",
+        a: "检测速度因链而异。在 TRON 上，内存池扫描器可在广播后 1-3 秒内检测到传入的 USDT 转账。在 EVM 链上，检测通常在 2-6 秒内完成。SUI 交易通常在 1-2 秒内检测到。系统可配置在触发 Webhook 前等待特定数量的区块确认。"
+      },
+      {
+        q: "我可以自定义结账页面的品牌吗？",
+        a: "可以。XPay Labs 是完全白标的。结账 UI 使用 React 构建，可以根据您的品牌进行主题定制——颜色、字体、Logo、布局和自定义 CSS。整个前端与网关一起部署在 Docker 中，没有第三方 iframe 或外部品牌要求。开发者也可以使用 REST API 构建完全自定义的结账体验。"
       }
     ]
   },
@@ -239,6 +259,7 @@ export const zh: TranslationSet = {
     allRights: "保留所有权利。项目由商业级私有化许可证提供授权保护。",
     disclaimer: "非托管基础设施软件。商户应对其自持密钥的离线安全、合规配置及服务器防火墙安全性承担完整、绝对的主体责任限制。",
     termsOfService: "服务条款",
-    privacyPolicy: "隐私政策"
+    privacyPolicy: "隐私政策",
+    resources: "资源"
   }
 };

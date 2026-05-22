@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function ChineseDocsPage() {
   return (
     <NextIntlClientProvider locale="zh" messages={translations.zh}>
-      <div className="relative min-h-screen bg-[#040612] text-gray-200">
+      <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-x-hidden">
         
         {/* Shared Nav Head */}
         <Header />
@@ -113,8 +113,8 @@ export default function ChineseDocsPage() {
                 复制以下容器配置文件至您服务器下的工作目录并以此拉起镜像服务：
               </p>
 
-              <div className="p-4 rounded-2xl bg-[#030510] border border-white/8 text-[11px] font-mono leading-relaxed text-gray-300 relative">
-                <pre>
+              <div className="p-4 rounded-2xl bg-[#030510] border border-white/8 text-[11px] font-mono leading-relaxed text-gray-300 relative overflow-x-auto">
+                <pre className="whitespace-pre-wrap sm:whitespace-pre">
 {`version: '3.8'
 services:
   xpay-core:
