@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/logo.png" alt="XPay Labs Logo — Self-hosted Crypto Payment Gateway" width="80" />
+<img src="public/logo.png" alt="XPay Labs Logo — Self-hosted Crypto Payment Gateway" width="80" />
 </div>
 
 # XPay Labs — Self-hosted Crypto Payment Infrastructure

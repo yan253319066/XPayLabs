@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/logo.png" alt="XPay Labs Logo — 自托管加密支付网关" width="80" />
+<img src="public/logo.png" alt="XPay Labs Logo — 自托管加密支付网关" width="80" />
 </div>
 
 # XPay Labs — 自托管加密支付基础设施
