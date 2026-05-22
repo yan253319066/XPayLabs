@@ -161,6 +161,8 @@ export interface TranslationSet {
     links: string;
     allRights: string;
     disclaimer: string;
+    termsOfService: string;
+    privacyPolicy: string;
   };
 }
 

@@ -89,9 +89,8 @@ export default function Footer() {
           </div>
 
           <div className="flex space-x-6 text-slate-400 font-sans">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+            <Link href={locale === 'zh' ? '/zh/terms' : '/terms'} className="hover:text-white transition-colors">{tFooter('termsOfService')}</Link>
+            <Link href={locale === 'zh' ? '/zh/privacy' : '/privacy'} className="hover:text-white transition-colors">{tFooter('privacyPolicy')}</Link>
           </div>
         </div>
       </div>

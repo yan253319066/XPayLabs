@@ -237,6 +237,8 @@ export const zh: TranslationSet = {
     developers: "开发者板块",
     links: "生态兼容性",
     allRights: "保留所有权利。项目由商业级私有化许可证提供授权保护。",
-    disclaimer: "非托管基础设施软件。商户应对其自持密钥的离线安全、合规配置及服务器防火墙安全性承担完整、绝对的主体责任限制。"
+    disclaimer: "非托管基础设施软件。商户应对其自持密钥的离线安全、合规配置及服务器防火墙安全性承担完整、绝对的主体责任限制。",
+    termsOfService: "服务条款",
+    privacyPolicy: "隐私政策"
   }
 };

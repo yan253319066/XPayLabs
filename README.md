@@ -1,20 +1,42 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+<img src="/logo.png" alt="XPay Labs" width="80" />
 </div>
 
-# Run and deploy your AI Studio app
+# XPay Labs — Self-hosted Crypto Payment Infrastructure
 
-This contains everything you need to run your app locally.
+> **V1.0** — Private, containerized, self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.
 
-View your app in AI Studio: https://ai.studio/apps/9968302d-c91a-41c6-a2be-c510589a73d4
+## Features
 
-## Run Locally
+- **Multi-chain support** — TRON, EVM (Ethereum, BSC, Polygon, etc.), SUI
+- **Non-custodial** — Keys generated and stored entirely on your servers
+- **Self-hosted** — Deploy via Docker Compose on your own VPS
+- **White-label** — Full branding customization
+- **REST API** — Comprehensive API with SDK integration for Node.js
+- **Real-time monitoring** — Live gateway dashboard with merchant node tracking
+- **Webhook system** — Queue-backed webhook notifications
 
-**Prerequisites:**  Node.js
+## Quick Start
 
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deploy
+
+Deploy on your own VPS or server using Docker Compose. See the deployment documentation for full instructions.
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animation:** Motion (Framer Motion)
+- **Internationalization:** next-intl (EN / ZH)
+
+## Contact
+
+- Telegram: [@OS_Blockchain](https://t.me/OS_Blockchain)

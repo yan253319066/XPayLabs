@@ -458,10 +458,10 @@ export default function DevExperience() {
               {/* Console Prompt guide bar */}
               <div className="bg-[#07091c] px-5 py-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-gray-400">
                 <span>Docker Sandbox Environment</span>
-                <span className="text-brand-purple font-semibold hover:underline cursor-pointer flex items-center space-x-1">
+                <a href="https://t.me/OS_Blockchain" target="_blank" rel="noreferrer" className="text-brand-purple font-semibold hover:underline flex items-center space-x-1">
                   <span>Sandbox SDK Document</span>
                   <ChevronRight className="w-3.5 h-3.5" />
-                </span>
+                </a>
               </div>
 
             </div>

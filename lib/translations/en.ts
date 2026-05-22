@@ -237,6 +237,8 @@ export const en: TranslationSet = {
     developers: "DEVELOPERS",
     links: "INTEGRATIONS",
     allRights: "All rights reserved. Protected under XPay Enterprise License.",
-    disclaimer: "Non-custodial infrastructure software. Merchant remains strictly responsible for local legislative compliance, key protection, and node security."
+    disclaimer: "Non-custodial infrastructure software. Merchant remains strictly responsible for local legislative compliance, key protection, and node security.",
+    termsOfService: "Terms of Service",
+    privacyPolicy: "Privacy Policy"
   }
 };
