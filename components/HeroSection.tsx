@@ -154,12 +154,14 @@ export default function HeroSection() {
                 <span>{t('hero.ctaDeploy')}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link
-                href="/docs"
+              <a
+                href="https://t.me/OS_Blockchain"
+                target="_blank"
+                rel="noreferrer"
                 className="px-8 py-4 bg-slate-800/50 backdrop-blur border border-white/10 rounded-lg font-bold text-white hover:bg-slate-800 transition-all flex items-center justify-center text-sm"
               >
                 <span>{t('hero.ctaDocs')}</span>
-              </Link>
+              </a>
             </div>
 
             {/* Highlighting direct benefits as secure developer metrics */}

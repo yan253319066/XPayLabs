@@ -70,7 +70,7 @@ export default function EnglishDocsPage() {
                 </h1>
                 
                 <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
-                  Welcome to XPay Labs. This deployment documentation will guide you through spinning up the core multi-chain self-hosted payment node as a secure Docker container (compatible with VPS hosts, AWS, Google Cloud Run, and Kubernetes clusters), while deploying the fast React checkout widget as static files onto serverless edge platforms like Vercel or Cloudflare Pages.
+                  Welcome to XPay Labs. This deployment documentation will guide you through spinning up the core multi-chain self-hosted payment node as a secure Docker container (compatible with VPS hosts, AWS, Google Cloud Run, and Kubernetes clusters). With our provided Docker Compose templates, you can easily launch the gateway, frontend checkout, indexing databases, and queues concurrently in a single command.
                 </p>
               </section>
 
@@ -143,7 +143,7 @@ export default function EnglishDocsPage() {
                         <td className="p-3 font-bold text-brand-cyan">XPAY_KEY_SEED</td>
                         <td className="p-3">String</td>
                         <td className="p-3 text-red-400">YES</td>
-                        <td className="p-3 font-sans">High-entropy cryptographic bip39 root seed used to safely derive unique invoice deposit keys.</td>
+                        <td className="p-3 font-sans">High-entropy cryptographic BIP-39 root seed used to safely derive unique invoice deposit keys.</td>
                       </tr>
                       <tr>
                         <td className="p-3 font-bold text-brand-cyan">XPAY_HMAC_SECRET</td>

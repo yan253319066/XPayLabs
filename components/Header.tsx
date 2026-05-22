@@ -219,7 +219,7 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <div className="pt-3 border-t border-white/5 flex flex-col space-y-3 px-3">
+               <div className="pt-3 border-t border-white/5 flex flex-col space-y-3 px-3">
                 <Link
                   href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'}
                   onClick={() => setMobileMenuOpen(false)}

@@ -364,7 +364,7 @@ export default function DevExperience() {
                           {t('webhookSim.payload')}
                         </span>
 
-                        <div className="p-3 rounded-lg bg-[#07091d] text-[10px] sm:text-[11px] font-mono text-gray-300 leading-normal max-h-[160px] overflow-y-auto border border-white/5">
+                        <div className="p-3 rounded-lg bg-[#07091d] text-[10px] sm:text-[11px] font-mono text-gray-300 leading-normal max-h-[160px] overflow-auto custom-scrollbar border border-white/5">
                           <pre className="text-brand-cyan/80">
                             {getDynamicWebhookJson()}
                           </pre>

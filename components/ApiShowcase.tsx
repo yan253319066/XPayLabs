@@ -191,7 +191,7 @@ export default function ApiShowcase() {
               </div>
 
               {/* Screen layout block */}
-              <div className="p-5 sm:p-7 overflow-x-auto select-all max-h-[400px] h-[340px] bg-[#060816]">
+              <div className="p-5 sm:p-7 overflow-auto custom-scrollbar select-all max-h-[400px] h-[340px] bg-[#060816]">
                 {renderHighlightedCode()}
               </div>
 

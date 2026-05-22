@@ -39,11 +39,17 @@ export default function Footer() {
               {tFooter('slogan')}
             </p>
             <div className="flex items-center space-x-4 pt-2">
-              <a href="https://github.com/xpay-labs" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors">
+              <a href="https://github.com/yan253319066" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors" title="yan253319066 GitHub">
                 <Github className="w-4 h-4" />
               </a>
-              <a href="https://x.com/xpaylabs" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors">
+              <a href="https://x.com/getciteflow" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors" title="getciteflow on X / Twitter">
                 <Twitter className="w-4 h-4" />
+              </a>
+              <a href="https://t.me/OS_Blockchain" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors" title="Telegram: @OS_Blockchain">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
               </a>
             </div>
           </div>

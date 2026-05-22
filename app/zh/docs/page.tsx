@@ -70,7 +70,7 @@ export default function ChineseDocsPage() {
               </h1>
               
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
-                本部署技术文档将指导您在企业自有或高安全防护的服务器环境中运行 XPay Labs 核心收钱网关（支持 VPS 主机、阿里云/腾讯云、AWS 实例以及自建 Kubernetes/Docker 容器集群），并将高性能 React 静态收银前端一键托管于 Cloudflare Pages 或 Vercel 等边缘节点，轻松实现主权掌控的多链支付集成。
+                本部署技术文档将指导您在企业自有或高安全防护的服务器环境中运行 XPay Labs 核心收钱网关（支持 VPS 主机、阿里云/腾讯云、AWS 实例以及自建 Kubernetes/Docker 容器集群）。通过我们提供的 Docker Compose 一键整站编排，您可以极速将收钱网关、前端静态收银界面、多链区块索引器及安全消息队列一拉即起，实现 100% 绝对自主控权。
               </p>
             </section>
 
@@ -142,13 +142,13 @@ services:
                     <tr>
                       <td className="p-3 font-bold text-brand-cyan">XPAY_KEY_SEED</td>
                       <td className="p-3">String</td>
-                      <td className="p-3 text-red-400">是 (MANDATORY)</td>
-                      <td className="p-3 font-sans">高度安全的 bip39 通用助记词字串，网关依靠其安全派生数以万计不重叠的顾客账单临时付款地址。</td>
+                      <td className="p-3 text-red-400">是</td>
+                      <td className="p-3 font-sans">高度安全的 BIP-39 标准助记词密匙短语，网关依靠其安全派生数以万计不重叠的顾客账单临时付款地址。</td>
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-brand-cyan">XPAY_HMAC_SECRET</td>
                       <td className="p-3">String</td>
-                      <td className="p-3 text-red-400">是 (MANDATORY)</td>
+                      <td className="p-3 text-red-400">是</td>
                       <td className="p-3 font-sans">用于对发送给您商户服务器的 Webhook 数据包进行 SHA256 HMAC 强加密签名，防止伪造通知。</td>
                     </tr>
                     <tr>
