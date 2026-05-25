@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
+import { headers } from 'next/headers';
 import './globals.css'; // Global styles
 import JsonLd from '../components/JsonLd';
 
@@ -74,9 +75,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default async function RootLayout({children}: {children: React.ReactNode}) {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '';
+  const lang = pathname.startsWith('/zh') ? 'zh' : 'en';
+
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} dark antialiased`}>
+    <html lang={lang} className={`${inter.variable} ${spaceGrotesk.variable} dark antialiased`}>
       <body className="bg-[#060816] text-gray-200 min-h-screen selection:bg-indigo-500/30 selection:text-white" suppressHydrationWarning>
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
