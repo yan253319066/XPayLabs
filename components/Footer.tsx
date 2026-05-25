@@ -85,8 +85,10 @@ export default function Footer() {
               {tFooter('resources')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
+              <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li><Link href="/alternatives/nowpayments" className="hover:text-white transition-colors">vs NowPayments</Link></li>
+              <li><Link href="/alternatives/btcpayserver" className="hover:text-white transition-colors">vs BTCPay Server</Link></li>
               <li><a href="https://github.com/yan253319066/XPayLabs" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
             </ul>
           </div>

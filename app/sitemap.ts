@@ -59,10 +59,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.1,
     },
     {
-      url: `${baseUrl}/pricing.md`,
+      url: `${baseUrl}/pricing`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.1,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     // Competitor alternative pages
     {
@@ -83,9 +83,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/alternatives/btcpayserver`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     // Solution/vertical pages
     {
       url: `${baseUrl}/solutions/tron-payment-gateway`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/solutions/evm-payment-gateway`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/solutions/sui-payment-gateway`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,

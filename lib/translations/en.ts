@@ -17,8 +17,8 @@ export const en: TranslationSet = {
     cta: "Deploy Gateways"
   },
   hero: {
-    title: "Deploy Your Own Crypto Payment Infrastructure",
-    subtitle: "Private, containerized and self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.",
+    title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",
+    subtitle: "Private, containerized and self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power.",
     ctaDeploy: "Deploy Your System",
     ctaDocs: "Contact Us",
     badge: "V1.0 — DEPLOY INSTANTLY"

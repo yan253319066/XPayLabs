@@ -76,6 +76,27 @@ const posts = [
     category: 'Solution',
     excerpt: 'A deep dive into building a self-hosted USDT payment gateway on TRON. Covers TRC-20 token support, energy management, TronGrid integration, and HD wallet derivation for merchant payment processing.',
   },
+  {
+    title: 'BTCPay Server Alternative: Multi-Chain Stablecoin Payments',
+    href: '/alternatives/btcpayserver',
+    date: 'May 2026',
+    category: 'Alternative',
+    excerpt: 'BTCPay Server is the gold standard for self-hosted Bitcoin payments. But for merchants who need stablecoin support on TRON, EVM, and SUI, XPay Labs offers a modern multi-chain alternative.',
+  },
+  {
+    title: 'EVM Payment Gateway: Accept USDC and USDT on 7+ Chains',
+    href: '/solutions/evm-payment-gateway',
+    date: 'May 2026',
+    category: 'Solution',
+    excerpt: 'How to deploy a self-hosted EVM payment gateway that accepts USDT and USDC on Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Avalanche, and Base — simultaneously, from one Docker container.',
+  },
+  {
+    title: 'SUI Payment Gateway: Accept Crypto on the Sui Network',
+    href: '/solutions/sui-payment-gateway',
+    date: 'May 2026',
+    category: 'Solution',
+    excerpt: 'A guide to accepting SUI and USDC payments on the Sui Network using a self-hosted, non-custodial payment gateway. Sub-second finality, near-zero fees, and first-mover advantage.',
+  },
 ];
 
 const postSchema = {

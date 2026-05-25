@@ -131,9 +131,7 @@ export default function HeroSection() {
 
             {/* Display Headline with gradient, italic formatting */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400 italic">
-              Deploy Your Own <br />
-              Crypto Payment <br />
-              Infrastructure
+              {t('hero.title')}
             </h1>
 
             {/* Body copy */}

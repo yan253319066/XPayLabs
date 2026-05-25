@@ -234,6 +234,25 @@ export default function Header() {
                   )}
                 </Link>
               </li>
+
+              {/* Pricing */}
+              <li>
+                <Link
+                  href="/pricing"
+                  className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
+                    pathname === '/pricing' ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  <span>Pricing</span>
+                  {pathname === '/pricing' && (
+                    <motion.span
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_8px_rgba(91,140,255,0.6)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -321,6 +340,13 @@ export default function Header() {
                 className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
               >
                 Blog
+              </Link>
+              <Link
+                href="/pricing"
+                onClick={closeMobile}
+                className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
+              >
+                Pricing
               </Link>
               <div className="pt-3 border-t border-white/5 flex flex-col space-y-3 px-3">
                 <Link
