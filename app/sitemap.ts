@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.1,
     },
     {
+      url: `${baseUrl}/pricing.md`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.1,
+    },
+    {
       url: `${baseUrl}/pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -89,6 +95,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/alternatives/opennode`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/alternatives/coingate`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     // Solution/vertical pages
     {
       url: `${baseUrl}/solutions/tron-payment-gateway`,
@@ -111,6 +129,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Guide pages
     {
       url: `${baseUrl}/guides/how-to-accept-crypto-payments`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/guides/what-is-self-hosted-crypto-payment-gateway`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,

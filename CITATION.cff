@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "XPay Labs — Self-hosted Crypto Payment Infrastructure"
+message: "If you use XPay Labs in your research or project, please cite it as below."
+type: software
+authors:
+  - given-names: XPay Labs Team
+    email: contact@xpaylabs.com
+    website: "https://www.xpaylabs.com"
+identifiers:
+  - type: url
+    value: "https://github.com/yan253319066/XPayLabs"
+  - type: url
+    value: "https://www.xpaylabs.com"
+repository-code: "https://github.com/yan253319066/XPayLabs"
+abstract: "Self-hosted, non-custodial cryptocurrency payment gateway. Accept USDT/USDC on TRON TRC20, EVM chains, and SUI with zero gateway fees. Docker-based deployment with REST API, HMAC-signed webhooks, and real-time mempool transaction detection."
+keywords:
+  - crypto-payment-gateway
+  - self-hosted
+  - non-custodial
+  - cryptocurrency
+  - blockchain
+  - usdt
+  - tron
+  - evm
+  - sui
+  - payment-processing
+license: MIT

@@ -91,6 +91,29 @@ export default function OpenSourceSection() {
           </div>
 
         </div>
+
+        {/* Statistics Bar */}
+        <div className="mt-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-cyan font-mono">20+</div>
+              <div className="text-xs text-slate-400 mt-1">Supported EVM Chains</div>
+            </div>
+            <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-blue font-mono">1-6s</div>
+              <div className="text-xs text-slate-400 mt-1">Mempool Detection Speed</div>
+            </div>
+            <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-400 font-mono">0%</div>
+              <div className="text-xs text-slate-400 mt-1">Gateway Transaction Fees</div>
+            </div>
+            <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-purple font-mono">$6k+</div>
+              <div className="text-xs text-slate-400 mt-1">Annual Savings vs BitPay</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

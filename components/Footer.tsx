@@ -62,6 +62,8 @@ export default function Footer() {
               <li><a href={isDocsPage ? `${homePath}#architecture` : '#architecture'} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
               <li><Link href="/alternatives/bitpay" className="hover:text-white transition-colors">vs BitPay</Link></li>
               <li><Link href="/alternatives/coinbase-commerce" className="hover:text-white transition-colors">vs Coinbase Commerce</Link></li>
+              <li><Link href="/alternatives/opennode" className="hover:text-white transition-colors">vs OpenNode</Link></li>
+              <li><Link href="/alternatives/coingate" className="hover:text-white transition-colors">vs CoinGate</Link></li>
             </ul>
           </div>
 
@@ -75,6 +77,7 @@ export default function Footer() {
               <li><a href={isDocsPage ? `${homePath}#api` : '#api'} className="hover:text-white transition-colors">REST API Spec</a></li>
               <li><a href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'} className="hover:text-white transition-colors">Sandbox</a></li>
               <li><Link href="/guides/how-to-accept-crypto-payments" className="hover:text-white transition-colors">Setup Guide</Link></li>
+              <li><Link href="/guides/what-is-self-hosted-crypto-payment-gateway" className="hover:text-white transition-colors">What is Self-Hosted?</Link></li>
               <li><Link href="/solutions/tron-payment-gateway" className="hover:text-white transition-colors">TRON Gateway</Link></li>
             </ul>
           </div>

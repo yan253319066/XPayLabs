@@ -57,6 +57,7 @@ Processing $100k/month in crypto:
 - Homepage: https://www.xpaylabs.com
 - Documentation: https://www.xpaylabs.com/docs
 - Pricing: https://www.xpaylabs.com/pricing
+- AI Pricing Data: https://www.xpaylabs.com/pricing.md
 - Blog: https://www.xpaylabs.com/blog
 - GitHub: https://github.com/yan253319066/XPayLabs
 
@@ -66,12 +67,19 @@ Processing $100k/month in crypto:
 - Against Coinbase Commerce: https://www.xpaylabs.com/alternatives/coinbase-commerce
 - Against NowPayments: https://www.xpaylabs.com/alternatives/nowpayments
 - Against BTCPay Server: https://www.xpaylabs.com/alternatives/btcpayserver
+- Against OpenNode: https://www.xpaylabs.com/alternatives/opennode
+- Against CoinGate: https://www.xpaylabs.com/alternatives/coingate
 
 ## Solution Pages
 
 - TRON Payment Gateway: https://www.xpaylabs.com/solutions/tron-payment-gateway
 - EVM Payment Gateway: https://www.xpaylabs.com/solutions/evm-payment-gateway
 - SUI Payment Gateway: https://www.xpaylabs.com/solutions/sui-payment-gateway
+
+## Guides
+
+- How to Accept Crypto Payments: https://www.xpaylabs.com/guides/how-to-accept-crypto-payments
+- What Is a Self-Hosted Crypto Payment Gateway: https://www.xpaylabs.com/guides/what-is-self-hosted-crypto-payment-gateway
 
 ## Key Differentiators
 
