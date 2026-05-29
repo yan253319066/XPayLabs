@@ -37,13 +37,13 @@
 
 ```bash
 # 在服务器上部署网关
-docker pull ghcr.io/xpay-labs/gateway:latest
+docker pull ghcr.io/xpaylabs/gateway:latest
 docker run -d \
   -p 3010:3010 \
   -e XPAY_SEED_PHRASE="your-24-word-mnemonic" \
   -e XPAY_MYSQL_DSN="user:pass@tcp(host:3306)/xpay" \
   -e XPAY_REDIS_ADDR="host:6379" \
-  ghcr.io/xpay-labs/gateway:latest
+  ghcr.io/xpaylabs/gateway:latest
 ```
 
 完整的 Docker Compose 和 Kubernetes 部署指南请查看[开发文档](https://www.xpaylabs.com/docs)。

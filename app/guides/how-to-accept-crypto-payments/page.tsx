@@ -156,7 +156,7 @@ const steps = [
     code: `version: '3.8'
 services:
   xpay-gateway:
-    image: ghcr.io/xpay-labs/gateway:latest
+    image: ghcr.io/xpaylabs/gateway:latest
     container_name: xpay_core
     restart: unless-stopped
     ports:

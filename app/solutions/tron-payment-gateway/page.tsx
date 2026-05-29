@@ -451,7 +451,7 @@ export default function TronPaymentGatewayPage() {
                         <br />
                         <span className="text-brand-purple">services</span>:<br />
                         &nbsp;&nbsp;<span className="text-brand-cyan">xpay-gateway</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">image</span>: <span className="text-teal-300">ghcr.io/xpay-labs/gateway:latest</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">image</span>: <span className="text-teal-300">ghcr.io/xpaylabs/gateway:latest</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">restart</span>: <span className="text-teal-300">unless-stopped</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">ports</span>:<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span className="text-teal-300">"8080:8080"</span><br />

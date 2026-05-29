@@ -33,7 +33,7 @@ export default function ApiShowcase() {
     "callback_payload_sign": "sha256_hmac_signature_proof"
   }
 }`,
-    node: `import { XPayGateway } from '@xpay-labs/sdk';
+    node: `import { XPayGateway } from '@xpaylabs/sdk';
  
  const gateway = new XPayGateway({
    secretKey: 'xpay_live_8f3a9d7219bc',
@@ -92,7 +92,7 @@ export default function ApiShowcase() {
     }
     return (
       <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-        <span className="text-brand-purple">import</span> <span className="text-gray-300">{"{"}</span> <span className="text-brand-cyan">XPayGateway</span> <span className="text-gray-300">{"}"}</span> <span className="text-brand-purple">from</span> <span className="text-teal-400">{"'@xpay-labs/sdk'"}</span>;<br /><br />
+        <span className="text-brand-purple">import</span> <span className="text-gray-300">{"{"}</span> <span className="text-brand-cyan">XPayGateway</span> <span className="text-gray-300">{"}"}</span> <span className="text-brand-purple">from</span> <span className="text-teal-400">{"'@xpaylabs/sdk'"}</span>;<br /><br />
         <span className="text-brand-purple">const</span> <span className="text-gray-300">gateway</span> = <span className="text-brand-purple">new</span> <span className="text-blue-400">XPayGateway</span><span className="text-gray-500">({"{"})</span><br />
         &nbsp;&nbsp;<span className="text-brand-cyan">secretKey</span>: <span className="text-teal-400">{"'xpay_live_8f3a9d7219bc'"}</span>,<br />
         &nbsp;&nbsp;<span className="text-brand-cyan">endpoint</span>: <span className="text-teal-400">{"'https://gateway.yourdomain.com'"}</span><br />

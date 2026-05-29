@@ -22,7 +22,7 @@ const organizationSchema = {
   logo: 'https://www.xpaylabs.com/logo.png',
   description: 'Self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI.',
   sameAs: [
-    'https://github.com/xpay-labs',
+    'https://github.com/yan253319066',
   ],
 };
 

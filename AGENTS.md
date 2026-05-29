@@ -53,7 +53,7 @@ APP_URL="https://www.xpaylabs.com"
 - ESLint dual config exists (`.eslintrc.json` legacy + `eslint.config.mjs` flat). ESLint 9 uses the flat config; the legacy file is ignored.
 - `next.config.ts`: `output: 'standalone'` (Docker/self-hosted), `transpilePackages: ['motion']`, `eslint.ignoreDuringBuilds: true`.
 - No CI/CD, no test framework, no formatter.
-- Gateway image: `ghcr.io/xpay-labs/gateway:latest` (external; this repo is the marketing website only).
+- Gateway image: `ghcr.io/xpaylabs/gateway:latest` (external; this repo is the marketing website only).
 
 ## Architecture
 

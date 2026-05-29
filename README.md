@@ -37,13 +37,13 @@
 
 ```bash
 # Deploy the gateway on your server
-docker pull ghcr.io/xpay-labs/gateway:latest
+docker pull ghcr.io/xpaylabs/gateway:latest
 docker run -d \
   -p 3010:3010 \
   -e XPAY_SEED_PHRASE="your-24-word-mnemonic" \
   -e XPAY_MYSQL_DSN="user:pass@tcp(host:3306)/xpay" \
   -e XPAY_REDIS_ADDR="host:6379" \
-  ghcr.io/xpay-labs/gateway:latest
+  ghcr.io/xpaylabs/gateway:latest
 ```
 
 See the [deployment documentation](https://www.xpaylabs.com/docs) for Docker Compose and Kubernetes guides.
