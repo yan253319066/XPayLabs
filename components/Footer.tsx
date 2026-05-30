@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Terminal, Github, Twitter, ShieldCheck } from 'lucide-react';
+import { Terminal, Github, Twitter, ShieldCheck, Mail } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
@@ -47,6 +47,9 @@ export default function Footer() {
                   <path d="m22 2-7 20-4-9-9-4Z" />
                   <path d="M22 2 11 13" />
                 </svg>
+              </a>
+              <a href="mailto:contact@xpaylabs.com" className="p-1.5 rounded-md hover:bg-white/5 text-slate-400 hover:text-white transition-colors" title="contact@xpaylabs.com">
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
