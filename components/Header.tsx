@@ -14,8 +14,10 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
+  const [compareOpen, setCompareOpen] = useState(false);
   const [activeHash, setActiveHash] = useState<string>('');
   const productRef = useRef<HTMLLIElement>(null);
+  const compareRef = useRef<HTMLLIElement>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const homePath = locale === 'zh' ? '/zh' : '/';
@@ -33,6 +35,19 @@ export default function Header() {
     { label: t('devXp'), href: sectionHref('#dev-experience') },
     { label: t('faq'), href: sectionHref('#faq') },
   ];
+
+  const compareLinks = [
+    { label: 'XPay Labs Review', href: '/review' },
+    { label: 'Best Self-Hosted Gateway', href: '/guides/best-self-hosted-crypto-payment-gateway' },
+    { label: 'vs BitPay', href: '/alternatives/bitpay' },
+    { label: 'vs Coinbase Commerce', href: '/alternatives/coinbase-commerce' },
+    { label: 'vs NowPayments', href: '/alternatives/nowpayments' },
+    { label: 'vs BTCPay Server', href: '/alternatives/btcpayserver' },
+    { label: 'vs OpenNode', href: '/alternatives/opennode' },
+    { label: 'vs CoinGate', href: '/alternatives/coingate' },
+  ];
+
+  const isComparePage = compareLinks.some((l) => pathname === l.href);
 
   const getLanguageTogglePath = () => {
     if (pathname === '/docs') return '/zh/docs';
@@ -112,6 +127,15 @@ export default function Header() {
 
   const handleProductLeave = () => {
     dropdownTimer.current = setTimeout(() => setProductOpen(false), 150);
+  };
+
+  const handleCompareEnter = () => {
+    if (dropdownTimer.current) clearTimeout(dropdownTimer.current);
+    setCompareOpen(true);
+  };
+
+  const handleCompareLeave = () => {
+    dropdownTimer.current = setTimeout(() => setCompareOpen(false), 150);
   };
 
   const closeMobile = () => setMobileMenuOpen(false);
@@ -216,23 +240,66 @@ export default function Header() {
                 </Link>
               </li>
 
-              {/* Review */}
-              <li>
-                <Link
-                  href="/review"
-                  className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
-                    pathname === '/review' ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
+              {/* Compare Dropdown */}
+              <li
+                ref={compareRef}
+                className="relative"
+                onMouseEnter={handleCompareEnter}
+                onMouseLeave={handleCompareLeave}
+              >
+                <button
+                  onClick={() => {
+                    if (window.innerWidth < 768) setCompareOpen(!compareOpen);
+                  }}
+                  className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors flex items-center space-x-1 cursor-pointer ${
+                    isComparePage
+                      ? 'text-[#5B8CFF]'
+                      : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <span>Review</span>
-                  {pathname === '/review' && (
+                  <span>Compare</span>
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${compareOpen ? 'rotate-180' : ''}`} />
+                  {isComparePage && (
                     <motion.span
                       layoutId="activeNavIndicator"
                       className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_8px_rgba(91,140,255,0.6)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
-                </Link>
+                </button>
+
+                <AnimatePresence>
+                  {compareOpen && (
+                    <motion.ul
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-2 w-56 rounded-xl border border-white/5 bg-[#0D1026]/95 backdrop-blur-xl p-2 space-y-0.5 shadow-2xl"
+                      onMouseEnter={handleCompareEnter}
+                      onMouseLeave={handleCompareLeave}
+                    >
+                      {compareLinks.map((item) => {
+                        const active = pathname === item.href;
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={() => setCompareOpen(false)}
+                              className={`block px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                                active
+                                  ? 'text-[#5B8CFF] bg-[#5B8CFF]/5'
+                                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
               </li>
 
               {/* Blog */}
@@ -353,13 +420,23 @@ export default function Header() {
               >
                 {t('docs')}
               </Link>
-              <Link
-                href="/review"
-                onClick={closeMobile}
-                className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
-              >
-                Review
-              </Link>
+              <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
+                Compare
+              </div>
+              {compareLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobile}
+                  className={`block px-3 py-2 rounded-lg text-base font-medium transition-all break-words ${
+                    pathname === item.href
+                      ? 'text-[#5B8CFF] bg-[#5B8CFF]/5 font-semibold'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <Link
                 href="/blog"
                 onClick={closeMobile}
