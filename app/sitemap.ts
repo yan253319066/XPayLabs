@@ -139,6 +139,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/guides/best-self-hosted-crypto-payment-gateway`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    // Review page
+    {
+      url: `${baseUrl}/review`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // Blog pages
     {
       url: `${baseUrl}/blog`,

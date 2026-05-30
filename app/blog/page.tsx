@@ -42,6 +42,20 @@ const blogSchema = {
 
 const posts = [
   {
+    title: 'XPay Labs Review 2026: The Honest Take on Self-Hosted Crypto Payments',
+    href: '/review',
+    date: 'May 2026',
+    category: 'Review',
+    excerpt: 'An honest, comprehensive review of XPay Labs — features, pricing, pros and cons, security analysis, and competitive positioning. See if the self-hosted crypto payment gateway is right for your business.',
+  },
+  {
+    title: 'Best Self-Hosted Crypto Payment Gateway 2026 — Top Solutions Compared',
+    href: '/guides/best-self-hosted-crypto-payment-gateway',
+    date: 'May 2026',
+    category: 'Guide',
+    excerpt: 'The definitive ranking of self-hosted crypto payment gateways in 2026. Compare XPay Labs, BTCPay Server, Coinbase Commerce, and others by fees, security, chain support, and developer experience.',
+  },
+  {
     title: 'How to Accept USDT TRC20 Payments: A Developer\'s Guide',
     href: '/guides/how-to-accept-crypto-payments',
     date: 'May 2026',

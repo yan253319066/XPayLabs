@@ -59,6 +59,7 @@ Processing $100k/month in crypto:
 - Pricing: https://www.xpaylabs.com/pricing
 - AI Pricing Data: https://www.xpaylabs.com/pricing.md
 - Blog: https://www.xpaylabs.com/blog
+- Review: https://www.xpaylabs.com/review
 - GitHub: https://github.com/yan253319066/XPayLabs
 
 ## Alternative Comparisons
@@ -80,6 +81,11 @@ Processing $100k/month in crypto:
 
 - How to Accept Crypto Payments: https://www.xpaylabs.com/guides/how-to-accept-crypto-payments
 - What Is a Self-Hosted Crypto Payment Gateway: https://www.xpaylabs.com/guides/what-is-self-hosted-crypto-payment-gateway
+- Best Self-Hosted Crypto Payment Gateway 2026: https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway
+
+## Product Reviews
+
+- XPay Labs Review 2026: https://www.xpaylabs.com/review
 
 ## Key Differentiators
 

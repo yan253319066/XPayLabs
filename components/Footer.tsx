@@ -14,7 +14,7 @@ export default function Footer() {
   const launchYear = 2020;
   const pathname = usePathname();
   const homePath = locale === 'zh' ? '/zh' : '/';
-  const isDocsPage = pathname ? pathname.includes('/docs') : false;
+  const isHomePage = pathname === '/' || pathname === '/zh';
 
   return (
     <footer className="border-t border-white/5 bg-[#060816] text-slate-400 py-12 lg:py-16 relative overflow-hidden">
@@ -60,9 +60,9 @@ export default function Footer() {
               {tFooter('product')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><a href={isDocsPage ? `${homePath}#features` : '#features'} className="hover:text-white transition-colors">{tNav('features')}</a></li>
-              <li><a href={isDocsPage ? `${homePath}#chains` : '#chains'} className="hover:text-white transition-colors">{tNav('chains')}</a></li>
-              <li><a href={isDocsPage ? `${homePath}#architecture` : '#architecture'} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
+              <li><a href={isHomePage ? '#features' : `${homePath}#features`} className="hover:text-white transition-colors">{tNav('features')}</a></li>
+              <li><a href={isHomePage ? '#chains' : `${homePath}#chains`} className="hover:text-white transition-colors">{tNav('chains')}</a></li>
+              <li><a href={isHomePage ? '#architecture' : `${homePath}#architecture`} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
               <li><Link href="/alternatives/bitpay" className="hover:text-white transition-colors">vs BitPay</Link></li>
               <li><Link href="/alternatives/coinbase-commerce" className="hover:text-white transition-colors">vs Coinbase Commerce</Link></li>
               <li><Link href="/alternatives/opennode" className="hover:text-white transition-colors">vs OpenNode</Link></li>
@@ -77,8 +77,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
               <li><Link href={locale === 'zh' ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
-              <li><a href={isDocsPage ? `${homePath}#api` : '#api'} className="hover:text-white transition-colors">REST API Spec</a></li>
-              <li><a href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'} className="hover:text-white transition-colors">Sandbox</a></li>
+              <li><a href={isHomePage ? '#api' : `${homePath}#api`} className="hover:text-white transition-colors">REST API Spec</a></li>
+              <li><a href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`} className="hover:text-white transition-colors">Sandbox</a></li>
               <li><Link href="/guides/how-to-accept-crypto-payments" className="hover:text-white transition-colors">Setup Guide</Link></li>
               <li><Link href="/guides/what-is-self-hosted-crypto-payment-gateway" className="hover:text-white transition-colors">What is Self-Hosted?</Link></li>
               <li><Link href="/solutions/tron-payment-gateway" className="hover:text-white transition-colors">TRON Gateway</Link></li>
