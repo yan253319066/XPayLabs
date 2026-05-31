@@ -79,7 +79,7 @@ export default function Footer() {
               {tFooter('developers')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><Link href={isZhPage ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
+              <li><a href="https://docs.xpaylabs.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tNav('docs')}</a></li>
               <li><a href={isHomePage ? '#api' : `${homePath}#api`} className="hover:text-white transition-colors">{tFL('restApiSpec')}</a></li>
               <li><a href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`} className="hover:text-white transition-colors">{tFL('sandbox')}</a></li>
               <li><Link href={lh('/guides/how-to-accept-crypto-payments')} className="hover:text-white transition-colors">{tFL('setupGuide')}</Link></li>

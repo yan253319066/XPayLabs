@@ -226,21 +226,14 @@ export default function Header() {
 
               {/* Docs */}
               <li>
-                <Link
-                  href={isZhPage ? '/zh/docs' : '/docs'}
-                  className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
-                    pathname.includes('/docs') ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
-                  }`}
+                <a
+                  href="https://docs.xpaylabs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors text-gray-400 hover:text-white"
                 >
                   <span>{t('docs')}</span>
-                  {pathname.includes('/docs') && (
-                    <motion.span
-                      layoutId="activeNavIndicator"
-                      className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_8px_rgba(91,140,255,0.6)]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
+                </a>
               </li>
 
               {/* Compare Dropdown */}
@@ -416,13 +409,15 @@ export default function Header() {
                 );
               })}
               <div className="border-t border-white/5 my-2" />
-              <Link
-                href={isZhPage ? '/zh/docs' : '/docs'}
+              <a
+                href="https://docs.xpaylabs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobile}
                 className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
               >
                 {t('docs')}
-              </Link>
+              </a>
               <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
                 {t('compare')}
               </div>
