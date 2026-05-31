@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Gauge, Cpu, HardDrive, Activity, Zap, Server, Clock, Database } from 'lucide-react';
+import BlogNavigation from '@/components/BlogNavigation';
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
@@ -340,6 +341,15 @@ export default function ZhPerformanceBenchmarksPage() {
               </div>
             </section>
 
+            <BlogNavigation
+              prev={{
+                href: '/zh/blog/self-hosted-vs-hosted-cost-analysis',
+                title: '自托管 vs 托管加密货币支付：真实成本分析（2026）',
+              }}
+              next={null}
+              prevLabel="上一篇"
+              nextLabel="下一篇"
+            />
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-cyan text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, DollarSign, TrendingDown, Server, Coins, Zap, Shield } from 'lucide-react';
+import BlogNavigation from '@/components/BlogNavigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
@@ -105,10 +106,10 @@ export default function CostAnalysisPage() {
                     {annualCosts.map((row) => (
                       <tr key={row.tier} className="hover:bg-white/[0.02] transition-colors">
                         <td className="p-4 text-gray-300 font-medium">{row.tier}</td>
-                        <td className="p-4 text-gray-400">${row.bitpay}/yr</td>
-                        <td className="p-4 text-gray-400">${row.coinbase}/yr</td>
-                        <td className="p-4 text-gray-400">${row.nowpay}/yr</td>
-                        <td className="p-4 text-green-400 font-semibold">${row.xpay}/yr</td>
+                        <td className="p-4 text-gray-400">{row.bitpay}/yr</td>
+                        <td className="p-4 text-gray-400">{row.coinbase}/yr</td>
+                        <td className="p-4 text-gray-400">{row.nowpay}/yr</td>
+                        <td className="p-4 text-green-400 font-semibold">{row.xpay}/yr</td>
                       </tr>
                     ))}
                   </tbody>
@@ -223,6 +224,16 @@ export default function CostAnalysisPage() {
               </div>
             </section>
 
+            <BlogNavigation
+              prev={{
+                href: '/blog/10-engineering-decisions',
+                title: '10 Engineering Decisions for a Self-Hosted Crypto Payment Gateway',
+              }}
+              next={{
+                href: '/blog/performance-benchmarks-multi-chain-gateway',
+                title: 'Performance Benchmarks: Running a Multi-Chain Payment Gateway on a $5 VPS',
+              }}
+            />
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-emerald text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">

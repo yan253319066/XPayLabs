@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Cpu, Server, Shield, Zap, GitBranch, FileCode, Container, Key, Gauge, Layers } from 'lucide-react';
+import BlogNavigation from '@/components/BlogNavigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
@@ -153,6 +154,13 @@ export default function EngineeringDecisionsPage() {
               </section>
             ))}
 
+            <BlogNavigation
+              prev={null}
+              next={{
+                href: '/blog/self-hosted-vs-hosted-cost-analysis',
+                title: 'Self-Hosted vs Hosted Crypto Payments: A Real Cost Analysis (2026)',
+              }}
+            />
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-blue text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">

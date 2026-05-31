@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, DollarSign, TrendingDown, Server, Coins, Zap, Shield } from 'lucide-react';
+import BlogNavigation from '@/components/BlogNavigation';
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
@@ -104,10 +105,10 @@ export default function ZhCostAnalysisPage() {
                     {annualCosts.map((row) => (
                       <tr key={row.tier} className="hover:bg-white/[0.02] transition-colors">
                         <td className="p-4 text-gray-300 font-medium">{row.tier}</td>
-                        <td className="p-4 text-gray-400">${row.bitpay}/年</td>
-                        <td className="p-4 text-gray-400">${row.coinbase}/年</td>
-                        <td className="p-4 text-gray-400">${row.nowpay}/年</td>
-                        <td className="p-4 text-green-400 font-semibold">${row.xpay}/年</td>
+                        <td className="p-4 text-gray-400">{row.bitpay}/年</td>
+                        <td className="p-4 text-gray-400">{row.coinbase}/年</td>
+                        <td className="p-4 text-gray-400">{row.nowpay}/年</td>
+                        <td className="p-4 text-green-400 font-semibold">{row.xpay}/年</td>
                       </tr>
                     ))}
                   </tbody>
@@ -215,6 +216,18 @@ export default function ZhCostAnalysisPage() {
               </div>
             </section>
 
+            <BlogNavigation
+              prev={{
+                href: '/zh/blog/10-engineering-decisions',
+                title: '自托管加密货币支付网关的 10 个工程决策',
+              }}
+              next={{
+                href: '/zh/blog/performance-benchmarks-multi-chain-gateway',
+                title: '性能基准测试：在 $5 VPS 上运行多链加密货币支付网关',
+              }}
+              prevLabel="上一篇"
+              nextLabel="下一篇"
+            />
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-emerald text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">
