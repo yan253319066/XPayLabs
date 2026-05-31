@@ -8,7 +8,7 @@
 
 **XPay Labs** is an open source, self-hosted crypto payment gateway that lets you accept stablecoin payments (USDT, USDC) across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI — with zero gateway fees and full control over your private keys. A non-custodial BitPay alternative for developers who want to own their payment infrastructure.
 
-[Website](https://www.xpaylabs.com) · [Documentation](https://www.xpaylabs.com/docs) · [Pricing](https://www.xpaylabs.com/pricing) · [Blog](https://www.xpaylabs.com/blog)
+[Website](https://www.xpaylabs.com) · [Documentation](https://docs.xpaylabs.com) · [Pricing](https://www.xpaylabs.com/pricing) · [Blog](https://www.xpaylabs.com/blog)
 
 ---
 
@@ -46,7 +46,7 @@ docker run -d \
   ghcr.io/xpaylabs/gateway:latest
 ```
 
-See the [deployment documentation](https://www.xpaylabs.com/docs) for Docker Compose and Kubernetes guides.
+See the [deployment documentation](https://docs.xpaylabs.com) for Docker Compose and Kubernetes guides.
 
 ## Quick Start (Website)
 

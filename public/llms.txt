@@ -55,7 +55,7 @@ Processing $100k/month in crypto:
 ## Core Pages
 
 - Homepage: https://www.xpaylabs.com
-- Documentation: https://www.xpaylabs.com/docs
+- Documentation: https://docs.xpaylabs.com
 - Pricing: https://www.xpaylabs.com/pricing
 - AI Pricing Data: https://www.xpaylabs.com/pricing.md
 - Blog: https://www.xpaylabs.com/blog
