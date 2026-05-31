@@ -23,6 +23,7 @@ interface ChainCard {
 
 export default function MultiChainSection() {
   const t = useTranslations('multichain');
+  const tL = useTranslations('multiChainLabels');
   const locale = useLocale();
   const [activeChain, setActiveChain] = useState<NodeChain>('TRON');
 
@@ -210,11 +211,11 @@ export default function MultiChainSection() {
                   {/* Specific network metrics */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 space-y-1">
-                      <span className="text-[9px] text-slate-400 font-bold font-mono tracking-wider uppercase">{locale === 'zh' ? '处理吞吐 (TPS)' : 'LEOPARD TPS'}</span>
+                      <span className="text-[9px] text-slate-400 font-bold font-mono tracking-wider uppercase">{tL('tps')}</span>
                       <p className="text-sm sm:text-base font-bold font-display text-white">{activeChainData.tps}</p>
                     </div>
                     <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 space-y-1">
-                      <span className="text-[9px] text-slate-400 font-bold font-mono tracking-wider uppercase">{locale === 'zh' ? '区块耗时' : 'BLOCK TIME'}</span>
+                      <span className="text-[9px] text-slate-400 font-bold font-mono tracking-wider uppercase">{tL('blockTime')}</span>
                       <p className="text-sm sm:text-base font-bold font-display text-white">{activeChainData.blockTime}</p>
                     </div>
                   </div>

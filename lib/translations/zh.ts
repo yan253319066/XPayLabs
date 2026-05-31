@@ -14,7 +14,10 @@ export const zh: TranslationSet = {
     devXp: "开发者体验",
     faq: "常见问题",
     docs: "技术文档",
-    cta: "立即部署网关"
+    cta: "立即部署网关",
+    product: "产品",
+    compare: "对比",
+    pricing: "定价"
   },
   hero: {
     title: "部署您专属的加密货币支付基础设施",
@@ -193,7 +196,69 @@ export const zh: TranslationSet = {
         description: "完美的 UI 覆盖框架。无论是轻快风还是深色暗黑风，自适的多链 React 弹窗可完美定制，与高端严谨的前端设计系统完美贴合。",
         advantage: "支持随整站 Docker Compose 镜像一键瞬间渲染。"
       }
-    ]
+    ],
+    advantage: "优势："
+  },
+  heroStats: {
+    gatewayFees: "网关手续费",
+    mempoolScan: "内存池扫描",
+    nonCustodial: "非托管"
+  },
+  heroDashboard: {
+    nodeActive: "节点在线",
+    copyAddress: "复制地址",
+    dispatching: "正在发送...",
+    coreSecurity: "核心安全",
+    nonCustodial: "非托管",
+    privateKeys: "私钥始终留在您的服务器上。"
+  },
+  openSourceStats: {
+    supportedEvmChains: "支持 EVM 链数量",
+    mempoolDetectionSpeed: "内存池检测速度",
+    gatewayTransactionFees: "网关交易费用",
+    annualSavingsVsBitpay: "相比 BitPay 年节省"
+  },
+  featuresLabels: {
+    gatewayCore: "网关核心",
+    infraModuleReady: "基础模块就绪"
+  },
+  apiShowcaseLabels: {
+    copied: "已复制",
+    copy: "复制",
+    sslSecured: "SSL 安全加密 TLS_AES_256_GCM_SHA384 客户端授权",
+    prodReady: "生产就绪 API 客户端"
+  },
+  devXpConsole: {
+    consoleHeader: "XPAY 控制台 V1.0_提示",
+    sandboxSimulator: "沙盒模拟器",
+    generatingSecureSigningNodes: "正在生成安全签名节点...",
+    restartSandbox: "重启交互式体验沙盒",
+    triggerWebhook: "模拟顾客支付并触发 Webhook",
+    synthesizeVaultFundSweeps: "执行全自动资金归集 sweep",
+    vaultRootWallet: "商户离线多签大金库",
+    dockerSandboxEnvironment: "Docker 沙盒环境",
+    sandboxSdkDocument: "沙盒 SDK 文档"
+  },
+  multiChainLabels: {
+    tps: "处理吞吐 (TPS)",
+    blockTime: "区块耗时"
+  },
+  footerLinks: {
+    vsBitpay: "与 BitPay 对比",
+    vsCoinbaseCommerce: "与 Coinbase Commerce 对比",
+    vsOpenNode: "与 OpenNode 对比",
+    vsCoinGate: "与 CoinGate 对比",
+    vsNowPayments: "与 NowPayments 对比",
+    vsBtcpayserver: "与 BTCPay Server 对比",
+    restApiSpec: "REST API 文档",
+    sandbox: "沙盒环境",
+    setupGuide: "安装指南",
+    whatIsSelfHosted: "什么是自托管？",
+    tronGateway: "TRON 网关",
+    pricing: "定价方案",
+    github: "GitHub",
+    review: "XPay Labs 评测",
+    bestSelfHostedGateway: "最佳自托管网关"
   },
   faq: {
     badge: "专业知识库",
@@ -243,6 +308,38 @@ export const zh: TranslationSet = {
       {
         q: "我可以自定义结账页面的品牌吗？",
         a: "可以。XPay Labs 是完全白标的。结账 UI 使用 React 构建，可以根据您的品牌进行主题定制——颜色、字体、Logo、布局和自定义 CSS。整个前端与网关一起部署在 Docker 中，没有第三方 iframe 或外部品牌要求。开发者也可以使用 REST API 构建完全自定义的结账体验。"
+      },
+      {
+        q: "XPay Labs 能否支持 USDT 收款？",
+        a: "可以。XPay Labs 在所有集成的区块链上原生支持 USDT——波场 TRON 上的 TRC20 USDT、以太坊及所有 EVM 链上的 ERC20 USDT、币安智能链上的 BEP20 USDT，同时也支持 USDC。多链扫描器同时监控所有网络，能在数秒内检测到账的稳定币付款。相较于收取 0.5-1% 手续费的托管网关，商家可降低 40-60% 的支付处理成本。"
+      },
+      {
+        q: "XPay Labs 是否支持多链支付？",
+        a: "是的。XPay Labs 从底层架构上就是一套多链支付基础设施。它同时支持 TRON (TRC20)、所有 EVM 兼容链（以太坊、BSC、Polygon、Optimism、Arbitrum、Avalanche）以及 SUI。统一事件通道将所有区块链扫描输出合并为单一的 Webhook 数据流，无论顾客使用哪条链，您的应用收到的都是标准化的支付通知。"
+      },
+      {
+        q: "XPay Labs 的 Webhook 是如何工作的？",
+        a: "当链上检测到付款时，Webhook 服务会构建一个 HMAC-SHA256 签名的 JSON 负载并发送至您配置的终端 URL。如果您的端点返回非 2xx 状态码，系统将按指数退避策略（1秒、2秒、4秒、8秒，最长间隔5分钟）自动重试，持续最多48小时。每个负载包含交易哈希、金额、币种、链和商户元数据。您可使用共享的 HMAC 密钥验证签名，确保负载来自您的 XPay 节点。"
+      },
+      {
+        q: "XPay Labs 是否开放源代码？",
+        a: "XPay Labs 在 XPay 企业许可证下提供源代码。完整核心代码库发布于 GitHub，可供审计和自行部署。商户可精确检查密钥派生、交易扫描和 Webhook 分发的工作方式。社区支持通过 GitHub Issues 和 Discord 提供。商业支持计划起价为每年 $1,500，享有优先 SLA。"
+      },
+      {
+        q: "自托管与非托管有什么区别？",
+        a: "自托管意味着您在自有基础设施（VPS、裸金属、Kubernetes）上部署和运行支付网关软件。非托管意味着您保留对私钥的独占控制权——没有任何第三方可以访问或转移您的资金。XPay Labs 两者兼具：您在自有服务器上运行，所有加密密钥材料均在您的 Docker 容器内生成和存储。与托管解决方案（提供商持有密钥并延迟结算给您）不同，XPay Labs 在任何环节都不触碰您的资金。"
+      },
+      {
+        q: "XPay Labs 与 BTCPay Server 有何不同？",
+        a: "两者都是自托管方案，但 XPay Labs 专注于现代区块链网络（TRON、EVM、SUI）上的稳定币支付，而 BTCPay Server 主要面向比特币和闪电网络。XPay Labs 提供更注重开发者体验的 REST API（受 Stripe 设计模式启发）、原生多链并发扫描以及带自动重试队列的 HMAC 签名 Webhook。BTCPay Server 拥有更广泛的插件生态，但资源需求更高，且界面主要面向非技术商户。"
+      },
+      {
+        q: "如果我的服务器在支付过程中宕机会怎样？",
+        a: "由于 XPay Labs 是非托管的，资金始终直接进入您的区块链钱包——宕机期间不存在资金损失风险。当节点恢复上线后，区块链扫描器会从上次检查点回放区块并检测任何遗漏的交易。Webhook 队列将待处理通知存储在持久化数据库中，待您的端点恢复可达后自动重试投递。"
+      },
+      {
+        q: "是否有用于创建和管理支付的 API？",
+        a: "是的。XPay Labs 提供全面的 REST API 用于支付生命周期管理。create-payment 端点接受金额、币种、链和可选元数据，返回唯一的充值地址和结账 URL。其他端点涵盖 Invoice 状态查询、资金归集、Webhook 日志检索和商户钱包管理。API 响应遵循一致的 JSON 结构，字段类型明确。完整 API 文档（含 Node.js、Python、Go 和 cURL 示例）请参阅我们的技术文档。"
       }
     ]
   },

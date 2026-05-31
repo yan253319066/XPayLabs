@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 export default function OpenSourceSection() {
   const t = useTranslations('openSource');
+  const tStats = useTranslations('openSourceStats');
 
   return (
     <section className="py-20 bg-[#060816] border-y border-white/5 relative overflow-hidden">
@@ -97,19 +98,19 @@ export default function OpenSourceSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
               <div className="text-2xl sm:text-3xl font-bold text-brand-cyan font-mono">20+</div>
-              <div className="text-xs text-slate-400 mt-1">Supported EVM Chains</div>
+              <div className="text-xs text-slate-400 mt-1">{tStats('supportedEvmChains')}</div>
             </div>
             <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
               <div className="text-2xl sm:text-3xl font-bold text-brand-blue font-mono">1-6s</div>
-              <div className="text-xs text-slate-400 mt-1">Mempool Detection Speed</div>
+              <div className="text-xs text-slate-400 mt-1">{tStats('mempoolDetectionSpeed')}</div>
             </div>
             <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
               <div className="text-2xl sm:text-3xl font-bold text-emerald-400 font-mono">0%</div>
-              <div className="text-xs text-slate-400 mt-1">Gateway Transaction Fees</div>
+              <div className="text-xs text-slate-400 mt-1">{tStats('gatewayTransactionFees')}</div>
             </div>
             <div className="p-5 rounded-xl bg-[#0A0D1F]/50 border border-white/5 text-center">
               <div className="text-2xl sm:text-3xl font-bold text-brand-purple font-mono">$6k+</div>
-              <div className="text-xs text-slate-400 mt-1">Annual Savings vs BitPay</div>
+              <div className="text-xs text-slate-400 mt-1">{tStats('annualSavingsVsBitpay')}</div>
             </div>
           </div>
         </div>

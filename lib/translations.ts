@@ -16,6 +16,9 @@ export interface TranslationSet {
     faq: string;
     docs: string;
     cta: string;
+    product: string;
+    compare: string;
+    pricing: string;
   };
   hero: {
     title: string;
@@ -139,6 +142,68 @@ export interface TranslationSet {
       description: string;
       advantage: string;
     }[];
+    advantage: string;
+  };
+  heroStats: {
+    gatewayFees: string;
+    mempoolScan: string;
+    nonCustodial: string;
+  };
+  heroDashboard: {
+    nodeActive: string;
+    copyAddress: string;
+    dispatching: string;
+    coreSecurity: string;
+    nonCustodial: string;
+    privateKeys: string;
+  };
+  openSourceStats: {
+    supportedEvmChains: string;
+    mempoolDetectionSpeed: string;
+    gatewayTransactionFees: string;
+    annualSavingsVsBitpay: string;
+  };
+  featuresLabels: {
+    gatewayCore: string;
+    infraModuleReady: string;
+  };
+  apiShowcaseLabels: {
+    copied: string;
+    copy: string;
+    sslSecured: string;
+    prodReady: string;
+  };
+  devXpConsole: {
+    consoleHeader: string;
+    sandboxSimulator: string;
+    generatingSecureSigningNodes: string;
+    restartSandbox: string;
+    triggerWebhook: string;
+    synthesizeVaultFundSweeps: string;
+    vaultRootWallet: string;
+    dockerSandboxEnvironment: string;
+    sandboxSdkDocument: string;
+  };
+  multiChainLabels: {
+    tps: string;
+    blockTime: string;
+  };
+  footerLinks: {
+    vsBitpay: string;
+    vsCoinbaseCommerce: string;
+    vsOpenNode: string;
+    vsCoinGate: string;
+    vsNowPayments: string;
+    vsBtcpayserver: string;
+    restApiSpec: string;
+    sandbox: string;
+    setupGuide: string;
+    whatIsSelfHosted: string;
+    tronGateway: string;
+    pricing: string;
+    github: string;
+    review: string;
+    bestSelfHostedGateway: string;
   };
   faq: {
     badge: string;

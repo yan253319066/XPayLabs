@@ -6,11 +6,10 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
-export default function Header() {
+export default function Header({ locale }: { locale?: 'en' | 'zh' }) {
   const t = useTranslations('navigation');
-  const locale = useLocale() as 'en' | 'zh';
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
@@ -20,9 +19,12 @@ export default function Header() {
   const compareRef = useRef<HTMLLIElement>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const homePath = locale === 'zh' ? '/zh' : '/';
+  const isZhPage = locale === 'zh' || (!locale && pathname.startsWith('/zh'));
+  const homePath = isZhPage ? '/zh' : '/';
   const isDocsPage = pathname.includes('/docs');
   const isHomePage = pathname === '/' || pathname === '/zh';
+
+  const lh = (path: string) => isZhPage ? `/zh${path}` : path;
 
   const sectionHref = (hash: string) =>
     isHomePage ? hash : `${homePath}${hash}`;
@@ -36,24 +38,25 @@ export default function Header() {
     { label: t('faq'), href: sectionHref('#faq') },
   ];
 
+  const tF = useTranslations('footerLinks');
+
   const compareLinks = [
-    { label: 'XPay Labs Review', href: '/review' },
-    { label: 'Best Self-Hosted Gateway', href: '/guides/best-self-hosted-crypto-payment-gateway' },
-    { label: 'vs BitPay', href: '/alternatives/bitpay' },
-    { label: 'vs Coinbase Commerce', href: '/alternatives/coinbase-commerce' },
-    { label: 'vs NowPayments', href: '/alternatives/nowpayments' },
-    { label: 'vs BTCPay Server', href: '/alternatives/btcpayserver' },
-    { label: 'vs OpenNode', href: '/alternatives/opennode' },
-    { label: 'vs CoinGate', href: '/alternatives/coingate' },
+    { label: tF('review'), href: lh('/review') },
+    { label: tF('bestSelfHostedGateway'), href: lh('/guides/best-self-hosted-crypto-payment-gateway') },
+    { label: tF('vsBitpay'), href: lh('/alternatives/bitpay') },
+    { label: tF('vsCoinbaseCommerce'), href: lh('/alternatives/coinbase-commerce') },
+    { label: tF('vsNowPayments'), href: lh('/alternatives/nowpayments') },
+    { label: tF('vsBtcpayserver'), href: lh('/alternatives/btcpayserver') },
+    { label: tF('vsOpenNode'), href: lh('/alternatives/opennode') },
+    { label: tF('vsCoinGate'), href: lh('/alternatives/coingate') },
   ];
 
   const isComparePage = compareLinks.some((l) => pathname === l.href);
 
   const getLanguageTogglePath = () => {
-    if (pathname === '/docs') return '/zh/docs';
-    if (pathname === '/zh/docs') return '/docs';
-    if (pathname === '/zh') return '/';
-    return '/zh';
+    if (isZhPage) return pathname.replace(/^\/zh/, '') || '/';
+    if (pathname === '/blog') return '/zh';
+    return `/zh${pathname}`;
   };
 
   useEffect(() => {
@@ -148,7 +151,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-1.5 group">
+            <Link href={homePath} className="flex items-center space-x-1.5 group">
               <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-black text-xl tracking-tight group-hover:text-brand-cyan transition-colors italic">
                 XPay <span className="text-brand-blue not-italic font-bold">Labs</span>
@@ -176,7 +179,7 @@ export default function Header() {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <span>Product</span>
+                  <span>{t('product')}</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${productOpen ? 'rotate-180' : ''}`} />
                   {anySectionActive && (
                     <motion.span
@@ -224,7 +227,7 @@ export default function Header() {
               {/* Docs */}
               <li>
                 <Link
-                  href={locale === 'zh' ? '/zh/docs' : '/docs'}
+                  href={isZhPage ? '/zh/docs' : '/docs'}
                   className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
                     pathname.includes('/docs') ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
                   }`}
@@ -257,7 +260,7 @@ export default function Header() {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <span>Compare</span>
+                  <span>{t('compare')}</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${compareOpen ? 'rotate-180' : ''}`} />
                   {isComparePage && (
                     <motion.span
@@ -324,13 +327,13 @@ export default function Header() {
               {/* Pricing */}
               <li>
                 <Link
-                  href="/pricing"
+                  href={lh('/pricing')}
                   className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
-                    pathname === '/pricing' ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
+                    pathname === lh('/pricing') ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <span>Pricing</span>
-                  {pathname === '/pricing' && (
+                  <span>{t('pricing')}</span>
+                  {pathname === lh('/pricing') && (
                     <motion.span
                       layoutId="activeNavIndicator"
                       className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_8px_rgba(91,140,255,0.6)]"
@@ -349,7 +352,7 @@ export default function Header() {
               className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-white/10 text-gray-300 hover:text-white hover:border-brand-blue/30 text-xs font-medium transition-all"
             >
               <Globe className="w-3.5 h-3.5 text-brand-blue" />
-              <span>{locale === 'en' ? '中文' : 'English'}</span>
+              <span>{isZhPage ? 'English' : '中文'}</span>
             </Link>
 
             {/* CTA Button */}
@@ -368,7 +371,7 @@ export default function Header() {
               className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg border border-white/10 text-gray-300 hover:text-white hover:border-brand-blue/30 text-xs font-medium transition-all"
             >
               <Globe className="w-3 h-3 text-brand-blue" />
-              <span>{locale === 'en' ? '中' : 'EN'}</span>
+              <span>{isZhPage ? 'EN' : '中'}</span>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -393,7 +396,7 @@ export default function Header() {
           >
             <div className="px-4 pt-3 pb-6 space-y-3 overflow-x-hidden">
               <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
-                Product
+                {t('product')}
               </div>
               {sectionLinks.map((item) => {
                 const active = isActive(item.href);
@@ -414,14 +417,14 @@ export default function Header() {
               })}
               <div className="border-t border-white/5 my-2" />
               <Link
-                href={locale === 'zh' ? '/zh/docs' : '/docs'}
+                href={isZhPage ? '/zh/docs' : '/docs'}
                 onClick={closeMobile}
                 className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
               >
                 {t('docs')}
               </Link>
               <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
-                Compare
+                {t('compare')}
               </div>
               {compareLinks.map((item) => (
                 <Link
@@ -445,11 +448,11 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="/pricing"
+                href={lh('/pricing')}
                 onClick={closeMobile}
                 className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
               >
-                Pricing
+                {t('pricing')}
               </Link>
               <div className="pt-3 border-t border-white/5 flex flex-col space-y-3 px-3">
                 <Link

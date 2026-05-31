@@ -14,7 +14,10 @@ export const en: TranslationSet = {
     devXp: "Developer Experience",
     faq: "FAQ",
     docs: "Documentation",
-    cta: "Deploy Gateways"
+    cta: "Deploy Gateways",
+    product: "Product",
+    compare: "Compare",
+    pricing: "Pricing"
   },
   hero: {
     title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",
@@ -193,7 +196,69 @@ export const en: TranslationSet = {
         description: "Integrate beautiful UI overlays using customizable pre-themed checkout widgets matching high-end design systems.",
         advantage: "Ready to deploy instantly alongside the main Docker Compose package."
       }
-    ]
+    ],
+    advantage: "Advantage:"
+  },
+  heroStats: {
+    gatewayFees: "Gateway Fees",
+    mempoolScan: "Mempool Scan",
+    nonCustodial: "Non-Custodial"
+  },
+  heroDashboard: {
+    nodeActive: "NODE_ACTIVE",
+    copyAddress: "Copy Address",
+    dispatching: "Dispatching...",
+    coreSecurity: "Core Security",
+    nonCustodial: "Non-Custodial",
+    privateKeys: "Private keys stay on your metal."
+  },
+  openSourceStats: {
+    supportedEvmChains: "Supported EVM Chains",
+    mempoolDetectionSpeed: "Mempool Detection Speed",
+    gatewayTransactionFees: "Gateway Transaction Fees",
+    annualSavingsVsBitpay: "Annual Savings vs BitPay"
+  },
+  featuresLabels: {
+    gatewayCore: "Gateway Core",
+    infraModuleReady: "INFRA MODULE READY"
+  },
+  apiShowcaseLabels: {
+    copied: "Copied",
+    copy: "Copy",
+    sslSecured: "SSL SECURED TLS_AES_256_GCM_SHA384 CLIENT AUTHORIZATION",
+    prodReady: "PROD READY API CLIENT"
+  },
+  devXpConsole: {
+    consoleHeader: "XPAY CONSOLE V1.0_PROMPT",
+    sandboxSimulator: "SANDBOX SIMULATOR",
+    generatingSecureSigningNodes: "Generating secure signing nodes...",
+    restartSandbox: "Restart Interactive Sandbox",
+    triggerWebhook: "Trigger Paid Block Webhook",
+    synthesizeVaultFundSweeps: "Synthesize Vault Fund Sweeps",
+    vaultRootWallet: "Vault Root Wallet [Secure Multi-sig Anchor]",
+    dockerSandboxEnvironment: "Docker Sandbox Environment",
+    sandboxSdkDocument: "Sandbox SDK Document"
+  },
+  multiChainLabels: {
+    tps: "LEOPARD TPS",
+    blockTime: "BLOCK TIME"
+  },
+  footerLinks: {
+    vsBitpay: "vs BitPay",
+    vsCoinbaseCommerce: "vs Coinbase Commerce",
+    vsOpenNode: "vs OpenNode",
+    vsCoinGate: "vs CoinGate",
+    vsNowPayments: "vs NowPayments",
+    vsBtcpayserver: "vs BTCPay Server",
+    restApiSpec: "REST API Spec",
+    sandbox: "Sandbox",
+    setupGuide: "Setup Guide",
+    whatIsSelfHosted: "What is Self-Hosted?",
+    tronGateway: "TRON Gateway",
+    pricing: "Pricing",
+    github: "GitHub",
+    review: "XPay Labs Review",
+    bestSelfHostedGateway: "Best Self-Hosted Gateway"
   },
   faq: {
     badge: "DEEP INTELLIGENCE BASE",

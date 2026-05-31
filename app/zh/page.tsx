@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       'x-default': 'https://www.xpaylabs.com/',
       'en-US': 'https://www.xpaylabs.com/',
       'zh-CN': 'https://www.xpaylabs.com/zh',
-    }
+    },
   },
   openGraph: {
     title: translations.zh.meta.title,
@@ -35,20 +35,18 @@ export const metadata: Metadata = {
   twitter: {
     title: translations.zh.meta.title,
     description: translations.zh.meta.description,
-  }
+  },
 };
 
 export default function ChineseHomePage() {
   return (
     <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative overflow-hidden selection:bg-brand-blue/30 text-gray-200">
-        
         {/* Dynamic Header */}
-        <Header />
+        <Header locale="zh" />
 
         {/* Main Structural Layout items */}
         <main className="min-h-screen relative gradient-bg pt-16">
-          
           {/* Core Hero Landing segment containing mockup */}
           <HeroSection />
 
@@ -78,12 +76,10 @@ export default function ChineseHomePage() {
 
           {/* High converting final call block */}
           <CtaSection />
-
         </main>
 
         {/* Corporate compliant metadata foot layout */}
         <Footer />
-
       </div>
     </NextIntlClientProvider>
   );

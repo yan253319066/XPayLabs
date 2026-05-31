@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 
 export default function FeaturesSection() {
   const t = useTranslations('features');
+  const tL = useTranslations('featuresLabels');
   const items = t.raw('items') as Array<{ title: string; description: string }>;
 
   // Map corresponding vector icons for each feature
@@ -34,7 +35,7 @@ export default function FeaturesSection() {
         <div className="text-center max-w-2xl mx-auto space-y-4 pb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B8CFF]/10 border border-[#5B8CFF]/20 text-[#5B8CFF] text-xs font-bold uppercase tracking-widest mb-2 font-mono">
             <span className="w-1.5 h-1.5 bg-[#5B8CFF] rounded-full animate-pulse"></span>
-            <span>Gateway Core</span>
+            <span>{tL('gatewayCore')}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400 italic leading-tight">
             {t('title')}
@@ -72,7 +73,7 @@ export default function FeaturesSection() {
                 </div>
 
                 <div className="pt-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-brand-blue transition-colors flex items-center space-x-1">
-                  <span>INFRA MODULE READY</span>
+                  <span>{tL('infraModuleReady')}</span>
                   <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>

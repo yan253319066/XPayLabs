@@ -14,6 +14,7 @@ type StepIndex = 0 | 1 | 2 | 3;
 
 export default function DevExperience() {
   const t = useTranslations('devXp');
+  const tC = useTranslations('devXpConsole');
   const locale = useLocale();
   const [activeStep, setActiveStep] = useState<StepIndex>(0);
   
@@ -173,7 +174,7 @@ export default function DevExperience() {
               className="py-3 px-4 rounded-xl border border-white/5 bg-[#030510] hover:bg-white/5 text-gray-400 hover:text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center space-x-2 transition-all"
             >
               <RefreshCw className="w-3.5 h-3.5" />
-              <span>{locale === 'zh' ? '重启交互式体验沙盒' : 'Restart Interactive Sandbox'}</span>
+              <span>{tC('restartSandbox')}</span>
             </button>
           </div>
 
@@ -188,9 +189,9 @@ export default function DevExperience() {
                 <div className="bg-white/5 px-5 py-3 border-b border-white/5 flex items-center justify-between font-mono text-[10px]">
                 <div className="flex items-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-gray-400 font-bold uppercase">XPAY CONSOLE V1.0_PROMPT</span>
+                  <span className="text-gray-400 font-bold uppercase">{tC('consoleHeader')}</span>
                 </div>
-                <span className="text-gray-500">SANDBOX SIMULATOR</span>
+                <span className="text-gray-500">{tC('sandboxSimulator')}</span>
               </div>
 
               {/* Dynamic Sandbox Display Body */}
@@ -221,7 +222,7 @@ export default function DevExperience() {
                         
                         <div className="flex items-center justify-between text-xs font-mono text-gray-300 bg-[#07091d] py-2 px-3 rounded-lg border border-white/5 break-all">
                           {isGeneratingKey ? (
-                            <span className="text-gray-500">Generating secure signing nodes...</span>
+                            <span className="text-gray-500">{tC('generatingSecureSigningNodes')}</span>
                           ) : generatedKey ? (
                             <span className="text-gradient-purple-blue font-bold">{generatedKey}</span>
                           ) : (
@@ -289,9 +290,9 @@ export default function DevExperience() {
                             onChange={(e) => setPaymentCurrency(e.target.value)}
                             className="bg-[#07091d] border border-white/5 rounded-lg py-1.5 px-2.5 w-full text-xs font-mono font-bold text-white focus:outline-none focus:border-brand-blue"
                           >
-                            <option value="USDT">USDT (Stablecoin)</option>
-                            <option value="USDC">USDC (Stablecoin)</option>
-                            <option value="SUI">SUI (Gas Native)</option>
+                            <option value="USDT">USDT</option>
+                            <option value="USDC">USDC</option>
+                            <option value="SUI">SUI</option>
                           </select>
                         </div>
 
@@ -373,7 +374,7 @@ export default function DevExperience() {
                             className="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 font-bold text-xs font-display text-white transition-all text-center flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 animate-pulse"
                           >
                             {isFiringWebhook && <RefreshCw className="w-3.5 h-3.5 animate-spin" />}
-                            <span>{locale === 'zh' ? '模拟顾客支付 & 触发 Webhook' : 'Trigger Paid Block Webhook'}</span>
+                            <span>{tC('triggerWebhook')}</span>
                           </button>
                         )}
                       </div>
@@ -415,7 +416,7 @@ export default function DevExperience() {
                           <div className="text-[9px] text-gray-500 font-bold font-mono uppercase tracking-wider block">
                             {t('settleSim.dest')}
                           </div>
-                          <div className="font-mono text-white text-[11px] break-all">{locale === 'zh' ? '商户离线多签大金库' : 'Vault Root Wallet [Secure Multi-sig Anchor]'}</div>
+                          <div className="font-mono text-white text-[11px] break-all">{tC('vaultRootWallet')}</div>
                         </div>
 
                         {sweepTx && (
@@ -434,7 +435,7 @@ export default function DevExperience() {
                             className="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple hover:from-brand-blue/90 hover:to-brand-purple/90 font-bold text-xs font-display text-white transition-all text-center flex items-center justify-center space-x-2 shadow-lg shadow-brand-blue/20"
                           >
                             {isSweeping && <RefreshCw className="w-3.5 h-3.5 animate-spin" />}
-                            <span>{locale === 'zh' ? '执行全自动资金归集 sweep' : 'Synthesize Vault Fund Sweeps'}</span>
+                            <span>{tC('synthesizeVaultFundSweeps')}</span>
                           </button>
                         )}
                       </div>
@@ -453,9 +454,9 @@ export default function DevExperience() {
 
               {/* Console Prompt guide bar */}
               <div className="bg-[#07091c] px-5 py-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                <span>Docker Sandbox Environment</span>
+                <span>{tC('dockerSandboxEnvironment')}</span>
                 <a href="https://t.me/OS_Blockchain" target="_blank" rel="noreferrer" className="text-brand-purple font-semibold hover:underline flex items-center space-x-1">
-                  <span>Sandbox SDK Document</span>
+                  <span>{tC('sandboxSdkDocument')}</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </a>
               </div>

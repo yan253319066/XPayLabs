@@ -7,7 +7,6 @@ import { useTranslations } from 'next-intl';
 
 export default function UseCases() {
   const t = useTranslations('useCases');
-
   // Map icons physically
   const icons = [
     <ShoppingCart className="w-5 h-5 text-brand-blue" key="sc" />,
@@ -65,7 +64,7 @@ export default function UseCases() {
                 {/* Advantage tag */}
                 <div className="pt-3 border-t border-white/5 flex items-center space-x-2 text-xs font-mono font-bold text-brand-cyan">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Advantage: <span className="text-white bg-brand-cyan/10 px-2 py-0.5 rounded-md text-[10px] ml-1">{item.advantage}</span></span>
+                  <span>{t('advantage')} <span className="text-white bg-brand-cyan/10 px-2 py-0.5 rounded-md text-[10px] ml-1">{item.advantage}</span></span>
                 </div>
               </div>
             </div>

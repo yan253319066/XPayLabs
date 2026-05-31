@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} dark antialiased`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} dark antialiased`} suppressHydrationWarning>
       <body className="bg-[#060816] text-gray-200 min-h-screen selection:bg-indigo-500/30 selection:text-white" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{

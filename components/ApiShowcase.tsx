@@ -8,6 +8,7 @@ type TabType = 'curl' | 'json' | 'node';
 
 export default function ApiShowcase() {
   const t = useTranslations('apiShowcase');
+  const tL = useTranslations('apiShowcaseLabels');
   const [activeTab, setActiveTab] = useState<TabType>('curl');
   const [copiedCode, setCopiedCode] = useState(false);
 
@@ -172,17 +173,17 @@ export default function ApiShowcase() {
                   <button
                     onClick={handleCopyCode}
                     className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 text-xs font-mono flex items-center space-x-1.5 transition-all"
-                    title="Copy payload block"
+                    title={tL('copy')}
                   >
                     {copiedCode ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Copied</span>
+                        <span>{tL('copied')}</span>
                       </>
                     ) : (
                       <>
                         <Copy className="w-3.5 h-3.5" />
-                        <span>Copy</span>
+                        <span>{tL('copy')}</span>
                       </>
                     )}
                   </button>
@@ -199,9 +200,9 @@ export default function ApiShowcase() {
               <div className="bg-[#050716] px-5 py-2.5 border-t border-white/5 flex items-center justify-between text-[10px] uppercase font-mono text-slate-500">
                 <span className="flex items-center space-x-1.5 font-bold">
                   <Lock className="w-3.5 h-3.5 text-brand-cyan" />
-                  <span>SSL SECURED TLS_AES_256_GCM_SHA384 CLIENT AUTHORIZATION</span>
+                  <span>{tL('sslSecured')}</span>
                 </span>
-                <span className="hidden sm:inline font-bold">PROD READY API CLIENT</span>
+                <span className="hidden sm:inline font-bold">{tL('prodReady')}</span>
               </div>
 
             </div>

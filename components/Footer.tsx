@@ -4,17 +4,20 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Terminal, Github, Twitter, ShieldCheck, Mail } from 'lucide-react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const tFooter = useTranslations('footer');
   const tNav = useTranslations('navigation');
-  const locale = useLocale();
+  const tFL = useTranslations('footerLinks');
   const launchYear = 2020;
   const pathname = usePathname();
-  const homePath = locale === 'zh' ? '/zh' : '/';
+  const isZhPage = pathname.startsWith('/zh');
+  const homePath = isZhPage ? '/zh' : '/';
   const isHomePage = pathname === '/' || pathname === '/zh';
+
+  const lh = (path: string) => (isZhPage ? `/zh${path}` : path);
 
   return (
     <footer className="border-t border-white/5 bg-[#060816] text-slate-400 py-12 lg:py-16 relative overflow-hidden">
@@ -26,7 +29,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 pb-12 border-b border-white/5">
           {/* Slogan details */}
           <div className="space-y-4 md:col-span-2">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-1.5">
+            <Link href={homePath} className="flex items-center space-x-1.5">
               <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-extrabold text-base tracking-tight italic">
                 XPAY <span className="text-[#5B8CFF]">LABS</span>
@@ -63,10 +66,10 @@ export default function Footer() {
               <li><a href={isHomePage ? '#features' : `${homePath}#features`} className="hover:text-white transition-colors">{tNav('features')}</a></li>
               <li><a href={isHomePage ? '#chains' : `${homePath}#chains`} className="hover:text-white transition-colors">{tNav('chains')}</a></li>
               <li><a href={isHomePage ? '#architecture' : `${homePath}#architecture`} className="hover:text-white transition-colors">{tNav('architecture')}</a></li>
-              <li><Link href="/alternatives/bitpay" className="hover:text-white transition-colors">vs BitPay</Link></li>
-              <li><Link href="/alternatives/coinbase-commerce" className="hover:text-white transition-colors">vs Coinbase Commerce</Link></li>
-              <li><Link href="/alternatives/opennode" className="hover:text-white transition-colors">vs OpenNode</Link></li>
-              <li><Link href="/alternatives/coingate" className="hover:text-white transition-colors">vs CoinGate</Link></li>
+              <li><Link href={lh('/alternatives/bitpay')} className="hover:text-white transition-colors">{tFL('vsBitpay')}</Link></li>
+              <li><Link href={lh('/alternatives/coinbase-commerce')} className="hover:text-white transition-colors">{tFL('vsCoinbaseCommerce')}</Link></li>
+              <li><Link href={lh('/alternatives/opennode')} className="hover:text-white transition-colors">{tFL('vsOpenNode')}</Link></li>
+              <li><Link href={lh('/alternatives/coingate')} className="hover:text-white transition-colors">{tFL('vsCoinGate')}</Link></li>
             </ul>
           </div>
 
@@ -76,12 +79,12 @@ export default function Footer() {
               {tFooter('developers')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><Link href={locale === 'zh' ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
-              <li><a href={isHomePage ? '#api' : `${homePath}#api`} className="hover:text-white transition-colors">REST API Spec</a></li>
-              <li><a href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`} className="hover:text-white transition-colors">Sandbox</a></li>
-              <li><Link href="/guides/how-to-accept-crypto-payments" className="hover:text-white transition-colors">Setup Guide</Link></li>
-              <li><Link href="/guides/what-is-self-hosted-crypto-payment-gateway" className="hover:text-white transition-colors">What is Self-Hosted?</Link></li>
-              <li><Link href="/solutions/tron-payment-gateway" className="hover:text-white transition-colors">TRON Gateway</Link></li>
+              <li><Link href={isZhPage ? '/zh/docs' : '/docs'} className="hover:text-white transition-colors">{tNav('docs')}</Link></li>
+              <li><a href={isHomePage ? '#api' : `${homePath}#api`} className="hover:text-white transition-colors">{tFL('restApiSpec')}</a></li>
+              <li><a href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`} className="hover:text-white transition-colors">{tFL('sandbox')}</a></li>
+              <li><Link href={lh('/guides/how-to-accept-crypto-payments')} className="hover:text-white transition-colors">{tFL('setupGuide')}</Link></li>
+              <li><Link href={lh('/guides/what-is-self-hosted-crypto-payment-gateway')} className="hover:text-white transition-colors">{tFL('whatIsSelfHosted')}</Link></li>
+              <li><Link href={lh('/solutions/tron-payment-gateway')} className="hover:text-white transition-colors">{tFL('tronGateway')}</Link></li>
             </ul>
           </div>
 
@@ -91,11 +94,11 @@ export default function Footer() {
               {tFooter('resources')}
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
-              <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href={lh('/pricing')} className="hover:text-white transition-colors">{tFL('pricing')}</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/alternatives/nowpayments" className="hover:text-white transition-colors">vs NowPayments</Link></li>
-              <li><Link href="/alternatives/btcpayserver" className="hover:text-white transition-colors">vs BTCPay Server</Link></li>
-              <li><a href="https://github.com/yan253319066/XPayLabs" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
+              <li><Link href={lh('/alternatives/nowpayments')} className="hover:text-white transition-colors">{tFL('vsNowPayments')}</Link></li>
+              <li><Link href={lh('/alternatives/btcpayserver')} className="hover:text-white transition-colors">{tFL('vsBtcpayserver')}</Link></li>
+              <li><a href="https://github.com/yan253319066/XPayLabs" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{tFL('github')}</a></li>
             </ul>
           </div>
         </div>
@@ -113,8 +116,8 @@ export default function Footer() {
           </div>
 
           <div className="flex space-x-6 text-slate-400 font-sans">
-            <Link href={locale === 'zh' ? '/zh/terms' : '/terms'} className="hover:text-white transition-colors">{tFooter('termsOfService')}</Link>
-            <Link href={locale === 'zh' ? '/zh/privacy' : '/privacy'} className="hover:text-white transition-colors">{tFooter('privacyPolicy')}</Link>
+            <Link href={isZhPage ? '/zh/terms' : '/terms'} className="hover:text-white transition-colors">{tFooter('termsOfService')}</Link>
+            <Link href={isZhPage ? '/zh/privacy' : '/privacy'} className="hover:text-white transition-colors">{tFooter('privacyPolicy')}</Link>
           </div>
         </div>
       </div>
