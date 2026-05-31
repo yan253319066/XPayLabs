@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   ArrowRight, Check, X, Shield, DollarSign, Layers, Server,
   Palette, Webhook, Settings, Code, ExternalLink, Cpu
@@ -9,7 +8,6 @@ import {
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'NowPayments Alternative — Self-Hosted Crypto Payment Gateway | XPay Labs',
@@ -127,7 +125,6 @@ function SectionHeading({ title, subtitle }: { title: string; subtitle?: string 
 
 export default function NowPaymentsAlternativePage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} />
         <JsonLd data={productSchema} />
@@ -804,6 +801,5 @@ export default function NowPaymentsAlternativePage() {
 
         <Footer />
       </div>
-    </NextIntlClientProvider>
   );
 }

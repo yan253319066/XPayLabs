@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   Star,
   Check,
@@ -19,7 +18,6 @@ import {
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 export const metadata: Metadata = {
   title: 'XPay Labs 评测 — 自托管加密支付基础设施 2026 | XPay Labs',
   description:
@@ -147,8 +145,7 @@ const breadcrumbSchema = {
 };
 export default function ReviewPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
-      <JsonLd data={faqSchema} /> <JsonLd data={reviewSchema} />
+    <><JsonLd data={faqSchema} /> <JsonLd data={reviewSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <Header locale="zh" />
@@ -705,6 +702,6 @@ export default function ReviewPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

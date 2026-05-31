@@ -2,11 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Server, Shield, Globe, DollarSign, Key, Cpu, Coins, BookOpen, ArrowUpRight, Zap, Monitor, Layout, Warehouse, ShoppingCart, Binary, Network, ExternalLink } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'What is a Self-Hosted Crypto Payment Gateway? Complete Guide | XPay Labs',
@@ -235,7 +233,7 @@ const benefits = [
 
 export default function WhatIsSelfHostedGatewayPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
+    <>
       <JsonLd data={articleSchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
@@ -602,6 +600,6 @@ export default function WhatIsSelfHostedGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

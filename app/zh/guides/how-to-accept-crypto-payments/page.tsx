@@ -19,11 +19,9 @@ import {
   BookOpen,
   ArrowUpRight,
 } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
-import { translations } from '../../../../lib/translations';
 export const metadata: Metadata = {
   title: '如何接受加密货币支付 — 自托管加密支付网关指南 | XPay Labs',
   description:
@@ -230,7 +228,7 @@ const steps = [
 ];
 export default function HowToAcceptCryptoPaymentsPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
+    <>
       <JsonLd data={articleSchema} /> <JsonLd data={howToSchema} />
       <JsonLd data={faqSchema} /> <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
@@ -971,6 +969,6 @@ export default function HowToAcceptCryptoPaymentsPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

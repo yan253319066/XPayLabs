@@ -1,12 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import { Trophy, Shield, DollarSign, Server, Zap, Globe, Cpu, Star, Check, BookOpen, ArrowUpRight, ExternalLink, ArrowRight, Coins } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'Best Self-Hosted Crypto Payment Gateway 2026 — Top Solutions Compared | XPay Labs',
@@ -150,7 +148,7 @@ const rankData = [
 
 export default function BestSelfHostedGatewayPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
+    <>
       <JsonLd data={articleSchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
@@ -463,6 +461,6 @@ export default function BestSelfHostedGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

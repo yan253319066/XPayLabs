@@ -2,10 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Terminal, Shield, Book, Info, Copy, Check, Server, HardDrive, Key, ArrowLeft, RefreshCw, Layers } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'Documentation — Developer Infrastructure Guide',
@@ -27,7 +25,6 @@ export const metadata: Metadata = {
 
 export default function EnglishDocsPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-x-hidden">
         
         {/* Shared Nav Head */}
@@ -190,6 +187,5 @@ export default function EnglishDocsPage() {
         <Footer />
 
       </div>
-    </NextIntlClientProvider>
   );
 }

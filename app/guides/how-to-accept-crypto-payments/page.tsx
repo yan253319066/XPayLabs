@@ -2,11 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Globe, DollarSign, Shield, Key, Server, HardDrive, Terminal, Copy, Check, ArrowRight, ExternalLink, Zap, Cpu, Coins, BookOpen, ArrowUpRight } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'How to Accept Crypto Payments: Self-Hosted Infrastructure Guide | XPay Labs',
@@ -273,7 +271,7 @@ export async function POST(request: Request) {
 
 export default function HowToAcceptCryptoPaymentsPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
+    <>
       <JsonLd data={articleSchema} />
       <JsonLd data={howToSchema} />
       <JsonLd data={faqSchema} />
@@ -844,6 +842,6 @@ XPAY_CONFIRMATIONS=19`}</code>
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

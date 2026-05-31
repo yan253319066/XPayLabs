@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   ArrowRight,
   Check,
@@ -20,7 +19,6 @@ import {
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
-import { translations } from '../../../../lib/translations';
 export const metadata: Metadata = {
   title: 'NowPayments 替代方案 — 自托管加密支付网关 | XPay Labs',
   description:
@@ -153,7 +151,6 @@ function SectionHeading({
 }
 export default function NowPaymentsAlternativePage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} /> <JsonLd data={productSchema} />
         <JsonLd data={breadcrumbSchema} /> <Header locale="zh" />
@@ -957,6 +954,5 @@ export default function NowPaymentsAlternativePage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
   );
 }

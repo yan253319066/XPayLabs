@@ -1,12 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import { Server, Shield, CheckCircle2, Zap, Cpu, Globe, ArrowRight, ExternalLink, Code2, DollarSign, Layers, Wifi } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'EVM Payment Gateway — Accept USDT/USDC on Ethereum, BNB, Polygon, Arbitrum, Base | XPay Labs',
@@ -82,7 +80,6 @@ const breadcrumbSchema = {
 
 export default function EvmPaymentGatewayPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} />
         <JsonLd data={breadcrumbSchema} />
@@ -299,6 +296,5 @@ export default function EvmPaymentGatewayPage() {
 
         <Footer />
       </div>
-    </NextIntlClientProvider>
   );
 }

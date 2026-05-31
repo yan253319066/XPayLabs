@@ -20,11 +20,9 @@ import {
   Network,
   ExternalLink,
 } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
-import { translations } from '../../../../lib/translations';
 export const metadata: Metadata = {
   title: '什么是自托管加密支付网关？— 完整指南 | XPay Labs',
   description:
@@ -283,7 +281,7 @@ const benefits = [
 ];
 export default function WhatIsSelfHostedGatewayPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
+    <>
       <JsonLd data={articleSchema} /> <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
@@ -709,6 +707,6 @@ export default function WhatIsSelfHostedGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

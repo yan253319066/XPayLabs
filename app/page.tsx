@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import OpenSourceSection from '../components/OpenSourceSection';
@@ -13,12 +12,11 @@ import UseCases from '../components/UseCases';
 import FaqSection from '../components/FaqSection';
 import CtaSection from '../components/CtaSection';
 import Footer from '../components/Footer';
-import { translations } from '../lib/translations';
 
 export const metadata: Metadata = {
-  title: { absolute: translations.en.meta.title },
-  description: translations.en.meta.description,
-  keywords: translations.en.meta.keywords,
+  title: { absolute: 'XPay Labs — Self-hosted Crypto Payment Infrastructure' },
+  description: 'Deploy your own private, self-hosted crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Secure, non-custodial payment infrastructure for developers.',
+  keywords: 'crypto payment infrastructure, self-hosted crypto payment system, stablecoin payments, TRC20 payment API, EVM payment infrastructure, SUI payment API, developer payment infrastructure',
   alternates: {
     canonical: 'https://www.xpaylabs.com/',
     languages: {
@@ -28,19 +26,18 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: translations.en.meta.title,
-    description: translations.en.meta.description,
+    title: 'XPay Labs — Self-hosted Crypto Payment Infrastructure',
+    description: 'Deploy your own private, self-hosted crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Secure, non-custodial payment infrastructure for developers.',
     url: 'https://www.xpaylabs.com/',
   },
   twitter: {
-    title: translations.en.meta.title,
-    description: translations.en.meta.description,
+    title: 'XPay Labs — Self-hosted Crypto Payment Infrastructure',
+    description: 'Deploy your own private, self-hosted crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Secure, non-custodial payment infrastructure for developers.',
   }
 };
 
 export default function EnglishHomePage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative overflow-hidden selection:bg-brand-blue/30 text-gray-200">
         
         {/* Dynamic Header */}
@@ -85,6 +82,5 @@ export default function EnglishHomePage() {
         <Footer />
 
       </div>
-    </NextIntlClientProvider>
   );
 }

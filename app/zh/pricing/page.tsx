@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   Server,
   Shield,
@@ -20,7 +19,6 @@ import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
 import SavingsCalculator from '../../pricing/SavingsCalculator';
-import { translations } from '../../../lib/translations';
 export const metadata: Metadata = {
   title: '定价方案 — 自托管加密支付网关 | XPay Labs',
   description:
@@ -121,7 +119,6 @@ const breadcrumbSchema = {
 };
 export default function PricingPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} /> <JsonLd data={breadcrumbSchema} />
         <Header locale="zh" />
@@ -665,6 +662,6 @@ export default function PricingPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+
   );
 }

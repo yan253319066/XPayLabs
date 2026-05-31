@@ -1,12 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import { Server, Shield, Check, X, ArrowRight, ExternalLink, DollarSign, Coins, Github, Cpu, Code2, Layers, Zap, Settings, Globe, Terminal, FileCode } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'BTCPay Server Alternative — Self-Hosted Multi-Chain Payment Gateway | XPay Labs',
@@ -91,7 +89,6 @@ const breadcrumbSchema = {
 
 export default function BTCPayServerAlternativePage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
 
         <JsonLd data={faqSchema} />
@@ -539,6 +536,5 @@ export default function BTCPayServerAlternativePage() {
 
         <Footer />
       </div>
-    </NextIntlClientProvider>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   Terminal,
   Shield,
@@ -21,7 +20,6 @@ import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
 import CopyButton from './CopyButton';
-import { translations } from '../../../../lib/translations';
 export const metadata: Metadata = {
   title: 'TRON TRC20 支付网关 — 自托管 USDT 收款基础设施 | XPay Labs',
   description:
@@ -220,7 +218,7 @@ const useCases = [
 const curlCode = `curl -X POST "https://gateway.yourdomain.com/v1/payments" \  -H "Authorization: Bearer xpay_live_8f3a9d7219bc" \  -H "Content-Type: application/json" \  -d '{    "amount": "100.00",    "currency": "USDT",    "chain": "TRON",    "order_id": "order_783120",    "callback_url": "https://api.merchant.com/v1/webhooks/xpay"  }'`;
 export default function TronPaymentGatewayPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
+    <>
       <JsonLd data={faqSchema} /> <JsonLd data={howToSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
@@ -859,6 +857,6 @@ export default function TronPaymentGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

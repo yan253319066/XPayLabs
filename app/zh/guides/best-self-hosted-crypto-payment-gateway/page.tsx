@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import {
   Trophy,
   Shield,
@@ -21,7 +20,6 @@ import {
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
-import { translations } from '../../../../lib/translations';
 export const metadata: Metadata = {
   title: '最佳自托管加密支付网关 — 2025 年对比评测 | XPay Labs',
   description:
@@ -219,7 +217,7 @@ const rankData = [
 ];
 export default function BestSelfHostedGatewayPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
+    <>
       <JsonLd data={articleSchema} /> <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
@@ -600,6 +598,6 @@ export default function BestSelfHostedGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

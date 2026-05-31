@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../components/Header';
 import HeroSection from '../../components/HeroSection';
 import OpenSourceSection from '../../components/OpenSourceSection';
@@ -13,12 +12,11 @@ import UseCases from '../../components/UseCases';
 import FaqSection from '../../components/FaqSection';
 import CtaSection from '../../components/CtaSection';
 import Footer from '../../components/Footer';
-import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
-  title: { absolute: translations.zh.meta.title },
-  description: translations.zh.meta.description,
-  keywords: translations.zh.meta.keywords,
+  title: { absolute: 'XPay Labs — 自托管加密支付基础设施' },
+  description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
+  keywords: '加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口API, EVM支持加密网关, SUI区块链支付接口, 开发者支付底层系统',
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh',
     languages: {
@@ -28,19 +26,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: translations.zh.meta.title,
-    description: translations.zh.meta.description,
+    title: 'XPay Labs — 自托管加密支付基础设施',
+    description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
     url: 'https://www.xpaylabs.com/zh',
   },
   twitter: {
-    title: translations.zh.meta.title,
-    description: translations.zh.meta.description,
+    title: 'XPay Labs — 自托管加密支付基础设施',
+    description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
   },
 };
 
 export default function ChineseHomePage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative overflow-hidden selection:bg-brand-blue/30 text-gray-200">
         {/* Dynamic Header */}
         <Header locale="zh" />
@@ -81,6 +78,6 @@ export default function ChineseHomePage() {
         {/* Corporate compliant metadata foot layout */}
         <Footer />
       </div>
-    </NextIntlClientProvider>
+
   );
 }

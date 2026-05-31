@@ -15,10 +15,8 @@ import {
   RefreshCw,
   Layers,
 } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: '技术文档 — 开发者部署指南',
@@ -42,7 +40,6 @@ export const metadata: Metadata = {
 
 export default function ChineseDocsPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-x-hidden">
         {/* Shared Nav Head */}
         <Header locale="zh" />
@@ -280,6 +277,6 @@ services:
         {/* Shared Foot */}
         <Footer />
       </div>
-    </NextIntlClientProvider>
+
   );
 }

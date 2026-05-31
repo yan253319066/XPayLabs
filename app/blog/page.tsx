@@ -2,11 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, ArrowUpRight } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import JsonLd from '../../components/JsonLd';
-import { translations } from '../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
@@ -126,8 +124,7 @@ const postSchema = {
 
 export default function BlogIndexPage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
-      <JsonLd data={blogSchema} />
+    <><JsonLd data={blogSchema} />
       <JsonLd data={postSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <Header />
@@ -188,6 +185,6 @@ export default function BlogIndexPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }

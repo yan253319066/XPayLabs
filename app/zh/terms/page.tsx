@@ -2,10 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Shield, FileText } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: '服务条款',
@@ -26,7 +24,6 @@ export const metadata: Metadata = {
 
 export default function ChineseTermsPage() {
   return (
-    <NextIntlClientProvider locale="zh" messages={translations.zh}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200">
         <Header locale="zh" />
 
@@ -190,6 +187,6 @@ export default function ChineseTermsPage() {
 
         <Footer />
       </div>
-    </NextIntlClientProvider>
+
   );
 }

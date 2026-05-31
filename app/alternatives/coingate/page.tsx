@@ -2,11 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Shield, ArrowRight, Check, X, Server, Key, Coins, Palette, Settings, DollarSign, Code, ExternalLink, ArrowUpRight } from 'lucide-react';
-import { NextIntlClientProvider } from 'next-intl';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'CoinGate Alternative — Self-Hosted Crypto Payment Gateway | XPay Labs',
@@ -99,7 +97,6 @@ const breadcrumbSchema = {
 
 export default function CoinGateAlternativePage() {
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
 
         <JsonLd data={faqSchema} />
@@ -682,6 +679,5 @@ export default function CoinGateAlternativePage() {
         <Footer />
 
       </div>
-    </NextIntlClientProvider>
   );
 }

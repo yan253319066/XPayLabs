@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css'; // Global styles
 import JsonLd from '../components/JsonLd';
+import I18nProvider from '../components/I18nProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -86,7 +87,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
         <JsonLd data={softwareAppSchema} />
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );

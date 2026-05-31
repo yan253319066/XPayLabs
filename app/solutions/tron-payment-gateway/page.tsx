@@ -1,13 +1,11 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NextIntlClientProvider } from 'next-intl';
 import { Terminal, Shield, CheckCircle2, Zap, Lock, Server, Code2, DollarSign, Clock, Globe, Cpu, Activity, ArrowRight } from 'lucide-react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
 import CopyButton from './CopyButton';
-import { translations } from '../../../lib/translations';
 
 export const metadata: Metadata = {
   title: 'TRON TRC20 Payment Gateway — Self-Hosted USDT Payment Infrastructure | XPay Labs',
@@ -177,7 +175,7 @@ const curlCode = `curl -X POST "https://gateway.yourdomain.com/v1/payments" \
 export default function TronPaymentGatewayPage() {
 
   return (
-    <NextIntlClientProvider locale="en" messages={translations.en}>
+    <>
       <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
       <JsonLd data={breadcrumbSchema} />
@@ -650,6 +648,6 @@ export default function TronPaymentGatewayPage() {
         </main>
         <Footer />
       </div>
-    </NextIntlClientProvider>
+    </>
   );
 }
