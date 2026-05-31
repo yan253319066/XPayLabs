@@ -145,7 +145,7 @@ const rankData = [
     chains: 'TRON, 20+ EVM, SUI',
     deployment: 'Docker Compose',
     api: 'Stripe 风格 REST API + HMAC webhook',
-    openSource: '源码可用',
+    openSource: '授权免费使用',
     pros: [
       '所有链上零费率',
       '亚秒级支付检测',

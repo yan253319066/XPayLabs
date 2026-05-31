@@ -332,7 +332,7 @@ export default function CoinbaseCommerceAlternative() {
                       {
                         feature: '源代码访问',
                         coinbase: '否',
-                        xpay: '源代码可用',
+                        xpay: '授权免费使用',
                       },
                       {
                         feature: 'API 优先设计',
@@ -578,7 +578,7 @@ export default function CoinbaseCommerceAlternative() {
                         },
                         {
                           icon: <GitBranch className="w-4 h-4" />,
-                          text: '源代码可用的代码库',
+                          text: '授权免费使用的代码库',
                         },
                       ].map((item, i) => (
                         <div

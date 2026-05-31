@@ -289,7 +289,7 @@ export default function NowPaymentsAlternativePage() {
                       {
                         feature: '源代码访问',
                         np: '否',
-                        xpay: '源代码可用',
+                        xpay: '授权免费使用',
                       },
                       {
                         feature: 'API 优先设计',

@@ -303,7 +303,7 @@ export default function CoinbaseCommerceAlternative() {
                       {
                         feature: 'Source Access',
                         coinbase: 'No',
-                        xpay: 'Source-available',
+                        xpay: 'Free (XPay License)',
                       },
                       {
                         feature: 'API-First Design',
@@ -500,7 +500,7 @@ export default function CoinbaseCommerceAlternative() {
                         { icon: <Code className="w-4 h-4" />, text: 'REST API with full payment lifecycle' },
                         { icon: <Webhook className="w-4 h-4" />, text: 'Real-time webhook events (configurable)' },
                         { icon: <Server className="w-4 h-4" />, text: 'Docker container deployment' },
-                        { icon: <GitBranch className="w-4 h-4" />, text: 'Source-available codebase' },
+                        { icon: <GitBranch className="w-4 h-4" />, text: 'Free (XPay License) codebase' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
                           <span className="w-8 h-8 rounded-lg bg-[#5B8CFF]/5 border border-[#5B8CFF]/10 flex items-center justify-center text-[#5B8CFF] shrink-0">

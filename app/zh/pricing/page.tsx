@@ -519,7 +519,7 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-400">闭源</td>
                     <td className="p-4 text-gray-400">闭源</td>
                     <td className="p-4 text-green-400 font-semibold">
-                      源代码可用
+                      授权免费使用
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -546,6 +546,9 @@ export default function PricingPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div className="mt-4 text-xs text-gray-500 font-sans text-center">
+              XPay Labs 年成本仅含 VPS 托管费（约 $20/月）。可选支持计划 $1,500 起（Docker Setup）或 $3,000/年（Business）。
             </div>
           </section>
           {/* Why Self-Hosted */}

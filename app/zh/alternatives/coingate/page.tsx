@@ -295,7 +295,7 @@ export default function CoinGateAlternativePage() {
                       闭源（专有）
                     </td>
                     <td className="p-4 text-green-400">
-                      源代码可用（XPay License）
+                      授权免费使用
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -499,7 +499,7 @@ export default function CoinGateAlternativePage() {
                 </p>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
                   XPay Labs
-                  <strong className="text-green-400">源代码可用</strong>——
+                  <strong className="text-green-400">授权免费使用</strong>——
                   每一行代码都在 GitHub 上可见。您可以审计安全性、提交拉取请求、分叉项目并根据需要进行扩展。REST API 辅以
                   <strong className="text-gray-300">
                     HMAC 签名 webhook

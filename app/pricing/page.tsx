@@ -394,7 +394,7 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-400">Closed</td>
                     <td className="p-4 text-gray-400">Closed</td>
                     <td className="p-4 text-gray-400">Closed</td>
-                    <td className="p-4 text-green-400 font-semibold">Source-available</td>
+                    <td className="p-4 text-green-400 font-semibold">Free (XPay License)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Deployment</td>
@@ -412,6 +412,9 @@ export default function PricingPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div className="mt-4 text-xs text-gray-500 font-sans text-center">
+              XPay Labs annual cost based on VPS hosting only (~$20/mo). Optional support plans from $1,500 (Docker Setup) or $3,000/yr (Business).
             </div>
           </section>
 

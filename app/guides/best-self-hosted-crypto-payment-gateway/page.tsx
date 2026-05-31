@@ -104,7 +104,7 @@ const rankData = [
     chains: 'TRON, 20+ EVM, SUI',
     deployment: 'Docker Compose',
     api: 'Stripe-inspired REST API + HMAC webhooks',
-    openSource: 'Source-available',
+    openSource: 'Free (XPay License)',
     pros: ['Zero fees on all chains', 'Sub-second payment detection', 'Clean Stripe-like API', 'Native TRON + EVM + SUI support', 'Full white-label checkout'],
     cons: ['Requires DevOps skills', 'No Bitcoin/Lightning', 'Smaller community'],
     link: '/',

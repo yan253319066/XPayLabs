@@ -260,7 +260,7 @@ export default function NowPaymentsAlternativePage() {
                       {
                         feature: 'Source Access',
                         np: 'No',
-                        xpay: 'Source-available',
+                        xpay: 'Free (XPay License)',
                       },
                       {
                         feature: 'API-First Design',

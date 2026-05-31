@@ -239,7 +239,7 @@ export default function CoinGateAlternativePage() {
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Source Access</td>
                     <td className="p-4 text-gray-400">Closed-source (proprietary)</td>
-                    <td className="p-4 text-green-400">Source-available (XPay License)</td>
+                    <td className="p-4 text-green-400">Free (XPay License)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Deployment</td>

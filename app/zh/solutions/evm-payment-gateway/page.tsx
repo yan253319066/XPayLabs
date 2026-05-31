@@ -369,7 +369,7 @@ export default function EvmPaymentGatewayPage() {
                         源代码
                       </td>
                       <td className="p-4 text-gray-400">闭源</td>
-                      <td className="p-4 text-green-400">源代码可用</td>
+                      <td className="p-4 text-green-400">授权免费使用</td>
                     </tr>
                   </tbody>
                 </table>

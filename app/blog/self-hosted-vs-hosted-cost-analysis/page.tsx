@@ -120,6 +120,7 @@ export default function CostAnalysisPage() {
                 Coinbase Commerce: 0.8% tx fee + $25/mo plan. NowPayments: 0.5% tx fee (no monthly plan).
                 XPay Labs: $0 tx fee, VPS cost estimated at $5/mo ($10k tier) to $20/mo ($500k tier).
                 Gas fees not included (paid by customer or merchant equally across all solutions).
+                Optional XPay Labs support plans from $1,500 (Docker Setup) or $3,000/yr (Business) — not required to use the software.
               </div>
             </section>
 
