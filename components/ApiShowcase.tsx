@@ -13,42 +13,68 @@ export default function ApiShowcase() {
   const [copiedCode, setCopiedCode] = useState(false);
 
   const codeBlocks: Record<TabType, string> = {
-    curl: `curl -X POST "https://gateway.yourdomain.com/v1/payments" \\
-  -H "Authorization: Bearer xpay_live_8f3a9d7219bc" \\
-  -H "Content-Type: application/json" \\
+    curl: `curl -X POST "http://your-gateway:3010/v1/order/createCollection" \
+  -H "Content-Type: application/json" \
   -d '{
-    "amount": "100.00",
-    "currency": "USDT",
-    "chain": "TRON",
-    "order_id": "order_783120",
-    "callback_url": "https://api.merchant.com/v1/webhooks/xpay"
+    "sign": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "timestamp": 1717000000,
+    "nonce": "550e8400-e29b-41d4-a716-446655440000",
+    "data": {
+      "amount": "250.00",
+      "symbol": "USDT",
+      "chain": "TRON",
+      "orderId": "merchant_order_001"
+    }
   }'`,
     json: `{
-  "amount": "100.00",
-  "currency": "USDT",
-  "chain": "TRON",
+  "sign": "a1b2c3d4e5f67890abcdef...",
+  "timestamp": 1717000000,
+  "nonce": "550e8400-e29b-41d4-a716-446655440000",
   "data": {
-    "invoice_id": "inv_trc20_3a8b2df9",
-    "deposit_address": "TYpSq7f8MubE8bK6vG7m8F7WbA9c3DxE1F",
-    "expired_at": 1747833120,
-    "callback_payload_sign": "sha256_hmac_signature_proof"
+    "amount": "250.00",
+    "symbol": "USDT",
+    "chain": "TRON",
+    "orderId": "merchant_order_001"
   }
 }`,
-    node: `import { XPayGateway } from '@xpaylabs/sdk';
- 
- const gateway = new XPayGateway({
-   secretKey: 'xpay_live_8f3a9d7219bc',
-   endpoint: 'https://gateway.yourdomain.com'
- });
- 
- const invoice = await gateway.payments.create({
-   amount: 100.00,
-   currency: 'USDT',
-   chain: 'TRON',
-   orderId: 'order_783120'
- });
- 
- console.log(\`Deposit target generated: \${invoice.depositAddress}\`);`
+    node: `import crypto from "crypto";
+
+const GATEWAY_URL = "http://your-gateway:3010";
+const MERCHANT_TOKEN = "your-merchant-token";
+
+function signRequest(data) {
+  return crypto
+    .createHmac("sha256", MERCHANT_TOKEN)
+    .update(JSON.stringify(data), "utf8")
+    .digest("hex");
+}
+
+const data = {
+  amount: "250.00",
+  symbol: "USDT",
+  chain: "TRON",
+  orderId: "merchant_order_001",
+};
+
+const payload = {
+  sign: signRequest(data),
+  timestamp: Math.floor(Date.now() / 1000),
+  nonce: crypto.randomUUID(),
+  data,
+};
+
+const response = await fetch(
+  \`\${GATEWAY_URL}/v1/order/createCollection\`,
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  }
+);
+
+const result = await response.json();
+console.log("Address:", result.data.address);
+console.log("Pay URL:", result.data.paymentUrl);`
   };
 
   const handleCopyCode = () => {
@@ -61,15 +87,18 @@ export default function ApiShowcase() {
     if (activeTab === 'curl') {
       return (
         <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-          <span className="text-brand-purple">curl</span> <span className="text-brand-blue">-X</span> <span className="text-brand-cyan">POST</span> <span className="text-teal-400">{"\"https://gateway.yourdomain.com/v1/payments\""}</span> \<br />
-          &nbsp;&nbsp;<span className="text-brand-blue">-H</span> <span className="text-teal-400">{"\"Authorization: Bearer xpay_live_8f3a9d7219bc\""}</span> \<br />
+          <span className="text-brand-purple">curl</span> <span className="text-brand-blue">-X</span> <span className="text-brand-cyan">POST</span> <span className="text-teal-400">{"\"http://your-gateway:3010/v1/order/createCollection\""}</span> \<br />
           &nbsp;&nbsp;<span className="text-brand-blue">-H</span> <span className="text-teal-400">{"\"Content-Type: application/json\""}</span> \<br />
           &nbsp;&nbsp;<span className="text-brand-blue">-d</span> <span className="text-gray-400">{"'{"}</span><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"amount\""}</span>: <span className="text-teal-300">{"\"100.00\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"currency\""}</span>: <span className="text-teal-300">{"\"USDT\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"chain\""}</span>: <span className="text-teal-300">{"\"TRON\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"order_id\""}</span>: <span className="text-teal-300">{"\"order_783120\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"callback_url\""}</span>: <span className="text-teal-300">{"\"https://api.merchant.com/v1/webhooks/xpay\""}</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"sign\""}</span>: <span className="text-teal-300">{"\"a1b2c3d4e5f6...\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"timestamp\""}</span>: <span className="text-purple-400">1717000000</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"nonce\""}</span>: <span className="text-teal-300">{"\"550e8400-e29b-41d4-a716-446655440000\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"data\""}</span>: <span className="text-gray-500">{"{"}</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"amount\""}</span>: <span className="text-teal-300">{"\"250.00\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"symbol\""}</span>: <span className="text-teal-300">{"\"USDT\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"chain\""}</span>: <span className="text-teal-300">{"\"TRON\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"orderId\""}</span>: <span className="text-teal-300">{"\"merchant_order_001\""}</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-gray-500">{"}"}</span><br />
           &nbsp;&nbsp;<span className="text-gray-400">{"}'"}</span>
         </code>
       );
@@ -78,14 +107,14 @@ export default function ApiShowcase() {
       return (
         <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
           <span className="text-gray-500">{"{"}</span><br />
-          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"amount\""}</span>: <span className="text-teal-300">{"\"100.00\""}</span>,<br />
-          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"currency\""}</span>: <span className="text-teal-300">{"\"USDT\""}</span>,<br />
-          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"chain\""}</span>: <span className="text-teal-300">{"\"TRON\""}</span>,<br />
+          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"sign\""}</span>: <span className="text-teal-300">{"\"a1b2c3d4e5f67890abcdef...\""}</span>,<br />
+          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"timestamp\""}</span>: <span className="text-purple-400">1717000000</span>,<br />
+          &nbsp;&nbsp;<span className="text-brand-cyan">{"\"nonce\""}</span>: <span className="text-teal-300">{"\"550e8400-e29b-41d4-a716-446655440000\""}</span>,<br />
           &nbsp;&nbsp;<span className="text-brand-cyan">{"\"data\""}</span>: <span className="text-gray-500">{"{"}</span><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"invoice_id\""}</span>: <span className="text-teal-300">{"\"inv_trc20_3a8b2df9\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"deposit_address\""}</span>: <span className="text-teal-300">{"\"TYpSq7f8MubE8bK6vG7m8F7WbA9c3DxE1F\""}</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"expired_at\""}</span>: <span className="text-purple-400">1747833120</span>,<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"callback_payload_sign\""}</span>: <span className="text-teal-300">{"\"sha256_hmac_signature_proof\""}</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"amount\""}</span>: <span className="text-teal-300">{"\"250.00\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"symbol\""}</span>: <span className="text-teal-300">{"\"USDT\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"chain\""}</span>: <span className="text-teal-300">{"\"TRON\""}</span>,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"orderId\""}</span>: <span className="text-teal-300">{"\"merchant_order_001\""}</span><br />
           &nbsp;&nbsp;<span className="text-gray-500">{"}"}</span><br />
           <span className="text-gray-500">{"}"}</span>
         </code>
@@ -93,18 +122,38 @@ export default function ApiShowcase() {
     }
     return (
       <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-        <span className="text-brand-purple">import</span> <span className="text-gray-300">{"{"}</span> <span className="text-brand-cyan">XPayGateway</span> <span className="text-gray-300">{"}"}</span> <span className="text-brand-purple">from</span> <span className="text-teal-400">{"'@xpaylabs/sdk'"}</span>;<br /><br />
-        <span className="text-brand-purple">const</span> <span className="text-gray-300">gateway</span> = <span className="text-brand-purple">new</span> <span className="text-blue-400">XPayGateway</span><span className="text-gray-500">({"{"})</span><br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">secretKey</span>: <span className="text-teal-400">{"'xpay_live_8f3a9d7219bc'"}</span>,<br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">endpoint</span>: <span className="text-teal-400">{"'https://gateway.yourdomain.com'"}</span><br />
-        <span className="text-gray-500">{"});"}</span><br /><br />
-        <span className="text-brand-purple">const</span> <span className="text-gray-300">invoice</span> = <span className="text-brand-purple">await</span> <span className="text-gray-300">gateway</span>.<span className="text-blue-400">payments</span>.<span className="text-blue-400">create</span><span className="text-gray-500">({"{"})</span><br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">amount</span>: <span className="text-purple-400">100.00</span>,<br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">currency</span>: <span className="text-teal-400">{"'USDT'"}</span>,<br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">chain</span>: <span className="text-teal-400">{"'TRON'"}</span>,<br />
-        &nbsp;&nbsp;<span className="text-brand-cyan">orderId</span>: <span className="text-teal-400">{"'order_783120'"}</span><br />
-        <span className="text-gray-500">{"});"}</span><br /><br />
-        <span className="text-gray-400">{"console.log(`Deposit target generated: ${invoice.depositAddress}`);"}</span>
+        <span className="text-brand-purple">import</span> <span className="text-gray-300">crypto</span> <span className="text-brand-purple">from</span> <span className="text-teal-400">{"\"crypto\""}</span>;<br /><br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">GATEWAY_URL</span> = <span className="text-teal-400">{"\"http://your-gateway:3010\""}</span>;<br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">MERCHANT_TOKEN</span> = <span className="text-teal-400">{"\"your-merchant-token\""}</span>;<br /><br />
+        <span className="text-brand-purple">function</span> <span className="text-blue-400">signRequest</span><span className="text-gray-500">(</span><span className="text-gray-300">data</span><span className="text-gray-500">)</span> <span className="text-gray-500">{"{"}</span><br />
+        &nbsp;&nbsp;<span className="text-brand-purple">return</span> <span className="text-gray-300">crypto</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-blue-400">createHmac</span><span className="text-gray-500">(</span><span className="text-teal-400">{"\"sha256\""}</span>, <span className="text-gray-300">MERCHANT_TOKEN</span><span className="text-gray-500">)</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-blue-400">update</span><span className="text-gray-500">(</span><span className="text-blue-400">JSON</span>.<span className="text-blue-400">stringify</span><span className="text-gray-500">(</span><span className="text-gray-300">data</span><span className="text-gray-500">)</span>, <span className="text-teal-400">{"\"utf8\""}</span><span className="text-gray-500">)</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;.<span className="text-blue-400">digest</span><span className="text-gray-500">(</span><span className="text-teal-400">{"\"hex\""}</span><span className="text-gray-500">);</span><br />
+        <span className="text-gray-500">{"}"}</span><br /><br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">data</span> <span className="text-gray-500">=</span> <span className="text-gray-500">{"{"}</span><br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">amount</span>: <span className="text-teal-400">{"\"250.00\""}</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">symbol</span>: <span className="text-teal-400">{"\"USDT\""}</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">chain</span>: <span className="text-teal-400">{"\"TRON\""}</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">orderId</span>: <span className="text-teal-400">{"\"merchant_order_001\""}</span>,<br />
+        <span className="text-gray-500">{"};"}</span><br /><br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">payload</span> <span className="text-gray-500">=</span> <span className="text-gray-500">{"{"}</span><br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">sign</span>: <span className="text-blue-400">signRequest</span><span className="text-gray-500">(</span><span className="text-gray-300">data</span><span className="text-gray-500">)</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">timestamp</span>: <span className="text-blue-400">Math</span>.<span className="text-blue-400">floor</span><span className="text-gray-500">(</span><span className="text-blue-400">Date</span>.<span className="text-blue-400">now</span><span className="text-gray-500">()</span> / <span className="text-purple-400">1000</span><span className="text-gray-500">)</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">nonce</span>: <span className="text-gray-300">crypto</span>.<span className="text-blue-400">randomUUID</span><span className="text-gray-500">()</span>,<br />
+        &nbsp;&nbsp;<span className="text-brand-cyan">data</span>,<br />
+        <span className="text-gray-500">{"};"}</span><br /><br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">response</span> <span className="text-gray-500">=</span> <span className="text-brand-purple">await</span> <span className="text-blue-400">fetch</span><span className="text-gray-500">(</span><br />
+        &nbsp;&nbsp;<span className="text-teal-400">{"`${GATEWAY_URL}/v1/order/createCollection`"}</span>,<br />
+        &nbsp;&nbsp;<span className="text-gray-500">{"{"}</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">method</span>: <span className="text-teal-400">{"\"POST\""}</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">headers</span>: <span className="text-gray-500">{"{"}</span> <span className="text-teal-400">{"\"Content-Type\""}</span>: <span className="text-teal-400">{"\"application/json\""}</span> <span className="text-gray-500">{"}"}</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">body</span>: <span className="text-blue-400">JSON</span>.<span className="text-blue-400">stringify</span><span className="text-gray-500">(</span><span className="text-gray-300">payload</span><span className="text-gray-500">)</span>,<br />
+        &nbsp;&nbsp;<span className="text-gray-500">{"}"}</span><br />
+        <span className="text-gray-500">);</span><br /><br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">result</span> <span className="text-gray-500">=</span> <span className="text-brand-purple">await</span> <span className="text-gray-300">response</span>.<span className="text-blue-400">json</span><span className="text-gray-500">();</span><br />
+        <span className="text-gray-400">{"console.log(\"Address:\", result.data.address);"}</span><br />
+        <span className="text-gray-400">{"console.log(\"Pay URL:\", result.data.paymentUrl);"}</span>
       </code>
     );
   };
