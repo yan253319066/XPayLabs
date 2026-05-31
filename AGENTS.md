@@ -13,19 +13,15 @@ Single-package Next.js 15 App Router site (TypeScript, Tailwind v4, Motion, next
 
 No formatter, no typecheck script (`tsc --noEmit` runs during `build` only).
 
-## Translation (next-intl) — nonstandard
+## Translation (next-intl) — simplified
 
-Translations are **not** in `messages/`. They live in `lib/translations/en.ts` and `lib/translations/zh.ts`, exported as typed objects and imported manually:
+Translations live in `lib/translations/en.ts` and `lib/translations/zh.ts`, exported as typed objects.
 
-```tsx
-import { translations } from '@/lib/translations';
-// Page wraps children:
-<NextIntlClientProvider locale="en" messages={translations.en}>
-```
+A single `components/I18nProvider.tsx` client component detects locale via `usePathname()` and wraps the root layout — no per-page provider boilerplate.
 
-Components use `useTranslations()` from `next-intl` normally. The file `i18n/request.ts` is a stub (always returns `en` with empty messages) — do not rely on `next-intl/server` routing.
+Components use `useTranslations()` from `next-intl` normally. The file `i18n/request.ts` provides English translations as SSR fallback.
 
-Every page sets its own `metadata` from `translations.en.meta`.
+Every page sets its own hardcoded `metadata` (not from translations).
 
 ## Code conventions
 

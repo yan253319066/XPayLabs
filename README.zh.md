@@ -8,7 +8,7 @@
 
 **XPay Labs** 是一款自托管加密支付网关，支持在 TRON（TRC20）、EVM 链（Ethereum、BSC、Polygon、Arbitrum、Optimism、Avalanche）和 SUI 上接受稳定币支付（USDT、USDC）——零网关费，私钥完全自持。
 
-[官方网站](https://www.xpaylabs.com) · [开发文档](https://www.xpaylabs.com/docs) · [定价](https://www.xpaylabs.com/pricing.md) · [博客](https://www.xpaylabs.com/blog)
+[官方网站](https://www.xpaylabs.com) · [开发文档](https://www.xpaylabs.com/docs) · [定价](https://www.xpaylabs.com/pricing) · [博客](https://www.xpaylabs.com/blog)
 
 ---
 
