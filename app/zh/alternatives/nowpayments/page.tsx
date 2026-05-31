@@ -153,7 +153,7 @@ export default function NowPaymentsAlternativePage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} /> <JsonLd data={productSchema} />
-        <JsonLd data={breadcrumbSchema} /> <Header locale="zh" />
+        <JsonLd data={breadcrumbSchema} /> <Header />
         <main>
           {/* HERO */}
           <section className="relative pt-32 pb-20 gradient-bg">

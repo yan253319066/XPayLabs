@@ -123,7 +123,7 @@ export default function OpenNodeAlternativePage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} /> <JsonLd data={comparisonSchema} />
-        <JsonLd data={breadcrumbSchema} /> <Header locale="zh" />
+        <JsonLd data={breadcrumbSchema} /> <Header />
         <main className="relative gradient-bg pt-24 pb-20">
           {/* Hero Section */}
           <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">

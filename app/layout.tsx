@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css'; // Global styles
 import JsonLd from '../components/JsonLd';
 import I18nProvider from '../components/I18nProvider';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -87,7 +88,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
         <JsonLd data={softwareAppSchema} />
-        <I18nProvider>{children}</I18nProvider>
+        <ErrorBoundary>
+          <I18nProvider>{children}</I18nProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

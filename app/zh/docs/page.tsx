@@ -42,7 +42,7 @@ export default function ChineseDocsPage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-x-hidden">
         {/* Shared Nav Head */}
-        <Header locale="zh" />
+        <Header />
 
         {/* Docs Layout spacing */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">

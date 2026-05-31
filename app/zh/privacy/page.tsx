@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ChinesePrivacyPage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200">
-        <Header locale="zh" />
+        <Header />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
           <div className="flex items-center space-x-2 text-xs font-mono text-gray-500 hover:text-white transition-colors pb-4 border-b border-white/5 mb-10">

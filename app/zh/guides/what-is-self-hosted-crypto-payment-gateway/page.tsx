@@ -285,7 +285,7 @@ export default function WhatIsSelfHostedGatewayPage() {
       <JsonLd data={articleSchema} /> <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
-        <Header locale="zh" />
+        <Header />
         <main className="pt-28 pb-20">
           <div className="max-w-4xl mx-auto px-4">
             {/* Hero */}

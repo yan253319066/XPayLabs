@@ -121,7 +121,7 @@ export default function PricingPage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} /> <JsonLd data={breadcrumbSchema} />
-        <Header locale="zh" />
+        <Header />
         <main className="relative gradient-bg pt-24 pb-20">
           {/* Hero */}
           <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 text-center">

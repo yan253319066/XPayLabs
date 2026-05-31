@@ -40,7 +40,7 @@ export default function ChineseHomePage() {
   return (
       <div className="relative overflow-hidden selection:bg-brand-blue/30 text-gray-200">
         {/* Dynamic Header */}
-        <Header locale="zh" />
+        <Header />
 
         {/* Main Structural Layout items */}
         <main className="min-h-screen relative gradient-bg pt-16">

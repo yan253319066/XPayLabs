@@ -222,7 +222,7 @@ export default function TronPaymentGatewayPage() {
       <JsonLd data={faqSchema} /> <JsonLd data={howToSchema} />
       <JsonLd data={breadcrumbSchema} />
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
-        <Header locale="zh" />
+        <Header />
         <main className="relative gradient-bg pt-24 pb-20">
           {/* Hero 区域 */}
           <section className="relative overflow-hidden">

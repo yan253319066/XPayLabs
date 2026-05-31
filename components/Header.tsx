@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function Header({ locale }: { locale?: 'en' | 'zh' }) {
+export default function Header() {
   const t = useTranslations('navigation');
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Header({ locale }: { locale?: 'en' | 'zh' }) {
   const compareRef = useRef<HTMLLIElement>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const isZhPage = locale === 'zh' || (!locale && pathname.startsWith('/zh'));
+  const isZhPage = pathname.startsWith('/zh');
   const homePath = isZhPage ? '/zh' : '/';
   const isDocsPage = pathname.includes('/docs');
   const isHomePage = pathname === '/' || pathname === '/zh';
