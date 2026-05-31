@@ -17,7 +17,8 @@ export const zh: TranslationSet = {
     cta: "立即部署网关",
     product: "产品",
     compare: "对比",
-    pricing: "定价"
+    pricing: "定价",
+    blog: "博客"
   },
   hero: {
     title: "部署您专属的加密货币支付基础设施",

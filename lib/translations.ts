@@ -19,6 +19,7 @@ export interface TranslationSet {
     product: string;
     compare: string;
     pricing: string;
+    blog: string;
   };
   hero: {
     title: string;

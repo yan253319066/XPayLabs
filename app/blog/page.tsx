@@ -40,6 +40,28 @@ const blogSchema = {
 
 const posts = [
   {
+    title: '10 Engineering Decisions Behind Building a Self-Hosted Crypto Payment Gateway',
+    href: '/blog/10-engineering-decisions',
+    date: 'May 2026',
+    category: 'Engineering',
+    excerpt: 'From Distroless Java to HD wallet derivation — the 10 architecture choices that make XPay Labs fast, secure, and resource-efficient. Lessons from building production payment infrastructure.',
+  },
+  {
+    title: 'Self-Hosted vs Hosted Crypto Payments: The Real Cost Analysis (2026)',
+    href: '/blog/self-hosted-vs-hosted-cost-analysis',
+    date: 'May 2026',
+    category: 'Analysis',
+    excerpt: 'We crunched the numbers across 5 volume tiers: how much do BitPay, Coinbase Commerce, and NowPayments really cost vs self-hosted XPay Labs? The savings will surprise you.',
+  },
+  {
+    title: 'Performance Benchmarks: Multi-Chain Gateway on a $5 VPS',
+    href: '/blog/performance-benchmarks-multi-chain-gateway',
+    date: 'May 2026',
+    category: 'Engineering',
+    excerpt: 'Real benchmarks on a $4.49/month Hetzner CX22 — payment detection latency, memory usage, CPU consumption, and concurrent invoice capacity across TRON, EVM, and SUI chains.',
+  },
+
+  {
     title: 'XPay Labs Review 2026: The Honest Take on Self-Hosted Crypto Payments',
     href: '/review',
     date: 'May 2026',

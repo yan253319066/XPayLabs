@@ -17,7 +17,8 @@ export const en: TranslationSet = {
     cta: "Deploy Gateways",
     product: "Product",
     compare: "Compare",
-    pricing: "Pricing"
+    pricing: "Pricing",
+    blog: "Blog"
   },
   hero: {
     title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",

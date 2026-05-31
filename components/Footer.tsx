@@ -95,7 +95,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 hover:text-slate-300 transition-colors">
               <li><Link href={lh('/pricing')} className="hover:text-white transition-colors">{tFL('pricing')}</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href={lh('/blog')} className="hover:text-white transition-colors">{tNav('blog')}</Link></li>
               <li><Link href={lh('/alternatives/nowpayments')} className="hover:text-white transition-colors">{tFL('vsNowPayments')}</Link></li>
               <li><Link href={lh('/alternatives/btcpayserver')} className="hover:text-white transition-colors">{tFL('vsBtcpayserver')}</Link></li>
               <li><a href="https://github.com/yan253319066/XPayLabs" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{tFL('github')}</a></li>

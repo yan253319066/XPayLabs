@@ -308,13 +308,13 @@ export default function Header() {
               {/* Blog */}
               <li>
                 <Link
-                  href="/blog"
+                  href={lh('/blog')}
                   className={`relative py-1.5 px-0.5 font-sans text-sm font-medium transition-colors ${
-                    pathname === '/blog' ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
+                    pathname === '/blog' || pathname === '/zh/blog' || pathname.startsWith('/zh/blog/') ? 'text-[#5B8CFF]' : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <span>Blog</span>
-                  {pathname === '/blog' && (
+                  <span>{t('blog')}</span>
+                  {(pathname === '/blog' || pathname === '/zh/blog' || pathname.startsWith('/zh/blog/')) && (
                     <motion.span
                       layoutId="activeNavIndicator"
                       className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-brand-blue to-brand-cyan shadow-[0_0_8px_rgba(91,140,255,0.6)]"
@@ -441,11 +441,11 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="/blog"
+                href={lh('/blog')}
                 onClick={closeMobile}
                 className="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
               >
-                Blog
+                {t('blog')}
               </Link>
               <Link
                 href={lh('/pricing')}

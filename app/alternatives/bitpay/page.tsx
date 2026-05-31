@@ -478,6 +478,71 @@ export default function BitPayAlternativePage() {
             </div>
           </section>
 
+          {/* Performance Comparison */}
+          <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 className="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight mb-8 text-center">
+              Technical & Performance Comparison
+            </h2>
+            <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base max-w-3xl mx-auto text-center mb-10">
+              Beyond fees and custody, the technical architecture differences between BitPay and XPay Labs
+              have measurable impacts on settlement speed, infrastructure cost, and developer productivity.
+            </p>
+            <div className="overflow-x-auto rounded-2xl border border-white/5">
+              <table className="w-full text-left text-sm font-sans">
+                <thead>
+                  <tr className="bg-[#0b0e25] border-b border-white/8">
+                    <th className="p-4 text-gray-400 font-medium w-1/3">Metric</th>
+                    <th className="p-4 text-orange-400 font-medium w-1/3">BitPay</th>
+                    <th className="p-4 text-brand-cyan font-medium w-1/3">XPay Labs</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">Settlement Speed</td>
+                    <td className="p-4 text-gray-400">T+1 to T+3 business days</td>
+                    <td className="p-4 text-green-400">Real-time (on-chain finality)</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">Payment Detection Latency</td>
+                    <td className="p-4 text-gray-400">~30s–2min (IPN polling)</td>
+                    <td className="p-4 text-green-400">&lt;500ms TRON, &lt;1s EVM</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">Infrastructure Cost</td>
+                    <td className="p-4 text-gray-400">$30–$300+/month + 1% per tx</td>
+                    <td className="p-4 text-green-400">$5–$20/month VPS + 0% per tx</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">API Response Time (p95)</td>
+                    <td className="p-4 text-gray-400">~200–500ms (SaaS, shared)</td>
+                    <td className="p-4 text-green-400">&lt;50ms (self-hosted, local)</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">Blockchain Coverage</td>
+                    <td className="p-4 text-gray-400">5 chains, no L2s</td>
+                    <td className="p-4 text-green-400">TRON + 20+ EVM chains + SUI</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">White-Label Support</td>
+                    <td className="p-4 text-gray-400">Enterprise plan only</td>
+                    <td className="p-4 text-green-400">Free, included by default</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition-colors">
+                    <td className="p-4 text-gray-300 font-medium">Deployment Time</td>
+                    <td className="p-4 text-gray-400">Instant (SaaS signup)</td>
+                    <td className="p-4 text-green-400">~15–30 min (Docker Compose)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-6 p-4 rounded-xl bg-brand-blue/5 border border-brand-blue/10 text-xs text-gray-400 font-sans leading-relaxed max-w-3xl mx-auto">
+              <strong className="text-gray-300">Real-world impact:</strong> A merchant processing $100k/month on BitPay
+              pays ~$12,000+/year in fees and waits 1–3 days for settlement. The same merchant on XPay Labs pays
+               ~$120/year for a VPS and receives funds instantly. Over 3 years, that's ~$35,640 in savings — enough
+               to cover a year of VPS hosting for your entire infrastructure stack.
+            </div>
+          </section>
+
           {/* Honest Assessment */}
           <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 className="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight mb-8 text-center">
