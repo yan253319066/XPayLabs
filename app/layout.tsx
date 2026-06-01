@@ -4,6 +4,7 @@ import './globals.css'; // Global styles
 import JsonLd from '../components/JsonLd';
 import I18nProvider from '../components/I18nProvider';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -91,6 +92,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <ErrorBoundary>
           <I18nProvider>{children}</I18nProvider>
         </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
