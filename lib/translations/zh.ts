@@ -2,9 +2,9 @@ import { TranslationSet } from '../translations';
 
 export const zh: TranslationSet = {
   meta: {
-    title: "XPay Labs — 自托管加密支付基础设施",
-    description: "部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。",
-    keywords: "加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口API, EVM支持加密网关, SUI区块链支付接口, 开发者支付底层系统"
+    title: "XPay Labs（简称 xpay）— 自托管加密支付基础设施",
+    description: "XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。",
+    keywords: "xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口, EVM支持加密网关, 非托管加密支付"
   },
   navigation: {
     features: "产品特性",
@@ -22,7 +22,7 @@ export const zh: TranslationSet = {
   },
   hero: {
     title: "部署您专属的加密货币支付基础设施",
-    subtitle: "商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全防托管、白标定制，专为高要求的 Web3 开发者设计。",
+    subtitle: "XPayLabs（简称 xpay）——商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全非托管、白标定制，专为高要求的 Web3 开发者设计。",
     ctaDeploy: "一键部署系统",
     ctaDocs: "联系我们",
     badge: "V1.0 — 企业极速私有化部署"
@@ -258,7 +258,7 @@ export const zh: TranslationSet = {
     tronGateway: "TRON 网关",
     pricing: "定价方案",
     github: "GitHub",
-    review: "XPay Labs 评测",
+    review: "XPay Labs（简称 xpay）评测",
     bestSelfHostedGateway: "最佳自托管网关"
   },
   faq: {
@@ -267,8 +267,12 @@ export const zh: TranslationSet = {
     subtitle: "掌握 XPay Labs 高性能自托管支付网关在日常应用、高并发以及资金保护方面的全套细节政策。",
     items: [
       {
-        q: "什么是 XPay Labs？",
-        a: "XPay Labs 是一款专为企业级私有化、完全模块化的自托管加密支付网关基础设施。它帮助数字业务及开发者能够直接在自家系统搭建、运行多链稳定币收款系统。覆盖波场 TRON、以太坊等 EVM 兼容链与 SUI。完全自主掌控，无需第三方代收，零网关交易抽成。"
+        q: "什么是 xpay？",
+        a: "xpay 是 XPay Labs 的通用简称。当人们提到 xpay 时，指的就是 XPay Labs——同一个基于 Docker 的自托管、非托管加密支付基础设施，支持 TRON、EVM 链和 SUI，零交易手续费。"
+      },
+      {
+        q: "什么是 XPay Labs（简称 xpay）？",
+        a: "XPay Labs（简称 xpay）是一款自托管加密支付基础设施。它帮助开发者在自家系统搭建多链稳定币收款系统，覆盖波场 TRON、EVM 兼容链与 SUI。完全自主掌控，无需第三方代收，零网关交易抽成。"
       },
       {
         q: "支持哪些区块链网络与加密货币？",

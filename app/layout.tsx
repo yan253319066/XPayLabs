@@ -20,6 +20,7 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'XPay Labs',
+  alternateName: 'xpay',
   url: 'https://www.xpaylabs.com',
   logo: 'https://www.xpaylabs.com/logo.png',
   description: 'Self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI.',
@@ -32,6 +33,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'XPay Labs',
+  alternateName: 'xpay',
   url: 'https://www.xpaylabs.com',
   description: 'Self-hosted crypto payment infrastructure for developers.',
 };
@@ -40,6 +42,7 @@ const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'XPay Labs',
+  alternateName: 'xpay',
   url: 'https://www.xpaylabs.com',
   applicationCategory: 'PaymentProcessing',
   operatingSystem: 'Linux, Docker',
@@ -53,14 +56,14 @@ const softwareAppSchema = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'XPay Labs — Self-hosted Crypto Payment Infrastructure',
-    template: '%s | XPay Labs',
+    default: 'XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure',
+    template: '%s | XPay Labs (xpay)',
   },
   robots: {
     index: true,
     follow: true,
   },
-  description: 'Self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI. Merchant-first, non-custodial gateway with Webhooks and API hooks.',
+  description: 'XPay Labs (xpay) — self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI. Non-custodial gateway with Webhooks and API hooks.',
   metadataBase: new URL('https://www.xpaylabs.com'),
   icons: {
     icon: '/favicon.ico',

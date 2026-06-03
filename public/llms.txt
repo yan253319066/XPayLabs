@@ -1,9 +1,10 @@
-# XPay Labs — Self-Hosted Crypto Payment Gateway
+# XPay Labs (xpay) — Self-Hosted Crypto Payment Gateway
 
 > Deploy your own private, self-hosted crypto payment infrastructure. Non-custodial, 0% fees, multi-chain — supporting TRON (TRC20), 20+ EVM networks, and SUI.
 
 ## Quick Facts
 
+- **Also known as:** xpay
 - **Product:** Self-hosted, non-custodial crypto payment gateway
 - **Pricing:** Free software — 0% transaction fees, 0% monthly fees
 - **Deployment:** Docker Compose on VPS or bare metal

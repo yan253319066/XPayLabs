@@ -152,10 +152,11 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href={homePath} className="flex items-center space-x-1.5 group">
-              <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
+              <Image src="/logo.png" alt="XPay Labs (xpay)" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-black text-xl tracking-tight group-hover:text-brand-cyan transition-colors italic">
                 XPay <span className="text-brand-blue not-italic font-bold">Labs</span>
               </span>
+              <span className="ml-2 px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-brand-blue/20 text-brand-blue border border-brand-blue/30 rounded">xpay</span>
             </Link>
           </div>
 

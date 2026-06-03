@@ -19,17 +19,17 @@ import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
-  title: 'XPay Labs 评测 — 自托管加密支付基础设施 2026 | XPay Labs',
+  title: 'XPay Labs（简称 xpay）评测 — 自托管加密支付基础设施 2026',
   description:
-    '阅读我们真实的 XPay Labs 评测。功能特性、定价方案、优缺点，以及与 BitPay、Coinbase Commerce、NowPayments 和 BTCPay Server 的对比。XPay Labs 是否适合您的业务？',
+    '阅读 XPay Labs（xpay）的真实评测——功能、定价、优缺点及竞品对比。',
   keywords: [
     'XPay Labs 评测',
-    'XPay Labs 真实评价',
+    'xpay 评测',
     '自托管加密支付网关评测',
-    'XPay Labs 功能',
-    'XPay Labs 定价',
+    'xpay 功能',
+    'xpay 定价',
     'XPay Labs 优缺点',
-    '加密支付基础设施评测',
+    'xpay 自托管网关',
   ],
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/review',
@@ -40,15 +40,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'XPay Labs 评测 2026 — 自托管加密支付基础设施真实评测',
-    description:
-      '全面的 XPay Labs 评测，涵盖功能特性、定价、优缺点及竞品对比。了解 XPay Labs 是否是适合您的自托管加密支付网关。',
+    title: 'XPay Labs（xpay）评测 2026 — 自托管加密支付基础设施',
+    description: 'XPay Labs（xpay）的全面评测——功能、定价、优缺点及竞品对比。',
     url: 'https://www.xpaylabs.com/zh/review',
     type: 'article',
   },
   twitter: {
-    title: 'XPay Labs 评测 2026 — 自托管加密支付网关真实评测',
-    description: '全面的 XPay Labs 评测，涵盖功能特性、定价、优缺点。',
+    title: 'XPay Labs（xpay）评测 2026 — 自托管加密支付网关',
+    description: 'XPay Labs（xpay）的全面评测——功能、定价、优缺点。',
     card: 'summary_large_image',
   },
 };
@@ -111,11 +110,12 @@ const reviewSchema = {
   '@type': 'Review',
   itemReviewed: {
     '@type': 'SoftwareApplication',
-    name: 'XPay Labs',
+    name: 'XPay Labs (xpay)',
+    alternateName: 'xpay',
     applicationCategory: 'PaymentProcessing',
     operatingSystem: 'Docker, Linux',
   },
-  author: { '@type': 'Organization', name: 'XPay Labs' },
+  author: { '@type': 'Organization', name: 'XPay Labs (xpay)' },
   reviewRating: {
     '@type': 'Rating',
     ratingValue: '4.8',
@@ -123,7 +123,7 @@ const reviewSchema = {
     worstRating: '1',
   },
   datePublished: '2026-05-31',
-  description: 'XPay Labs 是一款自托管、非托管的加密支付网关，支持 TRON、EVM 链和 SUI，零交易手续费。',
+  description: 'XPay Labs（xpay）是一款自托管、非托管的加密支付网关，支持 TRON、EVM 链和 SUI，零交易手续费。',
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

@@ -40,6 +40,13 @@ const blogSchema = {
 
 const posts = [
   {
+    title: 'Why We Call It xpay — The Story Behind the XPay Labs Brand',
+    href: '/blog/why-xpay',
+    date: 'June 2026',
+    category: 'Brand',
+    excerpt: 'The story behind why XPay Labs is commonly called xpay, how a shorthand became our brand alias, and why it matters for developers searching for self-hosted crypto payment infrastructure.',
+  },
+  {
     title: '10 Engineering Decisions Behind Building a Self-Hosted Crypto Payment Gateway',
     href: '/blog/10-engineering-decisions',
     date: 'May 2026',
@@ -109,6 +116,13 @@ const posts = [
     date: 'May 2026',
     category: 'Solution',
     excerpt: 'A deep dive into building a self-hosted USDT payment gateway on TRON. Covers TRC-20 token support, energy management, TronGrid integration, and HD wallet derivation for merchant payment processing.',
+  },
+  {
+    title: 'XPay Labs (xpay) vs BTCPay Server: Self-Hosted Crypto Payment Gateways Compared (2026)',
+    href: '/blog/xpay-labs-vs-btcpayserver',
+    date: 'June 2026',
+    category: 'Comparison',
+    excerpt: 'A detailed head-to-head comparison of XPay Labs and BTCPay Server across chain support, pricing, security, developer experience, and more. Which self-hosted gateway wins in 2026?',
   },
   {
     title: 'BTCPay Server Alternative: Multi-Chain Stablecoin Payments',

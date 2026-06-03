@@ -2,9 +2,9 @@ import { TranslationSet } from '../translations';
 
 export const en: TranslationSet = {
   meta: {
-    title: "XPay Labs — Self-hosted Crypto Payment Infrastructure",
-    description: "Deploy your own private, self-hosted crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Secure, non-custodial payment infrastructure for developers.",
-    keywords: "crypto payment infrastructure, self-hosted crypto payment system, stablecoin payments, TRC20 payment API, EVM payment infrastructure, SUI payment API, developer payment infrastructure"
+    title: "XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure",
+    description: "XPay Labs (xpay) — self-hosted crypto payment infrastructure. Deploy your own private, non-custodial crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI.",
+    keywords: "xpay, XPay Labs, self-hosted crypto payment infrastructure, crypto payment gateway, stablecoin payments, TRC20 payment API, EVM payment infrastructure, developer payment infrastructure"
   },
   navigation: {
     features: "Features",
@@ -22,7 +22,7 @@ export const en: TranslationSet = {
   },
   hero: {
     title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",
-    subtitle: "Private, containerized and self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power.",
+    subtitle: "XPay Labs (often called xpay) is a self-hosted crypto payment infrastructure. Private, containerized system supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power.",
     ctaDeploy: "Deploy Your System",
     ctaDocs: "Contact Us",
     badge: "V1.0 — DEPLOY INSTANTLY"
@@ -258,7 +258,7 @@ export const en: TranslationSet = {
     tronGateway: "TRON Gateway",
     pricing: "Pricing",
     github: "GitHub",
-    review: "XPay Labs Review",
+    review: "XPay Labs (xpay) Review",
     bestSelfHostedGateway: "Best Self-Hosted Gateway"
   },
   faq: {
@@ -267,8 +267,12 @@ export const en: TranslationSet = {
     subtitle: "Everything you need to know about setting up and running your high-performance self-hosted cryptopayment nodes.",
     items: [
       {
-        q: "What is XPay Labs?",
-        a: "XPay Labs is a fully modular, self-hosted crypto payment infrastructure. It enables companies and developers to scan, accept, and settle stablecoin payments natively on TRON, EVM chains, and SUI without relying on a custodial third-party or paying processing commission."
+        q: "What is xpay?",
+        a: "xpay is the common shorthand for XPay Labs, a self-hosted, non-custodial crypto payment infrastructure. When people refer to xpay, they are talking about XPay Labs — the same Docker-based gateway that supports TRON, EVM chains, and SUI with zero transaction fees."
+      },
+      {
+        q: "What is XPay Labs (xpay)?",
+        a: "XPay Labs (often shortened to xpay) is a fully modular, self-hosted crypto payment infrastructure. It enables companies and developers to scan, accept, and settle stablecoin payments natively on TRON, EVM chains, and SUI without relying on a custodial third-party or paying processing commission."
       },
       {
         q: "Which blockchains and tokens are supported?",

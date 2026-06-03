@@ -2,11 +2,11 @@
 <img src="public/logo.png" alt="XPay Labs Logo — Self-hosted Crypto Payment Gateway" width="80" />
 </div>
 
-# XPay Labs — Self-hosted Crypto Payment Infrastructure | Open Source Crypto Payment Gateway
+# XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure | Open Source Crypto Payment Gateway
 
-> **V1.0** — Private, containerized, self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.
+> **V1.0** — XPay Labs (often called xpay) is a private, containerized, self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.
 
-**XPay Labs** is an open source, self-hosted crypto payment gateway that lets you accept stablecoin payments (USDT, USDC) across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI — with zero gateway fees and full control over your private keys. A non-custodial BitPay alternative for developers who want to own their payment infrastructure.
+**XPay Labs (xpay)** is an open source, self-hosted crypto payment gateway that lets you accept stablecoin payments (USDT, USDC) across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI — with zero gateway fees and full control over your private keys. A non-custodial BitPay alternative for developers who want to own their payment infrastructure.
 
 [Website](https://www.xpaylabs.com) · [Documentation](https://docs.xpaylabs.com) · [Pricing](https://www.xpaylabs.com/pricing) · [Blog](https://www.xpaylabs.com/blog)
 

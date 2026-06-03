@@ -1,4 +1,4 @@
-# XPay Labs — Agent Guide
+# XPay Labs (xpay) — Agent Guide
 
 Single-package Next.js 15 App Router site (TypeScript, Tailwind v4, Motion, next-intl). No monorepo, no CI, no test framework.
 

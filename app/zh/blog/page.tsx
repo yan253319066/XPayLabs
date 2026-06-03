@@ -41,6 +41,13 @@ const blogSchema = {
 
 const posts = [
   {
+    title: '为什么叫 xpay — XPay Labs 品牌简称背后的故事',
+    href: '/zh/blog/why-xpay',
+    date: '2026 年 6 月',
+    category: '品牌',
+    excerpt: '为什么 XPay Labs 通常被称为 xpay？一个简称如何成为我们的品牌别名，以及这对开发者搜索自托管加密支付基础设施的意义。',
+  },
+  {
     title: '自托管加密货币支付网关的 10 个工程决策',
     href: '/zh/blog/10-engineering-decisions',
     date: '2026 年 5 月',
@@ -60,6 +67,13 @@ const posts = [
     date: '2026 年 5 月',
     category: '工程',
     excerpt: '在 $4.49/月的 Hetzner CX22 上实测：TRON、EVM、SUI 三条链的支付检测延迟、内存占用、CPU 消耗和并发发票处理能力。',
+  },
+  {
+    title: 'XPay Labs（xpay）vs BTCPay Server：自托管加密支付网关对比（2026）',
+    href: '/zh/blog/xpay-labs-vs-btcpayserver',
+    date: '2026 年 6 月',
+    category: '对比',
+    excerpt: 'XPay Labs 与 BTCPay Server 的详细对比——链支持、定价、安全、开发者体验等多个维度。哪个自托管支付网关在 2026 年更胜一筹？',
   },
 ];
 

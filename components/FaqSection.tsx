@@ -19,6 +19,7 @@ export default function FaqSection() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "XPay Labs",
+    "alternateName": "xpay",
     "url": "https://www.xpaylabs.com",
     "logo": "https://www.xpaylabs.com/logo.png",
     "description": "Self-hosted crypto payment infrastructure for TRON, EVM chains, and SUI."

@@ -155,7 +155,10 @@ export default function EngineeringDecisionsPage() {
             ))}
 
             <BlogNavigation
-              prev={null}
+              prev={{
+                href: '/blog/why-xpay',
+                title: 'Why We Call It xpay — The Story Behind the XPay Labs Brand',
+              }}
               next={{
                 href: '/blog/self-hosted-vs-hosted-cost-analysis',
                 title: 'Self-Hosted vs Hosted Crypto Payments: A Real Cost Analysis (2026)',

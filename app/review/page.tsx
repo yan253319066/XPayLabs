@@ -7,21 +7,21 @@ import Footer from '../../components/Footer';
 import JsonLd from '../../components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'XPay Labs Review 2026 — Self-Hosted Crypto Payment Gateway Honest Review',
-  description: 'Read our honest XPay Labs review. Features, pricing, pros and cons, and how it compares to BitPay, Coinbase Commerce, NowPayments, and BTCPay Server. Is XPay Labs right for your business?',
-  keywords: ['XPay Labs review', 'XPay Labs honest review', 'self-hosted crypto payment gateway review', 'XPay Labs features', 'XPay Labs pricing', 'XPay Labs pros and cons', 'crypto payment infrastructure review'],
+  title: 'XPay Labs (xpay) Review 2026 — Self-Hosted Crypto Payment Gateway Honest Review',
+  description: 'Read our honest XPay Labs (xpay) review. Features, pricing, pros and cons, and how it compares to BitPay, Coinbase Commerce, NowPayments, and BTCPay Server.',
+  keywords: ['XPay Labs review', 'xpay review', 'self-hosted crypto payment gateway review', 'xpay features', 'xpay pricing', 'crypto payment infrastructure review'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/review',
   },
   openGraph: {
-    title: 'XPay Labs Review 2026 — The Honest Review of Self-Hosted Crypto Payment Infrastructure',
-    description: 'Comprehensive XPay Labs review covering features, pricing, pros and cons, and competitive comparisons. See if XPay Labs is the right self-hosted crypto payment gateway for you.',
+    title: 'XPay Labs (xpay) Review 2026 — Self-Hosted Crypto Payment Infrastructure',
+    description: 'Comprehensive XPay Labs (xpay) review covering features, pricing, pros and cons, and competitive comparisons.',
     url: 'https://www.xpaylabs.com/review',
     type: 'article',
   },
   twitter: {
-    title: 'XPay Labs Review 2026 — Honest Review of Self-Hosted Crypto Payment Gateway',
-    description: 'Comprehensive XPay Labs review covering features, pricing, pros and cons.',
+    title: 'XPay Labs (xpay) Review 2026 — Self-Hosted Crypto Payment Gateway Review',
+    description: 'Comprehensive XPay Labs (xpay) review covering features, pricing, pros and cons.',
     card: 'summary_large_image',
   },
 };

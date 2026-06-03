@@ -154,7 +154,10 @@ export default function ZhEngineeringDecisionsPage() {
             ))}
 
             <BlogNavigation
-              prev={null}
+              prev={{
+                href: '/zh/blog/why-xpay',
+                title: '为什么叫 xpay — XPay Labs 品牌简称背后的故事',
+              }}
               next={{
                 href: '/zh/blog/self-hosted-vs-hosted-cost-analysis',
                 title: '自托管 vs 托管加密货币支付：真实成本分析（2026）',

@@ -14,9 +14,9 @@ import CtaSection from '../../components/CtaSection';
 import Footer from '../../components/Footer';
 
 export const metadata: Metadata = {
-  title: { absolute: 'XPay Labs — 自托管加密支付基础设施' },
-  description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
-  keywords: '加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口API, EVM支持加密网关, SUI区块链支付接口, 开发者支付底层系统',
+  title: { absolute: 'XPay Labs（简称 xpay）— 自托管加密支付基础设施' },
+  description: 'XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。',
+  keywords: 'xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口, EVM支持加密网关, 非托管加密支付',
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh',
     languages: {
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'XPay Labs — 自托管加密支付基础设施',
-    description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
+    title: 'XPay Labs（简称 xpay）— 自托管加密支付基础设施',
+    description: 'XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关。',
     url: 'https://www.xpaylabs.com/zh',
   },
   twitter: {
-    title: 'XPay Labs — 自托管加密支付基础设施',
-    description: '部署您专属的私有、自托管加密货币支付网关。支持波场 TRON (TRC20 USDT)、所有 EVM 网络以及 SUI。专为开发者打造的非托管安全收款架构。',
+    title: 'XPay Labs（简称 xpay）— 自托管加密支付基础设施',
+    description: 'XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关。',
   },
 };
 

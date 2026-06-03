@@ -253,6 +253,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/blog/why-xpay`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/blog/xpay-labs-vs-btcpayserver`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     // Chinese blog pages
     {
       url: `${baseUrl}/zh/blog`,
@@ -274,6 +286,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/zh/blog/performance-benchmarks-multi-chain-gateway`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/zh/blog/why-xpay`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/zh/blog/xpay-labs-vs-btcpayserver`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,

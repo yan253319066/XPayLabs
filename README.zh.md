@@ -2,11 +2,11 @@
 <img src="public/logo.png" alt="XPay Labs Logo — 自托管加密支付网关" width="80" />
 </div>
 
-# XPay Labs — 自托管加密支付基础设施
+# XPay Labs（简称 xpay）— 自托管加密支付基础设施
 
-> **V1.0** — 私有化、容器化的自托管支付基础设施，支持 TRON、所有 EVM 链和 SUI。完全非托管、白标商户网关，专为开发者打造。
+> **V1.0** — XPay Labs（简称 xpay）是一款私有化、容器化的自托管支付基础设施，支持 TRON、所有 EVM 链和 SUI。完全非托管、白标商户网关，专为开发者打造。
 
-**XPay Labs** 是一款自托管加密支付网关，支持在 TRON（TRC20）、EVM 链（Ethereum、BSC、Polygon、Arbitrum、Optimism、Avalanche）和 SUI 上接受稳定币支付（USDT、USDC）——零网关费，私钥完全自持。
+**XPay Labs（简称 xpay）** 是一款自托管加密支付网关，支持在 TRON（TRC20）、EVM 链（Ethereum、BSC、Polygon、Arbitrum、Optimism、Avalanche）和 SUI 上接受稳定币支付（USDT、USDC）——零网关费，私钥完全自持。
 
 [官方网站](https://www.xpaylabs.com) · [开发文档](https://docs.xpaylabs.com) · [定价](https://www.xpaylabs.com/pricing) · [博客](https://www.xpaylabs.com/blog)
 

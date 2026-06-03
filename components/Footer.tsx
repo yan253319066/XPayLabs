@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Slogan details */}
           <div className="space-y-4 md:col-span-2">
             <Link href={homePath} className="flex items-center space-x-1.5">
-              <Image src="/logo.png" alt="XPay Labs" width={64} height={64} className="w-16 h-16 object-contain" />
+              <Image src="/logo.png" alt="XPay Labs (xpay)" width={64} height={64} className="w-16 h-16 object-contain" />
               <span className="text-white font-display font-extrabold text-base tracking-tight italic">
                 XPAY <span className="text-[#5B8CFF]">LABS</span>
               </span>
@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 text-xs">
           <div className="space-y-1">
             <p className="text-slate-500 font-sans">
-              &copy; {launchYear} XPay Labs. {tFooter('allRights')}
+              &copy; {launchYear} XPay Labs (xpay). {tFooter('allRights')}
             </p>
             <p className="text-slate-400 font-sans flex items-center space-x-1">
               <ShieldCheck className="w-3.5 h-3.5 text-[#5B8CFF] shrink-0" />
