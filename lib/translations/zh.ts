@@ -80,6 +80,10 @@ export const zh: TranslationSet = {
       {
         title: "可信 Webhook 通知",
         description: "集成可靠的任务消息队列，支持重试、指数退避策略与 HMAC SHA256 签名，保证服务器接收万无一失。"
+      },
+      {
+        title: "x402 协议",
+        description: "AI 代理即付即用。一行代码集成 USDC 微支付，无需管理 API 密钥。支持按次付费调用 LLM 和 API。"
       }
     ]
   },

@@ -80,6 +80,10 @@ export const en: TranslationSet = {
       {
         title: "Webhook Events",
         description: "Fail-proof queue-backed webhooks that retry automatically on endpoint errors, supporting cryptographically HMAC-signed payloads."
+      },
+      {
+        title: "x402 Protocol",
+        description: "One-line USDC micropayments for AI agents and LLM APIs. No API key management. Pay per LLM call or API request."
       }
     ]
   },

@@ -199,6 +199,9 @@ export default function HeroSection() {
                   <span className="text-[10px] text-emerald-400 font-mono font-bold tracking-wide uppercase">
                     {t('heroDashboard.nodeActive')}
                   </span>
+                  <a href="https://docs.xpaylabs.com/guides/x402-overview" target="_blank" rel="noreferrer" className="text-[10px] text-[#5B8CFF] font-mono font-bold tracking-wide uppercase ml-2 hover:text-white transition-colors">
+                    x402
+                  </a>
                 </div>
               </div>
 
