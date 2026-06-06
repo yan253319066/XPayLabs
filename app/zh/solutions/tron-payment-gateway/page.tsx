@@ -248,7 +248,7 @@ export default function TronPaymentGatewayPage() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link
-                    href="/docs"
+                    href="https://docs.xpaylabs.com/"
                     className="px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-purple text-white rounded-full text-sm font-bold hover:opacity-90 transition-all shadow-[0_0_25px_rgba(91,140,255,0.3)]"
                   >
                     查看文档
@@ -830,7 +830,7 @@ export default function TronPaymentGatewayPage() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Link
-                    href="/docs"
+                    href="https://docs.xpaylabs.com/"
                     className="px-8 py-3.5 bg-gradient-to-r from-brand-blue to-brand-purple text-white rounded-full text-sm font-bold hover:opacity-90 transition-all shadow-[0_0_30px_rgba(91,140,255,0.3)]"
                   >
                     阅读文档

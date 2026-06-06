@@ -298,7 +298,7 @@ export default function HowToAcceptCryptoPaymentsPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" />
@@ -828,7 +828,7 @@ XPAY_CONFIRMATIONS=19`}</code>
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="glass-panel rounded-2xl p-5 hover:bg-white/[0.04] transition-all group"
                 >
                   <div className="flex items-center gap-3 mb-2">
@@ -891,7 +891,7 @@ XPAY_CONFIRMATIONS=19`}</code>
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link
-                    href="/docs"
+                    href="https://docs.xpaylabs.com/"
                     className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                   >
                     <Server className="w-4 h-4" />

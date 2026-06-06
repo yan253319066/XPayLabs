@@ -139,7 +139,7 @@ export default function ReviewPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" />
@@ -458,7 +458,7 @@ export default function ReviewPage() {
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/docs"
+                    href="https://docs.xpaylabs.com/"
                     className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                   >
                     <Server className="w-4 h-4" />
@@ -498,7 +498,7 @@ export default function ReviewPage() {
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link
-                    href="/docs"
+                    href="https://docs.xpaylabs.com/"
                     className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                   >
                     <Server className="w-4 h-4" />

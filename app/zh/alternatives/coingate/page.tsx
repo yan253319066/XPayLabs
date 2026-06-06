@@ -144,7 +144,7 @@ export default function CoinGateAlternativePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/docs"
+                href="https://docs.xpaylabs.com/"
                 className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
               >
                 <Server className="w-4 h-4" />
@@ -722,7 +722,7 @@ export default function CoinGateAlternativePage() {
                     <p className="text-sm text-gray-400 font-sans">
                       在您的 VPS 或服务器上启动 XPay Labs Docker 容器。配置节点种子、RPC 提供者和 HMAC 密钥的环境变量。完整说明请参阅
                       <Link
-                        href="/docs"
+                        href="https://docs.xpaylabs.com/"
                         className="text-brand-cyan hover:text-white transition-colors underline underline-offset-2"
                       >
                         部署指南
@@ -800,7 +800,7 @@ export default function CoinGateAlternativePage() {
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" /> <span>立即部署</span>

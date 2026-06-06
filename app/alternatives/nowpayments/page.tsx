@@ -156,7 +156,7 @@ export default function NowPaymentsAlternativePage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="px-8 py-3 bg-[#5B8CFF] hover:bg-[#4A7CEE] text-slate-900 font-extrabold rounded-full inline-flex items-center gap-2 shadow-[0_0_20px_rgba(91,140,255,0.4)] hover:shadow-[0_0_30px_rgba(91,140,255,0.6)] transition-all duration-300"
                 >
                   <span>Get Started Free</span>
@@ -749,7 +749,7 @@ export default function NowPaymentsAlternativePage() {
                     </p>
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4">
                       <Link
-                        href="/docs"
+                        href="https://docs.xpaylabs.com/"
                         className="px-8 py-3 bg-[#5B8CFF] hover:bg-[#4A7CEE] text-slate-900 font-extrabold rounded-full inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(91,140,255,0.4)] hover:shadow-[0_0_30px_rgba(91,140,255,0.6)] transition-all duration-300"
                       >
                         <span>Get Started Free</span>
@@ -787,7 +787,7 @@ export default function NowPaymentsAlternativePage() {
                   XPay vs Coinbase Commerce
                 </Link>
                 <span className="text-slate-600">·</span>
-                <Link href="/docs" className="text-[#5B8CFF] hover:text-[#00D1FF] transition-colors">
+                <Link href="https://docs.xpaylabs.com/" className="text-[#5B8CFF] hover:text-[#00D1FF] transition-colors">
                   Documentation
                 </Link>
                 <span className="text-slate-600">·</span>

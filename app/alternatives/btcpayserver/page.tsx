@@ -119,7 +119,7 @@ export default function BTCPayServerAlternativePage() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/docs"
+                href="https://docs.xpaylabs.com/"
                 className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
               >
                 <Server className="w-4 h-4" />
@@ -460,7 +460,7 @@ export default function BTCPayServerAlternativePage() {
                     <p className="text-sm text-gray-400 font-sans">
                       Spin up XPay Labs on a separate VPS or alongside your BTCPay instance. Configure RPC
                       endpoints for the chains you need. See the{' '}
-                      <Link href="/docs" className="text-brand-cyan hover:text-white transition-colors underline underline-offset-2">deployment guide</Link>.
+                      <Link href="https://docs.xpaylabs.com/" className="text-brand-cyan hover:text-white transition-colors underline underline-offset-2">deployment guide</Link>.
                     </p>
                   </div>
                 </div>
@@ -515,7 +515,7 @@ export default function BTCPayServerAlternativePage() {
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link
-                  href="/docs"
+                  href="https://docs.xpaylabs.com/"
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" />

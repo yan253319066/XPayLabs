@@ -351,7 +351,7 @@ export default function Header() {
 
             {/* CTA Button */}
             <Link
-              href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'}
+              href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`}
               className="px-5 py-2 bg-white text-[#060816] rounded-full text-xs font-bold hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] text-center tracking-tight"
             >
               {t('cta')}
@@ -452,7 +452,7 @@ export default function Header() {
               </Link>
               <div className="pt-3 border-t border-white/5 flex flex-col space-y-3 px-3">
                 <Link
-                  href={isDocsPage ? `${homePath}#dev-experience` : '#dev-experience'}
+                  href={isHomePage ? '#dev-experience' : `${homePath}#dev-experience`}
                   onClick={closeMobile}
                   className="w-full text-center py-2.5 px-4 rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple text-white font-semibold text-sm transition-all break-words"
                 >
