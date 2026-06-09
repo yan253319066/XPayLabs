@@ -112,7 +112,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#060816]">
+    <section className="relative pt-20 pb-20 lg:pt-28 lg:pb-32 overflow-hidden bg-[#060816]">
       {/* Background Glow Effects matching Professional Polish theme precisely */}
       <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#5B8CFF] opacity-10 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#7C4DFF] opacity-10 blur-[120px] rounded-full pointer-events-none"></div>

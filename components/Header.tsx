@@ -388,27 +388,43 @@ export default function Header() {
             transition={{ duration: 0.2 }}
             className="md:hidden border-t border-white/5 bg-[#090b1c]/95 backdrop-blur-lg overflow-hidden"
           >
-            <div className="px-4 pt-3 pb-6 space-y-3 overflow-x-hidden">
-              <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
-                {t('product')}
-              </div>
-              {sectionLinks.map((item) => {
-                const active = isActive(item.href);
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => { setProductOpen(false); closeMobile(); }}
-                    className={`block px-3 py-2 rounded-lg text-base font-medium transition-all break-words ${
-                      active
-                        ? 'text-[#5B8CFF] bg-[#5B8CFF]/5 font-semibold'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
+            <div className="px-4 pt-3 pb-6 space-y-3 overflow-x-hidden max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+              <button
+                onClick={() => setProductOpen(!productOpen)}
+                className="flex items-center justify-between w-full px-3 py-1.5 text-xs uppercase tracking-widest text-gray-500 font-bold font-mono"
+              >
+                <span>{t('product')}</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${productOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {productOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="overflow-hidden"
                   >
-                    {item.label}
-                  </Link>
-                );
-              })}
+                    {sectionLinks.map((item) => {
+                      const active = isActive(item.href);
+                      return (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          onClick={() => { setProductOpen(false); closeMobile(); }}
+                          className={`block px-3 py-2 rounded-lg text-base font-medium transition-all break-words ${
+                            active
+                              ? 'text-[#5B8CFF] bg-[#5B8CFF]/5 font-semibold'
+                              : 'text-gray-300 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <div className="border-t border-white/5 my-2" />
               <a
                 href="https://docs.xpaylabs.com/"
@@ -419,23 +435,39 @@ export default function Header() {
               >
                 {t('docs')}
               </a>
-              <div className="text-xs uppercase tracking-widest text-gray-500 font-bold px-3 pt-2 pb-1 font-mono">
-                {t('compare')}
-              </div>
-              {compareLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobile}
-                  className={`block px-3 py-2 rounded-lg text-base font-medium transition-all break-words ${
-                    pathname === item.href
-                      ? 'text-[#5B8CFF] bg-[#5B8CFF]/5 font-semibold'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <button
+                onClick={() => setCompareOpen(!compareOpen)}
+                className="flex items-center justify-between w-full px-3 py-1.5 text-xs uppercase tracking-widest text-gray-500 font-bold font-mono"
+              >
+                <span>{t('compare')}</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${compareOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {compareOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="overflow-hidden"
+                  >
+                    {compareLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => { setCompareOpen(false); closeMobile(); }}
+                        className={`block px-3 py-2 rounded-lg text-base font-medium transition-all break-words ${
+                          pathname === item.href
+                            ? 'text-[#5B8CFF] bg-[#5B8CFF]/5 font-semibold'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <Link
                 href={lh('/blog')}
                 onClick={closeMobile}
