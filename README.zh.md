@@ -6,7 +6,7 @@
 
 > **V1.0** — XPay Labs（简称 xpay）是一款私有化、容器化的自托管支付基础设施，支持 TRON、所有 EVM 链和 SUI。完全非托管、白标商户网关，专为开发者打造。
 
-**XPay Labs（简称 xpay）** 是一款自托管加密支付网关，支持在 TRON（TRC20）、EVM 链（Ethereum、BSC、Polygon、Arbitrum、Optimism、Avalanche）和 SUI 上接受稳定币支付（USDT、USDC）——零网关费，私钥完全自持。
+**XPay Labs（简称 xpay）** 是一款自托管加密支付网关，支持在 TRON（TRC20）、EVM 链（Ethereum、BSC、Polygon、Arbitrum、Optimism、Avalanche）和 SUI 上接受稳定币支付（USDT、USDC）——零网关费，私钥完全自持。原生多商家架构——一套部署可入驻无限商户，独立 API 凭证和可配置的费率结构。
 
 [官方网站](https://www.xpaylabs.com) · [开发文档](https://docs.xpaylabs.com) · [定价](https://www.xpaylabs.com/pricing) · [博客](https://www.xpaylabs.com/blog)
 
@@ -32,6 +32,7 @@
 - **REST API** — 全面的 Stripe 风格 API，支持 Node.js、Python、Go SDK
 - **实时监控** — 实时网关仪表盘，支持商户节点追踪和内存池可视化
 - **Webhook 系统** — 基于队列的 Webhook 通知，HMAC-SHA256 签名，指数退避重试
+- **多商家** — 一套部署入驻无限商户，独立 API 凭证、独立配置、自定义费率结构
 
 ## 快速开始（网关）
 

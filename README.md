@@ -6,7 +6,7 @@
 
 > **V1.0** — XPay Labs (often called xpay) is a private, containerized, self-hosted payment infrastructure supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways engineered for optimal developer power.
 
-**XPay Labs (xpay)** is an open source, self-hosted crypto payment gateway that lets you accept stablecoin payments (USDT, USDC) across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI — with zero gateway fees and full control over your private keys. A non-custodial BitPay alternative for developers who want to own their payment infrastructure.
+**XPay Labs (xpay)** is an open source, self-hosted crypto payment gateway that lets you accept stablecoin payments (USDT, USDC) across TRON (TRC20), EVM chains (Ethereum, BSC, Polygon, Arbitrum, Optimism, Avalanche), and SUI — with zero gateway fees and full control over your private keys. Multi-tenant by design — host unlimited merchants on a single deployment with isolated credentials and configurable fee structures. A non-custodial BitPay alternative for developers who want to own their payment infrastructure.
 
 [Website](https://www.xpaylabs.com) · [Documentation](https://docs.xpaylabs.com) · [Pricing](https://www.xpaylabs.com/pricing) · [Blog](https://www.xpaylabs.com/blog)
 
@@ -32,6 +32,7 @@
 - **REST API** — Comprehensive Stripe-inspired API with SDK integration for Node.js and Java
 - **Real-time monitoring** — Live gateway dashboard with merchant node tracking and mempool visualization
 - **Webhook system** — Queue-backed webhook notifications with HMAC-SHA256 signing and exponential backoff retries
+- **Multi-tenant** — Unlimited merchants per deployment, isolated API credentials, independent configuration, and per-merchant fee structure
 
 ## Quick Start (Gateway)
 
