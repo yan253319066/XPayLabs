@@ -9,8 +9,8 @@ import SavingsCalculator from './SavingsCalculator';
 
 export const metadata: Metadata = {
   title: 'Pricing — Self-Hosted Crypto Payment Gateway | XPay Labs',
-  description: 'XPay Labs is free, self-hosted crypto payment software. Pay 0% transaction fees. Support plans from $1,500/year. Save $6k-$12k/year vs BitPay, Coinbase Commerce, and hosted gateways.',
-  keywords: ['crypto payment gateway pricing', 'self-hosted crypto payment cost', 'BitPay vs XPay Labs cost', 'crypto payment gateway fees comparison', 'free crypto payment gateway', 'non-custodial payment gateway pricing'],
+  description: 'XPay Labs is free, self-hosted crypto payment software. Pay 0% transaction fees. Multi-tenant — host unlimited merchants on one deployment. Support plans from $1,500/year. Save $6k-$12k/year vs BitPay, Coinbase Commerce, and hosted gateways.',
+  keywords: ['crypto payment gateway pricing', 'self-hosted crypto payment cost', 'BitPay vs XPay Labs cost', 'crypto payment gateway fees comparison', 'free crypto payment gateway', 'non-custodial payment gateway pricing', 'multi-tenant crypto payment gateway', 'host multiple merchants crypto'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/pricing',
     languages: {

@@ -22,7 +22,7 @@ import SavingsCalculator from '../../pricing/SavingsCalculator';
 export const metadata: Metadata = {
   title: '定价方案 — 自托管加密支付网关 | XPay Labs',
   description:
-    'XPay Labs 是免费的自托管加密支付软件。0% 交易手续费。支持计划从 $1,500/年起。与 BitPay、Coinbase Commerce 和托管网关相比，每年可节省 $6k-$12k。',
+    'XPay Labs 是免费的自托管加密支付软件。0% 交易手续费。多商家架构 — 一个部署即可服务无限商户。支持计划从 $1,500/年起。与 BitPay、Coinbase Commerce 和托管网关相比，每年可节省 $6k-$12k。',
   keywords: [
     '加密支付网关定价',
     '自托管加密支付成本',
@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     '加密支付网关手续费比较',
     '免费加密支付网关',
     '非托管支付网关定价',
+    '多商家加密支付网关',
+    '多商户加密支付平台',
   ],
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/pricing',

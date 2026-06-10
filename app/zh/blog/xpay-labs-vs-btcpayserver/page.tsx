@@ -9,8 +9,8 @@ import JsonLd from '../../../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'XPay Labs（xpay）vs BTCPay Server：自托管加密支付网关对比（2026）',
-  description: 'XPay Labs（xpay）与 BTCPay Server 的详细对比。从链支持、定价、安全、开发者体验等维度全面比较，帮你选择最适合的自托管加密支付网关。',
-  keywords: ['XPay Labs vs BTCPay Server', 'xpay vs btcpay', '自托管加密支付网关对比', 'BTCPay Server 替代方案', 'XPay Labs 对比', '最佳自托管加密支付网关 2026'],
+  description: 'XPay Labs（xpay）与 BTCPay Server 的详细对比。从链支持、定价、安全、多商家支持、开发者体验等维度全面比较，帮你选择最适合的自托管加密支付网关。',
+  keywords: ['XPay Labs vs BTCPay Server', 'xpay vs btcpay', '自托管加密支付网关对比', 'BTCPay Server 替代方案', 'XPay Labs 对比', 'XPay Labs 多商家', 'BTCPay Server 多商户'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/blog/xpay-labs-vs-btcpayserver',
     languages: {
@@ -120,6 +120,12 @@ const comparisonRows = [
     xpay: '简洁清晰，Stripe 风格文档，含快速入门',
     btcpay: '社区贡献的完善 Wiki 文档',
     winner: '主观——xpay 更精致，BTCPay 更全面',
+  },
+  {
+    feature: '多商家',
+    xpay: '原生支持——一套部署可入驻无限商户，独立 API 凭证和费率结构',
+    btcpay: '不支持——每个商户需独立部署',
+    winner: 'xpay — 原生多商家架构',
   },
 ];
 
@@ -260,6 +266,7 @@ export default function ZhXPayVsBTCPayPage() {
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> 你想要 Stripe 品质的 API 和 HMAC 签名 webhook</li>
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> 你需要真正的白标结账，无第三方品牌标记</li>
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> 你倾向于单个 docker-compose.yml 部署</li>
+                    <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> 你运营服务多个商家的支付平台——XPay Labs 原生支持多商家架构</li>
                   </ul>
                 </div>
                 <div className="glass-panel rounded-2xl p-6 glow-purple">

@@ -8,8 +8,8 @@ import JsonLd from '../../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: '博客 — 自托管加密货币支付指南 | XPay Labs',
-  description: '关于自托管加密货币支付基础设施的深度指南、技术对比和性能分析。了解如何接受 USDT、替代 BitPay、以及部署你自己的非托管支付网关。',
-  keywords: ['加密货币支付博客', '自托管支付网关', 'USDT 支付指南', 'BitPay 替代方案', '加密货币支付基础设施', '接受加密货币支付'],
+  description: '关于自托管加密货币支付基础设施的深度指南、技术对比和性能分析。了解如何接受 USDT、替代 BitPay、部署多商家网关、以及运行你自己的非托管支付平台。',
+  keywords: ['加密货币支付博客', '自托管支付网关', 'USDT 支付指南', 'BitPay 替代方案', '多商家加密支付网关', '加密货币支付基础设施', '接受加密货币支付', '加密支付平台运营'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/blog',
     languages: {

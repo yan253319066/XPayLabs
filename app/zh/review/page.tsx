@@ -21,13 +21,14 @@ import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'XPay Labs（简称 xpay）评测 — 自托管加密支付基础设施 2026',
   description:
-    '阅读 XPay Labs（xpay）的真实评测——功能、定价、优缺点及竞品对比。',
+    '阅读 XPay Labs（xpay）的真实评测——功能、定价、多商家支持、优缺点及竞品对比。',
   keywords: [
     'XPay Labs 评测',
     'xpay 评测',
     '自托管加密支付网关评测',
     'xpay 功能',
     'xpay 定价',
+    'xpay 多商家',
     'XPay Labs 优缺点',
     'xpay 自托管网关',
   ],

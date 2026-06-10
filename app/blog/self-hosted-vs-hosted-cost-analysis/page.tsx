@@ -121,6 +121,7 @@ export default function CostAnalysisPage() {
                 XPay Labs: $0 tx fee, VPS cost estimated at $5/mo ($10k tier) to $20/mo ($500k tier).
                 Gas fees not included (paid by customer or merchant equally across all solutions).
                 Optional XPay Labs support plans from $1,500 (Docker Setup) or $3,000/yr (Business) — not required to use the software.
+                Multi-tenant architecture further reduces per-merchant cost: one deployment serves unlimited merchants with isolated credentials. No per-merchant server overhead.
               </div>
             </section>
 

@@ -8,8 +8,8 @@ import JsonLd from '../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'XPay Labs (xpay) Review 2026 — Self-Hosted Crypto Payment Gateway Honest Review',
-  description: 'Read our honest XPay Labs (xpay) review. Features, pricing, pros and cons, and how it compares to BitPay, Coinbase Commerce, NowPayments, and BTCPay Server.',
-  keywords: ['XPay Labs review', 'xpay review', 'self-hosted crypto payment gateway review', 'xpay features', 'xpay pricing', 'crypto payment infrastructure review'],
+  description: 'Read our honest XPay Labs (xpay) review. Features, pricing, pros and cons, multi-tenant support, and how it compares to BitPay, Coinbase Commerce, NowPayments, and BTCPay Server.',
+  keywords: ['XPay Labs review', 'xpay review', 'self-hosted crypto payment gateway review', 'xpay features', 'xpay pricing', 'crypto payment infrastructure review', 'multi-tenant crypto payment gateway', 'xpay multi-tenant'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/review',
   },

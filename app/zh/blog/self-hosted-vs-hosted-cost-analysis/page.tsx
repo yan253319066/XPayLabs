@@ -120,6 +120,7 @@ export default function ZhCostAnalysisPage() {
                 XPay Labs: $0 交易费，VPS 费用按 $5/月（$10k 级别）到 $20/月（$500k 级别）估算。
                 Gas 费未计入（所有方案下客户或商户支付相同）。
                 XPay Labs 可选支持计划 $1,500 起（Docker Setup）或 $3,000/年（Business）— 使用软件无需购买。
+                多商家架构进一步降低商户成本：一套部署即可服务无限商家，独立 API 凭证，无需为每个商户单独部署服务器。
               </div>
             </section>
 

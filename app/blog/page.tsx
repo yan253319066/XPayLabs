@@ -8,8 +8,8 @@ import JsonLd from '../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
-  description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure. Learn how to accept USDT, replace BitPay, and deploy your own non-custodial gateway.',
-  keywords: ['crypto payment blog', 'self-hosted payment gateway', 'USDT payment guide', 'BitPay alternative', 'Coinbase Commerce alternative', 'crypto payment infrastructure', 'accept crypto payments'],
+  description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure. Learn how to accept USDT, replace BitPay, deploy multi-tenant gateways, and run your own non-custodial payment platform.',
+  keywords: ['crypto payment blog', 'self-hosted payment gateway', 'USDT payment guide', 'BitPay alternative', 'Coinbase Commerce alternative', 'crypto payment infrastructure', 'accept crypto payments', 'multi-tenant crypto payment gateway', 'crypto payment platform operator'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/blog',
     languages: {

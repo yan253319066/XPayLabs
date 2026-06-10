@@ -9,8 +9,8 @@ import JsonLd from '../../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'XPay Labs (xpay) vs BTCPay Server: Self-Hosted Crypto Payment Gateways Compared (2026)',
-  description: 'A detailed comparison of XPay Labs (xpay) vs BTCPay Server in 2026. Compare features, chain support, pricing, security, and developer experience to choose the best self-hosted crypto payment gateway.',
-  keywords: ['XPay Labs vs BTCPay Server', 'xpay vs btcpay', 'self-hosted crypto payment gateway comparison', 'BTCPay Server alternative', 'XPay Labs comparison', 'best self-hosted crypto payment gateway 2026'],
+  description: 'A detailed comparison of XPay Labs (xpay) vs BTCPay Server in 2026. Compare features, chain support, pricing, security, multi-tenant support, and developer experience to choose the best self-hosted crypto payment gateway.',
+  keywords: ['XPay Labs vs BTCPay Server', 'xpay vs btcpay', 'self-hosted crypto payment gateway comparison', 'BTCPay Server alternative', 'XPay Labs comparison', 'XPay Labs multi-tenant', 'BTCPay Server multi-tenant'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/blog/xpay-labs-vs-btcpayserver',
     languages: {
@@ -119,6 +119,12 @@ const comparisonRows = [
     xpay: 'Clean, concise, Stripe-style docs with quickstart',
     btcpay: 'Extensive wiki documentation contributed by community',
     winner: 'Subjective — XPay Labs is more polished, BTCPay is more comprehensive',
+  },
+  {
+    feature: 'Multi-Tenant',
+    xpay: 'Native — unlimited merchants per deployment, isolated API credentials and fee structure',
+    btcpay: 'Not supported — each merchant requires a separate deployment',
+    winner: 'XPay Labs — built-in multi-tenant architecture',
   },
 ];
 
@@ -270,6 +276,7 @@ export default function XPayVsBTCPayPage() {
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> You want a Stripe-quality API with HMAC-signed webhooks</li>
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> You need true white-label checkout with no third-party branding</li>
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> You prefer a single docker-compose.yml deployment</li>
+                    <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> You run a payment platform serving multiple merchants — XPay Labs has native multi-tenant support</li>
                     <li className="flex items-start gap-2"><span className="text-brand-cyan mt-1">→</span> You want clean, modern documentation with quickstart guides</li>
                   </ul>
                 </div>
