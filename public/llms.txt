@@ -90,134 +90,317 @@ Processing $100k/month in crypto:
 
 ## Deployment
 
-### Docker Compose (Recommended)
+### Docker Compose
 
-```yaml
-version: '3.8'
-services:
-  xpay-core:
-    image: ghcr.io/xpaylabs/gateway:latest
-    ports:
-      - "3010:3010"
-    volumes:
-      - ./data:/app/data
-    environment:
-      - RPC_TRON={your_tron_rpc}
-      - RPC_EVM={your_evm_rpc}
-      - RPC_SUI={your_sui_rpc}
-      - API_KEY={your_api_key}
-    restart: unless-stopped
-```
-
-### Quick Start
+The gateway runs as 11 microservices managed via Docker Compose. See the [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) repository.
 
 ```bash
-git clone https://github.com/yan253319066/XPayLabs.git
-cd XPayLabs
+# Step 1: Clone the deployment repository
+git clone https://github.com/yan253319066/XPayLabs-docker.git
+cd XPayLabs-docker
+
+# Step 2: Configure environment
+cp .env.example .env
+# Edit .env: set RPC endpoints, passwords, domain URLs
+
+# Step 3: Launch all services
 docker compose up -d
-curl http://localhost:3010/health
 ```
+
+The gateway starts on port **180** by default. Visit `http://localhost:180` for the merchant dashboard.
+
+### Services
+
+| Service | Image | Port (default) | Role |
+|---------|-------|----------------|------|
+| gateway | nginx:alpine | 180 (HTTP) | Single public entry reverse proxy |
+| xpay-user | xpaylabs/xpay-java | 18077 | User-facing collection order API |
+| xpay-merchant | xpaylabs/xpay-java | 18078 | Merchant admin backend |
+| xpay-tron | xpaylabs/xpay-java | 18075 | TRON blockchain scanner |
+| xpay-eth | xpaylabs/xpay-java | 18076 | EVM scanner (ETH, BSC, Polygon, AVAX) |
+| xpay-sui | xpaylabs/xpay-java | 18074 | SUI blockchain scanner |
+| sui-node-service | xpaylabs/sui-node-service | 13001 | SUI RPC proxy |
+| merchant-vue | xpaylabs/merchant-vue | internal | Merchant admin dashboard |
+| checkout | xpaylabs/checkout | internal | Payment checkout page |
+| mysql | mysql:8.0 | 13306 | Primary database |
+| redis | redis:7-alpine | 16379 | Cache & session store |
+
+### Nginx Routing
+
+| Path | Upstream | Description |
+|------|----------|-------------|
+| `/api/` | xpay-user:8077 | Collection order API |
+| `/prod-api/` | xpay-merchant:8078 | Merchant admin API |
+| `/checkout` | checkout:80 | Checkout page |
+| `/` (default) | merchant-vue:80 | Merchant dashboard |
 
 ## REST API
 
-All endpoints return JSON. Authenticate via `x-api-key` header.
+Base URL: `http://your-gateway:3010/v1`
 
-### Create Payment
+### Authentication (HMAC-SHA256)
+
+Every request uses a signed envelope:
+
+```json
+{
+  "sign": "a1b2c3d4e5f6...",
+  "timestamp": 1717000000,
+  "nonce": "550e8400-e29b-41d4-a716-446655440000",
+  "data": { "amount": "100.00", "symbol": "USDT", "chain": "TRON" }
+}
+```
+
+Signing algorithm: `sign = HEX(HMAC-SHA256(JSON.stringify(data), merchant_token))`
+
+- Signature computed over the `data` field only (not the envelope)
+- JSON must be compact (no whitespace)
+- Timestamp must be within 5 minutes of server clock
+- For GET requests, `sign` is a query param: `sign = HEX(HMAC-SHA256(orderId, merchant_token))`
+
+### Create Collection Order
 
 ```
-POST /api/v1/payments
-Content-Type: application/json
-x-api-key: {your_api_key}
+POST /v1/order/createCollection
+```
 
+**data fields:**
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `amount` | string | Yes | Decimal string e.g. `"100.00"` |
+| `symbol` | string | Yes | Token symbol e.g. `"USDT"` |
+| `chain` | string | Yes | `TRON`, `ETH`, `BSC`, `POLYGON`, `AVAX_C_CHAIN`, `SUI` |
+| `orderId` | string | V3 merchants | Your unique order ID |
+| `uid` | string | V2 merchants | User identifier |
+
+**Response:**
+```json
 {
-  "amount": "100.00",
-  "currency": "USDT",
-  "chain": "TRON",
-  "metadata": {
-    "order_id": "ORD-001",
-    "customer_email": "customer@example.com"
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "address": "TWkKZkmuB8DpVeiMoHiKf99ZoFHzk73CqR",
+    "amount": "250.00",
+    "symbol": "USDT",
+    "chain": "TRON",
+    "orderId": "order_1042",
+    "uid": null,
+    "expiredTime": 1717086400,
+    "paymentUrl": "http://your-gateway:3010/checkout?orderId=order_1042"
   }
 }
 ```
 
-Response:
+### Create Payout Order
+
+```
+POST /v1/order/createPayout
+```
+
+**Additional data fields:**
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `receiveAddress` | string | Yes | Destination address (validated per chain) |
+
+### Order Status
+
+```
+GET /v1/order/status/{orderId}
+```
+
+**Response:**
 ```json
 {
-  "id": "pay_abc123",
-  "amount": "100.00",
-  "currency": "USDT",
-  "chain": "TRON",
-  "depositAddress": "TXYZ...",
-  "status": "pending",
-  "checkoutUrl": "https://checkout.xpaylabs.com/pay_abc123",
-  "expiresAt": "2026-06-10T12:00:00Z"
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "orderId": "order_1042",
+    "orderType": "COLLECTION",
+    "status": "SUCCESS",
+    "amount": "250.00",
+    "actualAmount": "249.50",
+    "fee": "0.00",
+    "transaction": {
+      "chain": "TRON", "symbol": "USDT",
+      "txid": "a1b2c3d4e5f6...",
+      "from": "TXyz...", "to": "TWkKZkmuB8DpVeiMoHiKf99ZoFHzk73CqR",
+      "amount": "250.00", "confirmedNum": 19,
+      "status": "SUCCESS", "timestamp": 1717000123
+    }
+  }
 }
 ```
 
-### Check Payment Status
+**Status values:** `INIT`, `PENDING`, `PENDING_CONFIRMATION`, `SUCCESS`, `EXPIRED`, `FAILED`
+**Order types:** `COLLECTION`, `PAYOUT`
+
+### Supported Tokens
 
 ```
-GET /api/v1/payments/{id}
-x-api-key: {your_api_key}
+GET /v1/symbol/supportSymbols?chain=TRON&symbol=USDT
 ```
 
-### Webhook Payload (HMAC-SHA256 signed)
+**Response:**
+```json
+{
+  "code": 200, "msg": "success",
+  "data": [
+    { "symbol": "USDT", "chain": "TRON", "contractAddress": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", "decimals": 6 },
+    { "symbol": "USDT", "chain": "ETH", "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7", "decimals": 6 },
+    { "symbol": "USDC", "chain": "SUI", "contractAddress": null, "decimals": 6 }
+  ]
+}
+```
+
+### Rate Limits
+
+| Endpoint | Limit |
+|----------|-------|
+| `POST /v1/order/createCollection` | 100 req / 10s |
+| `POST /v1/order/createPayout` | 100 req / 10s |
+| `GET /v1/order/status/{orderId}` | 1000 req / 10s |
+| `GET /v1/symbol/supportSymbols` | 50 req / 10s |
+
+## Webhook Events
+
+### Payload Format
+
+Every webhook is a `POST` to your `callback-url` with a signed envelope:
 
 ```json
 {
-  "event": "payment.confirmed",
-  "paymentId": "pay_abc123",
-  "txHash": "0xabcdef...",
-  "amount": "100.00",
-  "currency": "USDT",
-  "chain": "TRON",
-  "confirmations": 1,
-  "metadata": {
-    "order_id": "ORD-001"
-  },
-  "timestamp": "2026-06-10T11:59:00Z"
+  "sign": "a1b2c3d4e5f6...",
+  "timestamp": 1717000000,
+  "nonce": "nonce_001",
+  "notifyType": "ORDER_SUCCESS",
+  "data": { ... }
 }
 ```
+
+### Event Types
+
+| Event | When |
+|-------|------|
+| `ORDER_PENDING` | Order created, awaiting payment |
+| `ORDER_PENDING_CONFIRMATION` | Transaction detected, awaiting confirmations |
+| `ORDER_SUCCESS` | Payment confirmed / payout completed |
+| `ORDER_EXPIRED` | Order expired without payment |
+| `ORDER_FAILED` | Transaction failed |
+| `COLLECT_PENDING` | Hot-to-cold sweep initiated |
+| `COLLECT_SUCCESS` | Sweep completed |
+| `COLLECT_FAILED` | Sweep failed |
+
+### ORDER_SUCCESS Example
+
+```json
+{
+  "sign": "a1b2c3d4e5f6...",
+  "timestamp": 1717000100,
+  "nonce": "nonce_003",
+  "notifyType": "ORDER_SUCCESS",
+  "data": {
+    "orderId": "order_1042",
+    "orderType": "COLLECTION",
+    "status": "SUCCESS",
+    "reason": null,
+    "amount": "250.00",
+    "actualAmount": "250.00",
+    "fee": "0.00",
+    "transaction": {
+      "chain": "TRON", "symbol": "USDT",
+      "txid": "a1b2c3d4e5f6...",
+      "from": "TXyz...", "to": "TWkKZkmuB8DpVeiMoHiKf99ZoFHzk73CqR",
+      "amount": "250.00", "confirmedNum": 19,
+      "status": "SUCCESS", "timestamp": 1717000045
+    }
+  }
+}
+```
+
+### Signature Verification
+
+Webhooks are signed with your `webhook-secret` (different from the API merchant token):
+```
+sign = HEX(HMAC-SHA256(JSON.stringify(data), webhook_secret))
+```
+
+### Retry Policy
+
+| Attempt | Delay |
+|---------|-------|
+| 1st retry | ~1 second |
+| 2nd retry | ~5 seconds |
+| 3rd retry | ~30 seconds |
+| 4th retry | ~5 minutes |
+
+After 4 failures, the notification is marked as failed.
 
 ## SDKs
 
 ### Node.js SDK (@xpaylabs/node-sdk)
 
 ```typescript
-import { XPayClient } from '@xpaylabs/node-sdk';
+import { XPay } from '@xpaylabs/node-sdk';
 
-const client = new XPayClient({
-  apiKey: 'your_api_key',
-  baseUrl: 'http://localhost:3010',
+const xpay = new XPay({
+  apiKey: 'your-merchant-token',
+  apiSecret: 'your-api-secret',
+  baseUrl: 'http://your-gateway:3010',
 });
 
-const payment = await client.createPayment({
-  amount: '100.00',
-  currency: 'USDT',
+// Create collection order
+const collection = await xpay.createCollection({
+  amount: 100,
+  symbol: 'USDT',
   chain: 'TRON',
-  metadata: { order_id: 'ORD-001' },
+  orderId: 'order-' + Date.now(),
+  uid: 'user123',
 });
 
-console.log(payment.depositAddress);
+// Get order status
+const order = await xpay.getOrderStatus('order_1042');
+
+// List supported tokens
+const symbols = await xpay.getSupportedSymbols('TRON', 'USDT');
+```
+
+**Webhook handling (Express):**
+```typescript
+app.post('/webhook', (req, res) => {
+  const event = xpay.parseWebhook(JSON.stringify(req.body),
+    req.body.sign, req.body.timestamp.toString());
+  if (!event) return res.status(400).send('Invalid signature');
+
+  switch (event.notifyType) {
+    case 'ORDER_SUCCESS':
+      // fulfill order
+      break;
+    case 'ORDER_FAILED':
+      // handle failure
+      break;
+  }
+  res.status(200).send('Webhook received');
+});
 ```
 
 ### Java SDK (com.xpaylabs:xpay-java-sdk)
 
 ```java
-XPayClient client = new XPayClient.Builder()
-    .apiKey("your_api_key")
-    .baseUrl("http://localhost:3010")
+XPay xpay = new XPay.Builder()
+    .apiKey("your-merchant-token")
+    .apiSecret("your-api-secret")
+    .baseUrl("http://your-gateway:3010")
     .build();
 
-CreatePaymentRequest request = new CreatePaymentRequest.Builder()
-    .amount("100.00")
-    .currency("USDT")
+CreateCollectionRequest req = new CreateCollectionRequest.Builder()
+    .amount(new BigDecimal("100.00"))
+    .symbol("USDT")
     .chain("TRON")
-    .metadata(Map.of("order_id", "ORD-001"))
+    .orderId("order_1042")
+    .uid("user123")
     .build();
 
-Payment payment = client.createPayment(request);
-System.out.println(payment.getDepositAddress());
+PaymentAddress address = xpay.createCollection(req);
 ```
 
 ## Multi-Tenant
@@ -238,15 +421,35 @@ One-line USDC micropayments for LLM APIs and AI agents:
 - Works with any OpenAI-compatible API endpoint
 - Supported via `@xpaylabs/x402` npm package
 
+## Settlement Configuration
+
+Hot-to-cold wallet sweeps configured in `application.yml`:
+
+```yaml
+xpay:
+  settlement:
+    cold-wallet-addresses:
+      TRON: "TYourColdWalletAddress..."
+      ETH: "0xYourColdWalletAddress..."
+    auto-sweep:
+      enabled: true
+      min-amount: "1000"
+      interval: 3600
+    sweep-on-collect: true
+```
+
 ## Supported Chains
 
-| Chain | Tokens | Detection Speed |
-|-------|--------|-----------------|
-| TRON (TRC20) | USDT, USDC, custom | 1-3 seconds |
-| EVM (ERC20/BEP20) | USDT, USDC, DAI, custom | 2-6 seconds |
-| SUI | SUI, USDC | 1-2 seconds |
+| Chain | Value | Scanner | Detection Speed |
+|-------|-------|---------|-----------------|
+| TRON | `TRON` | xpay-tron | 1-3 seconds |
+| Ethereum | `ETH` | xpay-eth | 2-6 seconds |
+| BNB Chain | `BSC` | xpay-eth | 2-6 seconds |
+| Polygon | `POLYGON` | xpay-eth | 2-6 seconds |
+| Avalanche C-Chain | `AVAX_C_CHAIN` | xpay-eth | 2-6 seconds |
+| SUI | `SUI` | xpay-sui | 1-2 seconds |
 
-20+ EVM chains supported: Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Avalanche, Base, zkSync Era, Linea, Scroll, Celo, Mantle, Gnosis, Cronos, Fantom, opBNB, Polygon zkEVM, Metis, Blast, Boba.
+Additional EVM chains available via custom RPC configuration.
 
 ## Key Differentiators
 
