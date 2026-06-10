@@ -88,11 +88,173 @@ Processing $100k/month in crypto:
 
 - XPay Labs Review 2026: https://www.xpaylabs.com/review
 
+## Deployment
+
+### Docker Compose (Recommended)
+
+```yaml
+version: '3.8'
+services:
+  xpay-core:
+    image: ghcr.io/xpaylabs/gateway:latest
+    ports:
+      - "3010:3010"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - RPC_TRON={your_tron_rpc}
+      - RPC_EVM={your_evm_rpc}
+      - RPC_SUI={your_sui_rpc}
+      - API_KEY={your_api_key}
+    restart: unless-stopped
+```
+
+### Quick Start
+
+```bash
+git clone https://github.com/yan253319066/XPayLabs.git
+cd XPayLabs
+docker compose up -d
+curl http://localhost:3010/health
+```
+
+## REST API
+
+All endpoints return JSON. Authenticate via `x-api-key` header.
+
+### Create Payment
+
+```
+POST /api/v1/payments
+Content-Type: application/json
+x-api-key: {your_api_key}
+
+{
+  "amount": "100.00",
+  "currency": "USDT",
+  "chain": "TRON",
+  "metadata": {
+    "order_id": "ORD-001",
+    "customer_email": "customer@example.com"
+  }
+}
+```
+
+Response:
+```json
+{
+  "id": "pay_abc123",
+  "amount": "100.00",
+  "currency": "USDT",
+  "chain": "TRON",
+  "depositAddress": "TXYZ...",
+  "status": "pending",
+  "checkoutUrl": "https://checkout.xpaylabs.com/pay_abc123",
+  "expiresAt": "2026-06-10T12:00:00Z"
+}
+```
+
+### Check Payment Status
+
+```
+GET /api/v1/payments/{id}
+x-api-key: {your_api_key}
+```
+
+### Webhook Payload (HMAC-SHA256 signed)
+
+```json
+{
+  "event": "payment.confirmed",
+  "paymentId": "pay_abc123",
+  "txHash": "0xabcdef...",
+  "amount": "100.00",
+  "currency": "USDT",
+  "chain": "TRON",
+  "confirmations": 1,
+  "metadata": {
+    "order_id": "ORD-001"
+  },
+  "timestamp": "2026-06-10T11:59:00Z"
+}
+```
+
+## SDKs
+
+### Node.js SDK (@xpaylabs/node-sdk)
+
+```typescript
+import { XPayClient } from '@xpaylabs/node-sdk';
+
+const client = new XPayClient({
+  apiKey: 'your_api_key',
+  baseUrl: 'http://localhost:3010',
+});
+
+const payment = await client.createPayment({
+  amount: '100.00',
+  currency: 'USDT',
+  chain: 'TRON',
+  metadata: { order_id: 'ORD-001' },
+});
+
+console.log(payment.depositAddress);
+```
+
+### Java SDK (com.xpaylabs:xpay-java-sdk)
+
+```java
+XPayClient client = new XPayClient.Builder()
+    .apiKey("your_api_key")
+    .baseUrl("http://localhost:3010")
+    .build();
+
+CreatePaymentRequest request = new CreatePaymentRequest.Builder()
+    .amount("100.00")
+    .currency("USDT")
+    .chain("TRON")
+    .metadata(Map.of("order_id", "ORD-001"))
+    .build();
+
+Payment payment = client.createPayment(request);
+System.out.println(payment.getDepositAddress());
+```
+
+## Multi-Tenant
+
+XPay Labs supports unlimited merchants per deployment:
+
+- Isolated API credentials per merchant
+- Independent webhook endpoints
+- Configurable fee structure per merchant (percentage, flat, or hybrid)
+- Data isolation — merchants never see each other's data
+
+## x402 Protocol (AI Agent Payments)
+
+One-line USDC micropayments for LLM APIs and AI agents:
+
+- No API key management — pay per request
+- Sub-cent precision for LLM token billing
+- Works with any OpenAI-compatible API endpoint
+- Supported via `@xpaylabs/x402` npm package
+
+## Supported Chains
+
+| Chain | Tokens | Detection Speed |
+|-------|--------|-----------------|
+| TRON (TRC20) | USDT, USDC, custom | 1-3 seconds |
+| EVM (ERC20/BEP20) | USDT, USDC, DAI, custom | 2-6 seconds |
+| SUI | SUI, USDC | 1-2 seconds |
+
+20+ EVM chains supported: Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, Avalanche, Base, zkSync Era, Linea, Scroll, Celo, Mantle, Gnosis, Cronos, Fantom, opBNB, Polygon zkEVM, Metis, Blast, Boba.
+
 ## Key Differentiators
 
 1. **Only self-hosted gateway with native TRON + EVM + SUI support** — no competitor covers all three.
 2. **0% fees** — BitPay charges 1%, Coinbase Commerce charges 0.8%, NowPayments charges 0.5%.
 3. **Non-custodial** — unlike hosted gateways, you control private keys and funds settle instantly.
-4. **Stripe-inspired developer experience** — cleaner API than BTCPay Server's Greenfield API.
-5. **Sub-second payment detection** — mempool scanning catches payments before block confirmation.
-6. **No KYC required** — self-sovereign deployment, no account approval or verification.
+4. **Multi-tenant architecture** — host unlimited merchants on a single deployment.
+5. **x402 protocol** — AI agent micropayments without API key management.
+6. **Stripe-inspired developer experience** — cleaner API than BTCPay Server's Greenfield API.
+7. **Sub-second payment detection** — mempool scanning catches payments before block confirmation.
+8. **No KYC required** — self-sovereign deployment, no account approval or verification.

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     languages: {
       'x-default': 'https://www.xpaylabs.com/pricing',
       'en-US': 'https://www.xpaylabs.com/pricing',
+      'zh-CN': 'https://www.xpaylabs.com/zh/pricing',
     },
   },
   openGraph: {
@@ -78,6 +79,42 @@ const faqSchema = {
   ],
 };
 
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'XPay Labs',
+  alternateName: 'xpay',
+  description: 'Self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI.',
+  applicationCategory: 'PaymentProcessing',
+  operatingSystem: 'Docker, Linux',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Self-Hosted Software',
+      price: '0',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: 'Free self-hosted crypto payment software. 0% transaction fees.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Docker Setup',
+      price: '1500',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: 'One-time Docker deployment assistance and 30-day setup support.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Business Support',
+      price: '3000',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: 'Annual business support plan with priority SLA and monitoring assistance.',
+    },
+  ],
+};
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -91,6 +128,7 @@ export default function PricingPage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
         <JsonLd data={faqSchema} />
+        <JsonLd data={productSchema} />
         <JsonLd data={breadcrumbSchema} />
         <Header />
 

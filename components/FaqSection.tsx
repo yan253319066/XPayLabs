@@ -14,17 +14,7 @@ export default function FaqSection() {
 
   const items = t.raw('items') as Array<{ q: string; a: string }>;
 
-  // Structured Organization and FAQ Schema JSON-LD metadata
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "XPay Labs",
-    "alternateName": "xpay",
-    "url": "https://www.xpaylabs.com",
-    "logo": "https://www.xpaylabs.com/logo.png",
-    "description": "Self-hosted crypto payment infrastructure for TRON, EVM chains, and SUI."
-  };
-
+  // Structured FAQ Schema JSON-LD metadata
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -40,11 +30,7 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="py-20 bg-[#060816] relative overflow-hidden text-left border-t border-white/5">
-      {/* Injecting JSON-LD schema tags securely */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
+      {/* Injecting JSON-LD schema tag securely */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

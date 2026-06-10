@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     languages: {
       'x-default': 'https://www.xpaylabs.com/blog',
       'en-US': 'https://www.xpaylabs.com/blog',
+      'zh-CN': 'https://www.xpaylabs.com/zh/blog',
     },
   },
   openGraph: {
