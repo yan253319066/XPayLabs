@@ -194,12 +194,18 @@ cp .env.example .env`,
   },
   {
     num: '2',
-    title: '生成 API 密钥',
-    content: '在网关管理面板中创建您的商户账号以获取 API 密钥（merchant token）和 webhook 密钥。这些用于验证支付请求和确认 webhook 签名。',
+    title: '配置环境变量',
+    content: '在 `.env` 文件中配置您的区块链 RPC 端点（TRON、EVM、SUI）和 webhook 回调 URL：',
     after: '',
   },
   {
     num: '3',
+    title: '生成 API 密钥',
+    content: '创建您的商户账号以获取 API 密钥（merchant token）和 webhook 密钥。这些用于验证支付请求和 webhook 签名确认。',
+    after: '',
+  },
+  {
+    num: '4',
     title: '创建您的第一笔收款订单',
     content: '现在您可以创建一笔收款订单。当客户到达结账页面时，您的后端调用此端点：',
     code: `curl -X POST "http://localhost:180/v1/order/createCollection" \\
@@ -218,10 +224,56 @@ cp .env.example .env`,
     after: '将 TOKEN 替换为您的商家令牌。有关 HMAC-SHA256 签名详情，请参阅[认证指南](https://docs.xpaylabs.com/authentication)。',
   },
   {
-    num: '4',
+    num: '5',
     title: '处理 Webhook 回调',
-    content: 'XPay Labs 通过 POST 请求向您的回调 URL 发送支付确认 webhook，并在请求体中附带 HMAC-SHA256 签名。以下是在 Node.js 中验证和处理负载的方法：',
-    code: `import crypto from 'crypto';// Your HMAC secret from XPAY_HMAC_SECRETconst HMAC_SECRET = process.env.XPAY_HMAC_SECRET;export async function POST(request: Request) {  const body = await request.text();  const signature = request.headers.get('x-signature');  // Verify HMAC-SHA256 signature  const expected = crypto    .createHmac('sha256', HMAC_SECRET)    .update(body, 'utf8')    .digest('hex');  if (signature !== expected) {    return Response.json({ error: 'invalid signature' }, { status: 401 });  }  const payload = JSON.parse(body);  // payload structure:  // {  //   "event": "payment.confirmed",  //   "payment": {  //     "id": "pay_9f3b8c2a1d",  //     "order_id": "order_783120",  //     "amount": "100.00",  //     "currency": "USDT",  //     "chain": "TRON",  //     "tx_id": "b4f7c3a12d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",  //     "from_address": "TXYZ...",  //     "to_address": "TABC...",  //     "confirmations": 32,  //     "status": "confirmed",  //     "timestamp": 1715875200  //   }  // }  if (payload.event === 'payment.confirmed') {    // Fulfill the order    await fulfillOrder(payload.payment.order_id, payload.payment);    return Response.json({ received: true });  }  return Response.json({ received: true });}`,
+    content: 'XPay Labs 通过 POST 请求向您的回调 URL 发送支付确认 webhook，并在请求头中附带 HMAC-SHA256 签名。以下是在 Node.js 中验证和处理负载的方法：',
+    code: `import crypto from 'crypto';
+
+// Your HMAC secret from XPAY_HMAC_SECRET
+const HMAC_SECRET = process.env.XPAY_HMAC_SECRET;
+
+export async function POST(request: Request) {
+  const body = await request.text();
+  const signature = request.headers.get('x-signature');
+
+  // Verify HMAC-SHA256 signature
+  const expected = crypto
+    .createHmac('sha256', HMAC_SECRET)
+    .update(body, 'utf8')
+    .digest('hex');
+
+  if (signature !== expected) {
+    return Response.json({ error: 'invalid signature' }, { status: 401 });
+  }
+
+  const payload = JSON.parse(body);
+
+  // payload structure:
+  // {
+  //   "event": "payment.confirmed",
+  //   "payment": {
+  //     "id": "pay_9f3b8c2a1d",
+  //     "order_id": "order_783120",
+  //     "amount": "100.00",
+  //     "currency": "USDT",
+  //     "chain": "TRON",
+  //     "tx_id": "b4f7c3a12d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",
+  //     "from_address": "TXYZ...",
+  //     "to_address": "TABC...",
+  //     "confirmations": 32,
+  //     "status": "confirmed",
+  //     "timestamp": 1715875200
+  //   }
+  // }
+
+  if (payload.event === 'payment.confirmed') {
+    // Fulfill the order
+    await fulfillOrder(payload.payment.order_id, payload.payment);
+    return Response.json({ received: true });
+  }
+
+  return Response.json({ received: true });
+}`,
     after:
       'Webhook 使用指数退避重试机制发送（3 次尝试：10 秒、60 秒、300 秒），直到您的服务器返回 200 OK。使用 payment.id 实现幂等性检查，以防止在重复 webhook 投递时出现双重履约。',
   },

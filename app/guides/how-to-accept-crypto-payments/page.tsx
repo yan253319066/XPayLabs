@@ -158,12 +158,18 @@ cp .env.example .env`,
   },
   {
     num: '2',
+    title: 'Configure Environment Variables',
+    content: 'Configure your blockchain RPC endpoints (TRON, EVM, SUI) and webhook callback URL via environment variables in the `.env` file:',
+    after: '',
+  },
+  {
+    num: '3',
     title: 'Generate API Keys',
     content: 'Create your merchant account in the gateway dashboard to get your API key (merchant token) and webhook secret. These are used to authenticate payment requests and verify webhook signatures.',
     after: '',
   },
   {
-    num: '3',
+    num: '4',
     title: 'Create Your First Collection',
     content: 'Now you can create a collection order. Your backend calls this endpoint when a customer reaches checkout:',
     code: `curl -X POST "http://localhost:180/v1/order/createCollection" \\
@@ -182,7 +188,7 @@ cp .env.example .env`,
     after: 'Replace TOKEN with your merchant token. See the [authentication guide](https://docs.xpaylabs.com/authentication) for HMAC-SHA256 signing details.',
   },
   {
-    num: '4',
+    num: '5',
     title: 'Handle Webhook Callbacks',
     content: 'XPay Labs sends payment confirmation webhooks to your callback URL via POST with an HMAC-SHA256 signature. Here is how to verify and process the payload in Node.js:',
     code: `import crypto from 'crypto';
@@ -196,7 +202,7 @@ export async function POST(request: Request) {
 
   // Verify HMAC-SHA256 signature
   const expected = crypto
-    .createHmac('sha256', HMAC_SECRET)
+    .createHmac('sha256', WEBHOOK_SECRET)
     .update(body, 'utf8')
     .digest('hex');
 
