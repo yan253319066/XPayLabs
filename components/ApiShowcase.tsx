@@ -13,7 +13,7 @@ export default function ApiShowcase() {
   const [copiedCode, setCopiedCode] = useState(false);
 
   const codeBlocks: Record<TabType, string> = {
-    curl: `curl -X POST "http://your-gateway:3010/v1/order/createCollection" \
+    curl: `curl -X POST "http://your-gateway:180/v1/order/createCollection" \
   -H "Content-Type: application/json" \
   -d '{
     "sign": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
@@ -39,7 +39,7 @@ export default function ApiShowcase() {
 }`,
     node: `import crypto from "crypto";
 
-const GATEWAY_URL = "http://your-gateway:3010";
+const GATEWAY_URL = "http://your-gateway:180";
 const MERCHANT_TOKEN = "your-merchant-token";
 
 function signRequest(data) {
@@ -87,7 +87,7 @@ console.log("Pay URL:", result.data.paymentUrl);`
     if (activeTab === 'curl') {
       return (
         <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-          <span className="text-brand-purple">curl</span> <span className="text-brand-blue">-X</span> <span className="text-brand-cyan">POST</span> <span className="text-teal-400">{"\"http://your-gateway:3010/v1/order/createCollection\""}</span> \<br />
+          <span className="text-brand-purple">curl</span> <span className="text-brand-blue">-X</span> <span className="text-brand-cyan">POST</span> <span className="text-teal-400">{"\"http://your-gateway:180/v1/order/createCollection\""}</span> \<br />
           &nbsp;&nbsp;<span className="text-brand-blue">-H</span> <span className="text-teal-400">{"\"Content-Type: application/json\""}</span> \<br />
           &nbsp;&nbsp;<span className="text-brand-blue">-d</span> <span className="text-gray-400">{"'{"}</span><br />
           &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">{"\"sign\""}</span>: <span className="text-teal-300">{"\"a1b2c3d4e5f6...\""}</span>,<br />
@@ -123,7 +123,7 @@ console.log("Pay URL:", result.data.paymentUrl);`
     return (
       <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
         <span className="text-brand-purple">import</span> <span className="text-gray-300">crypto</span> <span className="text-brand-purple">from</span> <span className="text-teal-400">{"\"crypto\""}</span>;<br /><br />
-        <span className="text-brand-purple">const</span> <span className="text-gray-300">GATEWAY_URL</span> = <span className="text-teal-400">{"\"http://your-gateway:3010\""}</span>;<br />
+        <span className="text-brand-purple">const</span> <span className="text-gray-300">GATEWAY_URL</span> = <span className="text-teal-400">{"\"http://your-gateway:180\""}</span>;<br />
         <span className="text-brand-purple">const</span> <span className="text-gray-300">MERCHANT_TOKEN</span> = <span className="text-teal-400">{"\"your-merchant-token\""}</span>;<br /><br />
         <span className="text-brand-purple">function</span> <span className="text-blue-400">signRequest</span><span className="text-gray-500">(</span><span className="text-gray-300">data</span><span className="text-gray-500">)</span> <span className="text-gray-500">{"{"}</span><br />
         &nbsp;&nbsp;<span className="text-brand-purple">return</span> <span className="text-gray-300">crypto</span><br />

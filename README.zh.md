@@ -37,15 +37,15 @@
 ## 快速开始（网关）
 
 ```bash
-# 在服务器上部署网关
-docker pull ghcr.io/xpaylabs/gateway:latest
-docker run -d \
-  -p 3010:3010 \
-  -e XPAY_SEED_PHRASE="your-24-word-mnemonic" \
-  -e XPAY_MYSQL_DSN="user:pass@tcp(host:3306)/xpay" \
-  -e XPAY_REDIS_ADDR="host:6379" \
-  ghcr.io/xpaylabs/gateway:latest
+# 克隆官方部署仓库
+git clone https://github.com/yan253319066/XPayLabs-docker.git
+cd XPayLabs-docker
+
+# 部署网关
+docker compose up -d
 ```
+
+编辑 `.env` 文件设置 `XPAY_SEED_PHRASE`、RPC 端点和 Webhook URL。网关可通过 `http://localhost:180` 访问（由 `.env` 中的 `HOST_PORT_GATEWAY_HTTP` 控制）。
 
 完整的 Docker Compose 和 Kubernetes 部署指南请查看[开发文档](https://docs.xpaylabs.com)。
 

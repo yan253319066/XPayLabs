@@ -114,14 +114,14 @@ The gateway starts on port **180** by default. Visit `http://localhost:180` for 
 | Service | Image | Port (default) | Role |
 |---------|-------|----------------|------|
 | gateway | nginx:alpine | 180 (HTTP) | Single public entry reverse proxy |
-| xpay-user | xpaylabs/xpay-java | 18077 | User-facing collection order API |
-| xpay-merchant | xpaylabs/xpay-java | 18078 | Merchant admin backend |
-| xpay-tron | xpaylabs/xpay-java | 18075 | TRON blockchain scanner |
-| xpay-eth | xpaylabs/xpay-java | 18076 | EVM scanner (ETH, BSC, Polygon, AVAX) |
-| xpay-sui | xpaylabs/xpay-java | 18074 | SUI blockchain scanner |
-| sui-node-service | xpaylabs/sui-node-service | 13001 | SUI RPC proxy |
-| merchant-vue | xpaylabs/merchant-vue | internal | Merchant admin dashboard |
-| checkout | xpaylabs/checkout | internal | Payment checkout page |
+| xpay-user | ghcr.io/yan253319066/xpay-java | 18077 | User-facing collection order API |
+| xpay-merchant | ghcr.io/yan253319066/xpay-java | 18078 | Merchant admin backend |
+| xpay-tron | ghcr.io/yan253319066/xpay-java | 18075 | TRON blockchain scanner |
+| xpay-eth | ghcr.io/yan253319066/xpay-java | 18076 | EVM scanner (ETH, BSC, Polygon, AVAX) |
+| xpay-sui | ghcr.io/yan253319066/xpay-java | 18074 | SUI blockchain scanner |
+| sui-node-service | ghcr.io/yan253319066/sui-node-service | 13001 | SUI RPC proxy |
+| merchant-vue | ghcr.io/yan253319066/merchant-vue | internal | Merchant admin dashboard |
+| checkout | ghcr.io/yan253319066/checkout | internal | Payment checkout page |
 | mysql | mysql:8.0 | 13306 | Primary database |
 | redis | redis:7-alpine | 16379 | Cache & session store |
 
@@ -337,10 +337,10 @@ After 4 failures, the notification is marked as failed.
 
 ## SDKs
 
-### Node.js SDK (@xpaylabs/node-sdk)
+### Node.js SDK (@ghcr.io/yan253319066/node-sdk)
 
 ```typescript
-import { XPay } from '@xpaylabs/node-sdk';
+import { XPay } from '@ghcr.io/yan253319066/node-sdk';
 
 const xpay = new XPay({
   apiKey: 'your-merchant-token',
@@ -419,7 +419,7 @@ One-line USDC micropayments for LLM APIs and AI agents:
 - No API key management — pay per request
 - Sub-cent precision for LLM token billing
 - Works with any OpenAI-compatible API endpoint
-- Supported via `@xpaylabs/x402` npm package
+- Supported via `@ghcr.io/yan253319066/x402` npm package
 
 ## Settlement Configuration
 

@@ -309,7 +309,7 @@ export const en: TranslationSet = {
       },
       {
         q: "How do I set up a self-hosted crypto payment gateway?",
-        a: "Setting up XPay Labs takes under 30 minutes. First, provision a VPS with at least 8GB RAM and 4 vCPU running Ubuntu 22.04+. Install Docker and Docker Compose, then clone the repository and run docker compose up -d. Configure your blockchain RPC endpoints (TRON, EVM, SUI) and generate your node seed phrase. Once deployed, the gateway exposes a REST API on port 3010. Full setup instructions are available in our documentation with step-by-step commands."
+        a: "Setting up XPay Labs takes under 30 minutes. First, provision a VPS with at least 8GB RAM and 4 vCPU running Ubuntu 22.04+. Install Docker and Docker Compose, then clone the repository and run docker compose up -d. Configure your blockchain RPC endpoints (TRON, EVM, SUI) and generate your node seed phrase. Once deployed, the gateway exposes a REST API on port 180. Full setup instructions are available in our documentation with step-by-step commands."
       },
       {
         q: "Can I accept USDT payments with XPay Labs?",

@@ -185,42 +185,42 @@ const faqSchema = {
 const steps = [
   {
     num: '1',
-    title: '部署核心节点',
-    content:
-      '开始接受加密货币支付的最快方式是使用 Docker Compose。在您的 VPS 上创建一个目录，并将以下内容保存为 docker-compose.yml：',
-    code: `version: '3.8'services:  xpay-gateway:    image: ghcr.io/xpaylabs/gateway:latest    container_name: xpay_core    restart: unless-stopped    ports:      - "8080:8080"    environment:      - XPAY_SEED_PHRASE=\${XPAY_SEED_PHRASE}      - XPAY_HMAC_SECRET=\${XPAY_HMAC_SECRET}      - XPAY_TRON_RPC=https://api.trongrid.io      - XPAY_EVM_RPC=https://eth-mainnet.g.alchemy.com/v2/\${ALCHEMY_KEY}      - XPAY_WEBHOOK_URL=https://api.yourdomain.com/webhooks/xpay    volumes:      - ./data:/app/data    logging:      driver: "json-file"      options:        max-size: "10m"        max-file: "3"`,
-    after:
-      '运行 docker compose up -d 启动网关。首次启动时，如果未设置 XPAY_SEED_PHRASE，XPay Labs 会生成一个新的 HD 钱包种子，或者从您现有的种子派生地址。网关在 8080 端口上暴露 REST API，并立即开始扫描已配置链上的传入交易。',
+    title: '使用 Docker Compose 部署',
+    content: '开始接受加密货币支付的最快方式是使用 Docker Compose。克隆官方部署仓库并配置环境变量：',
+    code: `git clone https://github.com/yan253319066/XPayLabs-docker.git
+cd XPayLabs-docker
+cp .env.example .env`,
+    after: '运行 `docker compose up -d` 启动所有服务。在 `.env` 文件中配置您的区块链 RPC 端点（TRON、EVM、SUI）、钱包助记词和商户设置。网关在 180 端口上暴露 REST API，并立即开始扫描已配置链上的传入交易。',
   },
   {
     num: '2',
-    title: '配置环境变量',
-    content:
-      '网关需要几个环境变量才能运行。在与 docker-compose.yml 相同的目录中创建一个 .env 文件：',
+    title: '生成 API 密钥',
+    content: '在网关管理面板中创建您的商户账号以获取 API 密钥（merchant token）和 webhook 密钥。这些用于验证支付请求和确认 webhook 签名。',
     after: '',
   },
   {
     num: '3',
-    title: '生成 API 密钥',
-    content:
-      '在网关运行后，生成一个商户 API 密钥来验证您的支付请求。使用管理端点：',
-    code: `curl -X POST "http://localhost:8080/v1/admin/api-keys" \\  -H "Content-Type: application/json" \\  -H "Authorization: Bearer \${XPAY_ADMIN_TOKEN}" \\  -d '{    "label": "production-checkout",    "permissions": ["payments:create", "payments:read"]  }'`,
-    after:
-      '响应中包含一个以 xpay_live_ 为前缀的 API 密钥。请安全存储此密钥——它将取代所有支付 API 调用的用户名/密码认证。您可以为开发、测试和生产环境生成多个具有不同权限范围的密钥。',
+    title: '创建您的第一笔收款订单',
+    content: '现在您可以创建一笔收款订单。当客户到达结账页面时，您的后端调用此端点：',
+    code: `curl -X POST "http://localhost:180/v1/order/createCollection" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "sign": "a1b2c3d4e5f6...",
+    "timestamp": 1717000000,
+    "nonce": "unique_nonce_123",
+    "data": {
+      "amount": "100.00",
+      "symbol": "USDT",
+      "chain": "TRON",
+      "orderId": "order_12345"
+    }
+  }'`,
+    after: '将 TOKEN 替换为您的商家令牌。有关 HMAC-SHA256 签名详情，请参阅[认证指南](https://docs.xpaylabs.com/authentication)。',
   },
   {
     num: '4',
-    title: '创建您的第一笔支付',
-    content:
-      '现在您可以创建一笔支付发票。当客户到达结账页面时，您的后端调用此端点：',
-    code: `curl -X POST "https://gateway.yourdomain.com/v1/payments" \\  -H "Authorization: Bearer xpay_live_8f3a9d7219bc" \\  -H "Content-Type: application/json" \\  -d '{    "amount": "100.00",    "currency": "USDT",    "chain": "TRON",    "order_id": "order_783120",    "callback_url": "https://api.merchant.com/v1/webhooks/xpay",    "customer_email": "customer@example.com",    "metadata": {      "product_id": "prod_456",      "plan": "premium_annual"    }  }'`,
-    after: '',
-  },
-  {
-    num: '5',
     title: '处理 Webhook 回调',
-    content:
-      'XPay Labs 通过 POST 请求向您的 callback_url 发送支付确认 webhook，并在 X-Signature 请求头中附带 HMAC-SHA256 签名。以下是在 Node.js 中验证和处理负载的方法：',
+    content: 'XPay Labs 通过 POST 请求向您的回调 URL 发送支付确认 webhook，并在请求体中附带 HMAC-SHA256 签名。以下是在 Node.js 中验证和处理负载的方法：',
     code: `import crypto from 'crypto';// Your HMAC secret from XPAY_HMAC_SECRETconst HMAC_SECRET = process.env.XPAY_HMAC_SECRET;export async function POST(request: Request) {  const body = await request.text();  const signature = request.headers.get('x-signature');  // Verify HMAC-SHA256 signature  const expected = crypto    .createHmac('sha256', HMAC_SECRET)    .update(body, 'utf8')    .digest('hex');  if (signature !== expected) {    return Response.json({ error: 'invalid signature' }, { status: 401 });  }  const payload = JSON.parse(body);  // payload structure:  // {  //   "event": "payment.confirmed",  //   "payment": {  //     "id": "pay_9f3b8c2a1d",  //     "order_id": "order_783120",  //     "amount": "100.00",  //     "currency": "USDT",  //     "chain": "TRON",  //     "tx_id": "b4f7c3a12d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",  //     "from_address": "TXYZ...",  //     "to_address": "TABC...",  //     "confirmations": 32,  //     "status": "confirmed",  //     "timestamp": 1715875200  //   }  // }  if (payload.event === 'payment.confirmed') {    // Fulfill the order    await fulfillOrder(payload.payment.order_id, payload.payment);    return Response.json({ received: true });  }  return Response.json({ received: true });}`,
     after:
       'Webhook 使用指数退避重试机制发送（3 次尝试：10 秒、60 秒、300 秒），直到您的服务器返回 200 OK。使用 payment.id 实现幂等性检查，以防止在重复 webhook 投递时出现双重履约。',

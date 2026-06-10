@@ -149,79 +149,46 @@ const faqSchema = {
 const steps = [
   {
     num: '1',
-    title: 'Deploy the Core Node',
-    content: 'The fastest way to start accepting crypto payments is with Docker Compose. Create a directory on your VPS and save the following as docker-compose.yml:',
-    code: `version: '3.8'
-services:
-  xpay-gateway:
-    image: ghcr.io/xpaylabs/gateway:latest
-    container_name: xpay_core
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    environment:
-      - XPAY_SEED_PHRASE=\${XPAY_SEED_PHRASE}
-      - XPAY_HMAC_SECRET=\${XPAY_HMAC_SECRET}
-      - XPAY_TRON_RPC=https://api.trongrid.io
-      - XPAY_EVM_RPC=https://eth-mainnet.g.alchemy.com/v2/\${ALCHEMY_KEY}
-      - XPAY_WEBHOOK_URL=https://api.yourdomain.com/webhooks/xpay
-    volumes:
-      - ./data:/app/data
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"`,
-    after: 'Run docker compose up -d to start the gateway. On your first launch, XPay Labs generates a new HD wallet seed if XPAY_SEED_PHRASE is not set, or derives addresses from your existing seed. The gateway exposes a REST API on port 8080 and immediately begins scanning configured chains for incoming transactions.',
+    title: 'Deploy with Docker Compose',
+    content: 'The fastest way to start accepting crypto payments is with Docker Compose. Clone the official deployment repository and configure your environment:',
+    code: `git clone https://github.com/yan253319066/XPayLabs-docker.git
+cd XPayLabs-docker
+cp .env.example .env`,
+    after: 'Run `docker compose up -d` to start all services. Configure your blockchain RPC endpoints (TRON, EVM, SUI), wallet seed phrase, and merchant settings in the `.env` file. The gateway exposes a REST API on port 180 and begins scanning configured chains for incoming transactions.',
   },
   {
     num: '2',
-    title: 'Configure Environment',
-    content: 'The gateway requires several environment variables to operate. Create a .env file in the same directory as your docker-compose.yml:',
+    title: 'Generate API Keys',
+    content: 'Create your merchant account in the gateway dashboard to get your API key (merchant token) and webhook secret. These are used to authenticate payment requests and verify webhook signatures.',
     after: '',
   },
   {
     num: '3',
-    title: 'Generate API Keys',
-    content: 'With the gateway running, generate a merchant API key to authenticate your payment requests. Use the admin endpoint:',
-    code: `curl -X POST "http://localhost:8080/v1/admin/api-keys" \\
+    title: 'Create Your First Collection',
+    content: 'Now you can create a collection order. Your backend calls this endpoint when a customer reaches checkout:',
+    code: `curl -X POST "http://localhost:180/v1/order/createCollection" \\
   -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer \${XPAY_ADMIN_TOKEN}" \\
   -d '{
-    "label": "production-checkout",
-    "permissions": ["payments:create", "payments:read"]
+    "sign": "a1b2c3d4e5f6...",
+    "timestamp": 1717000000,
+    "nonce": "unique_nonce_123",
+    "data": {
+      "amount": "100.00",
+      "symbol": "USDT",
+      "chain": "TRON",
+      "orderId": "order_12345"
+    }
   }'`,
-    after: 'The response includes an API key prefixed with xpay_live_. Store this securely — it replaces username/password authentication for all payment API calls. You can generate multiple keys with different permission scopes for development, staging, and production environments.',
+    after: 'Replace TOKEN with your merchant token. See the [authentication guide](https://docs.xpaylabs.com/authentication) for HMAC-SHA256 signing details.',
   },
   {
     num: '4',
-    title: 'Create Your First Payment',
-    content: 'Now you can create a payment invoice. Your backend calls this endpoint when a customer reaches checkout:',
-    code: `curl -X POST "https://gateway.yourdomain.com/v1/payments" \\
-  -H "Authorization: Bearer xpay_live_8f3a9d7219bc" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "amount": "100.00",
-    "currency": "USDT",
-    "chain": "TRON",
-    "order_id": "order_783120",
-    "callback_url": "https://api.merchant.com/v1/webhooks/xpay",
-    "customer_email": "customer@example.com",
-    "metadata": {
-      "product_id": "prod_456",
-      "plan": "premium_annual"
-    }
-  }'`,
-    after: '',
-  },
-  {
-    num: '5',
     title: 'Handle Webhook Callbacks',
-    content: 'XPay Labs sends payment confirmation webhooks to your callback_url via POST with an HMAC-SHA256 signature in the X-Signature header. Here is how to verify and process the payload in Node.js:',
+    content: 'XPay Labs sends payment confirmation webhooks to your callback URL via POST with an HMAC-SHA256 signature. Here is how to verify and process the payload in Node.js:',
     code: `import crypto from 'crypto';
 
-// Your HMAC secret from XPAY_HMAC_SECRET
-const HMAC_SECRET = process.env.XPAY_HMAC_SECRET;
+// Your webhook secret from the merchant dashboard
+const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
 export async function POST(request: Request) {
   const body = await request.text();

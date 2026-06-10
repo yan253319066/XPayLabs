@@ -440,50 +440,36 @@ export default function TronPaymentGatewayPage() {
                           <span className="w-2.5 h-2.5 bg-yellow-500/80 rounded-full" />
                           <span className="w-2.5 h-2.5 bg-green-500/80 rounded-full" />
                         </div>
-                        <span className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-wider">docker-compose.yml</span>
+                        <span className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-wider">bash</span>
                       </div>
                     </div>
                     <div className="p-5 sm:p-7 overflow-auto custom-scrollbar select-all bg-[#060816]">
                       <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-                        <span className="text-brand-purple">version</span>: <span className="text-teal-300">"3.9"</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">1. Clone the official deployment repo</span><br />
+                        <span className="text-teal-400">git</span> <span className="text-brand-cyan">clone</span> <span className="text-teal-400">https://github.com/yan253319066/XPayLabs-docker.git</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">2. Enter the directory</span><br />
+                        <span className="text-brand-blue">cd</span> <span className="text-teal-400">XPayLabs-docker</span><br />
                         <br />
-                        <span className="text-brand-purple">services</span>:<br />
-                        &nbsp;&nbsp;<span className="text-brand-cyan">xpay-gateway</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">image</span>: <span className="text-teal-300">ghcr.io/xpaylabs/gateway:latest</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">restart</span>: <span className="text-teal-300">unless-stopped</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">ports</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span className="text-teal-300">"8080:8080"</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">environment</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_SEED_PHRASE</span>: <span className="text-teal-300">${"{XPAY_SEED_PHRASE}"}</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_TRON_RPC</span>: <span className="text-teal-300">https://api.trongrid.io</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_TRON_API_KEY</span>: <span className="text-teal-300">${"{TRONGRID_API_KEY}"}</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_CONFIRMATIONS</span>: <span className="text-purple-400">19</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_WEBHOOK_URL</span>: <span className="text-teal-300">https://api.merchant.com/v1/webhooks/xpay</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">XPAY_TRON_NETWORK</span>: <span className="text-teal-300">mainnet</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">volumes</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span className="text-teal-300">./config.yaml:/app/config.yaml</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">logging</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">driver</span>: <span className="text-teal-300">"json-file"</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-purple">options</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">max-size</span>: <span className="text-teal-300">"10m"</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-brand-cyan">max-file</span>: <span className="text-teal-300">"3"</span>
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">3. Edit .env with your seed phrase, RPC endpoints, webhook URL</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">4. Start the gateway</span><br />
+                        <span className="text-brand-blue">docker compose</span> <span className="text-brand-cyan">up</span> <span className="text-teal-400">-d</span><br />
+                        <br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">Gateway is available at http://localhost:180</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">(port controlled by HOST_PORT_GATEWAY_HTTP in .env)</span>
                       </code>
                     </div>
                     <div className="bg-[#050716] px-5 py-2.5 border-t border-white/5 flex items-center justify-between text-[10px] uppercase font-mono text-slate-500">
                       <span className="flex items-center space-x-1.5 font-bold">
                         <Shield className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>PERSISTENT VOLUME BOUND</span>
+                        <span>OFFICIAL DEPLOYMENT REPO</span>
                       </span>
-                      <span className="hidden sm:inline font-bold">DOCKER COMPOSE V3</span>
+                      <span className="hidden sm:inline font-bold">DOCKER COMPOSE</span>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 glass-panel rounded-2xl p-5 border border-white/5">
                   <p className="text-slate-400 text-xs sm:text-sm font-sans">
-                    <strong className="text-white">Environment breakdown:</strong> <code className="text-brand-cyan text-xs">XPAY_SEED_PHRASE</code> is your 12–24 word mnemonic 
-                    (store it offline — never in version control). <code className="text-brand-cyan text-xs">XPAY_TRON_RPC</code> defaults to TronGrid but can point to your own full node. 
-                    <code className="text-brand-cyan text-xs"> XPAY_CONFIRMATIONS</code> defaults to 19 blocks (~57s) for finality — you can lower this to 1 for mempool-only 
-                    detection (<strong className="text-white">risk: orphan risk</strong>) or raise it for higher assurance.
+                    <strong className="text-white">Configuration:</strong> Edit <code className="text-brand-cyan text-xs">.env</code> in the <code className="text-brand-cyan text-xs">XPayLabs-docker</code> repo to set your <code className="text-brand-cyan text-xs">XPAY_SEED_PHRASE</code>, TRON/EVM/SUI RPC endpoints, and webhook URL. All environment variables are documented in the <a href="https://github.com/yan253319066/XPayLabs-docker" className="text-brand-blue hover:underline">XPayLabs-docker</a> repository. The gateway exposes port <code className="text-brand-cyan text-xs">180</code> by default (controlled by <code className="text-brand-cyan text-xs">HOST_PORT_GATEWAY_HTTP</code> in <code className="text-brand-cyan text-xs">.env</code>). <code className="text-brand-cyan text-xs">XPAY_CONFIRMATIONS</code> defaults to 19 blocks (~57s) for finality — you can lower this to 1 for mempool-only detection (<strong className="text-white">risk: orphan risk</strong>) or raise it for higher assurance.
                   </p>
                 </div>
               </div>

@@ -37,15 +37,15 @@
 ## Quick Start (Gateway)
 
 ```bash
-# Deploy the gateway on your server
-docker pull ghcr.io/xpaylabs/gateway:latest
-docker run -d \
-  -p 3010:3010 \
-  -e XPAY_SEED_PHRASE="your-24-word-mnemonic" \
-  -e XPAY_MYSQL_DSN="user:pass@tcp(host:3306)/xpay" \
-  -e XPAY_REDIS_ADDR="host:6379" \
-  ghcr.io/xpaylabs/gateway:latest
+# Clone the official deployment repo
+git clone https://github.com/yan253319066/XPayLabs-docker.git
+cd XPayLabs-docker
+
+# Deploy the gateway
+docker compose up -d
 ```
+
+Edit `.env` to set `XPAY_SEED_PHRASE`, RPC endpoints, and your webhook URL. The gateway is available at `http://localhost:180` (controlled by `HOST_PORT_GATEWAY_HTTP` in `.env`).
 
 See the [deployment documentation](https://docs.xpaylabs.com) for Docker Compose and Kubernetes guides.
 

@@ -309,7 +309,7 @@ export const zh: TranslationSet = {
       },
       {
         q: "如何搭建自托管加密支付网关？",
-        a: "部署 XPay Labs 只需不到 30 分钟。首先准备一台至少 8GB RAM、4核 CPU 的 VPS（推荐 Ubuntu 22.04+），安装 Docker 和 Docker Compose，然后克隆仓库并运行 docker compose up -d。配置您的区块链 RPC 端点（TRON、EVM、SUI）并生成节点种子短语。部署完成后，网关在 3010 端口提供 REST API。完整的安装指南请参阅我们的开发文档。"
+        a: "部署 XPay Labs 只需不到 30 分钟。首先准备一台至少 8GB RAM、4核 CPU 的 VPS（推荐 Ubuntu 22.04+），安装 Docker 和 Docker Compose，然后克隆仓库并运行 docker compose up -d。配置您的区块链 RPC 端点（TRON、EVM、SUI）并生成节点种子短语。部署完成后，网关在 180 端口提供 REST API。完整的安装指南请参阅我们的开发文档。"
       },
       {
         q: "XPay Labs 与 BitPay 或 Coinbase Commerce 相比如何？",

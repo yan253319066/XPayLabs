@@ -559,121 +559,39 @@ export default function TronPaymentGatewayPage() {
                           <span className="w-2.5 h-2.5 bg-yellow-500/80 rounded-full" />
                           <span className="w-2.5 h-2.5 bg-green-500/80 rounded-full" />
                         </div>
-                        <span className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-wider">
-                          docker-compose.yml
-                        </span>
+                        <span className="text-[10px] font-mono text-slate-500 font-bold uppercase tracking-wider">bash</span>
                       </div>
                     </div>
                     <div className="p-5 sm:p-7 overflow-auto custom-scrollbar select-all bg-[#060816]">
                       <code className="text-gray-300 font-mono text-[11px] sm:text-xs leading-relaxed block whitespace-pre overflow-x-auto">
-                        <span className="text-brand-purple">version</span>:
-                        <span className="text-teal-300">"3.9"</span>
-                        <br /> <br />
-                        <span className="text-brand-purple">services</span>:
-                        <br /> &nbsp;&nbsp;
-                        <span className="text-brand-cyan">xpay-gateway</span>:
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">image</span>:
-                        <span className="text-teal-300">
-                          ghcr.io/xpaylabs/gateway:latest
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">restart</span>:
-                        <span className="text-teal-300">unless-stopped</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">ports</span>:<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
-                        <span className="text-teal-300">"8080:8080"</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">environment</span>:
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">
-                          XPAY_SEED_PHRASE
-                        </span>
-                        :
-                        <span className="text-teal-300">
-                          ${'{XPAY_SEED_PHRASE}'}
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">XPAY_TRON_RPC</span>:
-                        <span className="text-teal-300">
-                          https://api.trongrid.io
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">
-                          XPAY_TRON_API_KEY
-                        </span>
-                        :
-                        <span className="text-teal-300">
-                          ${'{TRONGRID_API_KEY}'}
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">
-                          XPAY_CONFIRMATIONS
-                        </span>
-                        : <span className="text-purple-400">19</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">
-                          XPAY_WEBHOOK_URL
-                        </span>
-                        :
-                        <span className="text-teal-300">
-                          https://api.merchant.com/v1/webhooks/xpay
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">
-                          XPAY_TRON_NETWORK
-                        </span>
-                        : <span className="text-teal-300">mainnet</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">volumes</span>:
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
-                        <span className="text-teal-300">
-                          ./config.yaml:/app/config.yaml
-                        </span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">logging</span>:
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">driver</span>:
-                        <span className="text-teal-300">"json-file"</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-purple">options</span>:
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">max-size</span>:
-                        <span className="text-teal-300">"10m"</span>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className="text-brand-cyan">max-file</span>:
-                        <span className="text-teal-300">"3"</span>
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">1. 克隆官方部署仓库</span><br />
+                        <span className="text-teal-400">git</span> <span className="text-brand-cyan">clone</span> <span className="text-teal-400">https://github.com/yan253319066/XPayLabs-docker.git</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">2. 进入目录</span><br />
+                        <span className="text-brand-blue">cd</span> <span className="text-teal-400">XPayLabs-docker</span><br />
+                        <br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">3. 编辑 .env 设置助记词、RPC 端点和 Webhook URL</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">4. 启动网关</span><br />
+                        <span className="text-brand-blue">docker compose</span> <span className="text-brand-cyan">up</span> <span className="text-teal-400">-d</span><br />
+                        <br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">网关可通过 http://localhost:180 访问</span><br />
+                        <span className="text-brand-purple">#</span> <span className="text-teal-300">（端口由 .env 中的 HOST_PORT_GATEWAY_HTTP 控制）</span>
                       </code>
                     </div>
                     <div className="bg-[#050716] px-5 py-2.5 border-t border-white/5 flex items-center justify-between text-[10px] uppercase font-mono text-slate-500">
                       <span className="flex items-center space-x-1.5 font-bold">
                         <Shield className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>持久卷已绑定</span>
+                        <span>官方部署仓库</span>
                       </span>
-                      <span className="hidden sm:inline font-bold">
-                        DOCKER COMPOSE V3
-                      </span>
+                      <span className="hidden sm:inline font-bold">DOCKER COMPOSE</span>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 glass-panel rounded-2xl p-5 border border-white/5">
                   <p className="text-slate-400 text-xs sm:text-sm font-sans">
                     <strong className="text-white">
-                      环境变量说明：
+                      配置说明：
                     </strong>
-                    <code className="text-brand-cyan text-xs">
-                      XPAY_SEED_PHRASE
-                    </code>
-                    是您的 12–24 词助记词（离线保存——切勿放入版本控制）。
-                    <code className="text-brand-cyan text-xs">
-                      XPAY_TRON_RPC
-                    </code>
-                    默认为 TronGrid，但可指向您自己的全节点。
-                    <code className="text-brand-cyan text-xs">
-                      XPAY_CONFIRMATIONS
-                    </code>
-                    默认为 19 个区块（约 57 秒）以确保最终确认——您可以降低到 1
+                    在 <code className="text-brand-cyan text-xs">XPayLabs-docker</code> 仓库中编辑 <code className="text-brand-cyan text-xs">.env</code> 文件设置您的 <code className="text-brand-cyan text-xs">XPAY_SEED_PHRASE</code>、TRON/EVM/SUI RPC 端点和 Webhook URL。所有环境变量均在 <a href="https://github.com/yan253319066/XPayLabs-docker" className="text-brand-blue hover:underline">XPayLabs-docker</a> 仓库中有文档说明。网关默认暴露端口 <code className="text-brand-cyan text-xs">180</code>（由 <code className="text-brand-cyan text-xs">.env</code> 中的 <code className="text-brand-cyan text-xs">HOST_PORT_GATEWAY_HTTP</code> 控制）。<code className="text-brand-cyan text-xs">XPAY_CONFIRMATIONS</code> 默认为 19 个区块（约 57 秒）以确保最终确认——您可以降低到 1
                     以实现仅交易池检测（
                     <strong className="text-white">风险：孤块风险</strong>
                     ）或提高以获得更高保障。
