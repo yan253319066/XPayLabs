@@ -3,7 +3,7 @@ import { TranslationSet } from '../translations';
 export const en: TranslationSet = {
   meta: {
     title: "XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure",
-    description: "XPay Labs (xpay) — self-hosted crypto payment infrastructure. Deploy your own private, non-custodial crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI.",
+    description: "XPay Labs (xpay) — self-hosted crypto payment infrastructure. Deploy your own private, non-custodial crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Multi-tenant — host unlimited merchants and collect fees.",
     keywords: "xpay, XPay Labs, self-hosted crypto payment infrastructure, crypto payment gateway, stablecoin payments, TRC20 payment API, EVM payment infrastructure, developer payment infrastructure"
   },
   navigation: {
@@ -22,7 +22,7 @@ export const en: TranslationSet = {
   },
   hero: {
     title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",
-    subtitle: "XPay Labs (often called xpay) is a self-hosted crypto payment infrastructure. Private, containerized system supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power.",
+    subtitle: "XPay Labs (often called xpay) is a self-hosted crypto payment infrastructure. Private, containerized system supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power. Multi-tenant by design — host unlimited merchants and earn from every transaction.",
     ctaDeploy: "Deploy Your System",
     ctaDocs: "Contact Us",
     badge: "V1.0 — DEPLOY INSTANTLY"
@@ -84,6 +84,10 @@ export const en: TranslationSet = {
       {
         title: "x402 Protocol",
         description: "One-line USDC micropayments for AI agents and LLM APIs. No API key management. Pay per LLM call or API request."
+      },
+      {
+        title: "Multi-Tenant Platform",
+        description: "Host unlimited merchants on a single deployment. Isolated API credentials, independent configuration, and your own fee structure per merchant."
       }
     ]
   },
@@ -200,6 +204,11 @@ export const en: TranslationSet = {
         title: "Custom Crypto Checkout Widget",
         description: "Integrate beautiful UI overlays using customizable pre-themed checkout widgets matching high-end design systems.",
         advantage: "Ready to deploy instantly alongside the main Docker Compose package."
+      },
+      {
+        title: "Payment Platform Operator",
+        description: "Run your own crypto payment platform. Onboard multiple merchants, each with isolated wallets and API credentials. Set your own transaction fees and earn from every payment processed.",
+        advantage: "Zero infrastructure fees — keep 100% of the revenue you generate."
       }
     ],
     advantage: "Advantage:"
@@ -284,7 +293,7 @@ export const en: TranslationSet = {
       },
       {
         q: "Is XPay Labs truly 100% self-hosted and non-custodial?",
-        a: "Absolutely. XPay Labs does not store customer keys on multi-tenant cloud storage. The merchant owns the deployment containers. The software generates and accesses deposit address pools fully on your private system memory, ensuring strict non-custodial operation."
+        a: "Absolutely. XPay Labs does not store customer keys on any cloud infrastructure. The merchant owns the deployment containers. The software generates and accesses deposit address pools fully on your private system memory, ensuring strict non-custodial operation."
       },
       {
         q: "How does the webhook event system guarantee arrival?",
@@ -349,6 +358,14 @@ export const en: TranslationSet = {
       {
         q: "Is there an API for creating and managing payments?",
         a: "Yes. XPay Labs exposes a comprehensive REST API for payment lifecycle management. The create-payment endpoint accepts amount, currency, chain, and optional metadata, then returns a unique deposit address and checkout URL. Additional endpoints cover invoice status lookup, settlement sweeps, webhook log retrieval, and merchant wallet management. API responses follow a consistent JSON structure with typed fields. Full API documentation with Node.js, Python, Go, and cURL examples is available in our docs."
+      },
+      {
+        q: "Can I host multiple merchants on a single deployment?",
+        a: "Yes. XPay Labs is multi-tenant by design. A single Docker Compose deployment can serve unlimited merchants, each with isolated API credentials, separate webhook endpoints, and independent configuration. Merchants never see each other's data or transactions."
+      },
+      {
+        q: "Can I charge transaction fees to my merchants?",
+        a: "Absolutely. As the platform operator, you set your own fee structure — percentage-based, flat fee per transaction, or a hybrid model. Since you run the infrastructure yourself, there are no third-party processor fees cutting into your margin. You keep 100% of the revenue you generate."
       }
     ]
   },

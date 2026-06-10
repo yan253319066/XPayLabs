@@ -3,7 +3,7 @@ import { TranslationSet } from '../translations';
 export const zh: TranslationSet = {
   meta: {
     title: "XPay Labs（简称 xpay）— 自托管加密支付基础设施",
-    description: "XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。",
+    description: "XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。多商家架构 — 一个部署可入驻无限商家并收取手续费。",
     keywords: "xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口, EVM支持加密网关, 非托管加密支付"
   },
   navigation: {
@@ -22,7 +22,7 @@ export const zh: TranslationSet = {
   },
   hero: {
     title: "部署您专属的加密货币支付基础设施",
-    subtitle: "XPayLabs（简称 xpay）——商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全非托管、白标定制，专为高要求的 Web3 开发者设计。",
+    subtitle: "XPayLabs（简称 xpay）——商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全非托管、白标定制，专为高要求的 Web3 开发者设计。原生多商家架构 — 一个部署可入驻无限商家，从每笔交易中获取收益。",
     ctaDeploy: "一键部署系统",
     ctaDocs: "联系我们",
     badge: "V1.0 — 企业极速私有化部署"
@@ -84,6 +84,10 @@ export const zh: TranslationSet = {
       {
         title: "x402 协议",
         description: "AI 代理即付即用。一行代码集成 USDC 微支付，无需管理 API 密钥。支持按次付费调用 LLM 和 API。"
+      },
+      {
+        title: "多商家平台",
+        description: "一个部署可入驻无限商家。独立 API 凭证、各自隔离的配置，以及为每个商家自定义的费率结构。"
       }
     ]
   },
@@ -200,6 +204,11 @@ export const zh: TranslationSet = {
         title: "高定收银台视觉自定义",
         description: "完美的 UI 覆盖框架。无论是轻快风还是深色暗黑风，自适的多链 React 弹窗可完美定制，与高端严谨的前端设计系统完美贴合。",
         advantage: "支持随整站 Docker Compose 镜像一键瞬间渲染。"
+      },
+      {
+        title: "支付平台运营",
+        description: "运营您自己的加密支付平台。入驻多个商家，每个商家拥有独立隔离的钱包和 API 凭证。自主设置交易费率，从每笔支付中获取收益。",
+        advantage: "零基础设施抽成 — 您产生的收入 100% 归您。"
       }
     ],
     advantage: "优势："
@@ -284,7 +293,7 @@ export const zh: TranslationSet = {
       },
       {
         q: "自托管和非托管具体如何确保我的资金安全？",
-        a: "在 XPay Labs 中，所有加密私钥、助记词及派生地址，均在您自己完全隔离的管理容器内存空间中产生与保存，不经过任何多租户第三方。XPay 绝对不在云端收集或存储商户密钥。收款资金全流程由顾客直接划入您的专属私钥钱包，无法被外部冻结。"
+        a: "在 XPay Labs 中，所有加密私钥、助记词及派生地址，均在您自己完全隔离的管理容器内存空间中产生与保存，绝不经过任何第三方云端。XPay 绝对不在云端收集或存储商户密钥。收款资金全流程由顾客直接划入您的专属私钥钱包，无法被外部冻结。"
       },
       {
         q: "Webhook 事件推送如果不通会如何处理？",
@@ -349,6 +358,14 @@ export const zh: TranslationSet = {
       {
         q: "是否有用于创建和管理支付的 API？",
         a: "是的。XPay Labs 提供全面的 REST API 用于支付生命周期管理。create-payment 端点接受金额、币种、链和可选元数据，返回唯一的充值地址和结账 URL。其他端点涵盖 Invoice 状态查询、资金归集、Webhook 日志检索和商户钱包管理。API 响应遵循一致的 JSON 结构，字段类型明确。完整 API 文档（含 Node.js、Python、Go 和 cURL 示例）请参阅我们的技术文档。"
+      },
+      {
+        q: "一个部署可以入驻多个商家吗？",
+        a: "可以。XPay Labs 原生支持多商家架构。一套 Docker Compose 部署即可服务无限商家，每个商家拥有独立的 API 凭证、独立的 Webhook 端点和独立的配置，商家之间数据完全隔离，互不可见。"
+      },
+      {
+        q: "我可以向入驻商家收取交易手续费吗？",
+        a: "完全可以。作为平台运营者，您可以自主设置费率结构——按百分比抽成、每笔固定费用或混合模式。由于基础设施由您自己运行，没有第三方处理器抽成侵蚀您的利润，您产生的收入 100% 归您。"
       }
     ]
   },
