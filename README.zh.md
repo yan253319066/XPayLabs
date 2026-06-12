@@ -29,7 +29,7 @@
 - **非托管** — 密钥在您自己的服务器上生成和存储，绝不经过共享基础设施
 - **自托管** — 通过 Docker Compose 在您的 VPS、裸金属或 Kubernetes 集群上部署
 - **白标** — 完全品牌自定义，无第三方 iframe 或 Logo
-- **REST API** — 全面的 Stripe 风格 API，支持 Node.js、Python、Go SDK
+- **REST API** — 全面的 Stripe 风格 API，支持 Node.js 和 Java SDK
 - **实时监控** — 实时网关仪表盘，支持商户节点追踪和内存池可视化
 - **Webhook 系统** — 基于队列的 Webhook 通知，HMAC-SHA256 签名，指数退避重试
 - **多商家** — 一套部署入驻无限商户，独立 API 凭证、独立配置、自定义费率结构

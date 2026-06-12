@@ -238,7 +238,7 @@ export default function BTCPayServerAlternativePage() {
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">White-Label</td>
                     <td className="p-4 text-gray-400">Full white-label</td>
-                    <td className="p-4 text-green-400">Full white-label (React checkout)</td>
+                    <td className="p-4 text-green-400">Full white-label (Vue 3 checkout)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">License</td>

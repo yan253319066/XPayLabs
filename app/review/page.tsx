@@ -258,7 +258,7 @@ export default function ReviewPage() {
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
                 At its core, XPay Labs is a Spring Boot backend with concurrent blockchain indexers,
                 a REST API for payment management, and a webhook delivery system. The frontend checkout
-                widget is built with React and supports full white-label customization.
+                widget is built with Vue 3 and supports full white-label customization.
               </p>
             </section>
 

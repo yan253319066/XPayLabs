@@ -302,7 +302,7 @@ export default function BTCPayServerAlternativePage() {
                     </td>
                     <td className="p-4 text-gray-400">完全白标</td>
                     <td className="p-4 text-green-400">
-                      完全白标（React 结账）
+                      完全白标（Vue 3 结账）
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">

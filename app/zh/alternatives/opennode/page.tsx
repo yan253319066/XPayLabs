@@ -788,7 +788,7 @@ export default function OpenNodeAlternativePage() {
                       更新您的结账集成
                     </h3>
                     <p className="text-sm text-gray-400 font-sans">
-                      将 OpenNode API 调用替换为 XPay Labs REST API 端点。发票创建流程类似：创建发票、获取支付地址、监听 webhook 确认。我们的 HMAC 签名 webhook 提供可靠的服务器到服务器通知。
+                      将 OpenNode API 调用替换为 XPay Labs REST API 端点。发票创建流程类似：创建订单、获取收款地址、监听 webhook 确认。我们的 HMAC 签名 webhook 提供可靠的服务器到服务器通知。
                     </p>
                   </div>
                 </div>

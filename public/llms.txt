@@ -26,7 +26,7 @@
 - **Sub-second detection:** Mempool-level scanning detects payments within 1–6 seconds of broadcast.
 - **Stripe-inspired REST API:** Predictable endpoints, consistent JSON responses, clear error messages.
 - **HMAC-SHA256 webhooks:** Cryptographically signed payloads with automatic retry queues.
-- **Full white-label:** Customizable React checkout UI with your branding. No third-party badges.
+- **Full white-label:** Customizable Vue 3 checkout UI with your branding. No third-party badges.
 - **Docker deployment:** Single `docker compose up -d` to deploy all microservices.
 
 ## Infrastructure Requirements

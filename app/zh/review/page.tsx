@@ -394,7 +394,7 @@ export default function ReviewPage() {
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
                 在核心层面，XPay Labs 是一个 Spring Boot 后端，配备并发区块链索引器、
                 用于支付管理的 REST API 以及 webhook 推送系统。
-                前端结账组件基于 React 构建，支持完全的白标自定义。
+                前端结账组件基于 Vue 3 构建，支持完全的白标自定义。
               </p>
             </section>
             {/* Key Features */}

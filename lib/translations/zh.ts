@@ -71,7 +71,7 @@ export const zh: TranslationSet = {
       },
       {
         title: "完美白标定制",
-        description: "开箱即用的 React 收银台组件，允许你一键修改文案、配置 logo 并随心自选各类渐变视觉主题。"
+        description: "开箱即用的 Vue 3 收银台组件，允许你一键修改文案、配置 logo 并随心自选各类渐变视觉主题。"
       },
       {
         title: "高并发区块监听",
@@ -202,7 +202,7 @@ export const zh: TranslationSet = {
       },
       {
         title: "高定收银台视觉自定义",
-        description: "完美的 UI 覆盖框架。无论是轻快风还是深色暗黑风，自适的多链 React 弹窗可完美定制，与高端严谨的前端设计系统完美贴合。",
+        description: "完美的 UI 覆盖框架。无论是轻快风还是深色暗黑风，自适的多链 Vue 3 弹窗可完美定制，与高端严谨的前端设计系统完美贴合。",
         advantage: "支持随整站 Docker Compose 镜像一键瞬间渲染。"
       },
       {
@@ -325,7 +325,7 @@ export const zh: TranslationSet = {
       },
       {
         q: "我可以自定义结账页面的品牌吗？",
-        a: "可以。XPay Labs 是完全白标的。结账 UI 使用 React 构建，可以根据您的品牌进行主题定制——颜色、字体、Logo、布局和自定义 CSS。整个前端与网关一起部署在 Docker 中，没有第三方 iframe 或外部品牌要求。开发者也可以使用 REST API 构建完全自定义的结账体验。"
+        a: "可以。XPay Labs 是完全白标的。结账 UI 使用 Vue 3 构建，可以根据您的品牌进行主题定制——颜色、字体、Logo、布局和自定义 CSS。整个前端与网关一起部署在 Docker 中，没有第三方 iframe 或外部品牌要求。开发者也可以使用 REST API 构建完全自定义的结账体验。"
       },
       {
         q: "XPay Labs 能否支持 USDT 收款？",

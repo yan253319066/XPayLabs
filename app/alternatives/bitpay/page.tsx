@@ -666,7 +666,7 @@ export default function BitPayAlternativePage() {
                     <h3 className="text-base font-display font-medium text-white">Update Your Checkout Integration</h3>
                     <p className="text-sm text-gray-400 font-sans">
                       Replace BitPay API calls with XPay Labs REST API endpoints. The invoice creation flow is
-                      similar: create an invoice, get a payment address, and listen for webhook confirmations.
+                      similar: create an invoice, get a deposit address, and listen for webhook confirmations.
                       Our HMAC-signed webhooks provide the same reliability as BitPay IPN.
                     </p>
                   </div>

@@ -706,7 +706,7 @@ export default function NowPaymentsAlternativePage() {
                   {
                     num: '04',
                     title: 'Update Your Checkout Integration',
-                    text: 'Replace NowPayments API calls with XPay Labs REST API endpoints. The invoice lifecycle is similar — create a charge, receive a payment address, and listen for on-chain confirmation via webhooks. Our HMAC-signed webhooks provide the same reliability as NowPayments IPN.',
+                    text: 'Replace NowPayments API calls with XPay Labs REST API endpoints. The invoice lifecycle is similar — create a charge, receive a deposit address, and listen for on-chain confirmation via webhooks. Our HMAC-signed webhooks provide the same reliability as NowPayments IPN.',
                   },
                   {
                     num: '05',

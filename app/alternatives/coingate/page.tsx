@@ -606,7 +606,7 @@ export default function CoinGateAlternativePage() {
                     <h3 className="text-base font-display font-medium text-white">Update Your Checkout Integration</h3>
                     <p className="text-sm text-gray-400 font-sans">
                       Replace CoinGate API calls with XPay Labs REST API endpoints. The invoice creation flow is
-                      similar: create an invoice, get a payment address, and listen for webhook confirmations.
+                      similar: create an invoice, get a deposit address, and listen for webhook confirmations.
                       Our HMAC-signed webhooks provide a more secure notification model than CoinGate's callbacks.
                     </p>
                   </div>

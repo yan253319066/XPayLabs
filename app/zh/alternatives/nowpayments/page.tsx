@@ -854,7 +854,7 @@ export default function NowPaymentsAlternativePage() {
                   {
                     num: '04',
                     title: '更新您的结账集成',
-                    text: '将 NowPayments API 调用替换为 XPay Labs REST API 端点。发票生命周期类似——创建订单、接收支付地址、通过 webhook 监听链上确认。我们的 HMAC 签名 webhook 提供与 NowPayments IPN 相同的可靠性。',
+                    text: '将 NowPayments API 调用替换为 XPay Labs REST API 端点。发票生命周期类似——创建订单、获取收款地址、通过 webhook 监听链上确认。我们的 HMAC 签名 webhook 提供与 NowPayments IPN 相同的可靠性。',
                   },
                   {
                     num: '05',

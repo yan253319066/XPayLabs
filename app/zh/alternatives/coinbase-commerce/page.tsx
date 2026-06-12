@@ -785,7 +785,7 @@ export default function CoinbaseCommerceAlternative() {
                   {
                     num: '04',
                     title: '更新您的结账集成',
-                    text: '将 Coinbase Commerce 结账按钮替换为 XPay Labs 支付链接或 API 集成。REST API 使其简单直接——创建订单、获取支付地址、监听 webhook 确认。',
+                    text: '将 Coinbase Commerce 结账按钮替换为 XPay Labs 支付链接或 API 集成。REST API 使其简单直接——创建订单、获取收款地址、监听 webhook 确认。',
                   },
                   {
                     num: '05',

@@ -684,7 +684,7 @@ export default function CoinbaseCommerceAlternative() {
                   {
                     num: '04',
                     title: 'Update Your Checkout Integration',
-                    text: 'Replace the Coinbase Commerce checkout button with XPay Labs payment link or API integration. The REST API makes it straightforward — create a charge, get a payment address, and listen for webhook confirmation.',
+                    text: 'Replace the Coinbase Commerce checkout button with XPay Labs payment link or API integration. The REST API makes it straightforward — create a charge, get a deposit address, and listen for webhook confirmation.',
                   },
                   {
                     num: '05',

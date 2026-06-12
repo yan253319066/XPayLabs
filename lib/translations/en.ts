@@ -71,7 +71,7 @@ export const en: TranslationSet = {
       },
       {
         title: "White-label Architecture",
-        description: "Easily integrate our pre-assembled modern React checkout widgets or brand the absolute entirety of your client payment flows."
+        description: "Easily integrate our pre-assembled modern Vue 3 checkout widgets or brand the absolute entirety of your client payment flows."
       },
       {
         title: "Real-time Monitoring",
@@ -345,7 +345,7 @@ export const en: TranslationSet = {
       },
       {
         q: "Can I customize the checkout page branding?",
-        a: "Yes. XPay Labs is fully white-label. The checkout UI is built with React and can be themed to match your brand — colors, typography, logo, layouts, and custom CSS. The entire frontend is deployed alongside the gateway in Docker, so there are no third-party iframes or external branding requirements. Developers can also build a completely custom checkout experience using the REST API."
+        a: "Yes. XPay Labs is fully white-label. The checkout UI is built with Vue 3 and can be themed to match your brand — colors, typography, logo, layouts, and custom CSS. The entire frontend is deployed alongside the gateway in Docker, so there are no third-party iframes or external branding requirements. Developers can also build a completely custom checkout experience using the REST API."
       },
       {
         q: "How is XPay Labs different from BTCPay Server?",
