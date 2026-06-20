@@ -1,6 +1,9 @@
 {
   "name": "xpaylabs",
   "version": "0.1.0",
+  "description": "XPay Labs — Self-hosted Crypto Payment Infrastructure. Marketing website built with Next.js 15.",
+  "author": "XPay Labs",
+  "keywords": ["xpaylabs", "xpay", "crypto-payment-gateway", "self-hosted", "cryptocurrency", "blockchain"],
   "private": true,
   "scripts": {
     "dev": "next dev",

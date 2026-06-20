@@ -23,9 +23,17 @@ const organizationSchema = {
   alternateName: 'xpay',
   url: 'https://www.xpaylabs.com',
   logo: 'https://www.xpaylabs.com/logo.png',
+  image: 'https://www.xpaylabs.com/og-image.png',
   description: 'Self-hosted crypto payment infrastructure supporting TRON, EVM chains, and SUI.',
+  foundingDate: '2026',
   sameAs: [
     'https://github.com/yan253319066',
+    'https://github.com/yan253319066/XPayLabs-docker',
+    'https://x.com/getciteflow',
+    'https://www.linkedin.com/in/neil-yan/',
+    'https://docs.xpaylabs.com',
+    'https://www.npmjs.com/package/@xpaylabs/node-sdk',
+    'https://central.sonatype.com/artifact/io.xpay/xpay-java-sdk',
   ],
 };
 
@@ -67,6 +75,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.xpaylabs.com'),
   icons: {
     icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     siteName: 'XPay Labs',
