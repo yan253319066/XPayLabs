@@ -100,7 +100,7 @@ const faqSchema = {
 const comparisonSchema = {
   '@context': 'https://schema.org',
   '@type': 'Table',
-  about: { '@type': 'Product', name: 'CoinGate vs XPay Labs Comparison' },
+  about: { '@type': 'Thing', name: 'CoinGate vs XPay Labs Comparison' },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

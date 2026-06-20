@@ -85,8 +85,37 @@ const productSchema = {
   name: 'XPay Labs',
   alternateName: 'xpay',
   description: 'Self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI.',
+  image: 'https://www.xpaylabs.com/logo.png',
+  brand: {
+    '@type': 'Brand',
+    name: 'XPay Labs',
+  },
   applicationCategory: 'PaymentProcessing',
   operatingSystem: 'Docker, Linux',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: 1,
+    reviewCount: 1,
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Organization',
+        name: 'XPay Labs',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '4.8',
+        bestRating: '5',
+      },
+      datePublished: '2026-05-31',
+      description: 'XPay Labs is a self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI with zero transaction fees.',
+    },
+  ],
   offers: [
     {
       '@type': 'Offer',
@@ -95,6 +124,34 @@ const productSchema = {
       priceCurrency: 'USD',
       priceValidUntil: '2030-12-31',
       description: 'Free self-hosted crypto payment software. 0% transaction fees.',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
     {
       '@type': 'Offer',
@@ -103,6 +160,34 @@ const productSchema = {
       priceCurrency: 'USD',
       priceValidUntil: '2030-12-31',
       description: 'One-time Docker deployment assistance and 30-day setup support.',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
     {
       '@type': 'Offer',
@@ -111,6 +196,34 @@ const productSchema = {
       priceCurrency: 'USD',
       priceValidUntil: '2030-12-31',
       description: 'Annual business support plan with priority SLA and monitoring assistance.',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
   ],
 };

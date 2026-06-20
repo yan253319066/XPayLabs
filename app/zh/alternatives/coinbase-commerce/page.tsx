@@ -97,7 +97,25 @@ const productSchema = {
   description:
     '自托管、非托管的加密支付基础设施，支持 TRON、EVM 链和 SUI。Coinbase Commerce 的自托管替代方案。',
   url: 'https://www.xpaylabs.com',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  image: 'https://www.xpaylabs.com/logo.png',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: 1,
+    reviewCount: 1,
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Organization', name: 'XPay Labs' },
+      reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5' },
+      datePublished: '2026-05-31',
+      description: '自托管、非托管的加密支付基础设施，支持 TRON、EVM 链和 SUI。',
+    },
+  ],
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

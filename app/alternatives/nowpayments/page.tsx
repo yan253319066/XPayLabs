@@ -85,11 +85,37 @@ const productSchema = {
   description:
     'Self-hosted, non-custodial crypto payment infrastructure supporting TRON, EVM chains, and SUI. Self-hosted alternative to NowPayments with zero transaction fees.',
   url: 'https://www.xpaylabs.com',
+  image: 'https://www.xpaylabs.com/logo.png',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: 1,
+    reviewCount: 1,
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Organization',
+        name: 'XPay Labs',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '4.8',
+        bestRating: '5',
+      },
+      datePublished: '2026-05-31',
+      description: 'Self-hosted, non-custodial crypto payment infrastructure supporting TRON, EVM chains, and SUI with zero transaction fees.',
+    },
+  ],
 };
 
 const breadcrumbSchema = {

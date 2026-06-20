@@ -99,7 +99,7 @@ const faqSchema = {
 const comparisonSchema = {
   '@context': 'https://schema.org',
   '@type': 'Table',
-  about: { '@type': 'Product', name: 'OpenNode vs XPay Labs Comparison' },
+  about: { '@type': 'Thing', name: 'OpenNode vs XPay Labs Comparison' },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

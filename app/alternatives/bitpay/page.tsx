@@ -81,7 +81,7 @@ const comparisonSchema = {
   '@context': 'https://schema.org',
   '@type': 'Table',
   about: {
-    '@type': 'Product',
+    '@type': 'Thing',
     name: 'BitPay vs XPay Labs Comparison',
   },
 };

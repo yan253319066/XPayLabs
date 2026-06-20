@@ -100,7 +100,7 @@ const faqSchema = {
 const comparisonSchema = {
   '@context': 'https://schema.org',
   '@type': 'Table',
-  about: { '@type': 'Product', name: 'BitPay vs XPay Labs Comparison' },
+  about: { '@type': 'Thing', name: 'BitPay vs XPay Labs Comparison' },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

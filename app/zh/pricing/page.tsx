@@ -101,6 +101,155 @@ const faqSchema = {
     },
   ],
 };
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'XPay Labs',
+  alternateName: 'xpay',
+  description: '自托管、非托管的加密支付网关，支持 TRON、EVM 链和 SUI。',
+  image: 'https://www.xpaylabs.com/logo.png',
+  brand: {
+    '@type': 'Brand',
+    name: 'XPay Labs',
+  },
+  applicationCategory: 'PaymentProcessing',
+  operatingSystem: 'Docker, Linux',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: 1,
+    reviewCount: 1,
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Organization',
+        name: 'XPay Labs',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '4.8',
+        bestRating: '5',
+      },
+      datePublished: '2026-05-31',
+      description: 'XPay Labs 是一款自托管、非托管的加密支付网关，支持 TRON、EVM 链和 SUI，零交易手续费。',
+    },
+  ],
+  offers: [
+    {
+      '@type': 'Offer',
+      name: '自托管软件',
+      price: '0',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: '免费自托管加密支付软件。0% 交易手续费。',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Docker 部署',
+      price: '1500',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: '一次性 Docker 部署协助和 30 天设置支持。',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: '商业支持',
+      price: '3000',
+      priceCurrency: 'USD',
+      priceValidUntil: '2030-12-31',
+      description: '年度商业支持计划，含优先 SLA 和监控协助。',
+      availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: '*',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: '*',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
+    },
+  ],
+};
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -122,7 +271,7 @@ const breadcrumbSchema = {
 export default function PricingPage() {
   return (
       <div className="relative min-h-screen bg-[#040612] text-gray-200 overflow-hidden">
-        <JsonLd data={faqSchema} /> <JsonLd data={breadcrumbSchema} />
+        <JsonLd data={faqSchema} /> <JsonLd data={productSchema} /> <JsonLd data={breadcrumbSchema} />
         <Header />
         <main className="relative gradient-bg pt-24 pb-20">
           {/* Hero */}

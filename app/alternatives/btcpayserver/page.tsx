@@ -73,7 +73,7 @@ const comparisonSchema = {
   '@context': 'https://schema.org',
   '@type': 'Table',
   about: {
-    '@type': 'Product',
+    '@type': 'Thing',
     name: 'BTCPay Server vs XPay Labs Comparison',
   },
 };
