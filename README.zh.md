@@ -90,3 +90,8 @@ npm run dev
 
 - Telegram：[@OS_Blockchain](https://t.me/OS_Blockchain)
 - GitHub Issues：[报告问题](https://github.com/yan253319066/XPayLabs/issues)
+
+## 仓库
+
+**GitHub:** [yan253319066/XPayLabs-website](https://github.com/yan253319066/XPayLabs-website)
+**Gitee（镜像）:** [XPayLabs/XPayLabs-website](https://gitee.com/XPayLabs/XPayLabs-website)
