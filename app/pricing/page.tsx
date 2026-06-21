@@ -127,14 +127,15 @@ const productSchema = {
       availability: 'https://schema.org/InStock',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
-        applicableCountry: '*',
+        applicableCountry: 'US',
         returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
       },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
+        shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
         shippingDestination: {
           '@type': 'DefinedRegion',
-          addressCountry: '*',
+          addressCountry: 'US',
         },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
@@ -163,14 +164,15 @@ const productSchema = {
       availability: 'https://schema.org/InStock',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
-        applicableCountry: '*',
+        applicableCountry: 'US',
         returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
       },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
+        shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
         shippingDestination: {
           '@type': 'DefinedRegion',
-          addressCountry: '*',
+          addressCountry: 'US',
         },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
@@ -199,14 +201,15 @@ const productSchema = {
       availability: 'https://schema.org/InStock',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
-        applicableCountry: '*',
+        applicableCountry: 'US',
         returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
       },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
+        shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
         shippingDestination: {
           '@type': 'DefinedRegion',
-          addressCountry: '*',
+          addressCountry: 'US',
         },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
