@@ -9,7 +9,8 @@
 - **Pricing:** Free software — 0% transaction fees, 0% monthly fees
 - **Deployment:** Docker Compose on VPS or bare metal
 - **License:** Source-available (XPay Enterprise License)
-- **Repository:** github.com/yan253319066/XPayLabs
+- **Repository:** github.com/yan253319066/XPayLabs (primary)
+- **Mirror:** gitee.com/XPayLabs
 - **Contact:** Telegram @OS_Blockchain
 
 ## Supported Blockchains

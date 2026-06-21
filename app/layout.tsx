@@ -33,7 +33,8 @@ const organizationSchema = {
     'https://www.linkedin.com/in/neil-yan/',
     'https://docs.xpaylabs.com',
     'https://www.npmjs.com/package/@xpaylabs/node-sdk',
-    'https://central.sonatype.com/artifact/io.xpay/xpay-java-sdk',
+    'https://central.sonatype.com/artifact/com.xpaylabs/xpay-java-sdk',
+    'https://gitee.com/XPayLabs',
   ],
 };
 

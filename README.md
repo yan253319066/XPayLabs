@@ -90,3 +90,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 - Telegram: [@OS_Blockchain](https://t.me/OS_Blockchain)
 - GitHub Issues: [Report bugs](https://github.com/yan253319066/XPayLabs/issues)
+
+## Repository
+
+**GitHub:** [yan253319066/XPayLabs-website](https://github.com/yan253319066/XPayLabs-website)
+**Gitee (mirror):** [XPayLabs/XPayLabs-website](https://gitee.com/XPayLabs/XPayLabs-website)
