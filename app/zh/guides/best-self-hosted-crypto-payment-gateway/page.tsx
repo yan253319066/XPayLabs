@@ -21,21 +21,30 @@ import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import JsonLd from '../../../../components/JsonLd';
 export const metadata: Metadata = {
-  title: '最佳自托管加密支付网关 — 2025 年对比评测 | XPay Labs',
+  title: '最佳自托管加密支付网关 — 2026 年对比评测 | XPay Labs',
   description:
-    '2025 年最佳自托管加密支付网关对比。XPay Labs、BTCPay Server 及其他方案在功能、费率、链支持和易用性方面的排名。为您的业务找到合适的自托管解决方案。',
+    '2026 年最佳加密支付基础设施与自托管加密支付网关对比。XPay Labs、BTCPay Server 及其他方案在功能、费率、链支持和易用性方面的排名。为您的业务找到合适的自托管解决方案。',
   keywords: [
-    '最佳自托管加密支付网关 2025',
+    '最佳自托管加密支付网关 2026',
+    '最佳加密支付基础设施',
+    '多链加密支付网关',
     '最佳加密支付网关',
     '自托管支付网关对比',
-    '顶级加密支付网关 2025',
+    '加密货币支付平台',
+    '加密货币支付系统',
+    '加密支付系统',
+    '数字货币支付网关',
+    '数字货币收款',
+    '白标支付网关',
+    '稳定币支付网关',
+    '顶级加密支付网关 2026',
     'XPay Labs vs BTCPay Server',
     '最佳非托管支付网关',
     '加密支付基础设施对比',
   ],
   alternates: {
     canonical:
-      'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
+      'https://www.xpaylabs.com/zh/guides/best-self-hosted-crypto-payment-gateway',
     languages: {
       'x-default':
         'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
@@ -46,15 +55,15 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '最佳自托管加密支付网关 — 2025 年对比评测',
+    title: '最佳自托管加密支付网关 — 2026 年对比评测',
     description:
-      '2025 年自托管加密支付网关权威排名。按费率、安全性、链支持和开发者体验对比 XPay Labs、BTCPay Server 等方案。',
+      '2026 年自托管加密支付网关权威排名。按费率、安全性、链支持和开发者体验对比 XPay Labs、BTCPay Server 等方案。',
     url: 'https://www.xpaylabs.com/zh/guides/best-self-hosted-crypto-payment-gateway',
     type: 'article',
   },
   twitter: {
-    title: '最佳自托管加密支付网关 — 2025 年对比评测',
-    description: '2025 年自托管加密支付网关权威排名。',
+    title: '最佳自托管加密支付网关 — 2026 年对比评测',
+    description: '2026 年自托管加密支付网关权威排名。',
     card: 'summary_large_image',
   },
 };
@@ -242,7 +251,7 @@ export default function BestSelfHostedGatewayPage() {
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" />
-                  <span>部署排名第一的网关</span>
+                  <span>部署自托管网关</span>
                 </Link>
               </div>
             </section>
@@ -431,6 +440,121 @@ export default function BestSelfHostedGatewayPage() {
                 </div>
               </section>
             ))}
+            {/* Feature Comparison */}
+            <section className="mb-16">
+              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mt-12 mb-4">
+                功能对比
+              </h2>
+              <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
+                XPay Labs 和 BTCPay Server 都是优秀的自托管网关，但它们服务于不同的使用场景。以下是对关键功能的详细对比。
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
+                <table className="w-full text-left text-sm font-sans">
+                  <thead>
+                    <tr className="bg-[#0b0e25] border-b border-white/8">
+                      <th className="p-4 text-gray-400 font-medium">功能</th>
+                      <th className="p-4 text-brand-cyan font-medium">XPay Labs</th>
+                      <th className="p-4 text-gray-400 font-medium">BTCPay Server</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">多商户支持</td>
+                      <td className="p-4 text-green-400">原生多租户，单实例无限商户</td>
+                      <td className="p-4 text-gray-400">单商户</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">运营商收入</td>
+                      <td className="p-4 text-green-400">自主设置费率，每笔交易赚取抽成</td>
+                      <td className="p-4 text-gray-400">不支持</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">稳定币支持</td>
+                      <td className="p-4 text-green-400">USDT (TRC20/ERC20)、USDC — 多链原生</td>
+                      <td className="p-4 text-gray-400">无原生稳定币支持</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">支持的链</td>
+                      <td className="p-4 text-green-400">TRON + 20+ EVM (ETH, BSC, Polygon, Avalanche) + SUI</td>
+                      <td className="p-4 text-gray-400">Bitcoin + Lightning（山寨币需插件）</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">部署方式</td>
+                      <td className="p-4 text-green-400">一条命令 <code className="text-xs text-brand-cyan">docker compose up -d</code> — 11 个容器自动编排</td>
+                      <td className="p-4 text-gray-400">Docker Compose，需手动配置</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">商户管理后台</td>
+                      <td className="p-4 text-green-400">Vue 3 + Element Plus — 订单管理、打款、结算</td>
+                      <td className="p-4 text-gray-400">基础 Web 界面</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">API 安全</td>
+                      <td className="p-4 text-green-400">HMAC-SHA256 + RSA 加密</td>
+                      <td className="p-4 text-gray-400">API Key</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Cost Savings Analysis */}
+            <section className="mb-16">
+              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mt-12 mb-4">
+                成本节省分析
+              </h2>
+              <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
+                自托管网关完全消除了托管服务商收取的 0.5–1% 每笔交易手续费。以下是基于月交易量的真实成本对比：
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
+                <table className="w-full text-left text-sm font-sans">
+                  <thead>
+                    <tr className="bg-[#0b0e25] border-b border-white/8">
+                      <th className="p-4 text-gray-400 font-medium">月交易量</th>
+                      <th className="p-4 text-gray-400 font-medium">托管网关 (1%)</th>
+                      <th className="p-4 text-green-400 font-medium">自托管 (0%)</th>
+                      <th className="p-4 text-brand-cyan font-medium">年节省</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$10,000</td>
+                      <td className="p-4 text-gray-400">$100/月</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$1,200/年</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$50,000</td>
+                      <td className="p-4 text-gray-400">$500/月</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$6,000/年</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$100,000</td>
+                      <td className="p-4 text-gray-400">$1,000/月</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$12,000/年</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$500,000</td>
+                      <td className="p-4 text-gray-400">$5,000/月</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$60,000/年</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$1,000,000</td>
+                      <td className="p-4 text-gray-400">$10,000/月</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$120,000/年</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 rounded-xl bg-green-500/5 border border-green-500/10 text-xs text-gray-400 font-sans leading-relaxed">
+                <strong className="text-green-400">结论：</strong>月交易量 $100,000 的企业每年可节省 $12,000——相当于雇佣一名兼职开发者的费用——仅通过从托管网关切换到 XPay Labs 的零费用自托管基础设施即可实现。详细成本分析请查看我们的<Link href="/zh/blog/self-hosted-vs-hosted-cost-analysis" className="text-brand-cyan underline underline-offset-2">自托管 vs 托管成本分析</Link>。
+              </div>
+            </section>
+
             {/* Honorable Mention */}
             <section className="mb-16">
               <h2 className="text-xl sm:text-2xl font-display font-medium text-white mt-12 mb-4">
@@ -571,7 +695,7 @@ export default function BestSelfHostedGatewayPage() {
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-amber text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">
-                  部署排名第一的自托管网关
+                  部署自托管支付网关
                 </h2>
                 <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base max-w-2xl mx-auto mb-8">
                   XPay Labs — 稳定币商家的最佳自托管加密支付网关。零费率、非托管、多链。在您自己的服务器上部署，30 分钟内完成。

@@ -57,6 +57,7 @@ Processing $100k/month in crypto:
 ## Core Pages
 
 - Homepage: https://www.xpaylabs.com
+- Best Crypto Payment Infrastructure: https://www.xpaylabs.com/best-crypto-payment-infrastructure
 - Documentation: https://docs.xpaylabs.com
 - Pricing: https://www.xpaylabs.com/pricing
 - AI Pricing Data: https://www.xpaylabs.com/pricing.md
@@ -441,16 +442,53 @@ xpay:
 
 ## Supported Chains
 
-| Chain | Value | Scanner | Detection Speed |
-|-------|-------|---------|-----------------|
-| TRON | `TRON` | xpay-tron | 1-3 seconds |
-| Ethereum | `ETH` | xpay-eth | 2-6 seconds |
-| BNB Chain | `BSC` | xpay-eth | 2-6 seconds |
-| Polygon | `POLYGON` | xpay-eth | 2-6 seconds |
-| Avalanche C-Chain | `AVAX_C_CHAIN` | xpay-eth | 2-6 seconds |
-| SUI | `SUI` | xpay-sui | 1-2 seconds |
+| Chain | Value | Scanner | Scan Interval |
+|-------|-------|---------|---------------|
+| TRON | `TRON` | xpay-tron | 2s |
+| Ethereum | `ETH` | xpay-eth | 2-15s (configurable) |
+| BNB Chain | `BSC` | xpay-eth | 2-15s (configurable) |
+| Polygon | `POLYGON` | xpay-eth | 2-15s (configurable) |
+| Avalanche C-Chain | `AVAX_C_CHAIN` | xpay-eth | 2-15s (configurable) |
+| SUI | `SUI` | xpay-sui | 1s |
 
 Additional EVM chains available via custom RPC configuration.
+
+## Technical Specifications
+
+### Blockchain Scanner Intervals
+
+| Chain | Scanner Service | Scan Interval | Detection Mechanism |
+|-------|----------------|---------------|--------------------|
+| TRON | xpay-tron | 2 seconds | gRPC stream + poll |
+| EVM (ETH, BSC, Polygon, AVAX, etc.) | xpay-eth | 2-15 seconds (configurable per network) | WebSocket + poll |
+| SUI | xpay-sui | 1 second | WebSocket subscribe |
+
+### Deployment Architecture
+
+- **Total microservices:** 11 Docker containers
+- **Entry point:** nginx:alpine (port 180)
+- **Database:** MySQL 8.0 (port 13306)
+- **Cache:** Redis 7-alpine (port 16379)
+- **Scanner images:** ghcr.io/yan253319066/xpay-java (single image for all 3 scanners)
+- **Backend framework:** Java 17 + Spring Boot 3.4
+- **Frontend:** Vue 3 (merchant dashboard + checkout)
+- **Authentication:** HMAC-SHA256 signed envelope + RSA-encrypted API traffic
+
+### Multi-Tenant Capacity
+
+- Unlimited merchants per deployment
+- Isolated API credentials per merchant
+- Independent webhook callbacks per merchant
+- Configurable per-merchant fee structure (percentage, flat, or hybrid)
+- Full data isolation between tenants
+
+### API Security
+
+- HMAC-SHA256 signature over request/response data field
+- Timestamp validity window: 5 minutes
+- Unique nonce per request
+- RSA encryption (when VITE_APP_ENCRYPT=true on merchant dashboard)
+- Webhook signatures use separate webhook-secret (not merchant token)
 
 ## Key Differentiators
 

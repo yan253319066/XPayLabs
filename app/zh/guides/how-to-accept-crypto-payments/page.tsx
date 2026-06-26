@@ -29,15 +29,21 @@ export const metadata: Metadata = {
   keywords: [
     '如何接受加密货币支付',
     '接受 USDT 支付',
+    '接受加密货币支付',
     '加密支付网关设置',
     '自托管加密货币支付',
     '在线接受加密货币支付',
-    '加密支付 API',
+    '加密货币支付接口',
+    'USDT 收款接口',
+    'USDT 支付接口',
     'USDT 支付网关',
+    'USDC 支付网关',
+    '数字货币收款',
     '自托管支付网关',
+    '加密支付 API',
   ],
   alternates: {
-    canonical: 'https://www.xpaylabs.com/guides/how-to-accept-crypto-payments',
+    canonical: 'https://www.xpaylabs.com/zh/guides/how-to-accept-crypto-payments',
     languages: {
       'x-default':
         'https://www.xpaylabs.com/guides/how-to-accept-crypto-payments',

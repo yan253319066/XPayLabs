@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description:
     '自托管 EVM 支付网关，用于在 Ethereum、BNB Chain、Polygon、Arbitrum、Optimism 和 Base 上接受 USDT、USDC 和 ERC20 代币。非托管、0% 费率、Docker 部署。',
   keywords:
-    'EVM 支付网关, Ethereum 支付网关, ERC20 支付处理器, 接受 USDT Ethereum, BNB Chain 支付网关, Polygon 支付网关, Arbitrum 支付网关, Base 支付网关, 多链 EVM 支付, 自托管 ERC20 网关',
+    'EVM 支付网关, Ethereum 支付网关, 最佳加密支付基础设施, USDC 支付网关, 稳定币支付网关, 白标支付网关, ERC20 支付处理器, 接受 USDT Ethereum, BNB Chain 支付网关, Polygon 支付网关, Arbitrum 支付网关, Base 支付网关, 多链 EVM 支付, 自托管 ERC20 网关',
   alternates: {
-    canonical: 'https://www.xpaylabs.com/solutions/evm-payment-gateway',
+    canonical: 'https://www.xpaylabs.com/zh/solutions/evm-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/evm-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/evm-payment-gateway',

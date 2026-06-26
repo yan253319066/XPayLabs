@@ -9,12 +9,13 @@ import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'EVM Payment Gateway — Accept USDT/USDC on Ethereum, BNB, Polygon, Arbitrum, Base | XPay Labs',
   description: 'Self-hosted EVM payment gateway for accepting USDT, USDC, and ERC20 tokens on Ethereum, BNB Chain, Polygon, Arbitrum, Optimism, and Base. Non-custodial, 0% fees, Docker deployment.',
-  keywords: 'EVM payment gateway, Ethereum payment gateway, ERC20 payment processor, accept USDT Ethereum, BNB Chain payment gateway, Polygon payment gateway, Arbitrum payment gateway, Base payment gateway, multi-chain EVM payments, self-hosted ERC20 gateway',
+  keywords: 'EVM payment gateway, Ethereum payment gateway, best crypto payment infrastructure, crypto payment processor, ERC20 payment processor, accept USDT Ethereum, BNB Chain payment gateway, Polygon payment gateway, Arbitrum payment gateway, Base payment gateway, multi-chain EVM payments, self-hosted ERC20 gateway, USDC payment gateway, stablecoin payment gateway, white label crypto payment gateway',
   alternates: {
     canonical: 'https://www.xpaylabs.com/solutions/evm-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/evm-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/evm-payment-gateway',
+      'zh-CN': 'https://www.xpaylabs.com/zh/solutions/evm-payment-gateway',
     },
   },
   openGraph: {

@@ -16,7 +16,7 @@ import Footer from '../../components/Footer';
 export const metadata: Metadata = {
   title: { absolute: 'XPay Labs（简称 xpay）— 自托管加密支付基础设施' },
   description: 'XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。',
-  keywords: 'xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口, EVM支持加密网关, 非托管加密支付, x402协议, AI代理支付, LLM微支付, 按次付费USDC',
+  keywords: 'xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, USDT 支付网关, USDC 支付网关, 加密货币支付平台, 加密货币支付系统, 加密支付系统, 数字货币支付网关, 数字货币收款, USDT 收款接口, USDT 支付接口, 白标支付网关, 代收 USDT, TRC20支付接口, EVM支持加密网关, 非托管加密支付, x402协议, AI代理支付, LLM微支付, 按次付费USDC',
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh',
     languages: {

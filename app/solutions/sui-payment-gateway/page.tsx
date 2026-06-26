@@ -9,12 +9,13 @@ import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'SUI Payment Gateway — Accept SUI and USDC on Sui Network | XPay Labs',
   description: 'Self-hosted SUI payment gateway for accepting SUI native tokens and USDC on the Sui Network. Non-custodial, 0% fees, sub-second transaction detection. Docker deployment.',
-  keywords: 'SUI payment gateway, Sui Network payment processor, accept SUI tokens, SUI crypto payments, self-hosted SUI gateway, Sui blockchain payments, Move language payment gateway, SUI merchant gateway',
+  keywords: 'SUI payment gateway, best crypto payment infrastructure, crypto payment processor, Sui Network payment processor, accept SUI tokens, SUI crypto payments, self-hosted SUI gateway, Sui blockchain payments, Move language payment gateway, SUI merchant gateway, USDC payment gateway, stablecoin payment gateway, white label crypto payment gateway',
   alternates: {
     canonical: 'https://www.xpaylabs.com/solutions/sui-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/sui-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/sui-payment-gateway',
+      'zh-CN': 'https://www.xpaylabs.com/zh/solutions/sui-payment-gateway',
     },
   },
   openGraph: {

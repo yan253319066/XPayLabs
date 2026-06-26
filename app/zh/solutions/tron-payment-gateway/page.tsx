@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   description:
     '自托管 TRON 支付网关，用于接受 USDT TRC20 支付。非托管、亚秒级交易检测、白标结账。通过 Docker 部署。',
   keywords:
-    'TRON 支付网关, TRC20 支付网关, 接受 USDT TRC20, TRON 加密货币支付, TRC20 USDT 支付处理器, 自托管 TRON 网关, TRON 支付 API, TRON 区块链支付, USDT TRC20 结账, TRON 商户网关',
+    'TRON 支付网关, TRC20 支付网关, 最佳加密支付基础设施, USDT 支付网关, USDT 收款接口, USDT 支付接口, 稳定币支付网关, 白标支付网关, 接受 USDT TRC20, TRON 加密货币支付, TRC20 USDT 支付处理器, 自托管 TRON 网关, TRON 支付 API, TRON 区块链支付, USDT TRC20 结账, TRON 商户网关',
   alternates: {
-    canonical: 'https://www.xpaylabs.com/solutions/tron-payment-gateway',
+    canonical: 'https://www.xpaylabs.com/zh/solutions/tron-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/tron-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/tron-payment-gateway',

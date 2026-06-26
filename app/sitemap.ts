@@ -221,6 +221,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    // Best crypto payment infrastructure pages
+    {
+      url: `${baseUrl}/best-crypto-payment-infrastructure`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zh/best-crypto-payment-infrastructure`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     // Review page
     {
       url: `${baseUrl}/review`,

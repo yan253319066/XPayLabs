@@ -9,12 +9,13 @@ import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'How to Accept Crypto Payments: Self-Hosted Infrastructure Guide | XPay Labs',
   description: 'Learn how to accept crypto payments with a self-hosted gateway. Step-by-step guide covering Docker deployment, API integration, webhooks, and multi-chain support for USDT, USDC, and more.',
-  keywords: ['how to accept crypto payments', 'accept USDT payments', 'crypto payment gateway setup', 'self-hosted crypto payments', 'accept cryptocurrency payments online', 'crypto payment API', 'USDT payment gateway', 'self-hosted payment gateway'],
+  keywords: ['how to accept crypto payments', 'accept USDT payments', 'accept cryptocurrency payments', 'crypto payment gateway setup', 'self-hosted crypto payments', 'accept cryptocurrency payments online', 'crypto payment API', 'USDT payment gateway', 'USDC payment gateway', 'self-hosted payment gateway', 'crypto merchant account', 'crypto payment processor'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/guides/how-to-accept-crypto-payments',
     languages: {
       'x-default': 'https://www.xpaylabs.com/guides/how-to-accept-crypto-payments',
       'en-US': 'https://www.xpaylabs.com/guides/how-to-accept-crypto-payments',
+      'zh-CN': 'https://www.xpaylabs.com/zh/guides/how-to-accept-crypto-payments',
     },
   },
   openGraph: {

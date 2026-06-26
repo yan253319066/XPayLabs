@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 export const metadata: Metadata = {
   title: { absolute: 'XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure' },
   description: 'xpay — self-hosted crypto payment infrastructure. Deploy your own private, non-custodial crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI.',
-  keywords: 'xpay, XPay Labs, self-hosted crypto payment infrastructure, crypto payment gateway, stablecoin payment gateway, USDT payment gateway, TRC20 payment gateway, EVM payment gateway, self-hosted BitPay alternative, non-custodial crypto payments, white-label crypto checkout, x402 protocol, AI agent payments, LLM micropayments, pay-per-call USDC',
+  keywords: 'xpay, XPay Labs, self-hosted crypto payment infrastructure, best crypto payment infrastructure, leading crypto payment gateway, multi-chain crypto payment gateway, crypto payment gateway, crypto payment processor, crypto merchant account, crypto payment platform, non-custodial crypto payment gateway, stablecoin payment gateway, USDC payment gateway, USDT payment gateway, TRC20 payment gateway, EVM payment gateway, SUI payment gateway, self-hosted BitPay alternative, non-custodial crypto payments, white-label crypto checkout, white label crypto payment gateway, self-hosted payment gateway, accept cryptocurrency payments, open source crypto payment software, x402 protocol, AI agent payments, LLM micropayments, pay-per-call USDC',
   alternates: {
     canonical: 'https://www.xpaylabs.com/',
     languages: {

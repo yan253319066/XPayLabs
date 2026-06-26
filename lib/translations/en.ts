@@ -4,7 +4,7 @@ export const en: TranslationSet = {
   meta: {
     title: "XPay Labs (xpay) — Self-hosted Crypto Payment Infrastructure",
     description: "XPay Labs (xpay) — self-hosted crypto payment infrastructure. Deploy your own private, non-custodial crypto payment gateway. Supporting TRON (TRC20), all EVM networks, stablecoins, and SUI. Multi-tenant — host unlimited merchants and collect fees.",
-    keywords: "xpay, XPay Labs, self-hosted crypto payment infrastructure, crypto payment gateway, stablecoin payments, TRC20 payment API, EVM payment infrastructure, developer payment infrastructure"
+    keywords: "xpay, XPay Labs, self-hosted crypto payment infrastructure, best crypto payment infrastructure, leading crypto payment gateway, multi-chain crypto payment gateway, crypto payment gateway, crypto payment processor, crypto merchant account, crypto payment platform, non-custodial crypto payment gateway, stablecoin payment gateway, USDC payment gateway, stablecoin payments, USDT payment gateway, TRC20 payment API, EVM payment infrastructure, SUI payment gateway, developer payment infrastructure, white label crypto payment gateway, self-hosted payment gateway, accept cryptocurrency payments, open source crypto payment software, self-hosted BitPay alternative"
   },
   navigation: {
     features: "Features",
@@ -22,7 +22,7 @@ export const en: TranslationSet = {
   },
   hero: {
     title: "Self-Hosted Crypto Payment\nInfrastructure. Zero Fees.",
-    subtitle: "XPay Labs (often called xpay) is a self-hosted crypto payment infrastructure. Private, containerized system supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power. Multi-tenant by design — host unlimited merchants and earn from every transaction.",
+    subtitle: "XPay Labs (often called xpay) is the best self-hosted crypto payment infrastructure — a leading multi-chain crypto payment gateway. Private, containerized system supporting TRON, all EVM chains, and SUI. Fully non-custodial, white-label merchant gateways — engineered for optimal developer power. Multi-tenant by design — host unlimited merchants and earn from every transaction.",
     ctaDeploy: "Deploy Your System",
     ctaDocs: "Contact Us",
     badge: "V1.0 — DEPLOY INSTANTLY"
@@ -54,12 +54,12 @@ export const en: TranslationSet = {
     point4Text: "Eliminate standard 1-2% middleman network fees. Pay strictly on-chain gas costs for network transactions."
   },
   features: {
-    title: "Modern payment infrastructure. Built for scale.",
-    subtitle: "Engineered for maximum resilience, sub-second mempool responsiveness, and complete non-custodial security.",
+    title: "The Best Crypto Payment Infrastructure. Built for Scale.",
+    subtitle: "The leading multi-chain crypto payment infrastructure — engineered for maximum resilience, sub-second mempool responsiveness, and complete non-custodial security.",
     items: [
       {
         title: "Multi-chain Payments",
-        description: "Engineered to capture and settle payment signals over TRON (TRC20 USDT), Ethereum (ERC20), BNB Chain, Polygon, and SUI natively."
+        description: "The best multi-chain crypto payment gateway. Engineered to capture and settle payment signals over TRON (TRC20 USDT), Ethereum (ERC20), BNB Chain, Polygon, and SUI natively."
       },
       {
         title: "Developer APIs",

@@ -9,7 +9,7 @@ import JsonLd from '../../../components/JsonLd';
 export const metadata: Metadata = {
   title: '博客 — 自托管加密货币支付指南 | XPay Labs',
   description: '关于自托管加密货币支付基础设施的深度指南、技术对比和性能分析。了解如何接受 USDT、替代 BitPay、部署多商家网关、以及运行你自己的非托管支付平台。',
-  keywords: ['加密货币支付博客', '自托管支付网关', 'USDT 支付指南', 'BitPay 替代方案', '多商家加密支付网关', '加密货币支付基础设施', '接受加密货币支付', '加密支付平台运营'],
+  keywords: ['加密货币支付博客', '自托管支付网关', '加密货币支付平台', '加密货币支付系统', '加密支付系统', '数字货币支付网关', '数字货币收款', 'USDT 支付指南', 'USDT 支付网关', 'USDT 收款接口', 'USDT 支付接口', 'BitPay 替代方案', '多商家加密支付网关', '加密货币支付基础设施', '接受加密货币支付', '加密支付平台运营', '白标支付网关'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/blog',
     languages: {
@@ -40,6 +40,13 @@ const blogSchema = {
 };
 
 const posts = [
+  {
+    title: '最佳加密支付基础设施 2026 — 部署你自己的非托管多链支付网关',
+    href: '/zh/best-crypto-payment-infrastructure',
+    date: '2026 年 6 月',
+    category: '精选',
+    excerpt: '最佳加密支付基础设施，免费、自托管、多链。对比 XPay Labs 与托管网关，查看真实部署规格（11 个 Docker 服务、22+ 条链、无限商户），分钟级完成部署。',
+  },
   {
     title: 'XPay Labs 评测 2026：自托管加密货币支付的客观评价',
     href: '/zh/review',

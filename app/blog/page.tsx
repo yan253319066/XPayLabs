@@ -9,7 +9,7 @@ import JsonLd from '../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'Blog — Self-Hosted Crypto Payment Guides | XPay Labs',
   description: 'Guides, comparisons, and deep dives on self-hosted crypto payment infrastructure. Learn how to accept USDT, replace BitPay, deploy multi-tenant gateways, and run your own non-custodial payment platform.',
-  keywords: ['crypto payment blog', 'self-hosted payment gateway', 'USDT payment guide', 'BitPay alternative', 'Coinbase Commerce alternative', 'crypto payment infrastructure', 'accept crypto payments', 'multi-tenant crypto payment gateway', 'crypto payment platform operator'],
+  keywords: ['crypto payment blog', 'self-hosted payment gateway', 'crypto payment processor', 'crypto payment platform', 'USDT payment guide', 'BitPay alternative', 'Coinbase Commerce alternative', 'crypto payment infrastructure', 'accept crypto payments', 'multi-tenant crypto payment gateway', 'crypto payment platform operator', 'stablecoin payment gateway', 'white label crypto payment gateway'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/blog',
     languages: {
@@ -40,6 +40,13 @@ const blogSchema = {
 };
 
 const posts = [
+  {
+    title: 'Best Crypto Payment Infrastructure 2026 — Deploy Your Own Non-Custodial Multi-Chain Gateway',
+    href: '/best-crypto-payment-infrastructure',
+    date: 'June 2026',
+    category: 'Featured',
+    excerpt: 'The best crypto payment infrastructure is free, self-hosted, and multi-chain. Compare XPay Labs vs hosted gateways, see real deployment specs (11 Docker services, 22+ chains, unlimited merchants), and deploy in minutes.',
+  },
   {
     title: 'Why We Call It xpay — The Story Behind the XPay Labs Brand',
     href: '/blog/why-xpay',

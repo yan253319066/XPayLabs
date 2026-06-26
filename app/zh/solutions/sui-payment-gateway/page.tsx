@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description:
     '自托管 SUI 支付网关，用于接受 SUI 原生代币和 Sui Network 上的 USDC。非托管、0% 费率、亚秒级交易检测。Docker 部署。',
   keywords:
-    'SUI 支付网关, Sui Network 支付处理器, 接受 SUI 代币, SUI 加密货币支付, 自托管 SUI 网关, Sui 区块链支付, Move 语言支付网关, SUI 商户网关',
+    'SUI 支付网关, 最佳加密支付基础设施, USDC 支付网关, 稳定币支付网关, 白标支付网关, Sui Network 支付处理器, 接受 SUI 代币, SUI 加密货币支付, 自托管 SUI 网关, Sui 区块链支付, Move 语言支付网关, SUI 商户网关',
   alternates: {
-    canonical: 'https://www.xpaylabs.com/solutions/sui-payment-gateway',
+    canonical: 'https://www.xpaylabs.com/zh/solutions/sui-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/sui-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/sui-payment-gateway',

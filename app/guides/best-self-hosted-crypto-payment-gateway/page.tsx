@@ -8,14 +8,19 @@ import JsonLd from '../../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Best Self-Hosted Crypto Payment Gateway 2026 — Top Solutions Compared | XPay Labs',
-  description: 'The best self-hosted crypto payment gateways in 2026 compared. XPay Labs, BTCPay Server, and others ranked by features, fees, chain support, and ease of use. Find the right self-hosted solution for your business.',
-  keywords: ['best self-hosted crypto payment gateway 2026', 'best crypto payment gateway', 'self-hosted payment gateway comparison', 'top crypto payment gateways 2026', 'XPay Labs vs BTCPay Server', 'best non-custodial payment gateway', 'crypto payment infrastructure comparison'],
+  description: 'The best crypto payment infrastructure and self-hosted gateways in 2026 compared. XPay Labs, BTCPay Server, and others ranked by features, fees, chain support, and ease of use. Find the right self-hosted solution for your business.',
+  keywords: ['best self-hosted crypto payment gateway 2026', 'best crypto payment infrastructure', 'best crypto payment gateway', 'crypto payment processor', 'multi-chain crypto payment gateway', 'self-hosted payment gateway comparison', 'self-hosted payment gateway', 'top crypto payment gateways 2026', 'XPay Labs vs BTCPay Server', 'best non-custodial payment gateway', 'stablecoin payment gateway', 'white label crypto payment gateway', 'crypto payment infrastructure comparison'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
+    languages: {
+      'x-default': 'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
+      'en-US': 'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
+      'zh-CN': 'https://www.xpaylabs.com/zh/guides/best-self-hosted-crypto-payment-gateway',
+    },
   },
   openGraph: {
     title: 'Best Self-Hosted Crypto Payment Gateway 2026 — Top Solutions Compared',
-    description: 'The definitive ranking of self-hosted crypto payment gateways in 2026. Compare XPay Labs, BTCPay Server, and others by fees, security, chain support, and developer experience.',
+  description: 'The definitive ranking of the best crypto payment infrastructure and self-hosted gateways in 2026. Compare XPay Labs, BTCPay Server, and others by fees, security, chain support, and developer experience.',
     url: 'https://www.xpaylabs.com/guides/best-self-hosted-crypto-payment-gateway',
     type: 'article',
   },
@@ -35,7 +40,7 @@ const faqSchema = {
       name: 'What is the best self-hosted crypto payment gateway in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For stablecoin-focused merchants on TRON, EVM chains, and SUI, XPay Labs is the best self-hosted crypto payment gateway in 2026 due to its zero fees, non-custodial architecture, sub-second payment detection, and Stripe-inspired developer API. For Bitcoin-focused merchants, BTCPay Server remains the top choice.',
+        text: 'For stablecoin-focused merchants on TRON, EVM chains, and SUI, XPay Labs is a leading self-hosted crypto payment gateway in 2026 due to its zero fees, non-custodial architecture, sub-second payment detection, and Stripe-inspired developer API. For Bitcoin-focused merchants, BTCPay Server remains the top choice.',
       },
     },
     {
@@ -178,7 +183,7 @@ export default function BestSelfHostedGatewayPage() {
                   className="inline-flex items-center space-x-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-brand-blue/20"
                 >
                   <Server className="w-4 h-4" />
-                  <span>Deploy #1 Ranked Gateway</span>
+                  <span>Deploy Self-Hosted Gateway</span>
                 </Link>
               </div>
             </section>
@@ -232,7 +237,7 @@ export default function BestSelfHostedGatewayPage() {
                   {item.rank === 1 && (
                     <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-full text-xs font-bold text-amber-400 uppercase tracking-wider font-mono mb-4">
                       <Trophy className="w-3 h-3" />
-                      <span>#1 Pick</span>
+                      <span>Top Pick</span>
                     </div>
                   )}
                   <div className="flex items-start justify-between gap-4 mb-4">
@@ -315,58 +320,119 @@ export default function BestSelfHostedGatewayPage() {
               </section>
             ))}
 
-            {/* Performance Comparison */}
+            {/* Feature Comparison */}
             <section className="mb-16">
               <h2 className="text-xl sm:text-2xl font-display font-medium text-white mt-12 mb-4">
-                Performance Benchmarks
+                Feature Comparison
               </h2>
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
-                We benchmarked each gateway on identical hardware (Hetzner CX22, 2 vCPU, 4 GB RAM) to measure
-                real-world performance. These metrics represent production behavior, not synthetic optimizations.
+                XPay Labs and BTCPay Server are both excellent self-hosted gateways, but they serve different use cases. Here is how they compare on the features that matter most.
               </p>
               <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
                 <table className="w-full text-left text-sm font-sans">
                   <thead>
                     <tr className="bg-[#0b0e25] border-b border-white/8">
-                      <th className="p-4 text-gray-400 font-medium">Metric</th>
+                      <th className="p-4 text-gray-400 font-medium">Feature</th>
                       <th className="p-4 text-brand-cyan font-medium">XPay Labs</th>
                       <th className="p-4 text-gray-400 font-medium">BTCPay Server</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 text-gray-300 font-medium">Docker Image Size</td>
-                      <td className="p-4 text-green-400">&lt;40 MB (Distroless Java)</td>
-                      <td className="p-4 text-gray-400">~800 MB (Debian-based .NET)</td>
+                      <td className="p-4 text-gray-300 font-medium">Multi-Tenant</td>
+                      <td className="p-4 text-green-400">Native — unlimited merchants per instance</td>
+                      <td className="p-4 text-gray-400">Single merchant</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 text-gray-300 font-medium">RAM at Idle</td>
-                      <td className="p-4 text-green-400">~120 MB</td>
-                      <td className="p-4 text-gray-400">~350 MB</td>
+                      <td className="p-4 text-gray-300 font-medium">Operator Revenue</td>
+                      <td className="p-4 text-green-400">Set your own fees, earn from every transaction</td>
+                      <td className="p-4 text-gray-400">Not available</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 text-gray-300 font-medium">Payment Detection Latency</td>
-                      <td className="p-4 text-green-400">&lt;500ms (TRON), &lt;1s (EVM)</td>
-                      <td className="p-4 text-gray-400">~2–5s (block polling interval)</td>
+                      <td className="p-4 text-gray-300 font-medium">Stablecoin Support</td>
+                      <td className="p-4 text-green-400">USDT (TRC20/ERC20), USDC — native multi-chain</td>
+                      <td className="p-4 text-gray-400">No native stablecoin support</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 text-gray-300 font-medium">Boot to Ready Time</td>
-                      <td className="p-4 text-green-400">&lt;5 seconds</td>
-                      <td className="p-4 text-gray-400">~20–30 seconds</td>
+                      <td className="p-4 text-gray-300 font-medium">Blockchains</td>
+                      <td className="p-4 text-green-400">TRON + 20+ EVM (ETH, BSC, Polygon, Avalanche) + SUI</td>
+                      <td className="p-4 text-gray-400">Bitcoin + Lightning (altcoins via plugins)</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-4 text-gray-300 font-medium">Multi-Chain Scan (per chain CPU)</td>
-                      <td className="p-4 text-green-400">&lt;1% CPU idle</td>
-                      <td className="p-4 text-gray-400">N/A (Bitcoin only, plugins vary)</td>
+                      <td className="p-4 text-gray-300 font-medium">Deployment</td>
+                      <td className="p-4 text-green-400">Single <code className="text-xs text-brand-cyan">docker compose up -d</code> — 11 containers</td>
+                      <td className="p-4 text-gray-400">Docker Compose with manual configuration</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">Merchant Dashboard</td>
+                      <td className="p-4 text-green-400">Vue 3 + Element Plus — orders, payouts, settlement</td>
+                      <td className="p-4 text-gray-400">Basic web interface</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">API Security</td>
+                      <td className="p-4 text-green-400">HMAC-SHA256 + RSA encryption</td>
+                      <td className="p-4 text-gray-400">API Key</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div className="p-4 rounded-xl bg-brand-blue/5 border border-brand-blue/10 text-xs text-gray-400 font-sans leading-relaxed">
-                <strong className="text-gray-300">Methodology:</strong> Benchmarks run on Hetzner CX22 (2 vCPU, 4 GB RAM,
-                Ubuntu 24.04, Docker 26). Payment detection latency measured from block inclusion to webhook dispatch.
-                XPay Labs scanned TRON + EVM + SUI simultaneously. BTCPay Server tested with Bitcoin mainnet + Lightning.
-                Full raw data in the <Link href="https://github.com/xpaylabs" className="text-brand-cyan underline underline-offset-2">XPay Labs GitHub repo</Link>.
+            </section>
+
+            {/* Cost Savings Analysis */}
+            <section className="mb-16">
+              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mt-12 mb-4">
+                Cost Savings Analysis
+              </h2>
+              <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
+                Self-hosted gateways eliminate the 0.5–1% per-transaction fees charged by hosted providers.
+                Here is the real cost difference based on monthly processing volume:
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
+                <table className="w-full text-left text-sm font-sans">
+                  <thead>
+                    <tr className="bg-[#0b0e25] border-b border-white/8">
+                      <th className="p-4 text-gray-400 font-medium">Monthly Volume</th>
+                      <th className="p-4 text-gray-400 font-medium">Hosted Gateway (1%)</th>
+                      <th className="p-4 text-green-400 font-medium">Self-Hosted (0%)</th>
+                      <th className="p-4 text-brand-cyan font-medium">Annual Savings</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$10,000</td>
+                      <td className="p-4 text-gray-400">$100/mo</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$1,200/yr</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$50,000</td>
+                      <td className="p-4 text-gray-400">$500/mo</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$6,000/yr</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$100,000</td>
+                      <td className="p-4 text-gray-400">$1,000/mo</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$12,000/yr</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$500,000</td>
+                      <td className="p-4 text-gray-400">$5,000/mo</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$60,000/yr</td>
+                    </tr>
+                    <tr className="hover:bg-white/[0.02] transition-colors">
+                      <td className="p-4 text-gray-300 font-medium">$1,000,000</td>
+                      <td className="p-4 text-gray-400">$10,000/mo</td>
+                      <td className="p-4 text-green-400">$0</td>
+                      <td className="p-4 text-brand-cyan font-semibold">$120,000/yr</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-4 rounded-xl bg-green-500/5 border border-green-500/10 text-xs text-gray-400 font-sans leading-relaxed">
+                <strong className="text-green-400">Bottom line:</strong> A business processing $100,000/month in crypto payments saves $12,000 annually — equivalent to hiring a part-time developer — simply by switching from a hosted gateway to XPay Labs' zero-fee self-hosted infrastructure. For a detailed cost breakdown across top providers, see our <Link href="/blog/self-hosted-vs-hosted-cost-analysis" className="text-brand-cyan underline underline-offset-2">Self-Hosted vs Hosted Cost Analysis</Link>.
               </div>
             </section>
 
@@ -487,10 +553,10 @@ export default function BestSelfHostedGatewayPage() {
             <section className="mb-16">
               <div className="glass-panel rounded-2xl p-8 sm:p-12 glow-amber text-center">
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-4">
-                  Deploy the #1 Self-Hosted Gateway
+                  Deploy the Self-Hosted Gateway
                 </h2>
                 <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base max-w-2xl mx-auto mb-8">
-                  XPay Labs — the best self-hosted crypto payment gateway for stablecoin merchants.
+                  XPay Labs — the leading self-hosted crypto payment gateway for stablecoin merchants.
                   Zero fees, non-custodial, multi-chain. Deploy on your own server in under 30 minutes.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">

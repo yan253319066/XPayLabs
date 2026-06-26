@@ -10,12 +10,13 @@ import CopyButton from './CopyButton';
 export const metadata: Metadata = {
   title: 'TRON TRC20 Payment Gateway — Self-Hosted USDT Payment Infrastructure | XPay Labs',
   description: 'Self-hosted TRON payment gateway for accepting USDT TRC20 payments. Non-custodial, sub-second transaction detection, white-label checkout. Deploy with Docker.',
-  keywords: 'TRON payment gateway, TRC20 payment gateway, accept USDT TRC20, TRON crypto payments, TRC20 USDT payment processor, self-hosted TRON gateway, TRON payment API, TRON blockchain payments, USDT TRC20 checkout, TRON merchant gateway',
+  keywords: 'TRON payment gateway, TRC20 payment gateway, best crypto payment infrastructure, crypto payment processor, accept USDT TRC20, TRON crypto payments, TRC20 USDT payment processor, self-hosted TRON gateway, TRON payment API, TRON blockchain payments, USDT payment gateway, USDT TRC20 checkout, TRON merchant gateway, stablecoin payment gateway, white label crypto payment gateway',
   alternates: {
     canonical: 'https://www.xpaylabs.com/solutions/tron-payment-gateway',
     languages: {
       'x-default': 'https://www.xpaylabs.com/solutions/tron-payment-gateway',
       'en-US': 'https://www.xpaylabs.com/solutions/tron-payment-gateway',
+      'zh-CN': 'https://www.xpaylabs.com/zh/solutions/tron-payment-gateway',
     },
   },
   openGraph: {

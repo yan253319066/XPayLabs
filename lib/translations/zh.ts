@@ -4,7 +4,7 @@ export const zh: TranslationSet = {
   meta: {
     title: "XPay Labs（简称 xpay）— 自托管加密支付基础设施",
     description: "XPay Labs（简称 xpay）——自托管加密支付基础设施。部署您专属的私有、非托管加密货币支付网关，支持波场 TRON、EVM 网络和 SUI。多商家架构 — 一个部署可入驻无限商家并收取手续费。",
-    keywords: "xpay, XPay Labs, 加密支付基础设施, 私有自托管加密支付系统, 稳定币收款网关, TRC20支付接口, EVM支持加密网关, 非托管加密支付"
+    keywords: "xpay, XPay Labs, 加密支付基础设施, 最佳加密支付基础设施, 领先的加密支付网关, 多链加密支付网关, 自托管加密支付网关, 非托管加密支付网关, 稳定币收款网关, USDT支付网关, USDT 收款接口, USDT 支付接口, USDC 支付网关, 加密货币支付平台, 加密货币支付系统, 加密支付系统, 数字货币支付网关, 数字货币收款, 白标支付网关, 代收 USDT, TRC20支付接口, EVM支付基础设施, SUI支付网关, 开发者支付基础设施, 开源加密支付软件, BitPay自托管替代方案"
   },
   navigation: {
     features: "产品特性",
@@ -22,7 +22,7 @@ export const zh: TranslationSet = {
   },
   hero: {
     title: "部署您专属的加密货币支付基础设施",
-    subtitle: "XPayLabs（简称 xpay）——商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全非托管、白标定制，专为高要求的 Web3 开发者设计。原生多商家架构 — 一个部署可入驻无限商家，从每笔交易中获取收益。",
+    subtitle: "XPayLabs（简称 xpay）——最佳自托管加密支付基础设施，领先的多链加密支付网关。商业级、私有化自托管的加密货币支付系统，完备支持波场 TRON、所有以太坊 EVM 兼容链以及 SUI。完全非托管、白标定制，专为高要求的 Web3 开发者设计。原生多商家架构 — 一个部署可入驻无限商家，从每笔交易中获取收益。",
     ctaDeploy: "一键部署系统",
     ctaDocs: "联系我们",
     badge: "V1.0 — 企业极速私有化部署"
@@ -54,12 +54,12 @@ export const zh: TranslationSet = {
     point4Text: "彻底终结市场上 1%-2% 的支付网关高额抽成，让资金流转只消耗底层的区块链网络 Gas 费。"
   },
   features: {
-    title: "现代化的支付系统，为高并发而生",
-    subtitle: "高能、轻量、高灵敏度的交易内存池捕获，保障商家在面对数万并发时的结算安全性。",
+    title: "最佳加密支付基础设施，为高并发而生",
+    subtitle: "领先的多链加密支付基础设施 — 高能、轻量、高灵敏度的交易内存池捕获，保障商家在面对数万并发时的结算安全性。",
     items: [
       {
         title: "领先多链支付",
-        description: "原生深度跟踪波场 TRON (TRC20 USDT)、以太坊 ERC20、币安智能链 BSC、Polygon 以及 SUI。多链无缝切换。"
+        description: "最佳多链加密支付网关。原生深度跟踪波场 TRON (TRC20 USDT)、以太坊 ERC20、币安智能链 BSC、Polygon 以及 SUI。多链无缝切换。"
       },
       {
         title: "极简开发者 API",
