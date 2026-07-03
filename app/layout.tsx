@@ -78,6 +78,11 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': '/blog/rss.xml',
+    },
+  },
   openGraph: {
     siteName: 'XPay Labs',
     type: 'website',

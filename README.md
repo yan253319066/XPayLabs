@@ -91,6 +91,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - Telegram: [@OS_Blockchain](https://t.me/OS_Blockchain)
 - GitHub Issues: [Report bugs](https://github.com/yan253319066/XPayLabs/issues)
 
+🌟 **Enjoying XPayLabs?** [Star this repo](https://github.com/yan253319066/XPayLabs) — it helps others discover self-hosted crypto payment infrastructure.
+
+---
+
 ## Repository
 
 **GitHub:** [yan253319066/XPayLabs](https://github.com/yan253319066/XPayLabs)
