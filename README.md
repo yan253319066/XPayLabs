@@ -14,6 +14,21 @@
 
 ## Why Self-Hosted Crypto Payment Gateway?
 
+### 💰 Cost Comparison: Self-Hosted vs Hosted Gateways
+
+Processing **$100,000/month** in crypto payments:
+
+| Gateway | Transaction Fee | Monthly Fee | **Annual Cost** | Savings vs XPay |
+|---------|----------------|-------------|-----------------|-----------------|
+| **XPay Labs** | **0%** | $0 | **~$240** (VPS) | — |
+| NowPayments | 0.5% | $0 | ~$6,000 | **Save $5,760** |
+| Coinbase Commerce | 0.8% | $25 | ~$9,900 | **Save $9,660** |
+| BitPay | 1% | $30 | ~$12,360 | **Save $12,120** |
+
+> XPay Labs is free software. You pay only blockchain gas costs (~$0.02-$0.50/tx) and your VPS bill.
+
+### Feature Comparison
+
 | Feature | XPay Labs | BitPay | Coinbase Commerce | NowPayments |
 |---------|-----------|--------|-------------------|-------------|
 | Fees | Zero (only gas) | 1% per tx | 0.8% + $25/mo | 0.5% per tx |
