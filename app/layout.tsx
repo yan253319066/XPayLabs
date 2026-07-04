@@ -5,6 +5,7 @@ import JsonLd from '../components/JsonLd';
 import I18nProvider from '../components/I18nProvider';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { Analytics } from '@vercel/analytics/next';
+import ChatwootWidget from '../components/ChatwootWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -111,6 +112,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <I18nProvider>{children}</I18nProvider>
         </ErrorBoundary>
         <Analytics />
+        <ChatwootWidget />
       </body>
     </html>
   );
