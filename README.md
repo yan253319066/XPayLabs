@@ -106,10 +106,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 | Repository | Description |
 |------------|-------------|
-| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose deployment (MIT) |
-| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | Gateway core — Spring Boot (GPL-3.0) |
-| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | Merchant dashboard — Vue 3 (GPL-3.0) |
-| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC proxy — Express (MIT) |
+| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose deployment |
+| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | Gateway core — Spring Boot |
+| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | Merchant dashboard — Vue 3 |
+| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC proxy — Express |
 | [XPayLabs-checkout](https://github.com/yan253319066/XPayLabs-checkout) | Checkout page (Vue 3) |
 | [XPayLabs-docs](https://github.com/yan253319066/XPayLabs-docs) | Documentation (Mintlify) |
 | [XPayLabs-node-sdk](https://github.com/yan253319066/XPayLabs-node-sdk) | Node.js SDK |

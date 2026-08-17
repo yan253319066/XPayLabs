@@ -93,10 +93,10 @@ npm run dev
 
 | 仓库 | 说明 |
 |------|------|
-| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose 部署（MIT） |
-| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | 网关核心 — Spring Boot（GPL-3.0） |
-| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | 商户后台 — Vue 3（GPL-3.0） |
-| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC 代理 — Express（MIT） |
+| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose 部署 |
+| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | 网关核心 — Spring Boot |
+| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | 商户后台 — Vue 3 |
+| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC 代理 — Express |
 | [XPayLabs-checkout](https://github.com/yan253319066/XPayLabs-checkout) | 收银台（Vue 3） |
 | [XPayLabs-docs](https://github.com/yan253319066/XPayLabs-docs) | 文档站（Mintlify） |
 | [XPayLabs-node-sdk](https://github.com/yan253319066/XPayLabs-node-sdk) | Node.js SDK |
