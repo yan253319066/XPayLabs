@@ -328,8 +328,8 @@ export const en: TranslationSet = {
         a: "When a payment is detected on-chain, the webhook service constructs an HMAC-SHA256 signed JSON payload and sends it to your configured endpoint URL. If your endpoint returns a non-2xx status, the system retries with exponential backoff (1s, 2s, 4s, 8s, up to 5 minutes) for up to 48 hours. Each payload includes the transaction hash, amount, currency, chain, and merchant metadata. You verify the signature using your shared HMAC secret to ensure the payload came from your XPay node."
       },
       {
-        q: "Is XPay Labs source-available?",
-        a: "XPay Labs component source is published on GitHub under the MIT license for audit and self-deployment. Merchants can inspect key derivation, transaction scanning, and webhook dispatch. Default Docker Compose deploys published container images; you can also build from source. Community support is provided through GitHub Issues and Discord. Optional commercial support plans start at $1,500."
+        q: "Is XPay Labs open source?",
+        a: "Yes. The Java gateway core and merchant dashboard are GPL-3.0; SDKs, checkout UI, Docker deployment, documentation, and sui-node-service are MIT. Source is on GitHub for audit and self-deployment. Default Docker Compose deploys published container images; you can also build from source. Community support is provided through GitHub Issues and Discord. Optional commercial support plans start at $1,500."
       },
       {
         q: "What is the difference between self-hosted and non-custodial?",

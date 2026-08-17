@@ -252,8 +252,9 @@ export default function ReviewPage() {
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-4">
                 Unlike hosted gateways (BitPay, Coinbase Commerce, NowPayments) that charge 0.5-1% per
                 transaction and hold custody of funds, XPay Labs charges zero transaction fees and routes
-                payments directly to your blockchain wallet. The software is source-available and published
-                on GitHub for full auditability.
+                payments directly to your blockchain wallet. The software is open source (GPL-3.0 for the
+                Java gateway core and merchant dashboard; MIT for SDKs, checkout, Docker, and related tools)
+                and published on GitHub for full auditability.
               </p>
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base">
                 At its core, XPay Labs is a Spring Boot backend with concurrent blockchain indexers,

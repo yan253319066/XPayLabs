@@ -73,7 +73,7 @@ const faqSchema = {
       name: 'XPay Labs 对 TRON 支付收取什么费用？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Zero gateway fees. XPay Labs is source-available software you deploy yourself. The only costs are your server (a $10–$20 VPS or dedicated machine) and TRON network transaction fees (~0.1–1 TRX per USDT transfer for energy/bandwidth). There are no per-transaction fees, monthly minimums, or revenue-share arrangements.',
+        text: '零网关手续费。XPay Labs 是开源软件（GPL-3.0 / MIT），由你自行部署。成本仅为服务器（约 $10–$20 VPS 或专用机）与 TRON 网络手续费（USDT 转账能量/带宽约 0.1–1 TRX）。无按笔收费、月费门槛或收入分成。',
       },
     },
     {

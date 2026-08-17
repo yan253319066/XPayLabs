@@ -340,8 +340,8 @@ export const zh: TranslationSet = {
         a: "当链上检测到付款时，Webhook 服务会构建一个 HMAC-SHA256 签名的 JSON 负载并发送至您配置的终端 URL。如果您的端点返回非 2xx 状态码，系统将按指数退避策略（1秒、2秒、4秒、8秒，最长间隔5分钟）自动重试，持续最多48小时。每个负载包含交易哈希、金额、币种、链和商户元数据。您可使用共享的 HMAC 密钥验证签名，确保负载来自您的 XPay 节点。"
       },
       {
-        q: "XPay Labs 是否开放源代码？",
-        a: "XPay Labs 组件源码以 MIT 许可证发布在 GitHub，可供审计和自行部署。商户可检查密钥派生、交易扫描和 Webhook 分发。默认 Docker Compose 使用已发布的容器镜像；也可从源码构建。社区支持通过 GitHub Issues 和 Discord 提供。可选商业支持计划起价 $1,500。"
+        q: "XPay Labs 是否开源？",
+        a: "是的。Java 网关核心与商户后台采用 GPL-3.0；SDK、收银台、Docker 部署、文档与 sui-node-service 采用 MIT。源码发布在 GitHub，可供审计和自行部署。默认 Docker Compose 使用已发布的容器镜像；也可从源码构建。社区支持通过 GitHub Issues 和 Discord 提供。可选商业支持计划起价 $1,500。"
       },
       {
         q: "自托管与非托管有什么区别？",

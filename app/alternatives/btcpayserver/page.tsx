@@ -395,7 +395,7 @@ export default function BTCPayServerAlternativePage() {
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-green-400">•</span>
-                    <span>You want source-available code that can be audited and forked</span>
+                    <span>You want open-source code (GPL-3.0 / MIT) that can be audited and forked</span>
                   </li>
                 </ul>
               </div>
