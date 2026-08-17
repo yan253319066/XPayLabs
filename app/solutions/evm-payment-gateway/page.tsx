@@ -256,7 +256,7 @@ export default function EvmPaymentGatewayPage() {
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300 font-medium">Source Code</td>
                       <td className="p-4 text-gray-400">Closed-source</td>
-                      <td className="p-4 text-green-400">Free (XPay License)</td>
+                      <td className="p-4 text-green-400">MIT License</td>
                     </tr>
                   </tbody>
                 </table>

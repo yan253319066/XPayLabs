@@ -64,7 +64,7 @@ const faqSchema = {
       name: 'XPay Labs 比 NowPayments 更便宜吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '是的。XPay Labs 收取 0% 的交易手续费，无月订阅费。您只需支付网络燃料费。NowPayments 每笔交易收取 0.5%，外加 0.5% 的提现隐藏费用到外部钱包。',
+        text: '是的。XPay Labs 收取 0% 的交易手续费，无月订阅费。您只需支付网络燃料费。NowPayments 公开单币基础费率约 0.5%，兑换会额外加费；并提供托管与非托管两种模式，并非仅托管。',
       },
     },
     {
@@ -88,7 +88,7 @@ const faqSchema = {
       name: '与 NowPayments 相比，XPay Labs 是非托管吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '是的。XPay Labs 完全非托管。私钥在您自己的基础设施上生成，从不离开您的服务器。付款直接结算到您配置的钱包。NowPayments 是托管式的——他们持有您的资金直到您请求提现，并强制执行最低提现额度。',
+        text: '是的。XPay Labs 完全非托管。私钥在您自己的基础设施上生成，从不离开您的服务器。付款直接结算到您配置的钱包。NowPayments 提供托管与非托管模式；托管流程会持有资金直至提现并可能设有额度，与自建网关仍有本质区别。',
       },
     },
   ],
@@ -189,7 +189,7 @@ export default function NowPaymentsAlternativePage() {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
-                NowPayments 是一个流行的基于 API 的加密支付网关，但商户日益面临托管风险、约 0.5% 的经常性费用、提现额度和有限的自定义等问题。XPay Labs 是自托管、非托管的替代方案，为您提供完全控制——零交易手续费、直接结算和天生多链。
+                NowPayments 是一个流行的基于 API 的加密支付网关，但商户日益面临费率问题（单币基础约 0.5%，兑换另计）、托管/非托管模式取舍、托管流程下的提现额度，以及有限自定义。XPay Labs 是自托管、非托管的替代方案，为您提供完全控制——零交易手续费、直接结算和天生多链。
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -219,7 +219,7 @@ export default function NowPaymentsAlternativePage() {
                   </span>
                 </div>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  <strong className="text-white">NowPayments</strong> 是一个流行的托管支付网关——但它每笔交易收取约 0.5% 的费用、以托管方式持有您的资金直到提现、强制执行最低付款额度并限制结账品牌。<strong className="text-white">XPay Labs</strong> 是一款自托管支付网关，为您提供
+                  <strong className="text-white">NowPayments</strong> 是一个流行的托管支付网关——但其公开单币基础约 0.5%（兑换另计）、提供托管与非托管模式，托管流程可能设有提现额度并限制结账品牌。<strong className="text-white">XPay Labs</strong> 是一款自托管支付网关，为您提供
                   <strong className="text-[#00D1FF]">
                     零交易手续费
                   </strong>
@@ -261,7 +261,7 @@ export default function NowPaymentsAlternativePage() {
                     {[
                       {
                         feature: '定价',
-                        np: '约 0.5% 每笔交易',
+                        np: '约 0.5% 单币基础（兑换另计）',
                         xpay: '免费（自托管，零费用）',
                       },
                       {
@@ -275,9 +275,9 @@ export default function NowPaymentsAlternativePage() {
                         xpay: '每条支持链上的原生 USDT/USDC',
                       },
                       {
-                        feature: '非托管',
-                        np: '否——NowPayments 在提现前持有资金',
-                        xpay: '是——自托管，直接钱包结算',
+                        feature: '托管模式',
+                        np: '托管与非托管均可',
+                        xpay: '非托管——自托管，直接钱包结算',
                       },
                       {
                         feature: '最低提现额度',
@@ -307,7 +307,7 @@ export default function NowPaymentsAlternativePage() {
                       {
                         feature: '源代码访问',
                         np: '否',
-                        xpay: '授权免费使用',
+                        xpay: 'MIT License（源码在 GitHub）',
                       },
                       {
                         feature: 'API 优先设计',
@@ -503,15 +503,11 @@ export default function NowPaymentsAlternativePage() {
                       安全与托管模式
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      NowPayments 采用
-                      <strong className="text-orange-400">
-                        托管模式
-                      </strong>
-                      。客户付款时，资金进入 NowPayments 的钱包。要获取您的资金，您必须提交提现请求，这会产生 0.5% 的费用和网络燃料成本。NowPayments 还强制执行
-                      <strong className="text-white">
-                        最低提现额度
-                      </strong>
-                      ——通常为 0.01 BTC 等值（约 500-1,000 美元，取决于市场状况）。小商户可能发现无法频繁提现。
+                      NowPayments 提供
+                      <strong className="text-orange-400">托管与非托管模式</strong>
+                      。在托管模式下，客户付款后资金进入 NowPayments 钱包直至提现——可能产生费用、网络燃料以及
+                      <strong className="text-white">最低提现额度</strong>
+                      （常引用约 0.01 BTC 等值）。非托管模式可降低托管风险，但仍受其 SaaS 平台费率与产品限制。托管流程下的小商户可能无法频繁提现。
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs
@@ -532,10 +528,10 @@ export default function NowPaymentsAlternativePage() {
                         <X className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                         <div>
                           <span className="text-orange-400 font-semibold text-sm">
-                            托管式（NowPayments）
+                            托管或非托管（NowPayments）
                           </span>
                           <p className="text-xs text-gray-500 mt-1">
-                            资金由 NowPayments 持有。需要手动提现。应用最低额度 + 0.5% 提现费。
+                            两种模式均可用。托管流程可能需手动提现，并附带费用与额度。
                           </p>
                         </div>
                       </div>

@@ -64,7 +64,7 @@ const faqSchema = {
       name: 'Are self-hosted crypto payment gateways free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most self-hosted gateways are free software with zero transaction fees. XPay Labs and BTCPay Server both charge 0% per transaction. You pay only for server hosting ($10-20/month for a basic VPS) and blockchain network gas fees. This contrasts sharply with hosted gateways that charge 0.5-1% per transaction.',
+        text: 'Most self-hosted gateways are free software with zero transaction fees. XPay Labs and BTCPay Server both charge 0% per transaction. You pay only for server hosting ($10-20/month for a basic VPS) and blockchain network gas fees. This contrasts with hosted gateways that commonly charge ~0.5–1% (or BitPay’s 2% + $0.25 public entry tier below $500k/mo).',
       },
     },
     {
@@ -109,7 +109,7 @@ const rankData = [
     chains: 'TRON, 20+ EVM, SUI',
     deployment: 'Docker Compose',
     api: 'Stripe-inspired REST API + HMAC webhooks',
-    openSource: 'Free (XPay License)',
+    openSource: 'MIT License',
     pros: ['Zero fees on all chains', 'Sub-second payment detection', 'Clean Stripe-like API', 'Native TRON + EVM + SUI support', 'Full white-label checkout'],
     cons: ['Requires DevOps skills', 'No Bitcoin/Lightning', 'Smaller community'],
     link: '/',
@@ -135,17 +135,17 @@ const rankData = [
   {
     rank: 3,
     name: 'Coinbase Commerce',
-    tagline: 'Best known hosted option (not self-hosted)',
+    tagline: 'Discontinued Mar 31, 2026 (was self-custodial)',
     rating: '3.5',
-    bestFor: 'Simple hosted crypto checkout',
-    fees: '0.8% + $25/mo',
-    custody: 'Custodial',
+    bestFor: 'Historical / migration reference; successor: Coinbase Business',
+    fees: 'Legacy 1% (was self-custodial)',
+    custody: 'Was self-custodial; Business is custodial',
     chains: 'BTC, ETH, USDC, DAI, a few others',
-    deployment: 'Hosted (SaaS)',
+    deployment: 'Hosted (SaaS) — portal inaccessible after Mar 31, 2026',
     api: 'REST API available',
     openSource: 'Closed-source',
-    pros: ['Easy to set up', 'Coinbase brand trust', 'Fiat conversion available'],
-    cons: ['0.8% + $25/mo fees', 'Custodial (Coinbase holds keys)', 'KYC required', 'Limited chain support'],
+    pros: ['Easy to set up (while available)', 'Coinbase brand trust', 'Fiat conversion available'],
+    cons: ['Discontinued after Mar 31, 2026', 'Legacy 1% fee', 'Limited chain support', 'Business successor is custodial (~1%, US/SG)'],
     link: '/alternatives/coinbase-commerce',
     linkText: 'XPay vs Coinbase Commerce',
   },
@@ -384,8 +384,9 @@ export default function BestSelfHostedGatewayPage() {
                 Cost Savings Analysis
               </h2>
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
-                Self-hosted gateways eliminate the 0.5–1% per-transaction fees charged by hosted providers.
-                Here is the real cost difference based on monthly processing volume:
+                Self-hosted gateways eliminate the per-transaction fees charged by hosted providers
+                (commonly ~0.5–1%, or BitPay’s 2% + $0.25 public entry tier below $500k/mo).
+                Here is an illustrative cost difference at a 1% hosted rate vs self-hosted:
               </p>
               <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
                 <table className="w-full text-left text-sm font-sans">
@@ -447,7 +448,7 @@ export default function BestSelfHostedGatewayPage() {
                   className="glass-panel rounded-2xl p-5 hover:bg-white/[0.04] transition-all group"
                 >
                   <h3 className="text-sm font-display font-medium text-white group-hover:text-brand-blue transition-colors">BitPay</h3>
-                  <p className="text-xs text-gray-400 font-sans mt-1">Pioneered crypto merchant payments but charges 1% fees and is custodial. Best for its established brand and fiat settlement options.</p>
+                  <p className="text-xs text-gray-400 font-sans mt-1">Pioneered crypto merchant payments; public entry tier is 2%+$0.25 (&lt;$500k/mo) and custodial. Best for brand recognition and fiat settlement.</p>
                 </Link>
                 <Link
                   href="/alternatives/nowpayments"

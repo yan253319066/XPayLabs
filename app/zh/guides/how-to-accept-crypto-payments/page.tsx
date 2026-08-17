@@ -424,7 +424,7 @@ export default function HowToAcceptCryptoPaymentsPage() {
                         月度费用
                       </td>
                       <td className="p-4 text-gray-400">
-                        $30–$300+ 套餐费
+                        按交易量分档（如 BitPay 入门档 2%+$0.25）
                       </td>
                       <td className="p-4 text-green-400">
                         $10–$20（VPS 托管）

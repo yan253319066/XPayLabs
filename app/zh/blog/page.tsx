@@ -80,7 +80,7 @@ const posts = [
     href: '/zh/alternatives/coinbase-commerce',
     date: '2026 年 5 月',
     category: '替代方案',
-    excerpt: 'Coinbase Commerce 正在关闭其托管服务。商户需要一个自托管替代方案，让他们掌握私钥控制权、结算时间和支持的区块链。',
+    excerpt: 'Coinbase Commerce 门户在 2026 年 3 月 31 日后已不可用。商户需要一个自托管替代方案，让他们掌握私钥控制权、结算时间和支持的区块链。',
   },
   {
     title: 'NowPayments 替代方案：为什么商户正在转向自托管',

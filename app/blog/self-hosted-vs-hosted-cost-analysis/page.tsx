@@ -42,11 +42,11 @@ const articleSchema = {
 };
 
 const annualCosts = [
-  { tier: '$10k/mo', bitpay: '$1,560', coinbase: '$1,260', nowpay: '$900', xpay: '$60' },
-  { tier: '$50k/mo', bitpay: '$6,360', coinbase: '$5,260', nowpay: '$3,300', xpay: '$120' },
-  { tier: '$100k/mo', bitpay: '$12,360', coinbase: '$10,260', nowpay: '$6,300', xpay: '$120' },
-  { tier: '$250k/mo', bitpay: '$30,360', coinbase: '$25,260', nowpay: '$15,300', xpay: '$240' },
-  { tier: '$500k/mo', bitpay: '$60,360', coinbase: '$50,260', nowpay: '$30,300', xpay: '$240' },
+  { tier: '$10k/mo', bitpay: '$2,400+', coinbase: '$1,200', nowpay: '$600+', xpay: '$60' },
+  { tier: '$50k/mo', bitpay: '$12,000+', coinbase: '$6,000', nowpay: '$3,000+', xpay: '$120' },
+  { tier: '$100k/mo', bitpay: '$24,000+', coinbase: '$12,000', nowpay: '$6,000+', xpay: '$120' },
+  { tier: '$250k/mo', bitpay: '$60,000+', coinbase: '$30,000', nowpay: '$15,000+', xpay: '$240' },
+  { tier: '$500k/mo', bitpay: '$90,000+', coinbase: '$60,000', nowpay: '$30,000+', xpay: '$240' },
 ];
 
 export default function CostAnalysisPage() {
@@ -71,10 +71,10 @@ export default function CostAnalysisPage() {
                 <span>8 min read</span>
               </div>
               <p className="mt-6 text-base sm:text-lg text-gray-400 font-sans leading-relaxed">
-                Hosted crypto payment gateways like BitPay and Coinbase Commerce advertise &ldquo;1% fees&rdquo;
-                as if it is negligible. For a business processing $100k/month, that 1% adds up to
-                <strong className="text-white"> $12,000+ per year</strong> — before you even factor in
-                monthly plan fees, settlement delays, and fiat conversion overhead.
+                Hosted crypto payment gateways like BitPay and Coinbase Business advertise low single-digit fees
+                as if they are negligible. BitPay’s public entry tier is 2% + $0.25 below $500k/month — for
+                $100k/month that is about <strong className="text-white">$24,000+/year</strong>. Coinbase Commerce
+                was discontinued after March 31, 2026; Coinbase Business is about 1% for eligible merchants.
               </p>
               <p className="mt-4 text-base sm:text-lg text-gray-400 font-sans leading-relaxed">
                 We built a transparent cost model across five volume tiers so you can see exactly what
@@ -97,7 +97,7 @@ export default function CostAnalysisPage() {
                     <tr className="bg-[#0b0e25] border-b border-white/8">
                       <th className="p-4 text-gray-400 font-medium">Monthly Volume</th>
                       <th className="p-4 text-orange-400 font-medium">BitPay</th>
-                      <th className="p-4 text-blue-400 font-medium">Coinbase Commerce</th>
+                      <th className="p-4 text-blue-400 font-medium">Coinbase Business</th>
                       <th className="p-4 text-purple-400 font-medium">NowPayments</th>
                       <th className="p-4 text-brand-cyan font-medium">XPay Labs (Self-Hosted)</th>
                     </tr>
@@ -116,8 +116,8 @@ export default function CostAnalysisPage() {
                 </table>
               </div>
               <div className="mt-4 p-4 rounded-xl bg-emerald-400/5 border border-emerald-400/10 text-xs text-gray-400 font-sans leading-relaxed">
-                <strong className="text-gray-300">Assumptions:</strong> BitPay: 1% tx fee + $30/mo Starter plan.
-                Coinbase Commerce: 0.8% tx fee + $25/mo plan. NowPayments: 0.5% tx fee (no monthly plan).
+                <strong className="text-gray-300">Assumptions:</strong> BitPay: public entry tier 2% + $0.25/invoice below $500k/mo (1.5% mid; 1% at ≥$1M).
+                Coinbase column uses Coinbase Business ~1% (Commerce portal inaccessible after Mar 31, 2026; legacy Commerce was 1% self-custodial). NowPayments: ~0.5% single-currency base (conversion adds more).
                 XPay Labs: $0 tx fee, VPS cost estimated at $5/mo ($10k tier) to $20/mo ($500k tier).
                 Gas fees not included (paid by customer or merchant equally across all solutions).
                 Optional XPay Labs support plans from $1,500 (Docker Setup) or $3,000/yr (Business) — not required to use the software.
@@ -135,25 +135,24 @@ export default function CostAnalysisPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-orange-500/50">
-                  <div className="text-2xl font-display font-bold text-orange-400">$37,080</div>
+                  <div className="text-2xl font-display font-bold text-orange-400">$72,000+</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">BitPay — 3 years</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$12,360/yr × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">~$24,000+/yr × 3 (entry tier)</div>
                 </div>
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-purple-500/50">
-                  <div className="text-2xl font-display font-bold text-purple-400">$18,900</div>
+                  <div className="text-2xl font-display font-bold text-purple-400">$18,000+</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">NowPayments — 3 years</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$6,300/yr × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">~$6,000+/yr × 3</div>
                 </div>
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-green-500/50">
-                  <div className="text-2xl font-display font-bold text-green-400">$360</div>
+                  <div className="text-2xl font-display font-bold text-green-400">$360–$720</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">XPay Labs — 3 years</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$120/yr × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">~$120–$240/yr × 3 (VPS)</div>
                 </div>
               </div>
               <p className="mt-4 text-sm text-gray-400 font-sans leading-relaxed">
-                That is <strong className="text-emerald-400">$36,720 in savings</strong> over 3 years by choosing
-                self-hosted infrastructure. Enough to fund a developer for a month, cover a year of server
-                costs for an entire microservices architecture, or reinvest into product development.
+                That is on the order of <strong className="text-emerald-400">$70,000+ in fee savings</strong> over 3 years
+                versus BitPay’s public entry tier alone — before counting Coinbase Business or conversion fees.
               </p>
             </section>
 
@@ -187,8 +186,9 @@ export default function CostAnalysisPage() {
                 <div className="glass-panel rounded-2xl p-5">
                   <h3 className="text-sm font-display font-medium text-white mb-2">3. Migration Cost When Processors Change Terms</h3>
                   <p className="text-xs text-gray-400 font-sans leading-relaxed">
-                    Coinbase Commerce is <Link href="/alternatives/coinbase-commerce" className="text-brand-cyan underline underline-offset-2">shutting down its custodial service</Link>.
-                    BitPay has raised fees and changed plan structures. When a hosted processor changes terms,
+                    Coinbase Commerce was <Link href="/alternatives/coinbase-commerce" className="text-brand-cyan underline underline-offset-2">discontinued after March 31, 2026</Link>
+                    (legacy Commerce was 1% and self-custodial). Coinbase Business is the custodial successor at about 1%.
+                    BitPay uses volume-tiered public pricing. When a hosted processor changes terms,
                     you migrate — and migration costs engineering time, testing, and potential downtime. With
                     self-hosted infrastructure, you control the upgrade cycle.
                   </p>

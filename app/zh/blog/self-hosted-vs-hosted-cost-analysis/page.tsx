@@ -43,11 +43,11 @@ const articleSchema = {
 };
 
 const annualCosts = [
-  { tier: '$10k/月', bitpay: '$1,560', coinbase: '$1,260', nowpay: '$900', xpay: '$60' },
-  { tier: '$50k/月', bitpay: '$6,360', coinbase: '$5,260', nowpay: '$3,300', xpay: '$120' },
-  { tier: '$100k/月', bitpay: '$12,360', coinbase: '$10,260', nowpay: '$6,300', xpay: '$120' },
-  { tier: '$250k/月', bitpay: '$30,360', coinbase: '$25,260', nowpay: '$15,300', xpay: '$240' },
-  { tier: '$500k/月', bitpay: '$60,360', coinbase: '$50,260', nowpay: '$30,300', xpay: '$240' },
+  { tier: '$10k/月', bitpay: '$2,400+', coinbase: '$1,200', nowpay: '$600+', xpay: '$60' },
+  { tier: '$50k/月', bitpay: '$12,000+', coinbase: '$6,000', nowpay: '$3,000+', xpay: '$120' },
+  { tier: '$100k/月', bitpay: '$24,000+', coinbase: '$12,000', nowpay: '$6,000+', xpay: '$120' },
+  { tier: '$250k/月', bitpay: '$60,000+', coinbase: '$30,000', nowpay: '$15,000+', xpay: '$240' },
+  { tier: '$500k/月', bitpay: '$90,000+', coinbase: '$60,000', nowpay: '$30,000+', xpay: '$240' },
 ];
 
 export default function ZhCostAnalysisPage() {
@@ -72,9 +72,8 @@ export default function ZhCostAnalysisPage() {
                 <span>阅读时间约 8 分钟</span>
               </div>
               <p className="mt-6 text-base sm:text-lg text-gray-400 font-sans leading-relaxed">
-                BitPay 和 Coinbase Commerce 等托管加密货币支付网关宣称"1% 手续费"似乎微不足道。
-                对一个月交易量 $100k 的商户来说，那 1% 累积起来就是每年
-                <strong className="text-white"> $12,000+</strong>——还没算月费、结算延迟和法币兑换成本。
+                BitPay 和 Coinbase Business 等托管加密货币支付网关宣称个位数手续费似乎微不足道。BitPay 公开入门档在月流水低于 $50 万时为 2% + $0.25/笔——对一个月交易量 $100k 的商户约合每年
+                <strong className="text-white"> $24,000+</strong>。Coinbase Commerce 门户在 2026 年 3 月 31 日后已不可用；Coinbase Business 对符合条件商户约 1%。
               </p>
               <p className="mt-4 text-base sm:text-lg text-gray-400 font-sans leading-relaxed">
                 我们构建了一个透明的成本模型，涵盖五个交易量级别，让你清楚看到每个网关的实际收费——
@@ -96,7 +95,7 @@ export default function ZhCostAnalysisPage() {
                     <tr className="bg-[#0b0e25] border-b border-white/8">
                       <th className="p-4 text-gray-400 font-medium">月交易量</th>
                       <th className="p-4 text-orange-400 font-medium">BitPay</th>
-                      <th className="p-4 text-blue-400 font-medium">Coinbase Commerce</th>
+                      <th className="p-4 text-blue-400 font-medium">Coinbase Business</th>
                       <th className="p-4 text-purple-400 font-medium">NowPayments</th>
                       <th className="p-4 text-brand-cyan font-medium">XPay Labs（自托管）</th>
                     </tr>
@@ -115,8 +114,8 @@ export default function ZhCostAnalysisPage() {
                 </table>
               </div>
               <div className="mt-4 p-4 rounded-xl bg-emerald-400/5 border border-emerald-400/10 text-xs text-gray-400 font-sans leading-relaxed">
-                <strong className="text-gray-300">假设条件：</strong> BitPay: 1% 交易费 + $30/月 Starter 套餐。
-                Coinbase Commerce: 0.8% 交易费 + $25/月套餐。NowPayments: 0.5% 交易费（无月费）。
+                <strong className="text-gray-300">假设条件：</strong> BitPay：公开入门档低于 $50 万/月为 2% + $0.25/笔（中档 1.5%；≥$100 万为 1%）。
+                Coinbase 列使用 Coinbase Business 约 1%（Commerce 门户 2026-03-31 后不可用；旧 Commerce 为 1% 且自托管）。NowPayments：约 0.5% 单币基础（兑换另计）。
                 XPay Labs: $0 交易费，VPS 费用按 $5/月（$10k 级别）到 $20/月（$500k 级别）估算。
                 Gas 费未计入（所有方案下客户或商户支付相同）。
                 XPay Labs 可选支持计划 $1,500 起（Docker Setup）或 $3,000/年（Business）— 使用软件无需购买。
@@ -133,24 +132,23 @@ export default function ZhCostAnalysisPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-orange-500/50">
-                  <div className="text-2xl font-display font-bold text-orange-400">$37,080</div>
+                  <div className="text-2xl font-display font-bold text-orange-400">$72,000+</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">BitPay — 3 年</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$12,360/年 × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">约 $24,000+/年 × 3（入门档）</div>
                 </div>
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-purple-500/50">
-                  <div className="text-2xl font-display font-bold text-purple-400">$18,900</div>
+                  <div className="text-2xl font-display font-bold text-purple-400">$18,000+</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">NowPayments — 3 年</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$6,300/年 × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">约 $6,000+/年 × 3</div>
                 </div>
                 <div className="glass-panel rounded-2xl p-6 text-center border-l-4 border-green-500/50">
-                  <div className="text-2xl font-display font-bold text-green-400">$360</div>
+                  <div className="text-2xl font-display font-bold text-green-400">$360–$720</div>
                   <div className="text-xs text-gray-500 font-sans mt-1">XPay Labs — 3 年</div>
-                  <div className="text-[10px] text-gray-600 font-sans mt-2">$120/年 × 3</div>
+                  <div className="text-[10px] text-gray-600 font-sans mt-2">约 $120–$240/年 × 3（VPS）</div>
                 </div>
               </div>
               <p className="mt-4 text-sm text-gray-400 font-sans leading-relaxed">
-                选择自托管基础设施，3 年可节省 <strong className="text-emerald-400">$36,720</strong>。
-                这些资金可用在产品开发、市场营销或扩充团队上。
+                仅相对 BitPay 公开入门档，3 年手续费节省量级约 <strong className="text-emerald-400">$70,000+</strong>——尚未计入 Coinbase Business 或兑换附加费。
               </p>
             </section>
 
@@ -181,8 +179,8 @@ export default function ZhCostAnalysisPage() {
                 <div className="glass-panel rounded-2xl p-5">
                   <h3 className="text-sm font-display font-medium text-white mb-2">3. 服务商变更条款时的迁移成本</h3>
                   <p className="text-xs text-gray-400 font-sans leading-relaxed">
-                    Coinbase Commerce 正在<a href="/alternatives/coinbase-commerce" className="text-brand-cyan underline underline-offset-2">关闭其托管服务</a>。
-                    BitPay 曾多次提价和调整套餐结构。当托管服务商变更条款时，你需要迁移——迁移成本包括
+                    Coinbase Commerce 已于<a href="/alternatives/coinbase-commerce" className="text-brand-cyan underline underline-offset-2">2026 年 3 月 31 日停用</a>。
+                    BitPay 采用按交易量分档的公开定价。当托管服务商变更条款时，你需要迁移——迁移成本包括
                     工程时间、测试和潜在停机。而自托管基础设施，你掌握升级周期。
                   </p>
                 </div>

@@ -295,7 +295,7 @@ export default function CoinGateAlternativePage() {
                       闭源（专有）
                     </td>
                     <td className="p-4 text-green-400">
-                      授权免费使用
+                      MIT License
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -498,9 +498,9 @@ export default function CoinGateAlternativePage() {
                   。您无法审计代码、在表面级设置之外自定义集成或贡献功能。API 虽有文档，但仅限于 CoinGate 决定提供的内容。
                 </p>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  XPay Labs
-                  <strong className="text-green-400">授权免费使用</strong>——
-                  每一行代码都在 GitHub 上可见。您可以审计安全性、提交拉取请求、分叉项目并根据需要进行扩展。REST API 辅以
+                  XPay Labs 以
+                  <strong className="text-green-400">MIT License</strong> 开源——
+                  源码在 GitHub 上。默认 Docker 使用已发布镜像，也可从源码构建以实现完整可复现。您可以审计安全性、提交拉取请求、分叉项目并根据需要进行扩展。REST API 辅以
                   <strong className="text-gray-300">
                     HMAC 签名 webhook
                   </strong>

@@ -313,11 +313,11 @@ export const en: TranslationSet = {
       },
       {
         q: "Can I accept USDT payments with XPay Labs?",
-        a: "Yes. XPay Labs natively supports USDT across all integrated blockchains — TRC20 USDT on TRON, ERC20 USDT on Ethereum and all EVM chains, BEP20 USDT on BNB Chain, and USDC as well. The multi-chain scanner monitors all networks concurrently and detects incoming stablecoin payments within seconds. Merchants report a 40-60% reduction in payment processing costs compared to hosted gateways that charge 0.5-1% per transaction."
+        a: "Yes. XPay Labs natively supports USDT across all integrated blockchains — TRC20 USDT on TRON, ERC20 USDT on Ethereum and all EVM chains, BEP20 USDT on BNB Chain, and USDC as well. The multi-chain scanner monitors all networks concurrently and detects incoming stablecoin payments within seconds. Merchants report lower payment processing costs compared to hosted gateways that commonly charge 0.5–2%+ per transaction."
       },
       {
-        q: "How does XPay Labs compare to hosted payment gateways like BitPay or Coinbase Commerce?",
-        a: "The fundamental difference is custody and cost. Hosted gateways like BitPay (1% fee) and Coinbase Commerce (0.8% + $25/mo) hold merchant keys on their infrastructure and charge per-transaction fees. XPay Labs is self-hosted and non-custodial — keys stay in your Docker containers, and you pay only blockchain gas fees (typically $0.01-$0.50 per transaction depending on network congestion). For a business processing $100,000/month in crypto payments, this can save $6,000-$12,000 annually in gateway fees."
+        q: "How does XPay Labs compare to hosted payment gateways like BitPay or Coinbase?",
+        a: "The fundamental difference is custody and cost. BitPay’s public entry tier is 2% + $0.25 per invoice below $500k/month (1% only at $1M+). Coinbase Commerce was discontinued after March 31, 2026 (legacy Commerce was 1% and self-custodial); Coinbase Business is custodial at about 1% for eligible merchants. XPay Labs is self-hosted and non-custodial — keys stay in your Docker containers, and you pay only blockchain gas fees. For $100,000/month volume, hosted fees are commonly in the $12,000–$24,000+/year range versus roughly $240/year in VPS cost with XPay Labs."
       },
       {
         q: "Does XPay Labs support multi-chain payments?",
@@ -329,7 +329,7 @@ export const en: TranslationSet = {
       },
       {
         q: "Is XPay Labs source-available?",
-        a: "XPay Labs is source-available under the XPay Enterprise License. The full core codebase is published on GitHub for audit and self-deployment. Merchants can inspect exactly how key derivation, transaction scanning, and webhook dispatch work. Community support is provided through GitHub Issues and Discord. Commercial support plans start at $1,500/year for priority SLA."
+        a: "XPay Labs component source is published on GitHub under the MIT license for audit and self-deployment. Merchants can inspect key derivation, transaction scanning, and webhook dispatch. Default Docker Compose deploys published container images; you can also build from source. Community support is provided through GitHub Issues and Discord. Optional commercial support plans start at $1,500."
       },
       {
         q: "What is the difference between self-hosted and non-custodial?",
@@ -379,7 +379,7 @@ export const en: TranslationSet = {
     product: "SYSTEM CORE",
     developers: "DEVELOPERS",
     links: "INTEGRATIONS",
-    allRights: "All rights reserved. Protected under XPay Enterprise License.",
+    allRights: "MIT-licensed open software. Optional paid support plans available.",
     disclaimer: "Non-custodial infrastructure software. Merchant remains strictly responsible for local legislative compliance, key protection, and node security.",
     termsOfService: "Terms of Service",
     privacyPolicy: "Privacy Policy",

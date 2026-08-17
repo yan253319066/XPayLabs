@@ -11,20 +11,20 @@ import JsonLd from '../../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Coinbase Commerce Alternative — Self-Hosted Crypto Payments | XPay Labs',
-  description: 'Looking for a Coinbase Commerce alternative? XPay Labs is a self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI. No 1% fee, full white-label control, and real-time webhooks.',
-  keywords: 'Coinbase Commerce alternative, alternative to Coinbase Commerce, self-hosted crypto payments, non-custodial payment gateway, crypto payment provider',
+  description: 'Coinbase Commerce portal inaccessible after Mar 31, 2026. Legacy Commerce was 1% and self-custodial. XPay Labs is a self-hosted, non-custodial alternative supporting TRON, EVM, and SUI — zero gateway fees, full white-label.',
+  keywords: 'Coinbase Commerce alternative, alternative to Coinbase Commerce, Coinbase Commerce discontinued, self-hosted crypto payments, non-custodial payment gateway, crypto payment provider',
   alternates: {
     canonical: 'https://www.xpaylabs.com/alternatives/coinbase-commerce',
   },
   openGraph: {
     title: 'Coinbase Commerce Alternative — Self-Hosted Crypto Payments | XPay Labs',
-    description: 'Looking for a Coinbase Commerce alternative? XPay Labs is a self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI.',
+    description: 'Coinbase Commerce discontinued after Mar 31, 2026. Migrate to self-hosted XPay Labs — TRON, EVM, SUI, zero gateway fees.',
     url: 'https://www.xpaylabs.com/alternatives/coinbase-commerce',
     type: 'website',
   },
   twitter: {
     title: 'Coinbase Commerce Alternative — Self-Hosted Crypto Payments | XPay Labs',
-    description: 'Looking for a Coinbase Commerce alternative? XPay Labs is a self-hosted, non-custodial crypto payment gateway supporting TRON, EVM chains, and SUI.',
+    description: 'Coinbase Commerce discontinued after Mar 31, 2026. Migrate to self-hosted XPay Labs — TRON, EVM, SUI, zero gateway fees.',
     card: 'summary_large_image',
   },
 };
@@ -38,7 +38,7 @@ const faqSchema = {
       name: 'Is XPay Labs a free alternative to Coinbase Commerce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. XPay Labs is free to self-host. You pay zero transaction fees — only network gas costs. We do not take a percentage of your payments like Coinbase Commerce does.',
+        text: 'Yes. XPay Labs is free to self-host under the MIT License. You pay zero transaction fees — only network gas costs. Coinbase Commerce was discontinued after March 31, 2026 (legacy Commerce charged 1%). Coinbase Business is the custodial successor at about 1% for eligible US/SG merchants.',
       },
     },
     {
@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'Does XPay Labs support more blockchains than Coinbase Commerce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'XPay Labs supports TRON (USDT, USDC), EVM-compatible chains (Ethereum, BSC, Polygon, Arbitrum, Optimism), and SUI. Coinbase Commerce supports Bitcoin, Ethereum, USDC, and a few other assets. XPay Labs offers broader stablecoin-focused chain support with lower transaction fees.',
+        text: 'XPay Labs supports TRON (USDT, USDC), EVM-compatible chains (Ethereum, BSC, Polygon, Arbitrum, Optimism), and SUI. Legacy Coinbase Commerce supported Bitcoin, Ethereum, USDC, and a few other assets. Coinbase Business is USDC-focused on major EVM chains. XPay Labs offers broader stablecoin-focused chain support with zero gateway fees.',
       },
     },
     {
@@ -182,9 +182,11 @@ export default function CoinbaseCommerceAlternative() {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
-                XPay Labs is the self-hosted, non-custodial alternative to Coinbase Commerce.
-                Cut fees to zero, support TRON, EVM chains, and SUI, and keep full control over
-                your payment infrastructure. No middlemen. No revenue share. No limitations.
+                Coinbase Commerce was discontinued after March 31, 2026 — the portal is no longer accessible.
+                Legacy Commerce was <strong className="text-white">1% and self-custodial</strong>. Merchants need a
+                durable alternative. <strong className="text-white">XPay Labs</strong> is self-hosted and non-custodial:
+                zero gateway fees, TRON, EVM chains, and SUI, full white-label control. For hosted comparison, Coinbase
+                Business (~1%, custodial, US/SG eligibility) is the successor product.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -219,18 +221,18 @@ export default function CoinbaseCommerceAlternative() {
                 {[
                   {
                     icon: <Layers className="w-6 h-6 text-[#5B8CFF]" />,
-                    title: 'Legacy Version Deprecation',
-                    text: 'Coinbase deprecated its original Commerce product in favor of a streamlined on-chain checkout. Merchants on the legacy version were forced to migrate with limited tooling and fewer features than before.',
+                    title: 'Commerce Discontinued',
+                    text: 'The Coinbase Commerce portal is inaccessible after March 31, 2026. Merchants who built on Commerce must migrate — hosted tooling and product direction shifted to Coinbase Business for eligible accounts.',
                   },
                   {
                     icon: <Shield className="w-6 h-6 text-[#00D1FF]" />,
-                    title: 'Custodial Risk',
-                    text: 'With Coinbase Commerce, Coinbase holds settlement funds until payout. This introduces counterparty risk, delayed settlements, and dependence on Coinbase operational uptime and compliance decisions.',
+                    title: 'Hosted Successor Trade-offs',
+                    text: 'Legacy Commerce was self-custodial at 1%. Coinbase Business — the comparison successor — is custodial at about 1% and limited by US/SG eligibility. Self-hosting avoids that custody and geo lock-in.',
                   },
                   {
                     icon: <Cpu className="w-6 h-6 text-[#7C4DFF]" />,
                     title: 'Limited Chain Support',
-                    text: 'Coinbase Commerce primarily supports Bitcoin, Ethereum, USDC, and a handful of assets. If you want TRON USDT, BSC, Polygon, Arbitrum, or SUI — you are out of luck.',
+                    text: 'Legacy Commerce primarily supported Bitcoin, Ethereum, USDC, and a handful of assets. If you want TRON USDT, BSC, Polygon, Arbitrum, or SUI — you need another stack.',
                   },
                 ].map((item, i) => (
                   <div
@@ -257,13 +259,13 @@ export default function CoinbaseCommerceAlternative() {
                   <span className="text-xs font-bold uppercase tracking-widest text-[#00D1FF] font-mono">TL;DR</span>
                 </div>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  <strong className="text-white">Coinbase Commerce</strong> is a solid hosted solution — but it takes a 1%
-                  cut, supports limited chains, and keeps your funds custodial until settlement.{' '}
-                  <strong className="text-white">XPay Labs</strong> is a self-hosted payment gateway that
-                  gives you <strong className="text-[#00D1FF]">zero transaction fees</strong>, support for{' '}
+                  <strong className="text-white">Coinbase Commerce</strong> is discontinued after March 31, 2026.
+                  Legacy Commerce was <strong className="text-white">1% and self-custodial</strong> — not 0.8%+$25 and
+                  not a custodial wallet product. Merchants need alternatives.{' '}
+                  <strong className="text-white">XPay Labs</strong> is a self-hosted gateway with{' '}
+                  <strong className="text-[#00D1FF]">zero transaction fees</strong>, support for{' '}
                   <strong className="text-[#00D1FF]">TRON, EVM chains, and SUI</strong>, full white-label customization,
-                  and direct non-custodial settlement. If you process high volume, need TRON USDT, or want to own your
-                  payment stack end-to-end, XPay Labs is the Coinbase Commerce alternative you are looking for.
+                  and direct non-custodial settlement. For hosted comparison, Coinbase Business is ~1% custodial (US/SG).
                 </p>
               </div>
             </div>
@@ -290,7 +292,8 @@ export default function CoinbaseCommerceAlternative() {
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {[
-                      { feature: 'Pricing', coinbase: '1% transaction fee', xpay: 'Free (self-hosted, zero fees)' },
+                      { feature: 'Status', coinbase: 'Portal inaccessible after Mar 31, 2026', xpay: 'Actively maintained, self-hosted' },
+                      { feature: 'Pricing', coinbase: 'Legacy: 1% (discontinued); Business ~1%', xpay: 'Free (self-hosted, zero fees)' },
                       {
                         feature: 'Supported Chains',
                         coinbase: 'Bitcoin, Ethereum, USDC, few others',
@@ -298,17 +301,17 @@ export default function CoinbaseCommerceAlternative() {
                       },
                       {
                         feature: 'Stablecoin Support',
-                        coinbase: 'USDC only',
+                        coinbase: 'USDC (Commerce/Business focus)',
                         xpay: 'USDT, USDC (native on each chain)',
                       },
                       {
-                        feature: 'Non-Custodial',
-                        coinbase: 'No — Coinbase holds funds',
-                        xpay: 'Yes — self-hosted, direct settlement',
+                        feature: 'Custody',
+                        coinbase: 'Legacy Commerce: self-custodial; Business: custodial',
+                        xpay: 'Non-custodial — self-hosted, direct settlement',
                       },
                       {
                         feature: 'White-Label',
-                        coinbase: 'No — branded Coinbase checkout',
+                        coinbase: 'Limited / Coinbase-branded checkout',
                         xpay: 'Yes — full customization',
                       },
                       {
@@ -318,7 +321,7 @@ export default function CoinbaseCommerceAlternative() {
                       },
                       {
                         feature: 'Settlement Control',
-                        coinbase: 'Batch payouts on their schedule',
+                        coinbase: 'Commerce: on-chain to you; Business: custodial balance',
                         xpay: 'Instant settlement to your wallets',
                       },
                       {
@@ -329,7 +332,7 @@ export default function CoinbaseCommerceAlternative() {
                       {
                         feature: 'Source Access',
                         coinbase: 'No',
-                        xpay: 'Free (XPay License)',
+                        xpay: 'MIT License (source on GitHub)',
                       },
                       {
                         feature: 'API-First Design',
@@ -369,10 +372,11 @@ export default function CoinbaseCommerceAlternative() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Pricing</h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      Coinbase Commerce charges a <strong className="text-orange-400">1% transaction fee</strong> on
-                      every payment you receive. For a business processing $100,000/month in crypto, that is{' '}
-                      <strong className="text-white">$1,000/month</strong> in fees — $12,000/year. And that is before any
-                      network gas costs.
+                      Legacy <strong className="text-orange-400">Coinbase Commerce charged 1%</strong> per payment and
+                      was self-custodial — not 0.8% + $25/mo. The Commerce portal is inaccessible after March 31, 2026.
+                      For ongoing hosted pricing, <strong className="text-white">Coinbase Business</strong> is about 1%
+                      (custodial, US/SG eligibility). At $100,000/month, that is roughly{' '}
+                      <strong className="text-white">$1,000/month</strong> — $12,000/year — before network costs.
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs is <strong className="text-[#00D1FF]">completely free</strong>. Since you self-host the
@@ -386,7 +390,7 @@ export default function CoinbaseCommerceAlternative() {
                     <h4 className="text-white font-bold mb-4 text-lg">Cost comparison at $100k/month volume</h4>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between pb-3 border-b border-white/5">
-                        <span className="text-gray-400">Coinbase Commerce (1%)</span>
+                        <span className="text-gray-400">Legacy Commerce / Business (~1%)</span>
                         <span className="text-orange-400 font-bold text-lg">$1,000/mo</span>
                       </div>
                       <div className="flex items-center justify-between pb-3 border-b border-white/5">
@@ -463,11 +467,11 @@ export default function CoinbaseCommerceAlternative() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Security Model</h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      Coinbase Commerce is <strong className="text-orange-400">custodial</strong>. When a customer pays
-                      you, the funds go to a Coinbase-controlled address. Coinbase holds those funds and pays you out
-                      later (daily or weekly batches). This means Coinbase controls your money until settlement —
-                      introducing counterparty risk, potential freeze events, and dependency on their compliance
-                      infrastructure.
+                      Legacy Coinbase Commerce was <strong className="text-orange-400">self-custodial</strong> at 1% —
+                      funds did not sit in a Coinbase custodial balance the way many hosted gateways do. After the
+                      Mar 31, 2026 cutoff, merchants comparing hosted options face{' '}
+                      <strong className="text-white">Coinbase Business</strong>: ~1%, custodial, with US/SG eligibility
+                      constraints and counterparty dependence.
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs is <strong className="text-[#00D1FF]">non-custodial</strong>. You run the software on
@@ -482,9 +486,9 @@ export default function CoinbaseCommerceAlternative() {
                       <div className="flex items-start gap-3">
                         <XIcon />
                         <div>
-                          <span className="text-orange-400 font-semibold text-sm">Custodial (Coinbase Commerce)</span>
+                          <span className="text-orange-400 font-semibold text-sm">Legacy Commerce vs Business</span>
                           <p className="text-xs text-gray-500 mt-1">
-                            Coinbase controls settlement wallet. Funds batched and paid out on their schedule.
+                            Commerce (discontinued): self-custodial at 1%. Business: custodial ~1%, US/SG eligibility.
                           </p>
                         </div>
                       </div>
@@ -526,7 +530,7 @@ export default function CoinbaseCommerceAlternative() {
                         { icon: <Code className="w-4 h-4" />, text: 'REST API with full payment lifecycle' },
                         { icon: <Webhook className="w-4 h-4" />, text: 'Real-time webhook events (configurable)' },
                         { icon: <Server className="w-4 h-4" />, text: 'Docker container deployment' },
-                        { icon: <GitBranch className="w-4 h-4" />, text: 'Free (XPay License) codebase' },
+                        { icon: <GitBranch className="w-4 h-4" />, text: 'MIT License codebase on GitHub' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
                           <span className="w-8 h-8 rounded-lg bg-[#5B8CFF]/5 border border-[#5B8CFF]/10 flex items-center justify-center text-[#5B8CFF] shrink-0">
@@ -555,23 +559,23 @@ export default function CoinbaseCommerceAlternative() {
               />
               <div className="grid md:grid-cols-3 gap-6 mt-12">
                 <div className="rounded-2xl border border-white/5 bg-[#0A0D1F]/60 backdrop-blur-sm p-8 glow-blue">
-                  <h3 className="text-lg font-bold text-white mb-1">Coinbase Commerce</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">Legacy Commerce</h3>
                   <p className="text-3xl font-extrabold text-orange-400 mb-4">1%</p>
                   <ul className="space-y-3 text-sm text-slate-400">
                     <li className="flex items-start gap-2">
-                      <XIcon /> 1% fee on every transaction
+                      <XIcon /> Portal inaccessible after Mar 31, 2026
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> No monthly plan available
+                      <XIcon /> Legacy fee was 1% (self-custodial)
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> Network gas costs on top
+                      <XIcon /> Successor: Business ~1%, custodial (US/SG)
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> Withdrawal fees to external wallets
+                      <XIcon /> Limited chain / stablecoin coverage
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckIcon /> Hosted and maintained by Coinbase
+                      <CheckIcon /> Was easy hosted checkout while available
                     </li>
                   </ul>
                 </div>
@@ -639,7 +643,7 @@ export default function CoinbaseCommerceAlternative() {
                   <h3 className="text-xl font-bold text-white mb-4">Switch to XPay Labs if...</h3>
                   <ul className="space-y-3">
                     {[
-                      'You process high transaction volume and want to eliminate the 1% fee overhead',
+                      'You need a replacement after Commerce ended (portal inaccessible after Mar 31, 2026)',
                       'Your customers primarily pay with TRON (TRC-20 USDT) — the most-used stablecoin network',
                       'You need multi-chain support including BSC, Polygon, Arbitrum, and SUI',
                       'You want non-custodial control — your keys, your funds, your infrastructure',
@@ -658,12 +662,12 @@ export default function CoinbaseCommerceAlternative() {
                   <div className="w-12 h-12 rounded-2xl bg-orange-400/5 border border-orange-400/10 flex items-center justify-center mb-4">
                     <Shield className="w-6 h-6 text-orange-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Stay with Coinbase Commerce if...</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">Consider Coinbase Business if...</h3>
                   <ul className="space-y-3">
                     {[
-                      'You only accept Bitcoin and Ethereum payments and have no need for other chains',
+                      'You are eligible in the US or Singapore and prefer a Coinbase-hosted product',
                       'You prefer a fully managed, hosted solution and do not want to manage infrastructure',
-                      'Your volume is low enough that the 1% fee is negligible compared to the convenience',
+                      'Your volume is low enough that ~1% fees are negligible compared to the convenience',
                       'You need Coinbase built-in fiat settlement and do not want to manage conversion yourself',
                       'Your compliance team requires a regulated, US-based payment processor',
                       'You do not have the technical resources to deploy and maintain a self-hosted system',
@@ -752,8 +756,8 @@ export default function CoinbaseCommerceAlternative() {
                       Ready to Take Control of Your Crypto Payments?
                     </h2>
                     <p className="text-sm sm:text-base text-slate-400 font-sans leading-relaxed max-w-xl mx-auto">
-                      Deploy XPay Labs in minutes. Zero fees, non-custodial, multi-chain. Join merchants who have
-                      already switched from Coinbase Commerce.
+                      Deploy XPay Labs in minutes. Zero fees, non-custodial, multi-chain. Join merchants migrating
+                      after Coinbase Commerce ended.
                     </p>
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4">
                       <Link

@@ -100,7 +100,7 @@ const faqSchema = {
       name: '自托管加密支付网关是否免费？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '大多数自托管网关是免费软件，且不收取交易手续费。XPay Labs 和 BTCPay Server 均对每笔交易收取 0% 费用。您只需要支付服务器托管费用（基础 VPS 每月 $10–20 美元）和区块链网络 Gas 费。这与托管网关收取 0.5–1% 交易费的模式形成鲜明对比。',
+        text: '大多数自托管网关是免费软件，且不收取交易手续费。XPay Labs 和 BTCPay Server 均对每笔交易收取 0% 费用。您只需要支付服务器托管费用（基础 VPS 每月 $10–20 美元）和区块链网络 Gas 费。这与托管网关常见约 0.5–1%（或 BitPay 公开入门档 2%+$0.25）形成鲜明对比。',
       },
     },
     {
@@ -154,7 +154,7 @@ const rankData = [
     chains: 'TRON, 20+ EVM, SUI',
     deployment: 'Docker Compose',
     api: 'Stripe 风格 REST API + HMAC webhook',
-    openSource: '授权免费使用',
+    openSource: 'MIT License',
     pros: [
       '所有链上零费率',
       '亚秒级支付检测',
@@ -200,25 +200,25 @@ const rankData = [
   {
     rank: 3,
     name: 'Coinbase Commerce',
-    tagline: '最知名的托管方案（非自托管）',
+    tagline: '已于 2026-03-31 停用（旧版为自托管）',
     rating: '3.5',
-    bestFor: '简单的托管式加密结账',
-    fees: '0.8% + $25/月',
-    custody: '托管',
+    bestFor: '历史/迁移参考；继任产品：Coinbase Business',
+    fees: '旧版 1%（曾为自托管）',
+    custody: '旧版自托管；Business 为托管',
     chains: 'BTC, ETH, USDC, DAI 及其他少数币种',
-    deployment: '托管 (SaaS)',
+    deployment: '托管 (SaaS) — 门户在 2026-03-31 后不可访问',
     api: '提供 REST API',
     openSource: '闭源',
     pros: [
-      '易于设置',
+      '可用时易于设置',
       'Coinbase 品牌信任度',
       '支持法币兑换',
     ],
     cons: [
-      '0.8% + $25/月 费用',
-      '托管模式（Coinbase 持有密钥）',
-      '需要 KYC',
+      '2026-03-31 后已停用',
+      '旧版费率 1%',
       '支持的链有限',
+      '继任 Business 为托管（约 1%，美/新）',
     ],
     link: '/alternatives/coinbase-commerce',
     linkText: 'XPay 对比 Coinbase Commerce',
@@ -504,7 +504,7 @@ export default function BestSelfHostedGatewayPage() {
                 成本节省分析
               </h2>
               <p className="text-gray-400 font-sans leading-relaxed text-sm sm:text-base mb-6">
-                自托管网关完全消除了托管服务商收取的 0.5–1% 每笔交易手续费。以下是基于月交易量的真实成本对比：
+                自托管网关可消除托管服务商收取的每笔交易手续费（常见约 0.5–1%，或 BitPay 公开入门档 2%+$0.25）。以下以托管 1% 费率为例说明成本对比：
               </p>
               <div className="overflow-x-auto rounded-2xl border border-white/5 mb-6">
                 <table className="w-full text-left text-sm font-sans">
@@ -569,7 +569,7 @@ export default function BestSelfHostedGatewayPage() {
                     BitPay
                   </h3>
                   <p className="text-xs text-gray-400 font-sans mt-1">
-                    开创了加密商家支付，但收取 1% 费用且采用托管模式。适合看重其品牌知名度和法币结算选项的用户。
+                    开创了加密商家支付；公开入门档为 2%+$0.25（&lt;$50 万/月），且为托管模式。适合看重品牌与法币结算的用户。
                   </p>
                 </Link>
                 <Link

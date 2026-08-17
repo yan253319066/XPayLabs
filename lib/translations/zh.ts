@@ -312,8 +312,8 @@ export const zh: TranslationSet = {
         a: "部署 XPay Labs 只需不到 30 分钟。首先准备一台至少 8GB RAM、4核 CPU 的 VPS（推荐 Ubuntu 22.04+），安装 Docker 和 Docker Compose，然后克隆仓库并运行 docker compose up -d。配置您的区块链 RPC 端点（TRON、EVM、SUI）并生成节点种子短语。部署完成后，网关在 180 端口提供 REST API。完整的安装指南请参阅我们的开发文档。"
       },
       {
-        q: "XPay Labs 与 BitPay 或 Coinbase Commerce 相比如何？",
-        a: "根本区别在于资产托管和费用。BitPay（1% 手续费）和 Coinbase Commerce（0.8% + $25/月）会持有商户密钥并按交易收费。XPay Labs 是自托管且非托管的——密钥保留在您的 Docker 容器中，您只需支付区块链燃料费（通常每笔 $0.01-$0.50）。对于每月处理 $100,000 加密货币支付的企业，每年可节省 $6,000-$12,000 的网关费用。"
+        q: "XPay Labs 与 BitPay 或 Coinbase 相比如何？",
+        a: "根本区别在于资产托管和费用。BitPay 公开入门档在月流水低于 $50 万时为 2% + $0.25/笔（$100 万以上才到 1%）。Coinbase Commerce 在 2026 年 3 月 31 日后已不可用（旧 Commerce 为 1% 且自托管）；Coinbase Business 为托管模式，迁移商户约 1%。XPay Labs 是自托管且非托管的——密钥保留在您的 Docker 容器中，您只需支付区块链燃料费。月处理 $100,000 时，托管网关年费常见约 $12,000–$24,000+，而 XPay Labs 大约 $240/年的 VPS 成本。"
       },
       {
         q: "XPay Labs 支持哪些稳定币？",
@@ -329,7 +329,7 @@ export const zh: TranslationSet = {
       },
       {
         q: "XPay Labs 能否支持 USDT 收款？",
-        a: "可以。XPay Labs 在所有集成的区块链上原生支持 USDT——波场 TRON 上的 TRC20 USDT、以太坊及所有 EVM 链上的 ERC20 USDT、币安智能链上的 BEP20 USDT，同时也支持 USDC。多链扫描器同时监控所有网络，能在数秒内检测到账的稳定币付款。相较于收取 0.5-1% 手续费的托管网关，商家可降低 40-60% 的支付处理成本。"
+        a: "可以。XPay Labs 在所有集成的区块链上原生支持 USDT——波场 TRON 上的 TRC20 USDT、以太坊及所有 EVM 链上的 ERC20 USDT、币安智能链上的 BEP20 USDT，同时也支持 USDC。多链扫描器同时监控所有网络，能在数秒内检测到账的稳定币付款。相较于常见收取 0.5–2%+ 手续费的托管网关，商家可显著降低支付处理成本。"
       },
       {
         q: "XPay Labs 是否支持多链支付？",
@@ -341,7 +341,7 @@ export const zh: TranslationSet = {
       },
       {
         q: "XPay Labs 是否开放源代码？",
-        a: "XPay Labs 在 XPay 企业许可证下提供源代码。完整核心代码库发布于 GitHub，可供审计和自行部署。商户可精确检查密钥派生、交易扫描和 Webhook 分发的工作方式。社区支持通过 GitHub Issues 和 Discord 提供。商业支持计划起价为每年 $1,500，享有优先 SLA。"
+        a: "XPay Labs 组件源码以 MIT 许可证发布在 GitHub，可供审计和自行部署。商户可检查密钥派生、交易扫描和 Webhook 分发。默认 Docker Compose 使用已发布的容器镜像；也可从源码构建。社区支持通过 GitHub Issues 和 Discord 提供。可选商业支持计划起价 $1,500。"
       },
       {
         q: "自托管与非托管有什么区别？",
@@ -379,7 +379,7 @@ export const zh: TranslationSet = {
     product: "系统架构",
     developers: "开发者板块",
     links: "生态兼容性",
-    allRights: "保留所有权利。项目由商业级私有化许可证提供授权保护。",
+    allRights: "MIT 开源软件。可选付费支持计划。",
     disclaimer: "非托管基础设施软件。商户应对其自持密钥的离线安全、合规配置及服务器防火墙安全性承担完整、绝对的主体责任限制。",
     termsOfService: "服务条款",
     privacyPolicy: "隐私政策",

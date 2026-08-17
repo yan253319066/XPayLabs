@@ -22,9 +22,9 @@ import JsonLd from '../../../../components/JsonLd';
 export const metadata: Metadata = {
   title: 'Coinbase Commerce 替代方案 — 自托管加密支付网关 | XPay Labs',
   description:
-    '寻找 Coinbase Commerce 的替代方案？XPay Labs 提供自托管、非托管的加密货币支付网关，支持 TRON、EVM 链和 SUI，零交易手续费，全白标结账。',
+    'Coinbase Commerce 门户在 2026 年 3 月 31 日后已不可用。旧 Commerce 为 1% 且自托管。XPay Labs 提供自托管、非托管替代方案，支持 TRON、EVM 链和 SUI，零网关手续费，全白标结账。',
   keywords:
-    'Coinbase Commerce 替代方案, Coinbase Commerce 替代, 自托管加密支付, 非托管支付网关, 加密支付提供商',
+    'Coinbase Commerce 替代方案, Coinbase Commerce 停用, 自托管加密支付, 非托管支付网关, 加密支付提供商',
   alternates: {
     canonical: 'https://www.xpaylabs.com/zh/alternatives/coinbase-commerce',
   },
@@ -51,7 +51,7 @@ const faqSchema = {
       name: 'XPay Labs 是 Coinbase Commerce 的免费替代方案吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '是的。XPay Labs 可免费自托管。您支付零交易手续费——仅需网络燃料成本。与 Coinbase Commerce 不同，我们不从您的付款中抽取任何百分比。',
+        text: '是的。XPay Labs 可在 MIT License 下免费自托管。您支付零交易手续费——仅需网络燃料成本。Coinbase Commerce 在 2026 年 3 月 31 日后已停用（旧 Commerce 为 1%）。Coinbase Business 为托管继任产品，符合条件的美/新商户约 1%。',
       },
     },
     {
@@ -190,7 +190,11 @@ export default function CoinbaseCommerceAlternative() {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
-                XPay Labs 是 Coinbase Commerce 的自托管、非托管替代方案。将费用降至零，支持 TRON、EVM 链和 SUI，并完全掌控您的支付基础设施。没有中间商。没有收入分成。没有限制。
+                Coinbase Commerce 已于 2026 年 3 月 31 日停用——门户不再可访问。旧 Commerce 为
+                <strong className="text-white">1% 且自托管</strong>
+                。商户需要可持续的替代方案。<strong className="text-white">XPay Labs</strong>
+                自托管且非托管：零网关手续费，支持 TRON、EVM 链和 SUI，全白标。若对比托管产品，继任方案为 Coinbase
+                Business（约 1%、托管、美/新资格限制）。
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -224,18 +228,18 @@ export default function CoinbaseCommerceAlternative() {
                 {[
                   {
                     icon: <Layers className="w-6 h-6 text-[#5B8CFF]" />,
-                    title: '旧版本弃用',
-                    text: 'Coinbase 弃用了其原始的 Commerce 产品，转而采用简化的链上结账。旧版本上的商户被迫迁移，可用的工具和功能比之前更少。',
+                    title: 'Commerce 已停用',
+                    text: 'Coinbase Commerce 门户在 2026 年 3 月 31 日后不可访问。基于 Commerce 的商户必须迁移——托管工具与产品方向转向符合条件账户的 Coinbase Business。',
                   },
                   {
                     icon: <Shield className="w-6 h-6 text-[#00D1FF]" />,
-                    title: '托管风险',
-                    text: '使用 Coinbase Commerce，Coinbase 持有结算资金直到付款。这引入了交易对手风险、结算延迟以及对 Coinbase 运营稳定性和合规决策的依赖。',
+                    title: '托管继任产品取舍',
+                    text: '旧 Commerce 为自托管、费率 1%。对比继任产品 Coinbase Business 约为 1%、托管，且受美/新资格限制。自托管可避开托管与地域锁定。',
                   },
                   {
                     icon: <Cpu className="w-6 h-6 text-[#7C4DFF]" />,
                     title: '有限的链支持',
-                    text: 'Coinbase Commerce 主要支持 Bitcoin、Ethereum、USDC 和少数资产。如果您需要 TRON USDT、BSC、Polygon、Arbitrum 或 SUI——那就没办法了。',
+                    text: '旧 Commerce 主要支持 Bitcoin、Ethereum、USDC 和少数资产。若需要 TRON USDT、BSC、Polygon、Arbitrum 或 SUI——需要另一套栈。',
                   },
                 ].map((item, i) => (
                   <div
@@ -267,15 +271,13 @@ export default function CoinbaseCommerceAlternative() {
                   </span>
                 </div>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  <strong className="text-white">Coinbase Commerce</strong> 是一个可靠的托管解决方案——但它抽成 1%，支持有限的链，并且在结算前以托管方式持有您的资金。<strong className="text-white">XPay Labs</strong> 是一款自托管支付网关，为您提供
-                  <strong className="text-[#00D1FF]">
-                    零交易手续费
-                  </strong>
-                  、支持
-                  <strong className="text-[#00D1FF]">
-                    TRON、EVM 链和 SUI
-                  </strong>
-                  、完全白标自定义以及直接的非托管结算。如果您处理高交易量、需要 TRON USDT，或希望端到端拥有自己的支付栈，XPay Labs 就是您在寻找的 Coinbase Commerce 替代方案。
+                  <strong className="text-white">Coinbase Commerce</strong> 已于 2026 年 3 月 31 日停用。旧 Commerce 为
+                  <strong className="text-white">1% 且自托管</strong>
+                  ——并非 0.8%+$25，也不是托管钱包产品。商户需要替代方案。
+                  <strong className="text-white">XPay Labs</strong> 是自托管网关，提供
+                  <strong className="text-[#00D1FF]">零交易手续费</strong>、支持
+                  <strong className="text-[#00D1FF]">TRON、EVM 链和 SUI</strong>
+                  、完全白标自定义以及直接的非托管结算。若对比托管产品，Coinbase Business 约 1%、托管（美/新）。
                 </p>
               </div>
             </div>
@@ -308,8 +310,13 @@ export default function CoinbaseCommerceAlternative() {
                   <tbody className="divide-y divide-white/5">
                     {[
                       {
+                        feature: '状态',
+                        coinbase: '门户在 2026-03-31 后不可访问',
+                        xpay: '持续维护，自托管',
+                      },
+                      {
                         feature: '定价',
-                        coinbase: '1% 交易手续费',
+                        coinbase: '旧版：1%（已停用）；Business 约 1%',
                         xpay: '免费（自托管，零费用）',
                       },
                       {
@@ -319,17 +326,17 @@ export default function CoinbaseCommerceAlternative() {
                       },
                       {
                         feature: '稳定币支持',
-                        coinbase: '仅 USDC',
+                        coinbase: 'USDC（Commerce/Business 侧重）',
                         xpay: 'USDT、USDC（每条链原生）',
                       },
                       {
-                        feature: '非托管',
-                        coinbase: '否——Coinbase 持有资金',
-                        xpay: '是——自托管，直接结算',
+                        feature: '托管模式',
+                        coinbase: '旧 Commerce：自托管；Business：托管',
+                        xpay: '非托管——自托管，直接结算',
                       },
                       {
                         feature: '白标',
-                        coinbase: '否——品牌化的 Coinbase 结账',
+                        coinbase: '有限 / Coinbase 品牌结账',
                         xpay: '是——完全自定义',
                       },
                       {
@@ -339,7 +346,7 @@ export default function CoinbaseCommerceAlternative() {
                       },
                       {
                         feature: '结算控制',
-                        coinbase: '按其计划分批付款',
+                        coinbase: 'Commerce：链上直达；Business：托管余额',
                         xpay: '即时结算到您的钱包',
                       },
                       {
@@ -350,7 +357,7 @@ export default function CoinbaseCommerceAlternative() {
                       {
                         feature: '源代码访问',
                         coinbase: '否',
-                        xpay: '授权免费使用',
+                        xpay: 'MIT License（源码在 GitHub）',
                       },
                       {
                         feature: 'API 优先设计',
@@ -397,13 +404,13 @@ export default function CoinbaseCommerceAlternative() {
                       定价
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      Coinbase Commerce 对您收到的每笔付款收取
-                      <strong className="text-orange-400">
-                        1% 的交易手续费
-                      </strong>
-                      。对于每月处理 10 万美元加密货币的企业，这相当于每月
+                      旧版
+                      <strong className="text-orange-400">Coinbase Commerce 收取 1%</strong>
+                      且为自托管——并非 0.8% + $25/月。Commerce 门户在 2026 年 3 月 31 日后不可访问。持续托管定价请对比
+                      <strong className="text-white">Coinbase Business</strong>
+                      （约 1%、托管、美/新资格）。月处理 10 万美元时约合每月
                       <strong className="text-white">1,000 美元</strong>
-                      的费用——每年 12,000 美元。这还是在任何网络燃料成本之前。
+                      ——每年约 12,000 美元（不含网络成本）。
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs
@@ -420,7 +427,7 @@ export default function CoinbaseCommerceAlternative() {
                     <div className="space-y-4">
                       <div className="flex items-center justify-between pb-3 border-b border-white/5">
                         <span className="text-gray-400">
-                          Coinbase Commerce（1%）
+                          旧 Commerce / Business（约 1%）
                         </span>
                         <span className="text-orange-400 font-bold text-lg">
                           1,000 美元/月
@@ -519,8 +526,11 @@ export default function CoinbaseCommerceAlternative() {
                       安全模型
                     </h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      Coinbase Commerce 是
-                      <strong className="text-orange-400">托管式</strong>的。客户付款时，资金进入 Coinbase 控制的地址。Coinbase 持有这些资金并在稍后向您付款（每日或每周分批）。这意味着 Coinbase 在结算前控制您的资金——引入了交易对手风险、潜在的冻结事件以及对其合规基础设施的依赖。
+                      旧 Coinbase Commerce 为
+                      <strong className="text-orange-400">自托管</strong>
+                      、费率 1%——资金并不像多数托管网关那样停留在 Coinbase 托管余额中。2026-03-31 截止后，对比托管选项时面临
+                      <strong className="text-white">Coinbase Business</strong>
+                      ：约 1%、托管，受美/新资格限制并依赖交易对手。
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs 是
@@ -537,10 +547,10 @@ export default function CoinbaseCommerceAlternative() {
                         <XIcon />
                         <div>
                           <span className="text-orange-400 font-semibold text-sm">
-                            托管式（Coinbase Commerce）
+                            旧 Commerce vs Business
                           </span>
                           <p className="text-xs text-gray-500 mt-1">
-                            Coinbase 控制结算钱包。资金分批并按计划支付。
+                            Commerce（已停用）：自托管、1%。Business：托管约 1%，美/新资格。
                           </p>
                         </div>
                       </div>
@@ -596,7 +606,7 @@ export default function CoinbaseCommerceAlternative() {
                         },
                         {
                           icon: <GitBranch className="w-4 h-4" />,
-                          text: '授权免费使用的代码库',
+                          text: 'MIT License 源码（GitHub）',
                         },
                       ].map((item, i) => (
                         <div
@@ -629,26 +639,26 @@ export default function CoinbaseCommerceAlternative() {
               <div className="grid md:grid-cols-3 gap-6 mt-12">
                 <div className="rounded-2xl border border-white/5 bg-[#0A0D1F]/60 backdrop-blur-sm p-8 glow-blue">
                   <h3 className="text-lg font-bold text-white mb-1">
-                    Coinbase Commerce
+                    旧版 Commerce
                   </h3>
                   <p className="text-3xl font-extrabold text-orange-400 mb-4">
                     1%
                   </p>
                   <ul className="space-y-3 text-sm text-slate-400">
                     <li className="flex items-start gap-2">
-                      <XIcon /> 每笔交易 1% 费用
+                      <XIcon /> 门户在 2026-03-31 后不可访问
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> 无月计划可用
+                      <XIcon /> 旧费率为 1%（自托管）
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> 外加网络燃料成本
+                      <XIcon /> 继任：Business 约 1%、托管（美/新）
                     </li>
                     <li className="flex items-start gap-2">
-                      <XIcon /> 提现到外部钱包的费用
+                      <XIcon /> 链与稳定币覆盖有限
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckIcon /> 由 Coinbase 托管和维护
+                      <CheckIcon /> 可用时托管结账较便捷
                     </li>
                   </ul>
                 </div>

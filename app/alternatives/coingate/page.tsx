@@ -239,7 +239,7 @@ export default function CoinGateAlternativePage() {
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Source Access</td>
                     <td className="p-4 text-gray-400">Closed-source (proprietary)</td>
-                    <td className="p-4 text-green-400">Free (XPay License)</td>
+                    <td className="p-4 text-green-400">Free (MIT License)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Deployment</td>
@@ -406,8 +406,9 @@ export default function CoinGateAlternativePage() {
                       contribute features. The API is documented but limited to what CoinGate decides to offer.
                     </p>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                      XPay Labs is <strong className="text-green-400">source-available</strong> — every line of code is visible
-                      on GitHub. You can audit security, submit pull requests, fork the project, and extend it
+                      XPay Labs is <strong className="text-green-400">open source under the MIT License</strong> — source
+                      is on GitHub. Default Docker uses published images; build from source for full reproducibility.
+                      You can audit security, submit pull requests, fork the project, and extend it
                       however you need. The REST API is complemented by <strong className="text-gray-300">HMAC-signed
                       webhooks</strong> for secure server-to-server notifications, and the Docker deployment means
                       you can be running in minutes.

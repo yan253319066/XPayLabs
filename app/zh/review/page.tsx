@@ -85,7 +85,7 @@ const faqSchema = {
       name: 'XPay Labs 与 Coinbase Commerce 相比如何？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'XPay Labs 是自托管且非托管的，费率为 0%，而 Coinbase Commerce 收取 0.8% + $25/月且采用托管模式。XPay Labs 支持 TRON、EVM 链和 SUI，而 Coinbase Commerce 支持 BTC、ETH、USDC 等少数币种。XPay Labs 提供完全白标自定义，而 Coinbase Commerce 要求显示 Coinbase 品牌标识。',
+        text: 'XPay Labs 是自托管且非托管的，费率为 0%。Coinbase Commerce 在 2026 年 3 月 31 日后已停用；旧 Commerce 为 1% 且自托管（并非 0.8%+$25）。Coinbase Business 对符合条件的美/新商户约 1%、托管。XPay Labs 支持 TRON、EVM 链和 SUI 并提供完全白标；Commerce 要求显示 Coinbase 品牌。',
       },
     },
     {
@@ -509,21 +509,21 @@ export default function ReviewPage() {
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">BitPay</td>
-                      <td className="p-4 text-gray-400">1% + $30/月</td>
-                      <td className="p-4 text-gray-400">~$12,360</td>
+                      <td className="p-4 text-gray-400">2% + $0.25（&lt;$50 万/月）</td>
+                      <td className="p-4 text-gray-400">~$24,000+</td>
                       <td className="p-4 text-amber-400">托管</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">Coinbase Commerce</td>
-                      <td className="p-4 text-gray-400">0.8% + $25/月</td>
-                      <td className="p-4 text-gray-400">~$9,900</td>
-                      <td className="p-4 text-amber-400">托管</td>
+                      <td className="p-4 text-gray-400">旧版 1%（已停用）</td>
+                      <td className="p-4 text-gray-400">不适用（2026-03-31 结束）</td>
+                      <td className="p-4 text-gray-400">曾为自托管</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">NowPayments</td>
-                      <td className="p-4 text-gray-400">0.5%</td>
-                      <td className="p-4 text-gray-400">~$6,000</td>
-                      <td className="p-4 text-amber-400">托管</td>
+                      <td className="p-4 text-gray-400">约 0.5%+（兑换另计）</td>
+                      <td className="p-4 text-gray-400">~$6,000+</td>
+                      <td className="p-4 text-amber-400">托管或非托管</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">BTCPay Server</td>
@@ -535,10 +535,10 @@ export default function ReviewPage() {
                 </table>
               </div>
               <div className="mt-4 p-4 rounded-xl bg-brand-cyan/5 border border-brand-cyan/10 text-xs text-gray-400 font-sans leading-relaxed">
-                <strong className="text-gray-300">节省成本：</strong>从 BitPay 切换到 XPay Labs，
+                <strong className="text-gray-300">节省成本：</strong>从 BitPay 公开入门档切换到 XPay Labs，
                 每处理 $100k/月的交易量，
                 每年可节省约
-                <strong className="text-green-400">$12,000</strong>。
+                <strong className="text-green-400">$24,000+</strong>。
               </div>
             </section>
             {/* Who Is It For */}

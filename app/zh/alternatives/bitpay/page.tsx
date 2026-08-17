@@ -68,7 +68,7 @@ const faqSchema = {
       name: 'XPay Labs 比 BitPay 更便宜吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '是的。XPay Labs 收取 0% 的交易手续费，且无月订阅费。您只需支付网络燃料费。BitPay 每笔交易收取 1%，另加每月 30 美元起的计划费用。',
+        text: '是的。XPay Labs 收取 0% 的交易手续费，且无月订阅费。您只需支付网络燃料费。BitPay 公开入门档在月流水低于 $50 万时为 2% + $0.25/笔（中档 1.5%；$100 万以上才到 1%），公开定价并非固定 1% 外加 $30–$300/月套餐费。',
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: 'XPay Labs 的代码库可审计吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '是的。XPay Labs 在 XPay Enterprise License 下授权免费使用。完整的核心代码库发布在 GitHub 上供审计。您可以准确检查密钥派生、交易扫描和 webhook 分发的工作方式。BitPay 的核心基础设施是专有的闭源系统。',
+        text: '是的。XPay Labs 以 MIT License 开源。源码在 GitHub 上可供审计；默认 Docker 使用已发布镜像，也可从源码构建以实现完整可复现。您可以检查密钥派生、交易扫描和 webhook 分发的工作方式。BitPay 的核心基础设施是专有的闭源系统。',
       },
     },
   ],
@@ -174,11 +174,11 @@ export default function BitPayAlternativePage() {
                     高昂费用
                   </h3>
                   <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                    BitPay 收取
+                    BitPay 公开入门档为
                     <strong className="text-gray-300">
-                      每笔交易 1%
+                      月流水低于 $50 万时 2% + $0.25/笔
                     </strong>
-                    另加每月 30 美元起的计划费用。一家月处理 10 万美元的企业，仅手续费每年就超过 1.2 万美元。
+                    （中档 1.5%；≥$100 万才到 1%）。一家月处理 10 万美元的企业，仅手续费每年约 2.4 万美元以上。
                   </p>
                 </div>
                 <div className="space-y-3 p-5 rounded-xl bg-white/[0.02] border border-white/5">
@@ -231,14 +231,14 @@ export default function BitPayAlternativePage() {
                     <td className="p-4 text-gray-300 font-medium">
                       交易手续费
                     </td>
-                    <td className="p-4 text-gray-400">每笔交易 1%</td>
+                    <td className="p-4 text-gray-400">2% + $0.25（&lt;$50 万/月）；中档 1.5%；≥$100 万为 1%</td>
                     <td className="p-4 text-green-400">0%（仅燃料费）</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">
                       月计划费用
                     </td>
-                    <td className="p-4 text-gray-400">30 – 300+ 美元/月</td>
+                    <td className="p-4 text-gray-400">$0（按交易量分档）</td>
                     <td className="p-4 text-green-400">0 美元（自托管）</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -293,7 +293,7 @@ export default function BitPayAlternativePage() {
                       闭源（专有）
                     </td>
                     <td className="p-4 text-green-400">
-                      授权免费使用
+                      MIT License
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -346,16 +346,16 @@ export default function BitPayAlternativePage() {
                       定价与费用
                     </h3>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                      BitPay 的费用结构包括
+                      BitPay 的公开定价为
                       <strong className="text-gray-300">
-                        1% 的交易手续费
+                        按交易量分档
                       </strong>
-                      和月计划费用（入门版 30 美元/月，企业版 300 美元/月，企业客户定制定价）。一家月加密货币收入 5 万美元的企业，BitPay 的
+                      ：月流水低于 $50 万时为 2% + $0.25/笔，中档 1.5%，≥$100 万才到 1%——并非固定 1% 外加 $30–$300/月套餐费。一家月加密货币收入 5 万美元的企业，按入门档约
                       <strong className="text-gray-300">
-                        交易手续费为 500 美元
+                        每月 $1,000 处理费
                       </strong>
-                      加上月计划费——每年超过
-                      <strong className="text-gray-300">6,000 美元</strong>。
+                      ——每年约
+                      <strong className="text-gray-300">$12,000+</strong>。
                     </p>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
                       XPay Labs 收取
@@ -493,9 +493,9 @@ export default function BitPayAlternativePage() {
                   。您无法审计代码、自定义集成或贡献功能。API 虽有文档，但仅限于 BitPay 决定公开的内容。
                 </p>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  XPay Labs
-                  <strong className="text-green-400">授权免费使用</strong>——
-                  每一行代码都在 GitHub 上可见。您可以审计安全性、提交拉取请求、分叉项目并根据需要进行扩展。REST API 辅以
+                  XPay Labs 以
+                  <strong className="text-green-400">MIT License</strong> 开源——
+                  源码在 GitHub 上。默认 Docker 使用已发布镜像，也可从源码构建以实现完整可复现。您可以审计安全性、提交拉取请求、分叉项目并根据需要进行扩展。REST API 辅以
                   <strong className="text-gray-300">
                     HMAC 签名 webhook
                   </strong>
@@ -524,13 +524,13 @@ export default function BitPayAlternativePage() {
                     <li className="flex items-start space-x-2">
                       <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
                       <span className="text-gray-400">
-                        每笔付款 1% 交易手续费
+                        入门档 2% + $0.25/笔（月流水 &lt;$50 万）
                       </span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
                       <span className="text-gray-400">
-                        30 – 300+ 美元月计划费
+                        ≥$100 万/月才到 1%（按交易量分档）
                       </span>
                     </li>
                     <li className="flex items-start space-x-2">
@@ -548,7 +548,7 @@ export default function BitPayAlternativePage() {
                   </ul>
                   <p className="mt-4 text-xs text-gray-500 font-mono">
                     月交易量 5 万美元的预估年成本：
-                    <strong className="text-red-400">~6,600+ 美元</strong>
+                    <strong className="text-red-400">~$12,000+</strong>
                   </p>
                 </div>
                 <div className="p-6 rounded-xl bg-brand-cyan/[0.03] border border-brand-cyan/10">
@@ -611,7 +611,7 @@ export default function BitPayAlternativePage() {
                   <li className="flex items-start space-x-2">
                     <span className="text-green-400">•</span>
                     <span>
-                      您月处理超过 1 万美元，希望消除 1% 的交易手续费
+                      您月处理超过 1 万美元，希望避开 BitPay 入门档 2% 费用
                     </span>
                   </li>
                   <li className="flex items-start space-x-2">
@@ -791,7 +791,7 @@ export default function BitPayAlternativePage() {
                 准备掌控您的支付基础设施？
               </h2>
               <p className="text-gray-400 font-sans leading-relaxed max-w-2xl mx-auto mb-8 text-sm sm:text-base">
-                停止支付每笔交易 1% 的手续费。停止将结算资金托付给第三方。立即部署 XPay Labs，完全掌控您的加密支付栈。
+                停止支付按交易量分档的网关手续费。停止将结算资金托付给第三方。立即部署 XPay Labs，完全掌控您的加密支付栈。
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link

@@ -14,14 +14,17 @@
 
 ## 为什么选择自托管加密支付？
 
-| 特性 | XPay Labs | BitPay | Coinbase Commerce | NowPayments |
+| 特性 | XPay Labs | BitPay | Coinbase Business | NowPayments |
 |------|-----------|--------|-------------------|-------------|
-| 手续费 | 零（仅链上 Gas） | 每笔 1% | 0.8% + $25/月 | 每笔 0.5% |
-| 资产托管 | 非托管 | 托管 | 托管 | 托管 |
-| 支持链 | TRON, EVM, SUI | BTC, ETH, LTC | ETH, Base 少量 | BTC, ETH, 50+ |
-| 白标 | 是 | 否 | 有限 | 否 |
+| 手续费 | 零（仅链上 Gas） | 入门档 2%+$0.25（&lt;$50万/月） | 约 1% | 0.5%+（兑换更高） |
+| 资产托管 | 非托管 | 托管 | 托管 | 托管或非托管 |
+| 支持链 | TRON, EVM, SUI | BTC, ETH, LTC 等 | 主流 EVM（偏 USDC） | BTC, ETH, 50+ |
+| 白标 | 是 | 有限 | 有限 | 是 |
 | 部署方式 | 自托管 (Docker) | 云托管 | 云托管 | 云托管 |
+| 许可证 | MIT | 闭源 | 闭源 | 闭源 |
 | Webhook | HMAC 签名 + 重试队列 | 有限 | 基础 | 基础 |
+
+> Coinbase Commerce 门户在 2026-03-31 后不可用（旧 Commerce 为 1% 且自托管）。数字依据 2026 年 8 月公开定价。
 
 ## 功能特性
 

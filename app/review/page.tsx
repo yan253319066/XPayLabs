@@ -59,7 +59,7 @@ const faqSchema = {
       name: 'How does XPay Labs compare to Coinbase Commerce?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'XPay Labs is self-hosted and non-custodial with 0% fees, while Coinbase Commerce charges 0.8% + $25/month and is custodial. XPay Labs supports TRON, EVM chains, and SUI, while Coinbase Commerce supports BTC, ETH, USDC, and a few others. XPay Labs offers full white-label customization, while Coinbase Commerce requires Coinbase branding.',
+        text: 'XPay Labs is self-hosted and non-custodial with 0% fees. Coinbase Commerce was discontinued after March 31, 2026; legacy Commerce was 1% and self-custodial (not 0.8%+$25). Coinbase Business is ~1% custodial for eligible US/SG merchants. XPay Labs supports TRON, EVM chains, and SUI with full white-label; Commerce required Coinbase branding.',
       },
     },
     {
@@ -357,21 +357,21 @@ export default function ReviewPage() {
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">BitPay</td>
-                      <td className="p-4 text-gray-400">1% + $30/mo</td>
-                      <td className="p-4 text-gray-400">~$12,360</td>
+                      <td className="p-4 text-gray-400">2% + $0.25 (&lt;$500k/mo)</td>
+                      <td className="p-4 text-gray-400">~$24,000+</td>
                       <td className="p-4 text-amber-400">Custodial</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">Coinbase Commerce</td>
-                      <td className="p-4 text-gray-400">0.8% + $25/mo</td>
-                      <td className="p-4 text-gray-400">~$9,900</td>
-                      <td className="p-4 text-amber-400">Custodial</td>
+                      <td className="p-4 text-gray-400">Legacy 1% (discontinued)</td>
+                      <td className="p-4 text-gray-400">n/a (ended Mar 31, 2026)</td>
+                      <td className="p-4 text-gray-400">Was self-custodial</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">NowPayments</td>
-                      <td className="p-4 text-gray-400">0.5%</td>
-                      <td className="p-4 text-gray-400">~$6,000</td>
-                      <td className="p-4 text-amber-400">Custodial</td>
+                      <td className="p-4 text-gray-400">~0.5%+ (conversion adds more)</td>
+                      <td className="p-4 text-gray-400">~$6,000+</td>
+                      <td className="p-4 text-amber-400">Custodial or non-custodial</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300">BTCPay Server</td>
@@ -383,8 +383,8 @@ export default function ReviewPage() {
                 </table>
               </div>
               <div className="mt-4 p-4 rounded-xl bg-brand-cyan/5 border border-brand-cyan/10 text-xs text-gray-400 font-sans leading-relaxed">
-                <strong className="text-gray-300">Savings:</strong> Switching from BitPay to XPay Labs
-                saves approximately <strong className="text-green-400">$12,000/year</strong> for every $100k/month
+                <strong className="text-gray-300">Savings:</strong> Switching from BitPay’s public entry tier to XPay Labs
+                saves approximately <strong className="text-green-400">$24,000+/year</strong> for every $100k/month
                 in processed volume.
               </div>
             </section>

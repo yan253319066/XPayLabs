@@ -382,7 +382,7 @@ export default function HowToAcceptCryptoPaymentsPage() {
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
                       <td className="p-4 text-gray-300 font-medium">Monthly Cost</td>
-                      <td className="p-4 text-gray-400">$30 – $300+ plan fees</td>
+                      <td className="p-4 text-gray-400">Volume-tiered (e.g. BitPay 2%+$0.25 entry)</td>
                       <td className="p-4 text-green-400">$10 – $20 (VPS hosting)</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">

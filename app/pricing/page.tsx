@@ -9,7 +9,7 @@ import SavingsCalculator from './SavingsCalculator';
 
 export const metadata: Metadata = {
   title: 'Pricing — Self-Hosted Crypto Payment Gateway | XPay Labs',
-  description: 'XPay Labs is free, self-hosted crypto payment software. Pay 0% transaction fees. Multi-tenant — host unlimited merchants on one deployment. Support plans from $1,500/year. Save $6k-$12k/year vs BitPay, Coinbase Commerce, and hosted gateways.',
+  description: 'XPay Labs is free, self-hosted crypto payment software. Pay 0% transaction fees. Multi-tenant — host unlimited merchants on one deployment. Support plans from $1,500/year. Save vs BitPay, Coinbase Business, and hosted gateways.',
   keywords: ['crypto payment gateway pricing', 'self-hosted crypto payment cost', 'BitPay vs XPay Labs cost', 'crypto payment gateway fees comparison', 'free crypto payment gateway', 'non-custodial payment gateway pricing', 'multi-tenant crypto payment gateway', 'host multiple merchants crypto'],
   alternates: {
     canonical: 'https://www.xpaylabs.com/pricing',
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Pricing — Self-Hosted Crypto Payment Gateway | XPay Labs',
-    description: 'Free self-hosted crypto payment software. 0% transaction fees. Compare costs vs BitPay, Coinbase Commerce, and other gateways.',
+    description: 'Free self-hosted crypto payment software. 0% transaction fees. Compare costs vs BitPay, Coinbase Business, and other gateways.',
     url: 'https://www.xpaylabs.com/pricing',
     type: 'website',
   },
   twitter: {
     title: 'Pricing — Self-Hosted Crypto Payment Gateway | XPay Labs',
-    description: 'Free self-hosted crypto payment software. 0% transaction fees. Compare costs vs BitPay, Coinbase Commerce, and other gateways.',
+    description: 'Free self-hosted crypto payment software. 0% transaction fees. Compare costs vs BitPay, Coinbase Business, and other gateways.',
     card: 'summary_large_image',
   },
 };
@@ -54,10 +54,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How much can I save compared to BitPay or Coinbase Commerce?',
+      name: 'How much can I save compared to BitPay or Coinbase Business?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A merchant processing $100,000/month in crypto payments pays $12,000+ per year in fees to BitPay (1% + plan fees) or $9,600+ to Coinbase Commerce (0.8% + plan fees). With XPay Labs, the same volume costs approximately $120-240/year in server costs plus negligible gas fees. That is $10,000+ in annual savings.',
+        text: 'A merchant processing $100,000/month in crypto payments pays about $24,000+/year to BitPay at the public entry tier (2% + $0.25 per invoice below $500k/month) or about $12,000/year to Coinbase Business (1%). Coinbase Commerce was discontinued after March 31, 2026. With XPay Labs, the same volume costs approximately $120-240/year in server costs plus negligible gas fees.',
       },
     },
     {
@@ -275,12 +275,12 @@ export default function PricingPage() {
               <div className="glass-panel rounded-xl p-6 text-center glow-blue">
                 <p className="text-3xl font-bold text-white font-display">0%</p>
                 <p className="text-sm text-gray-400 mt-1">Per-Transaction Fee</p>
-                <p className="text-xs text-gray-500 mt-1">vs 0.5–1% at hosted gateways</p>
+                <p className="text-xs text-gray-500 mt-1">vs 0.5–2%+ at hosted gateways</p>
               </div>
               <div className="glass-panel rounded-xl p-6 text-center glow-cyan">
                 <p className="text-3xl font-bold text-white font-display">$0</p>
                 <p className="text-sm text-gray-400 mt-1">Monthly License</p>
-                <p className="text-xs text-gray-500 mt-1">vs $25–$300+/mo at competitors</p>
+                <p className="text-xs text-gray-500 mt-1">No SaaS license — only your VPS</p>
               </div>
               <div className="glass-panel rounded-xl p-6 text-center glow-purple">
                 <p className="text-3xl font-bold text-white font-display">$10–$50</p>
@@ -488,7 +488,7 @@ export default function PricingPage() {
                   <tr className="bg-[#0b0e25] border-b border-white/8">
                     <th className="p-4 text-gray-400 font-medium w-1/4">Feature</th>
                     <th className="p-4 text-orange-400 font-medium w-[18%]">BitPay</th>
-                    <th className="p-4 text-blue-400 font-medium w-[18%]">Coinbase Commerce</th>
+                    <th className="p-4 text-blue-400 font-medium w-[18%]">Coinbase Business</th>
                     <th className="p-4 text-gray-400 font-medium w-[18%]">NowPayments</th>
                     <th className="p-4 text-brand-cyan font-medium w-[18%]">XPay Labs</th>
                   </tr>
@@ -496,15 +496,15 @@ export default function PricingPage() {
                 <tbody className="divide-y divide-white/5">
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Transaction Fee</td>
+                    <td className="p-4 text-gray-400">2% + $0.25 (&lt;$500k/mo)</td>
                     <td className="p-4 text-gray-400">1%</td>
-                    <td className="p-4 text-gray-400">0.8%</td>
-                    <td className="p-4 text-gray-400">0.5%</td>
+                    <td className="p-4 text-gray-400">0.5%+ (1% w/ conversion)</td>
                     <td className="p-4 text-green-400 font-semibold">0%</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Monthly Fee</td>
-                    <td className="p-4 text-gray-400">$30–$300+</td>
-                    <td className="p-4 text-gray-400">$25</td>
+                    <td className="p-4 text-gray-400">$0 (volume-tiered)</td>
+                    <td className="p-4 text-gray-400">$0</td>
                     <td className="p-4 text-gray-400">$0</td>
                     <td className="p-4 text-green-400 font-semibold">$0</td>
                   </tr>
@@ -512,34 +512,34 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-300 font-medium">Custody Model</td>
                     <td className="p-4 text-gray-400">Custodial</td>
                     <td className="p-4 text-gray-400">Custodial</td>
-                    <td className="p-4 text-gray-400">Custodial</td>
+                    <td className="p-4 text-gray-400">Custodial or non-custodial</td>
                     <td className="p-4 text-green-400 font-semibold">Non-Custodial</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Settlement</td>
                     <td className="p-4 text-gray-400">Scheduled payouts</td>
-                    <td className="p-4 text-gray-400">Scheduled payouts</td>
-                    <td className="p-4 text-gray-400">Scheduled payouts</td>
+                    <td className="p-4 text-gray-400">Custodial balance / offramp</td>
+                    <td className="p-4 text-gray-400">Wallet or custody balance</td>
                     <td className="p-4 text-green-400 font-semibold">Instant to your wallet</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Chains Supported</td>
-                    <td className="p-4 text-gray-400">BTC, BCH, ETH, LTC</td>
-                    <td className="p-4 text-gray-400">BTC, ETH, Base</td>
-                    <td className="p-4 text-gray-400">BTC, ETH, TRON, BNB +12</td>
+                    <td className="p-4 text-gray-400">BTC, BCH, ETH, LTC + tokens</td>
+                    <td className="p-4 text-gray-400">Major EVM (USDC-focused)</td>
+                    <td className="p-4 text-gray-400">BTC, ETH, TRON, BNB + many</td>
                     <td className="p-4 text-green-400 font-semibold">TRON, EVM, SUI</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">KYC Required</td>
                     <td className="p-4 text-gray-400">Yes</td>
-                    <td className="p-4 text-gray-400">Yes</td>
-                    <td className="p-4 text-gray-400">No (limited)</td>
+                    <td className="p-4 text-gray-400">Yes (US/SG eligibility)</td>
+                    <td className="p-4 text-gray-400">Risk-based</td>
                     <td className="p-4 text-green-400 font-semibold">No</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">White-Label</td>
                     <td className="p-4 text-gray-400">Enterprise only</td>
-                    <td className="p-4 text-gray-400">No</td>
+                    <td className="p-4 text-gray-400">Limited</td>
                     <td className="p-4 text-gray-400">Yes</td>
                     <td className="p-4 text-green-400 font-semibold">Full, no branding</td>
                   </tr>
@@ -548,7 +548,7 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-400">Closed</td>
                     <td className="p-4 text-gray-400">Closed</td>
                     <td className="p-4 text-gray-400">Closed</td>
-                    <td className="p-4 text-green-400 font-semibold">Free (XPay License)</td>
+                    <td className="p-4 text-green-400 font-semibold">MIT (source on GitHub)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Deployment</td>
@@ -559,16 +559,26 @@ export default function PricingPage() {
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Annual Cost ($100k/mo)</td>
-                    <td className="p-4 text-red-400 font-mono">~$12,360</td>
-                    <td className="p-4 text-red-400 font-mono">~$9,900</td>
-                    <td className="p-4 text-red-400 font-mono">~$6,000</td>
+                    <td className="p-4 text-red-400 font-mono">~$24,000+</td>
+                    <td className="p-4 text-red-400 font-mono">~$12,000</td>
+                    <td className="p-4 text-red-400 font-mono">~$6,000+</td>
                     <td className="p-4 text-green-400 font-mono font-semibold">~$240</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 text-xs text-gray-500 font-sans text-center">
-              XPay Labs annual cost based on VPS hosting only (~$20/mo). Optional support plans from $1,500 (Docker Setup) or $3,000/yr (Business).
+            <div className="mt-4 text-xs text-gray-500 font-sans text-center max-w-3xl mx-auto space-y-1">
+              <p>
+                XPay Labs annual cost based on VPS hosting only (~$20/mo). Optional support plans from $1,500 (Docker Setup) or $3,000/yr (Business).
+              </p>
+              <p>
+                Competitor figures use Aug 2026 public pricing: BitPay entry tier 2%+$0.25 below $500k/mo; Coinbase Business 1%
+                (Coinbase Commerce portal inaccessible after Mar 31, 2026; legacy Commerce was 1% and self-custodial).
+                NowPayments 0.5% single-currency base. Sources:{' '}
+                <a href="https://www.bitpay.com/pricing" className="text-gray-400 underline hover:text-gray-300" target="_blank" rel="noreferrer">BitPay</a>
+                {' · '}
+                <a href="https://help.coinbase.com/en/transitioning-from-coinbase-commerce-to-coinbase-business" className="text-gray-400 underline hover:text-gray-300" target="_blank" rel="noreferrer">Coinbase transition</a>.
+              </p>
             </div>
           </section>
 
@@ -582,7 +592,7 @@ export default function PricingPage() {
                 <DollarSign className="w-8 h-8 text-green-400 mb-4" />
                 <h3 className="text-lg font-display font-medium text-white mb-2">Eliminate Middleman Fees</h3>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  Hosted gateways take 0.5–1% of every transaction. Self-hosting with XPay Labs eliminates
+                  Hosted gateways commonly take 0.5–2%+ of every transaction. Self-hosting with XPay Labs eliminates
                   this entirely — you pay only blockchain gas fees, which are typically fractions of a cent.
                 </p>
               </div>
@@ -596,10 +606,10 @@ export default function PricingPage() {
               </div>
               <div className="glass-panel rounded-xl p-6">
                 <Code2 className="w-8 h-8 text-brand-purple mb-4" />
-                <h3 className="text-lg font-display font-medium text-white mb-2">Auditable Infrastructure</h3>
+                <h3 className="text-lg font-display font-medium text-white mb-2">Source-Available Infrastructure</h3>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  Every line of the XPay Labs codebase is visible on GitHub. You can audit security, inspect
-                  key derivation, review transaction scanning logic, and contribute improvements.
+                  Component source lives on GitHub under the MIT license. Default Docker Compose deploys published
+                  container images; you can build from source when you want a fully reproducible audit path.
                 </p>
               </div>
             </div>
@@ -626,7 +636,7 @@ export default function PricingPage() {
                 },
                 {
                   q: 'How much can I save compared to BitPay?',
-                  a: 'A merchant processing $100k/month saves $12,000+ per year by switching from BitPay (1% fee + plan) to XPay Labs. The savings calculator above shows your exact numbers based on your volume.',
+                  a: 'A merchant processing $100k/month at BitPay’s public entry tier (2% + $0.25 per invoice below $500k/month) pays about $24,000+/year in processing fees alone. XPay Labs is typically ~$240/year in VPS cost. Use the savings calculator above for your volume.',
                 },
                 {
                   q: 'Do you offer refunds?',

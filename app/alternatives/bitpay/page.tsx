@@ -47,7 +47,7 @@ const faqSchema = {
       name: 'Is XPay Labs cheaper than BitPay?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. XPay Labs charges 0% transaction fees and has no monthly subscription. You only pay network gas fees. BitPay charges 1% per transaction plus a $30+/month plan fee.',
+        text: 'Yes. XPay Labs charges 0% transaction fees and has no monthly subscription. You only pay network gas fees. BitPay’s public entry tier is 2% + $0.25 per invoice for monthly volume under $500k (1.5% mid-tier; 1% only at $1M+), with no separate $30–$300/mo plan fees as the public model.',
       },
     },
     {
@@ -71,7 +71,7 @@ const faqSchema = {
       name: 'Is the XPay Labs codebase auditable?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. XPay Labs is source-available under the XPay Enterprise License. The full core codebase is published on GitHub for audit. You can inspect exactly how key derivation, transaction scanning, and webhook dispatch work. BitPay\'s core infrastructure is proprietary and closed-source.',
+        text: 'Yes. XPay Labs is open source under the MIT License. Source is on GitHub for audit; the default Docker setup uses published images, and you can build from source for full reproducibility. You can inspect how key derivation, transaction scanning, and webhook dispatch work. BitPay\'s core infrastructure is proprietary and closed-source.',
       },
     },
   ],
@@ -157,8 +157,8 @@ export default function BitPayAlternativePage() {
                   </div>
                   <h3 className="font-display font-medium text-white text-lg">High Fees</h3>
                   <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                    BitPay charges <strong className="text-gray-300">1% per transaction</strong> plus a monthly plan fee starting at
-                    $30/month. For a business processing $100k/month, that's over $12k/year in fees alone.
+                    BitPay’s public entry tier is <strong className="text-gray-300">2% + $0.25 per invoice</strong> below
+                    $500k/month (1.5% mid; 1% only at ≥$1M). For a business processing $100k/month, that is about $24k+/year in fees alone.
                   </p>
                 </div>
 
@@ -205,12 +205,12 @@ export default function BitPayAlternativePage() {
                 <tbody className="divide-y divide-white/5">
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Transaction Fees</td>
-                    <td className="p-4 text-gray-400">1% per transaction</td>
+                    <td className="p-4 text-gray-400">2% + $0.25 (&lt;$500k/mo); 1.5% mid; 1% at ≥$1M</td>
                     <td className="p-4 text-green-400">0% (gas only)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Monthly Plan Fee</td>
-                    <td className="p-4 text-gray-400">$30 – $300+/month</td>
+                    <td className="p-4 text-gray-400">$0 (volume-tiered pricing)</td>
                     <td className="p-4 text-green-400">$0 (self-hosted)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -236,7 +236,7 @@ export default function BitPayAlternativePage() {
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Source Access</td>
                     <td className="p-4 text-gray-400">Closed-source (proprietary)</td>
-                    <td className="p-4 text-green-400">Free (XPay License)</td>
+                    <td className="p-4 text-green-400">MIT License</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Deployment</td>
@@ -274,10 +274,11 @@ export default function BitPayAlternativePage() {
                   <div className="space-y-3">
                     <h3 className="text-xl font-display font-medium text-white">Pricing & Fees</h3>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                      BitPay's fee structure combines a <strong className="text-gray-300">1% transaction fee</strong> with a
-                      monthly plan ($30/month for Starter, $300/month for Business, custom pricing for Enterprise).
-                      For a business doing $50k/month in crypto revenue, BitPay costs <strong className="text-gray-300">$500 in
-                      transaction fees</strong> plus the monthly plan — over <strong className="text-gray-300">$6,000/year</strong>.
+                      BitPay’s public pricing is <strong className="text-gray-300">volume-tiered</strong>: 2% + $0.25 per
+                      invoice below $500k/month, 1.5% in the mid tier, and 1% only at ≥$1M/month — not a flat 1% plus
+                      $30–$300/mo plan fees. For a business doing $50k/month in crypto revenue at the entry tier, BitPay
+                      costs about <strong className="text-gray-300">$1,000/month</strong> in processing fees —
+                      roughly <strong className="text-gray-300">$12,000+/year</strong>.
                     </p>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
                       XPay Labs charges <strong className="text-green-400">0% transaction fees</strong> and
@@ -401,11 +402,11 @@ export default function BitPayAlternativePage() {
                       documented but limited to what BitPay decides to expose.
                     </p>
                     <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                      XPay Labs is <strong className="text-green-400">source-available</strong> — every line of code is visible
-                      on GitHub. You can audit security, submit pull requests, fork the project, and extend it
-                      however you need. The REST API is complemented by <strong className="text-gray-300">HMAC-signed
-                      webhooks</strong> for secure server-to-server notifications, and the Docker deployment means
-                      you can be running in minutes.
+                      XPay Labs is <strong className="text-green-400">open source under the MIT License</strong> — source
+                      is on GitHub. Default Docker uses published images; build from source for full reproducibility.
+                      You can audit security, submit pull requests, fork the project, and extend it however you need.
+                      The REST API is complemented by <strong className="text-gray-300">HMAC-signed webhooks</strong> for
+                      secure server-to-server notifications, and Docker deployment means you can be running in minutes.
                     </p>
                 </div>
             </div>
@@ -427,11 +428,11 @@ export default function BitPayAlternativePage() {
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start space-x-2">
                       <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
-                      <span className="text-gray-400">1% transaction fee on every payment</span>
+                      <span className="text-gray-400">2% + $0.25 entry tier (&lt;$500k/mo volume)</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
-                      <span className="text-gray-400">$30 – $300+ monthly plan fee</span>
+                      <span className="text-gray-400">1% only at ≥$1M/mo (volume-tiered)</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
@@ -443,7 +444,7 @@ export default function BitPayAlternativePage() {
                     </li>
                   </ul>
                   <p className="mt-4 text-xs text-gray-500 font-mono">
-                    Estimated annual cost at $50k/mo volume: <strong className="text-red-400">~$6,600+</strong>
+                    Estimated annual cost at $50k/mo volume: <strong className="text-red-400">~$12,000+</strong>
                   </p>
                 </div>
 
@@ -509,7 +510,7 @@ export default function BitPayAlternativePage() {
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Infrastructure Cost</td>
-                    <td className="p-4 text-gray-400">$30–$300+/month + 1% per tx</td>
+                    <td className="p-4 text-gray-400">2% + $0.25 entry (&lt;$500k/mo)</td>
                     <td className="p-4 text-green-400">$5–$20/month VPS + 0% per tx</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -537,9 +538,9 @@ export default function BitPayAlternativePage() {
             </div>
             <div className="mt-6 p-4 rounded-xl bg-brand-blue/5 border border-brand-blue/10 text-xs text-gray-400 font-sans leading-relaxed max-w-3xl mx-auto">
               <strong className="text-gray-300">Real-world impact:</strong> A merchant processing $100k/month on BitPay
-              pays ~$12,000+/year in fees and waits 1–3 days for settlement. The same merchant on XPay Labs pays
-               ~$120/year for a VPS and receives funds instantly. Over 3 years, that's ~$35,640 in savings — enough
-               to cover a year of VPS hosting for your entire infrastructure stack.
+              at the public entry tier (2% + $0.25) pays ~$24,000+/year in fees and waits 1–3 days for settlement. The same merchant on XPay Labs pays
+               ~$120–240/year for a VPS and receives funds instantly. Over 3 years, that is tens of thousands in savings — enough
+               to cover VPS hosting for your entire infrastructure stack.
             </div>
           </section>
 
@@ -558,7 +559,7 @@ export default function BitPayAlternativePage() {
                 <ul className="space-y-2 text-sm text-gray-400 font-sans">
                   <li className="flex items-start space-x-2">
                     <span className="text-green-400">•</span>
-                    <span>You process over $10k/month and want to eliminate 1% transaction fees</span>
+                    <span>You process over $10k/month and want to avoid BitPay’s 2% entry-tier fees</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-green-400">•</span>
@@ -712,7 +713,7 @@ export default function BitPayAlternativePage() {
                 Ready to Own Your Payment Infrastructure?
               </h2>
               <p className="text-gray-400 font-sans leading-relaxed max-w-2xl mx-auto mb-8 text-sm sm:text-base">
-                Stop paying 1% per transaction. Stop trusting third parties with your settlement funds. Deploy
+                Stop paying volume-tiered gateway fees. Stop trusting third parties with your settlement funds. Deploy
                 XPay Labs today and take full control of your crypto payment stack.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">

@@ -5,15 +5,41 @@ import { Calculator, DollarSign } from 'lucide-react';
 
 interface Competitor {
   name: string;
+  /** Percentage fee (e.g. 2 = 2%). For BitPay, entry tier below $500k/mo. */
   txFee: number;
   monthlyFee: number;
+  /** Fixed fee per invoice (e.g. BitPay $0.25). */
+  perTxFee: number;
+  /** Optional note shown under the competitor name. */
+  note?: string;
   color: string;
 }
 
 const competitors: Competitor[] = [
-  { name: 'BitPay', txFee: 1.0, monthlyFee: 30, color: 'text-orange-400' },
-  { name: 'Coinbase Commerce', txFee: 0.8, monthlyFee: 25, color: 'text-blue-400' },
-  { name: 'NowPayments', txFee: 0.5, monthlyFee: 0, color: 'text-green-400' },
+  {
+    name: 'BitPay',
+    txFee: 2.0,
+    monthlyFee: 0,
+    perTxFee: 0.25,
+    note: 'Entry tier <$500k/mo: 2% + $0.25 (public pricing)',
+    color: 'text-orange-400',
+  },
+  {
+    name: 'Coinbase Business',
+    txFee: 1.0,
+    monthlyFee: 0,
+    perTxFee: 0,
+    note: 'Successor to Commerce (discontinued Mar 31, 2026)',
+    color: 'text-blue-400',
+  },
+  {
+    name: 'NowPayments',
+    txFee: 0.5,
+    monthlyFee: 0,
+    perTxFee: 0,
+    note: '0.5% single-currency; conversion adds more',
+    color: 'text-green-400',
+  },
 ];
 
 export default function SavingsCalculator() {
@@ -24,11 +50,21 @@ export default function SavingsCalculator() {
   const monthlyTxCount = Math.round(monthlyVolume / avgTxSize);
 
   const savings = competitors.map((c) => {
+    // BitPay tiers down at higher volume; use entry/mid/top public rates.
+    let effectiveTxFee = c.txFee;
+    if (c.name === 'BitPay') {
+      if (monthlyVolume >= 1_000_000) effectiveTxFee = 1.0;
+      else if (monthlyVolume >= 500_000) effectiveTxFee = 1.5;
+      else effectiveTxFee = 2.0;
+    }
     const competitorAnnual =
-      monthlyVolume * (c.txFee / 100) * 12 + c.monthlyFee * 12;
+      monthlyVolume * (effectiveTxFee / 100) * 12 +
+      c.monthlyFee * 12 +
+      monthlyTxCount * c.perTxFee * 12;
     const xpayAnnual = xpayServerCost * 12;
     return {
       ...c,
+      effectiveTxFee,
       competitorAnnual,
       xpayAnnual,
       savings: competitorAnnual - xpayAnnual,
@@ -131,11 +167,20 @@ export default function SavingsCalculator() {
                 <div className="flex items-center justify-between">
                   <span className={`text-sm font-bold font-display ${s.color}`}>
                     {s.name}
+                    <span className="text-[10px] text-gray-500 font-mono font-normal ml-2">
+                      {s.effectiveTxFee}%
+                      {s.perTxFee > 0 ? ` + $${s.perTxFee}/tx` : ''}
+                    </span>
                   </span>
                   <span className="text-sm text-red-400 font-mono font-bold">
                     {formatCurrency(s.competitorAnnual)}
                   </span>
                 </div>
+                {s.note ? (
+                  <p className="text-[10px] text-gray-600 font-mono leading-snug">
+                    {s.note}
+                  </p>
+                ) : null}
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold font-display text-brand-cyan">
                     XPay Labs
@@ -154,10 +199,14 @@ export default function SavingsCalculator() {
               </div>
             ))}
 
-            <div className="bg-brand-cyan/5 border border-brand-cyan/10 rounded-xl p-3">
+            <div className="bg-brand-cyan/5 border border-brand-cyan/10 rounded-xl p-3 space-y-1">
               <p className="text-[10px] text-gray-500 font-mono text-center">
                 Based on {formatCurrency(monthlyVolume)}/mo volume at {formatCurrency(avgTxSize)}/tx avg.
                 XPay Labs server cost estimated at {formatCurrency(xpayServerCost)}/mo.
+              </p>
+              <p className="text-[10px] text-gray-600 font-mono text-center leading-snug">
+                Competitor rates as of Aug 2026 public pages (BitPay volume tiers; Coinbase Business 1%;
+                NowPayments 0.5% single-currency). High-risk or enterprise contracts may differ.
               </p>
             </div>
           </div>

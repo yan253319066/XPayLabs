@@ -109,7 +109,7 @@ const posts = [
     href: '/alternatives/coinbase-commerce',
     date: 'May 2026',
     category: 'Alternative',
-    excerpt: 'Coinbase Commerce is shutting down its custodial service. Merchants need a self-hosted alternative that puts them in control of private keys, settlement timing, and supported chains.',
+    excerpt: 'Coinbase Commerce’s merchant portal became inaccessible after March 31, 2026. Merchants need a self-hosted alternative that puts them in control of private keys, settlement timing, and supported chains.',
   },
   {
     title: 'NowPayments Alternative: Why Merchants Are Switching to Self-Hosted',

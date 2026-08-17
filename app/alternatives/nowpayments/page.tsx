@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'Is XPay Labs cheaper than NowPayments?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. XPay Labs charges 0% transaction fees with no monthly subscription. You only pay network gas fees. NowPayments charges 0.5% per transaction plus a 0.5% hidden fee for withdrawal to external wallets.',
+        text: 'Yes. XPay Labs charges 0% transaction fees with no monthly subscription. You only pay network gas fees. NowPayments’ public single-currency base is about 0.5%; conversion adds more. It offers custodial and non-custodial modes — not custodial-only.',
       },
     },
     {
@@ -70,7 +70,7 @@ const faqSchema = {
       name: 'Is XPay Labs non-custodial compared to NowPayments?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. XPay Labs is fully non-custodial. Private keys are generated on your own infrastructure and never leave your server. Payments settle directly to your configured wallets. NowPayments is custodial — they hold your funds until you request a withdrawal, and enforce minimum withdrawal thresholds.',
+        text: 'Yes. XPay Labs is fully non-custodial. Private keys are generated on your own infrastructure and never leave your server. Payments settle directly to your configured wallets. NowPayments offers both custodial and non-custodial modes; custodial flows hold funds until withdrawal with thresholds, while non-custodial modes settle differently — still distinct from running your own gateway.',
       },
     },
   ],
@@ -175,8 +175,9 @@ export default function NowPaymentsAlternativePage() {
               </h1>
               <p className="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8">
                 NowPayments is a popular API-based crypto payment gateway, but merchants increasingly
-                face issues with custodial risk, recurring fees around 0.5%, withdrawal thresholds,
-                and limited customization. XPay Labs is the self-hosted, non-custodial alternative
+                face issues with fees (about 0.5% single-currency base; conversion adds more), custody-mode trade-offs,
+                withdrawal thresholds on custodial flows, and limited customization. XPay Labs is the self-hosted,
+                non-custodial alternative
                 that gives you full control — zero transaction fees, direct settlement, and
                 multi-chain by design.
               </p>
@@ -208,8 +209,8 @@ export default function NowPaymentsAlternativePage() {
                 </div>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                   <strong className="text-white">NowPayments</strong> is a popular hosted payment gateway
-                  — but it charges ~0.5% per transaction, holds your funds custodially until withdrawal,
-                  enforces minimum payout thresholds, and limits checkout branding.{' '}
+                  — but its public single-currency base is ~0.5% (conversion adds more), it offers custodial and
+                  non-custodial modes, and custodial flows can impose withdrawal thresholds and branding limits.{' '}
                   <strong className="text-white">XPay Labs</strong> is a self-hosted payment
                   gateway that gives you <strong className="text-[#00D1FF]">zero transaction fees</strong>,
                   support for <strong className="text-[#00D1FF]">TRON, EVM chains, and SUI</strong>, full
@@ -242,7 +243,7 @@ export default function NowPaymentsAlternativePage() {
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {[
-                      { feature: 'Pricing', np: '~0.5% per transaction', xpay: 'Free (self-hosted, zero fees)' },
+                      { feature: 'Pricing', np: '~0.5% single-currency base (conversion adds more)', xpay: 'Free (self-hosted, zero fees)' },
                       {
                         feature: 'Supported Chains',
                         np: 'BTC, LTC, ETH, TRON, BSC, MATIC, XRP, XLM, SOL, ADA, DOGE, more',
@@ -254,9 +255,9 @@ export default function NowPaymentsAlternativePage() {
                         xpay: 'Native USDT/USDC on every supported chain',
                       },
                       {
-                        feature: 'Non-Custodial',
-                        np: 'No — NowPayments holds funds until withdrawal',
-                        xpay: 'Yes — self-hosted, direct wallet settlement',
+                        feature: 'Custody',
+                        np: 'Custodial and non-custodial modes',
+                        xpay: 'Non-custodial — self-hosted, direct wallet settlement',
                       },
                       {
                         feature: 'Minimum Withdrawal',
@@ -286,7 +287,7 @@ export default function NowPaymentsAlternativePage() {
                       {
                         feature: 'Source Access',
                         np: 'No',
-                        xpay: 'Free (XPay License)',
+                        xpay: 'MIT License (source on GitHub)',
                       },
                       {
                         feature: 'API-First Design',
@@ -326,11 +327,11 @@ export default function NowPaymentsAlternativePage() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Pricing</h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      NowPayments charges a <strong className="text-orange-400">~0.5% transaction fee</strong> on
-                      every payment. On top of that, withdrawing your funds to an external wallet incurs an additional
-                      network fee plus a <strong className="text-white">0.5% withdrawal fee</strong>. For a business
-                      processing $100,000/month, that is $500 in transaction fees plus withdrawal costs — over{' '}
-                      <strong className="text-white">$6,000+/year</strong>.
+                      NowPayments’ public <strong className="text-orange-400">~0.5% single-currency base</strong> applies
+                      when you keep the same asset; conversion adds more. On custodial flows, withdrawing to an external
+                      wallet can add network fees plus a <strong className="text-white">withdrawal fee</strong>. For a business
+                      processing $100,000/month at the single-currency base, that is about $500/month in processing fees —
+                      over <strong className="text-white">$6,000+/year</strong> before conversion or withdrawal extras.
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs is <strong className="text-[#00D1FF]">completely free</strong>. Since you self-host
@@ -344,7 +345,7 @@ export default function NowPaymentsAlternativePage() {
                     <h4 className="text-white font-bold mb-4 text-lg">Cost comparison at $100k/month volume</h4>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between pb-3 border-b border-white/5">
-                        <span className="text-gray-400">NowPayments (0.5% + withdrawal)</span>
+                        <span className="text-gray-400">NowPayments (~0.5% base + extras)</span>
                         <span className="text-orange-400 font-bold text-lg">$600+/mo</span>
                       </div>
                       <div className="flex items-center justify-between pb-3 border-b border-white/5">
@@ -428,12 +429,13 @@ export default function NowPaymentsAlternativePage() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Security & Custody Model</h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                      NowPayments operates a <strong className="text-orange-400">custodial model</strong>. When a
-                      customer pays you, the funds go to NowPayments' wallets. To access your money, you must
-                      submit a withdrawal request, which incurs a 0.5% fee and a network gas cost. NowPayments
-                      also enforces <strong className="text-white">minimum withdrawal thresholds</strong> — typically
-                      0.01 BTC equivalent (roughly $500–$1,000 depending on market conditions). Small merchants may
-                      find themselves unable to withdraw frequently.
+                      NowPayments offers <strong className="text-orange-400">custodial and non-custodial modes</strong>.
+                      In custodial mode, when a customer pays you, funds go to NowPayments&apos; wallets until you
+                      withdraw — which can incur a fee and network gas, plus{' '}
+                      <strong className="text-white">minimum withdrawal thresholds</strong> (often cited around
+                      0.01 BTC equivalent). Non-custodial modes reduce custody risk but still leave fee and product
+                      constraints on their SaaS platform. Small merchants on custodial flows may find themselves
+                      unable to withdraw frequently.
                     </p>
                     <p className="text-sm text-slate-400 leading-relaxed">
                       XPay Labs is <strong className="text-[#00D1FF]">non-custodial</strong>. You run the software on
@@ -449,9 +451,9 @@ export default function NowPaymentsAlternativePage() {
                       <div className="flex items-start gap-3">
                         <X className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                         <div>
-                          <span className="text-orange-400 font-semibold text-sm">Custodial (NowPayments)</span>
+                          <span className="text-orange-400 font-semibold text-sm">Custodial or non-custodial (NowPayments)</span>
                           <p className="text-xs text-gray-500 mt-1">
-                            Funds held by NowPayments. Manual withdrawal required. Minimum threshold + 0.5% withdrawal fee applied.
+                            Both modes available. Custodial flows may require manual withdrawal with fees and thresholds.
                           </p>
                         </div>
                       </div>
@@ -578,13 +580,13 @@ export default function NowPaymentsAlternativePage() {
               <div className="grid md:grid-cols-3 gap-6 mt-12">
                 <div className="rounded-2xl border border-white/5 bg-[#0A0D1F]/60 backdrop-blur-sm p-8 glow-blue">
                   <h3 className="text-lg font-bold text-white mb-1">NowPayments</h3>
-                  <p className="text-3xl font-extrabold text-orange-400 mb-4">0.5%</p>
+                  <p className="text-3xl font-extrabold text-orange-400 mb-4">0.5%+</p>
                   <ul className="space-y-3 text-sm text-slate-400">
                     <li className="flex items-start gap-2">
-                      <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" /> 0.5% fee on every transaction
+                      <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" /> ~0.5% single-currency base
                     </li>
                     <li className="flex items-start gap-2">
-                      <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" /> 0.5% fee on withdrawals
+                      <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" /> Conversion and withdrawals can add more
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" /> Minimum withdrawal threshold

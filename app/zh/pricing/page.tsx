@@ -22,7 +22,7 @@ import SavingsCalculator from '../../pricing/SavingsCalculator';
 export const metadata: Metadata = {
   title: '定价方案 — 自托管加密支付网关 | XPay Labs',
   description:
-    'XPay Labs 是免费的自托管加密支付软件。0% 交易手续费。多商家架构 — 一个部署即可服务无限商户。支持计划从 $1,500/年起。与 BitPay、Coinbase Commerce 和托管网关相比，每年可节省 $6k-$12k。',
+    'XPay Labs 是免费的自托管加密支付软件。0% 交易手续费。多商家架构 — 一个部署即可服务无限商户。支持计划从 $1,500/年起。与 BitPay、Coinbase Business 和托管网关相比节省手续费。',
   keywords: [
     '加密支付网关定价',
     '自托管加密支付成本',
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: '定价方案 — 自托管加密支付网关 | XPay Labs',
     description:
-      '免费自托管加密支付软件。0% 交易手续费。与 BitPay、Coinbase Commerce 和其他网关进行成本比较。',
+      '免费自托管加密支付软件。0% 交易手续费。与 BitPay、Coinbase Business 和其他网关进行成本比较。',
     url: 'https://www.xpaylabs.com/zh/pricing',
     type: 'website',
   },
   twitter: {
     title: '定价方案 — 自托管加密支付网关 | XPay Labs',
     description:
-      '免费自托管加密支付软件。0% 交易手续费。与 BitPay、Coinbase Commerce 和其他网关进行成本比较。',
+      '免费自托管加密支付软件。0% 交易手续费。与 BitPay、Coinbase Business 和其他网关进行成本比较。',
     card: 'summary_large_image',
   },
 };
@@ -77,10 +77,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '相比 BitPay 或 Coinbase Commerce 能省多少钱？',
+      name: '相比 BitPay 或 Coinbase Business 能省多少钱？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '月处理 $10 万加密支付的商家每年向 BitPay（1% + 计划费）支付 $12,000+ 的费用，或向 Coinbase Commerce（0.8% + 计划费）支付 $9,600+。使用 XPay Labs，相同交易量仅需约 $120-240/年的服务器成本加上可忽略的 Gas 费。每年节省 $10,000+。',
+        text: '月处理 $10 万加密支付的商家，按 BitPay 公开入门档（月流水低于 $50 万时为 2% + $0.25/笔）约需 $24,000+/年；Coinbase Business 约 1%（约 $12,000/年）。Coinbase Commerce 门户在 2026 年 3 月 31 日后已不可用。使用 XPay Labs，相同交易量通常仅需约 $120–240/年服务器成本加上可忽略的 Gas 费。',
       },
     },
     {
@@ -303,14 +303,14 @@ export default function PricingPage() {
                   交易手续费
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
-                  托管网关收取 0.5–1%
+                  托管网关常见 0.5–2%+
                 </p>
               </div>
               <div className="glass-panel rounded-xl p-6 text-center glow-cyan">
                 <p className="text-3xl font-bold text-white font-display">$0</p>
                 <p className="text-sm text-gray-400 mt-1">月费</p>
                 <p className="text-xs text-gray-500 mt-1">
-                  竞品收取 $25–$300+/月
+                  无 SaaS 授权费，仅需 VPS
                 </p>
               </div>
               <div className="glass-panel rounded-xl p-6 text-center glow-purple">
@@ -581,7 +581,7 @@ export default function PricingPage() {
                       BitPay
                     </th>
                     <th className="p-4 text-blue-400 font-medium w-[18%]">
-                      Coinbase Commerce
+                      Coinbase Business
                     </th>
                     <th className="p-4 text-gray-400 font-medium w-[18%]">
                       NowPayments
@@ -596,17 +596,17 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-300 font-medium">
                       交易手续费
                     </td>
+                    <td className="p-4 text-gray-400">2% + $0.25（&lt;$50 万/月）</td>
                     <td className="p-4 text-gray-400">1%</td>
-                    <td className="p-4 text-gray-400">0.8%</td>
-                    <td className="p-4 text-gray-400">0.5%</td>
+                    <td className="p-4 text-gray-400">0.5%+（兑换约 1%）</td>
                     <td className="p-4 text-green-400 font-semibold">0%</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">
                       月费
                     </td>
-                    <td className="p-4 text-gray-400">$30–$300+</td>
-                    <td className="p-4 text-gray-400">$25</td>
+                    <td className="p-4 text-gray-400">$0（按量阶梯）</td>
+                    <td className="p-4 text-gray-400">$0</td>
                     <td className="p-4 text-gray-400">$0</td>
                     <td className="p-4 text-green-400 font-semibold">$0</td>
                   </tr>
@@ -616,7 +616,7 @@ export default function PricingPage() {
                     </td>
                     <td className="p-4 text-gray-400">托管</td>
                     <td className="p-4 text-gray-400">托管</td>
-                    <td className="p-4 text-gray-400">托管</td>
+                    <td className="p-4 text-gray-400">托管或非托管</td>
                     <td className="p-4 text-green-400 font-semibold">
                       非托管
                     </td>
@@ -625,9 +625,9 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-300 font-medium">
                       结算
                     </td>
-                    <td className="p-4 text-gray-400">定期支付</td>
-                    <td className="p-4 text-gray-400">定期支付</td>
-                    <td className="p-4 text-gray-400">定期支付</td>
+                    <td className="p-4 text-gray-400">定期打款</td>
+                    <td className="p-4 text-gray-400">托管余额 / 法币出场</td>
+                    <td className="p-4 text-gray-400">钱包或托管余额</td>
                     <td className="p-4 text-green-400 font-semibold">
                       即时到账钱包
                     </td>
@@ -636,10 +636,10 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-300 font-medium">
                       支持的公链
                     </td>
-                    <td className="p-4 text-gray-400">BTC、BCH、ETH、LTC</td>
-                    <td className="p-4 text-gray-400">BTC、ETH、Base</td>
+                    <td className="p-4 text-gray-400">BTC、BCH、ETH、LTC 等</td>
+                    <td className="p-4 text-gray-400">主流 EVM（偏 USDC）</td>
                     <td className="p-4 text-gray-400">
-                      BTC、ETH、TRON、BNB +12
+                      BTC、ETH、TRON、BNB 等多链
                     </td>
                     <td className="p-4 text-green-400 font-semibold">
                       TRON、EVM、SUI
@@ -650,8 +650,8 @@ export default function PricingPage() {
                       需要 KYC
                     </td>
                     <td className="p-4 text-gray-400">是</td>
-                    <td className="p-4 text-gray-400">是</td>
-                    <td className="p-4 text-gray-400">不需要（有限制）</td>
+                    <td className="p-4 text-gray-400">是（美/新资格）</td>
+                    <td className="p-4 text-gray-400">按风险</td>
                     <td className="p-4 text-green-400 font-semibold">不需要</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -659,7 +659,7 @@ export default function PricingPage() {
                       白标
                     </td>
                     <td className="p-4 text-gray-400">仅企业版</td>
-                    <td className="p-4 text-gray-400">否</td>
+                    <td className="p-4 text-gray-400">有限</td>
                     <td className="p-4 text-gray-400">是</td>
                     <td className="p-4 text-green-400 font-semibold">
                       完全白标，无品牌标识
@@ -673,7 +673,7 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-400">闭源</td>
                     <td className="p-4 text-gray-400">闭源</td>
                     <td className="p-4 text-green-400 font-semibold">
-                      授权免费使用
+                      MIT（GitHub 源码）
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -691,9 +691,9 @@ export default function PricingPage() {
                     <td className="p-4 text-gray-300 font-medium">
                       年成本（月流水 $10 万）
                     </td>
-                    <td className="p-4 text-red-400 font-mono">~$12,360</td>
-                    <td className="p-4 text-red-400 font-mono">~$9,900</td>
-                    <td className="p-4 text-red-400 font-mono">~$6,000</td>
+                    <td className="p-4 text-red-400 font-mono">~$24,000+</td>
+                    <td className="p-4 text-red-400 font-mono">~$12,000</td>
+                    <td className="p-4 text-red-400 font-mono">~$6,000+</td>
                     <td className="p-4 text-green-400 font-mono font-semibold">
                       ~$240
                     </td>
@@ -701,8 +701,17 @@ export default function PricingPage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 text-xs text-gray-500 font-sans text-center">
-              XPay Labs 年成本仅含 VPS 托管费（约 $20/月）。可选支持计划 $1,500 起（Docker Setup）或 $3,000/年（Business）。
+            <div className="mt-4 text-xs text-gray-500 font-sans text-center max-w-3xl mx-auto space-y-1">
+              <p>
+                XPay Labs 年成本仅含 VPS 托管费（约 $20/月）。可选支持计划 $1,500 起（Docker Setup）或 $3,000/年（Business）。
+              </p>
+              <p>
+                竞品数字依据 2026 年 8 月公开定价：BitPay 入门档 2%+$0.25（&lt;$50 万/月）；Coinbase Business 1%
+                （Commerce 门户 2026-03-31 后不可用；旧 Commerce 为 1% 且自托管）。NowPayments 单币基础约 0.5%。来源：{' '}
+                <a href="https://www.bitpay.com/pricing" className="text-gray-400 underline hover:text-gray-300" target="_blank" rel="noreferrer">BitPay</a>
+                {' · '}
+                <a href="https://help.coinbase.com/en/transitioning-from-coinbase-commerce-to-coinbase-business" className="text-gray-400 underline hover:text-gray-300" target="_blank" rel="noreferrer">Coinbase 迁移说明</a>。
+              </p>
             </div>
           </section>
           {/* Why Self-Hosted */}
@@ -717,7 +726,7 @@ export default function PricingPage() {
                   消除中间商费用
                 </h3>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  托管网关收取每笔交易 0.5–1% 的费用。使用 XPay Labs 自托管完全消除了这一成本——您只需支付区块链 Gas 费用，通常不到一美分。
+                  托管网关常见每笔交易 0.5–2%+ 的费用。使用 XPay Labs 自托管可消除中间商抽成——您只需支付区块链 Gas 费用，通常不到一美分。
                 </p>
               </div>
               <div className="glass-panel rounded-xl p-6">
@@ -732,10 +741,10 @@ export default function PricingPage() {
               <div className="glass-panel rounded-xl p-6">
                 <Code2 className="w-8 h-8 text-brand-purple mb-4" />
                 <h3 className="text-lg font-display font-medium text-white mb-2">
-                  可审计基础设施
+                  源码可见基础设施
                 </h3>
                 <p className="text-sm text-gray-400 font-sans leading-relaxed">
-                  XPay Labs 代码库的每一行代码都在 GitHub 上可见。您可以审计安全性、检查密钥派生、审查交易扫描逻辑，并贡献改进。
+                  组件源码以 MIT 许可证发布在 GitHub。默认 Docker Compose 使用已发布的容器镜像；如需完整可复现审计路径，可自行从源码构建。
                 </p>
               </div>
             </div>
@@ -761,7 +770,7 @@ export default function PricingPage() {
                 },
                 {
                   q: '相比 BitPay 能省多少钱？',
-                  a: '月交易量 $10 万的商家从 BitPay（1% 费用 + 计划费）切换到 XPay Labs，每年可节省 $12,000 以上。上方的节省计算器可根据您的交易量显示精确数字。',
+                  a: '月交易量 $10 万、按 BitPay 公开入门档（低于 $50 万/月为 2% + $0.25/笔）约需 $24,000+/年处理费。XPay Labs 通常约 $240/年 VPS 成本。上方计算器可按您的交易量估算。',
                 },
                 {
                   q: '提供退款吗？',

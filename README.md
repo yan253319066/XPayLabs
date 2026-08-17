@@ -16,26 +16,27 @@
 
 ### 💰 Cost Comparison: Self-Hosted vs Hosted Gateways
 
-Processing **$100,000/month** in crypto payments:
+Processing **$100,000/month** in crypto payments (public rates as of Aug 2026):
 
 | Gateway | Transaction Fee | Monthly Fee | **Annual Cost** | Savings vs XPay |
 |---------|----------------|-------------|-----------------|-----------------|
 | **XPay Labs** | **0%** | $0 | **~$240** (VPS) | — |
-| NowPayments | 0.5% | $0 | ~$6,000 | **Save $5,760** |
-| Coinbase Commerce | 0.8% | $25 | ~$9,900 | **Save $9,660** |
-| BitPay | 1% | $30 | ~$12,360 | **Save $12,120** |
+| NowPayments | 0.5%+ (single-currency base) | $0 | ~$6,000+ | **Save ~$5,760+** |
+| Coinbase Business | ~1% | $0 | ~$12,000 | **Save ~$11,760** |
+| BitPay | 2% + $0.25 (&lt;$500k/mo) | $0 (volume-tiered) | ~$24,000+ | **Save ~$23,760+** |
 
-> XPay Labs is free software. You pay only blockchain gas costs (~$0.02-$0.50/tx) and your VPS bill.
+> Coinbase Commerce’s portal became inaccessible after March 31, 2026 (legacy Commerce was 1% and self-custodial). XPay Labs is free MIT-licensed software. You pay only blockchain gas costs (~$0.02-$0.50/tx) and your VPS bill.
 
 ### Feature Comparison
 
-| Feature | XPay Labs | BitPay | Coinbase Commerce | NowPayments |
+| Feature | XPay Labs | BitPay | Coinbase Business | NowPayments |
 |---------|-----------|--------|-------------------|-------------|
-| Fees | Zero (only gas) | 1% per tx | 0.8% + $25/mo | 0.5% per tx |
-| Custody | Non-custodial | Custodial | Custodial | Custodial |
-| Chains | TRON, EVM, SUI | BTC, ETH, LTC | ETH, Base, few | BTC, ETH, 50+ |
-| White-label | Yes | No | Limited | No |
+| Fees | Zero (only gas) | 2%+$0.25 entry (&lt;$500k); 1% at ≥$1M | ~1% | 0.5%+ (higher w/ conversion) |
+| Custody | Non-custodial | Custodial | Custodial | Custodial or non-custodial |
+| Chains | TRON, EVM, SUI | BTC, ETH, LTC + tokens | Major EVM (USDC-focused) | BTC, ETH, 50+ |
+| White-label | Yes | Limited | Limited | Yes |
 | Deployment | Self-hosted (Docker) | Hosted | Hosted | Hosted |
+| License | MIT | Closed | Closed | Closed |
 | Webhooks | HMAC-signed, retry queue | Limited | Basic | Basic |
 
 ## Features
