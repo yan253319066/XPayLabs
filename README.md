@@ -102,6 +102,19 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - [How to Accept Crypto Payments](https://www.xpaylabs.com/guides/how-to-accept-crypto-payments) — Developer's setup guide
 - [TRON Payment Gateway](https://www.xpaylabs.com/solutions/tron-payment-gateway) — Self-hosted USDT TRC20 infrastructure
 
+## Related Projects
+
+| Repository | Description |
+|------------|-------------|
+| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose deployment (MIT) |
+| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | Gateway core — Spring Boot (GPL-3.0) |
+| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | Merchant dashboard — Vue 3 (GPL-3.0) |
+| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC proxy — Express (MIT) |
+| [XPayLabs-checkout](https://github.com/yan253319066/XPayLabs-checkout) | Checkout page (Vue 3) |
+| [XPayLabs-docs](https://github.com/yan253319066/XPayLabs-docs) | Documentation (Mintlify) |
+| [XPayLabs-node-sdk](https://github.com/yan253319066/XPayLabs-node-sdk) | Node.js SDK |
+| [XPayLabs-java-sdk](https://github.com/yan253319066/XPayLabs-java-sdk) | Java SDK |
+
 ## Contact
 
 - Telegram: [@OS_Blockchain](https://t.me/OS_Blockchain)

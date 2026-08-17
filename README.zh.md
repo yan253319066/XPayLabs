@@ -89,6 +89,19 @@ npm run dev
 - [如何接受加密货币支付](https://www.xpaylabs.com/guides/how-to-accept-crypto-payments) — 开发者部署指南
 - [TRON 支付网关](https://www.xpaylabs.com/solutions/tron-payment-gateway) — 自托管 USDT TRC20 基础设施
 
+## 相关项目
+
+| 仓库 | 说明 |
+|------|------|
+| [XPayLabs-docker](https://github.com/yan253319066/XPayLabs-docker) | Docker Compose 部署（MIT） |
+| [XPayLabs-java](https://github.com/yan253319066/XPayLabs-java) | 网关核心 — Spring Boot（GPL-3.0） |
+| [XPayLabs-merchant-vue](https://github.com/yan253319066/XPayLabs-merchant-vue) | 商户后台 — Vue 3（GPL-3.0） |
+| [XPayLabs-sui-node-service](https://github.com/yan253319066/XPayLabs-sui-node-service) | SUI RPC 代理 — Express（MIT） |
+| [XPayLabs-checkout](https://github.com/yan253319066/XPayLabs-checkout) | 收银台（Vue 3） |
+| [XPayLabs-docs](https://github.com/yan253319066/XPayLabs-docs) | 文档站（Mintlify） |
+| [XPayLabs-node-sdk](https://github.com/yan253319066/XPayLabs-node-sdk) | Node.js SDK |
+| [XPayLabs-java-sdk](https://github.com/yan253319066/XPayLabs-java-sdk) | Java SDK |
+
 ## 联系方式
 
 - Telegram：[@OS_Blockchain](https://t.me/OS_Blockchain)
