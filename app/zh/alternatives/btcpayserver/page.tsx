@@ -311,7 +311,7 @@ export default function BTCPayServerAlternativePage() {
                       MIT（完全开源）
                     </td>
                     <td className="p-4 text-gray-400">
-                      MIT License
+                      GPL-3.0 / MIT
                     </td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
@@ -494,7 +494,7 @@ export default function BTCPayServerAlternativePage() {
                   <li className="flex items-start space-x-2">
                     <span className="text-green-400">•</span>
                     <span>
-                      您想要可审计和可复刻的代码（MIT License）
+                      您想要可审计和可复刻的开源代码（GPL-3.0 / MIT）
                     </span>
                   </li>
                 </ul>

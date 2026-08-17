@@ -243,7 +243,7 @@ export default function BTCPayServerAlternativePage() {
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">License</td>
                     <td className="p-4 text-gray-400">MIT (fully open source)</td>
-                    <td className="p-4 text-gray-400">MIT License</td>
+                    <td className="p-4 text-gray-400">GPL-3.0 / MIT</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4 text-gray-300 font-medium">Payment Detection</td>

@@ -379,7 +379,7 @@ export const en: TranslationSet = {
     product: "SYSTEM CORE",
     developers: "DEVELOPERS",
     links: "INTEGRATIONS",
-    allRights: "MIT-licensed open software. Optional paid support plans available.",
+    allRights: "Open source: GPL-3.0 (gateway core + merchant dashboard); MIT (SDKs, checkout, Docker, and related tools). Optional paid support plans available.",
     disclaimer: "Non-custodial infrastructure software. Merchant remains strictly responsible for local legislative compliance, key protection, and node security.",
     termsOfService: "Terms of Service",
     privacyPolicy: "Privacy Policy",
