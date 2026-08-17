@@ -8,7 +8,7 @@
 - **Product:** Self-hosted, non-custodial crypto payment gateway
 - **Pricing:** Free software — 0% transaction fees, 0% monthly fees
 - **Deployment:** Docker Compose on VPS or bare metal
-- **License:** Source-available (XPay Enterprise License)
+- **License:** GPL-3.0 (Java gateway core + merchant dashboard); MIT (SDKs, checkout, Docker, sui-node-service, docs)
 - **Repository:** github.com/yan253319066/XPayLabs (primary)
 - **Mirror:** gitee.com/XPayLabs
 - **Contact:** Telegram @OS_Blockchain
